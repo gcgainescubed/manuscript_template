@@ -1,5 +1,9 @@
+# In original forked .yml:
 project:
   type: manuscript
+
+manuscript:
+  article: index_vae.qmd
 
 execute:
   freeze: auto
@@ -12,6 +16,4 @@ format:
   docx: default
   jats: default
   agu-pdf: default
-
-
 

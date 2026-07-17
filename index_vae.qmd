@@ -1,0 +1,142 @@
+---
+title: "Assessing the influence of variable annual sampling effort on official national forest inventory statistics"
+author:
+  - name: George C. Gaines III
+    id: gg
+    orcid: 0000-0002-4341-6802
+    corresponding: true
+    email: george.gaines@usda.gov
+    roles:
+      - Investigation
+      - Project administration
+      - Visualization
+    affiliation:
+      - name: USDA Forest Service, Rocky Mountain Research Station
+        city: Missoula
+        state: MT
+  - name: Bryce Frank
+    id: bf
+    orcid: 0000-0000-0000-0000
+    corresponding: false
+    roles: []
+    affiliation:
+      - name: USDA Forest Service, Pacific Northwest Research Station
+        city: XXX
+        state: WA
+  - name: KaDonna Randolph
+    orcid: 0000-0000-0000-0000
+    corresponding: false
+    roles: []
+    affiliation:
+      - name: USDA Forest Service, Southern Research Station, 
+        city: Knoxville
+        state: TN
+  - name: Jim Westfall
+    orcid: 0000-0000-0000-0000
+    corresponding: false
+    roles: []
+    affiliation:
+      - name: USDA Forest Service, Northern Research Station
+        city: XXX
+        state: PA
+date: today
+date-format: MMM D, YYYY
+keywords:
+  - Forest Inventory and Analysis
+abstract: |
+  In this study we...
+#plain-language-summary: |
+  # In this study we...
+#key-points:
+  #- We found...
+  #- We also found...
+#date: last-modified
+crossref:
+  eq-prefix: "Eq."
+#toc: true
+editor: source
+colorlinks: true
+bibliography: vae.bib
+citation:
+  container-title: Forest Ecology and Management
+number-sections: true
+funding: "The authors received no funding for this work."
+---
+
+## Introduction
+
+The USFS Forest Inventory and Analysis (FIA) Program surveys and analyzes the forests of the
+United States through a nationwide network of 
+permanent sample locations. These plot locations are distributed across all lands with a spatial 
+sampling intensity of about 1 location per 2400 ha according to an 
+unaligned, quasi-systematic equal probability sample design. This design 
+forces desirable spatial dispersion while limiting the potential 
+for alignment of sample locations with periodic population features.
+Statistical inference on forest population 
+status and change parameters is enabled by measurements of forest
+vegetation traits made at these locations by field crews. 
+
+Historically, FIA sample locations in each state were visited periodically 
+as time, budgets, and workforce capacity allowed. This approach offered 
+logistical flexibility but complicated analysis and reporting timelines.
+In the early 2000's the program shifted 
+from periodic to annual inventory protocols calling for approximately equal 
+numbers of plot remeasurements each year on schedules
+intended to be fixed and consistent within states.
+Under the annual inventory, each 
+plot location in a state is assigned to one of a set of panels, 
+and all plots assigned to a panel are designated for measurement in the 
+same year. Once the final panel in an inventory 
+cycle is complete, remeasurements at sample locations in the first panel begin the following year. 
+For more information regarding the FIA sample design see [@gb2 Chapter 2].
+
+In general, FIA requires that a panel be complete before the associated raw tabular
+data are pushed to its public-facing databases, and requires a complete inventory cycle 
+within a state to publish official state-scale estimates 
+of forest parameters in fulfillment of 
+Congressional reporting obligations. Unfortunately, in practice,
+adherence to the annual design described above has proven very challenging or
+impossible for the FIA Program. Instead, delayed and skipped field measurements 
+cause unintentional lengthening of inventory cycles
+and/or survey nonresponse [see, e.g., @sarndal_nonresponse], 
+at rates that vary regionally and over time. The underlying causes 
+of delayed and skipped field measurements are varied, and can be chronic 
+(e.g., denied access to private lands [@westfall2022spatial], 
+logistical or administrative challenges in remote regions [@affleck2026inventory], 
+persistent workforce and budgetary constraints [@conroy_thesis]) 
+or result from discrete events (e.g., the COVID19 pandemic). Better understanding of patterns
+in late and skipped measurements [@conroy_thesis], 
+and the investigation of new sampling and estimation techniques
+to ameliorate the statistical consequences nonresponse [@westfall2022estimation; 
+@westfall2026double], are active research
+topics. 
+
+Of immediate practical concern for FIA and its external partners are the strain on 
+field staff and delays to tabular data publication that result from delayed 
+field measurements. Methods have been proposed to control the measurement delay 
+process by disaggregating FIA’s annual panel structure while still preserving the spatial 
+dispersion of the FIA sample network within field season
+years. Panel disaggregation enables intentional alignment of workloads with anticipated data 
+acquisition workforce capacity in each field season year through the application of variable
+annual field sampling effort within individual states.  
+
+Though the logistical advantages of variable annual effort (VAE) are profound (i.e., it can help 
+ensure the long-term viability of the inventory in the context of funding and staffing 
+volatility), the statistical consequences of the redistribution of partial panels within inventory cycles, and of extended and variable inventory cycle lengths, are unknown across states and 
+epochs. In particular, a need exists to understand and communicate to stakeholders how 
+adoption of VAE protocols may influence the statistical properties of forest parameter estimates 
+published by FIA in fulfillment of Congressional reporting imperatives.  
+
+In this study, we seek to...
+
+## Data & Methods {#sec-data-methods}
+
+{{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}}
+
+## Conclusion
+
+## References {.unnumbered}
+
+:::{#refs}
+
+:::
