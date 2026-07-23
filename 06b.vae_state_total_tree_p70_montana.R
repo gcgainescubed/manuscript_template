@@ -1,0 +1,294 @@
+# Initialize
+source("00.initialize.R")
+# Load plots_p70 (combined previous and current cycle data) for Maine
+load(file.path("data","plots_p70_mt.Rdata"))
+# Load current cycle data for Maine
+load(file.path("data","total_vol_mt.Rdata"))
+
+changes <- plots_p70$VOLCFNET_plot_change[plots_p70$PLOT_STATUS_CD==1&
+                                            !is.na(plots_p70$VOLCFNET_plot_change)]
+
+#hist(changes)
+plot(density(changes),
+     main = "Change in annualized plot-level volume, previous to current cycle")
+
+# Determine the largest negative annualized change value and add 1
+shift <- abs(min(changes)) + 1
+# then add this value to all annualized change values to eliminate non-positive values
+# (because Weibull distribution can't handle negative and 0 values)
+shifted_changes <- changes + shift
+
+# Fit Weibull distribution to the shifted annualized change values
+library(fitdistrplus)
+fit <- fitdist(shifted_changes, "weibull")
+fit[1]$estimate[1]
+fit[1]$estimate[2]
+
+plot(density(changes),
+     main = "Change in annualized plot-level volume, previous to current cycle")
+lines(density(rweibull(n=1000000,
+                       shape = fit[1]$estimate[1],
+                       scale = fit[1]$estimate[2])-shift),
+      col="red")
+mean(rweibull(n=100000,shape = fit[1]$estimate[1],
+              scale = fit[1]$estimate[2]))-shift
+
+### SLOW START SCENARIO
+# Here, we simulate a slow start (Some panel 70's pushed forward from first few P2 panels)
+plots_p70$panel <- (plots_p70$SUBPANEL-1)*5+plots_p70$P2PANEL # Convert panel/subpanel to 10-year panels
+slow <- plots_p70
+
+# NEED TO ACOUNT FOR THE FACT THAT 2015 INVYR WAS NOT PANEL70 1-14, 2015 STARTED WITH P70=15;
+# I.e., as the following shows for Maine,
+table(plots_p70$INVYR) # Original INVYR distribution
+table(ceiling(plots_p70$PANEL_70/7)) # How many P70's per panel in 10 year cycle? Should be same as plots/invyr?
+table(ceiling(plots_p70$panel))
+# P70 values are NOT staggered off the P2 panels in MT? I.e., P2 Panel l = Panel70 1-7, etc.? 
+#table(plots_p70$panel,plots_p70$PANEL_70)
+table(plots_p70$INVYR,plots_p70$PANEL_70)
+
+
+slow$NEWINVYR <- 0
+for(i in 1:nrow(slow)){
+  if(slow$PANEL_70[i] > 0 & slow$PANEL_70[i] <= 5){slow$NEWINVYR[i] <- 2013} else # Slow: 5 P70's
+    if(slow$PANEL_70[i] > 5 & slow$PANEL_70[i] <= 10){slow$NEWINVYR[i] <- 2014} else # Slow: 5 P70's
+      if(slow$PANEL_70[i] > 10 & slow$PANEL_70[i] <= 15){slow$NEWINVYR[i] <- 2015} else # Slow: 5 P70's
+        if(slow$PANEL_70[i] > 15 & slow$PANEL_70[i] <= 20){slow$NEWINVYR[i] <- 2016} else # Slow: 5 P70's
+          if(slow$PANEL_70[i] > 20 & slow$PANEL_70[i] <= 29){slow$NEWINVYR[i] <- 2017} else # Fast: 9 P70's
+            if(slow$PANEL_70[i] > 29 & slow$PANEL_70[i] <= 39){slow$NEWINVYR[i] <- 2018} else # Fast: 9 P70's
+              if(slow$PANEL_70[i] > 39 & slow$PANEL_70[i] <= 48){slow$NEWINVYR[i] <- 2019} else # Fast: 8 P70's
+                if(slow$PANEL_70[i] > 48 & slow$PANEL_70[i] <= 56){slow$NEWINVYR[i] <- 2020} else # Fast: 8 P70's
+                  if(slow$PANEL_70[i] > 56 & slow$PANEL_70[i] <= 63){slow$NEWINVYR[i] <- 2021} else # On time: 7 P70's
+                    if(slow$PANEL_70[i] > 63 & slow$PANEL_70[i] <= 70){slow$NEWINVYR[i] <- 2022} # On time: 7 P70's
+}
+
+table(slow$INVYR) # Original INVYR distribution
+table(slow$NEWINVYR) # New INVYR distribution
+
+# For plots getting shifted forward, compute difference in years between original INVYR and new INVYR
+#slow$INVDIFF <- slow$NEWINVYR - slow$INVYR_0
+slow$INVDIFF <- slow$NEWINVYR - slow$INVYR
+
+table(slow$INVDIFF,useNA = "always") # So in Maine under this case 
+
+nsim <- 1000
+
+slow_results <- data.frame(matrix(NA, nrow = nsim, ncol = 2))
+colnames(slow_results) <- c("total","se_pct")
+
+for(i in 1:nsim){
+  set.seed(i)
+  growths <- rweibull(n=nrow(slow), shape = fit[1]$estimate[1], scale = fit[1]$estimate[2]) - shift
+  slow$NEWVOL <- 0
+  
+  ifelse(slow$PLOT_STATUS_CD==1,
+         slow$NEWVOL <- slow$VOLCFNET_plot + (slow$INVDIFF * growths),
+         0)
+  slow$NEWVOL <- ifelse(slow$NEWVOL < 0, 0, slow$NEWVOL)
+  
+  # Compare original volumes to new "grown" volumes
+  # plot(density(plots_p70$VOLCFNET_plot))
+  # lines(density(slow$NEWVOL),col="red")
+  # summary(slow$VOLCFNET_plot)
+  # summary(slow$NEWVOL)
+  
+  # Compute the ith new estimated total in the simulation 
+  NEW_ESTIMATED_TOTAL <- sum(slow$NEWVOL * slow$EXPNS)
+  
+  # SE
+  
+  # get within stratum standard errors [GB2 eq 4 on page 8]
+  v_Yhd_new <- aggregate(slow$NEWVOL,
+                         by=list(ESTN_UNIT=slow$ESTN_UNIT,
+                                 STRATUMCD=slow$STRATUMCD),
+                         FUN=function(z){var(z)/length(z)}) 
+  # note: var includes /(n-1), /n added via /length(z)
+  
+  colnames(v_Yhd_new)[ncol(v_Yhd_new)] <- "VOLCFNET_eu_strat_se"
+  
+  # add the stratum point/pixel count stuff to the latter
+  v_Yhd_plus_total_new <- merge(v_Yhd_new,pop_stratum)
+  
+  # copy the list of estimation units for building estn unit level variances 
+  pop_estn_unit_total_new <- pop_estn_unit_total
+  pop_estn_unit_total_new$var_vol_new <- 0
+  # loop through the estn units
+  for (eu in unique(pop_estn_unit_total$ESTN_UNIT)){
+    # pull all strata in this estn unit
+    strata_in_unit <- v_Yhd_plus_total_new[v_Yhd_plus_total_new$ESTN_UNIT==eu,]
+    # get the W_h weights for each strata within the estimation unit
+    strata_in_unit$W_h <- strata_in_unit$P1POINTCNT/sum(strata_in_unit$P1POINTCNT)
+    # get the total p2 sample size in this estimation unit
+    n <- sum(strata_in_unit$P2POINTCNT)
+    # implement GB2 equation 3 page 8 in two parts for this estimation unit
+    part1 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se))
+    part2 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se)/n)
+    # stick the result on the  copied list of estimation units
+    pop_estn_unit_total_new$var_vol[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1 + part2)/n
+  }
+  
+  # combine the estimation unit level variances together, using the area variable
+  total_var_new <- sum(pop_estn_unit_total_new$var_vol*pop_estn_unit_total_new$AREA_USED^2)
+  se_new <- sqrt(total_var_new)
+  
+  #se_new / NEW_ESTIMATED_TOTAL * 100 # Compute new SE%
+  
+  slow_results$total[i] <- NEW_ESTIMATED_TOTAL
+  slow_results$se_pct[i] <- se_new / NEW_ESTIMATED_TOTAL * 100
+}
+
+head(slow_results)
+range(slow_results$total)
+#plot(slow_results$total,slow_results$se_pct, pch=19, col = t_blk)
+
+total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
+se <- sqrt(total_var)
+t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
+plot(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,
+     ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
+     #ylim = c(1.22,1.24),xlim = c(ESTIMATED_TOTAL - 100000000,ESTIMATED_TOTAL + 100000000))
+     ylim = c(1.325,1.36),xlim = c(ESTIMATED_TOTAL - (0.007*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (0.015*ESTIMATED_TOTAL)),
+     xaxt = "n")
+abline(h = se / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
+points(slow_results$total,slow_results$se_pct, pch=19, col = t_blk)
+points(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,)
+
+
+x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.015, 0.015, by = 0.001))
+axis(side = 1, at = x_vals, labels = paste0(seq(-1.5, 1.5, 0.1), "%"))
+
+
+#plot(slow_results$total,slow_results$se_pct)
+
+### FAST START THEN SLOW
+fast <- plots_p70
+
+table(fast$INVYR) # Original INVYR distribution
+table(ceiling(fast$PANEL_70/14)) # How many P70's per panel in 5 year cycle?
+table(fast$INVYR,fast$P2PANEL)
+table(fast$INVYR,fast$PANEL_70)
+
+# ...Change to make fast start: 
+
+fast$NEWINVYR <- 0
+for(i in 1:nrow(slow)){
+  if(fast$PANEL_70[i] > 0 & fast$PANEL_70[i] <= 9){fast$NEWINVYR[i] <- 2013} else # Fast: 9 P70's
+    if(fast$PANEL_70[i] > 9 & fast$PANEL_70[i] <= 19){fast$NEWINVYR[i] <- 2014} else # Fast: 9 P70's
+      if(fast$PANEL_70[i] > 19 & fast$PANEL_70[i] <= 29){fast$NEWINVYR[i] <- 2015} else # Fast: 8 P70's
+        if(fast$PANEL_70[i] > 29 & fast$PANEL_70[i] <= 37){fast$NEWINVYR[i] <- 2016} else # Fast: 8 P70's
+          if(fast$PANEL_70[i] > 37 & fast$PANEL_70[i] <= 43){fast$NEWINVYR[i] <- 2017} else # Slow: 5 P70's
+            if(fast$PANEL_70[i] > 43 & fast$PANEL_70[i] <= 48){fast$NEWINVYR[i] <- 2018} else # Slow: 5 P70's
+              if(fast$PANEL_70[i] > 48 & fast$PANEL_70[i] <= 52){fast$NEWINVYR[i] <- 2019} else # Slow: 4 P70's
+                if(fast$PANEL_70[i] > 52 & fast$PANEL_70[i] <= 56){fast$NEWINVYR[i] <- 2020} else # Slow: 4 P70's
+                  if(fast$PANEL_70[i] > 56 & fast$PANEL_70[i] <= 63){fast$NEWINVYR[i] <- 2021} else # On time: 7 P70's
+                    if(fast$PANEL_70[i] > 63 & fast$PANEL_70[i] <= 70){fast$NEWINVYR[i] <- 2022} # On time: 7 P70's
+}
+
+table(fast$INVYR) # Original INVYR distribution
+table(fast$NEWINVYR) # New INVYR distribution
+
+# For plots getting shifted forward, compute difference in years between original INVYR and new INVYR
+#fast$INVDIFF <- fast$NEWINVYR - fast$INVYR_0
+fast$INVDIFF <- fast$NEWINVYR - fast$INVYR
+
+table(fast$INVDIFF,useNA = "always") # So in Maine under this case 
+
+nsim <- 1000
+
+fast_results <- data.frame(matrix(NA, nrow = nsim, ncol = 2))
+colnames(fast_results) <- c("total","se_pct")
+
+for(i in 1:nsim){
+  set.seed(i)
+  growths <- rweibull(n=nrow(fast), shape = fit[1]$estimate[1], scale = fit[1]$estimate[2]) - shift
+  fast$NEWVOL <- 0
+  
+  ifelse(fast$PLOT_STATUS_CD==1,
+         fast$NEWVOL <- fast$VOLCFNET_plot + (fast$INVDIFF * growths),
+         0)
+  fast$NEWVOL <- ifelse(fast$NEWVOL < 0, 0, fast$NEWVOL)
+  
+  # Compare original volumes to new "grown" volumes
+  # plot(density(plots_p70$VOLCFNET_plot))
+  # lines(density(fast$NEWVOL),col="red")
+  # summary(fast$VOLCFNET_plot)
+  # summary(fast$NEWVOL)
+  
+  # Compute the ith new estimated total in the simulation 
+  NEW_ESTIMATED_TOTAL <- sum(fast$NEWVOL * fast$EXPNS)
+  
+  # SE
+  
+  # get within stratum standard errors [GB2 eq 4 on page 8]
+  v_Yhd_new <- aggregate(fast$NEWVOL,
+                         by=list(ESTN_UNIT=fast$ESTN_UNIT,
+                                 STRATUMCD=fast$STRATUMCD),
+                         FUN=function(z){var(z)/length(z)}) 
+  # note: var includes /(n-1), /n added via /length(z)
+  
+  colnames(v_Yhd_new)[ncol(v_Yhd_new)] <- "VOLCFNET_eu_strat_se"
+  
+  # add the stratum point/pixel count stuff to the latter
+  v_Yhd_plus_total_new <- merge(v_Yhd_new,pop_stratum)
+  
+  # copy the list of estimation units for building estn unit level variances 
+  pop_estn_unit_total_new <- pop_estn_unit_total
+  pop_estn_unit_total_new$var_vol_new <- 0
+  # loop through the estn units
+  for (eu in unique(pop_estn_unit_total$ESTN_UNIT)){
+    # pull all strata in this estn unit
+    strata_in_unit <- v_Yhd_plus_total_new[v_Yhd_plus_total_new$ESTN_UNIT==eu,]
+    # get the W_h weights for each strata within the estimation unit
+    strata_in_unit$W_h <- strata_in_unit$P1POINTCNT/sum(strata_in_unit$P1POINTCNT)
+    # get the total p2 sample size in this estimation unit
+    n <- sum(strata_in_unit$P2POINTCNT)
+    # implement GB2 equation 3 page 8 in two parts for this estimation unit
+    part1 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se))
+    part2 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se)/n)
+    # stick the result on the  copied list of estimation units
+    pop_estn_unit_total_new$var_vol[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1 + part2)/n
+  }
+  
+  # combine the estimation unit level variances together, using the area variable
+  total_var_new <- sum(pop_estn_unit_total_new$var_vol*pop_estn_unit_total_new$AREA_USED^2)
+  se_new <- sqrt(total_var_new)
+  
+  #se_new / NEW_ESTIMATED_TOTAL * 100 # Compute new SE%
+  
+  fast_results$total[i] <- NEW_ESTIMATED_TOTAL
+  fast_results$se_pct[i] <- se_new / NEW_ESTIMATED_TOTAL * 100
+}
+
+head(fast_results)
+range(fast_results$total)
+range(slow_results$total)
+range(fast_results$se_pct)
+
+total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
+se <- sqrt(total_var)
+
+t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
+t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
+
+plot(ESTIMATED_TOTAL,se / ESTIMATED_TOTAL * 100, col="red", pch = 19,
+     ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
+     #ylim = c(1.22,1.24),xlim = c(ESTIMATED_TOTAL - 100000000,ESTIMATED_TOTAL + 100000000))
+     ylim = c(1.28,1.36),xlim = c(ESTIMATED_TOTAL - (0.05*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (0.05*ESTIMATED_TOTAL)),
+     xaxt = "n")
+abline(h = se / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
+points(slow_results$total,slow_results$se_pct, pch=19, col = t_blk)
+#plot(fast_results$total,fast_results$se_pct, pch=19, col = t_grn)
+points(fast_results$total,fast_results$se_pct, pch=19, col = t_grn)
+points(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,)
+
+
+x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.015, 0.015, by = 0.001))
+axis(side = 1, at = x_vals, labels = paste0(seq(-1.5, 1.5, 0.1), "%"))
+
+legend("bottomleft", 
+       legend = c("Slow start", "Fast start"), 
+       col = c(t_blk, t_grn), 
+       pch = 19, 
+       title = "VAE Regimen")
+
+
