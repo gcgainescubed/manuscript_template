@@ -99,19 +99,44 @@ table(slow$INVDIFF,useNA = "always") # So in Maine under this case
 
 nsim <- 1000
 
-slow_results <- data.frame(matrix(NA, nrow = nsim, ncol = 2))
-colnames(slow_results) <- c("total","se_pct")
+changes_df <- data.frame(difs = changes, id = 1:length(changes)) 
 
+slow_results <- data.frame(matrix(NA, nrow = nsim, ncol = 4))
+colnames(slow_results) <- c("total_weibull","se_pct_weibull","total_empirical","se_pct_empirical")
+
+#i <- 1
 
 for(i in 1:nsim){
   set.seed(i)
-  growths <- rweibull(n=nrow(slow), shape = fit[1]$estimate[1], scale = fit[1]$estimate[2]) - shift
+  # Weibull growth
+  growths_1 <- rweibull(n=nrow(slow), shape = fit[1]$estimate[1], scale = fit[1]$estimate[2]) - shift
+  slow$growths_1 <- growths_1
   
-  slow$NEWVOL <- 0
-  slow$NEWVOL <- ifelse(slow$PLOT_STATUS_CD==1,
-                        slow$VOLCFNET_plot + (slow$INVDIFF * growths),
-                        0)
-  slow$NEWVOL <- ifelse(slow$NEWVOL < 0, 0, slow$NEWVOL)
+  slow$NEWVOL_1 <- 0
+  slow$NEWVOL_1 <- ifelse(slow$PLOT_STATUS_CD==1,
+                          slow$VOLCFNET_plot + (slow$INVDIFF * slow$growths_1),
+                          0)
+  slow$NEWVOL_1 <- ifelse(slow$NEWVOL_1 < 0, 0, slow$NEWVOL_1)
+  
+  # Empirical CDF growth: SRSwR
+  growths_2 <- sample(changes, size = nrow(slow), replace = TRUE)
+  slow$growths_2 <- growths_2
+  slow$NEWVOL_2 <- 0
+  slow$NEWVOL_2 <- ifelse(slow$PLOT_STATUS_CD==1,
+                          slow$VOLCFNET_plot + (slow$INVDIFF * slow$growths_2),
+                          0)
+  slow$NEWVOL_2 <- ifelse(slow$NEWVOL_2 < 0, 0, slow$NEWVOL_2)
+  
+  # Empirical CDF growth: SRSwoR
+  # slow$NEWVOL_2 <- 0
+  # #j <- 1
+  # for(j in 1:nrow(slow)){
+  #   my_id <- round(runif(n=1, min = 1, max = max(changes_df$id)),0)
+  #   my_growth <- changes_df$difs[changes_df$id==my_id]
+  #   if(slow$PLOT_STATUS_CD[j]==1){slow$NEWVOL_2[j] <- slow$VOLCFNET_plot[j] + (slow$INVDIFF[j] * my_growth)} else {
+  #   slow$NEWVOL_2[j] <- 0}
+  # }
+  # slow$NEWVOL_2 <- ifelse(slow$NEWVOL_2 < 0, 0, slow$NEWVOL_2)
   
   # Compare original volumes to new "grown" volumes
   # plot(density(plots_p70$VOLCFNET_plot))
@@ -120,25 +145,29 @@ for(i in 1:nsim){
   # summary(slow$NEWVOL)
   
   # Compute the ith new estimated total in the simulation 
-  NEW_ESTIMATED_TOTAL <- sum(slow$NEWVOL * slow$EXPNS)
+  NEW_ESTIMATED_TOTAL_1 <- sum(slow$NEWVOL_1 * slow$EXPNS)
+  NEW_ESTIMATED_TOTAL_2 <- sum(slow$NEWVOL_2 * slow$EXPNS)
   
-  # SE
-  
+  # Standard error estimator
   # get within stratum standard errors [GB2 eq 4 on page 8]
-  v_Yhd_new <- aggregate(slow$NEWVOL,
+  v_Yhd_new <- aggregate(cbind(slow$NEWVOL_1,
+                               slow$NEWVOL_2),
                          by=list(ESTN_UNIT=slow$ESTN_UNIT,
                                  STRATUMCD=slow$STRATUMCD),
                          FUN=function(z){var(z)/length(z)}) 
   # note: var includes /(n-1), /n added via /length(z)
   
-  colnames(v_Yhd_new)[ncol(v_Yhd_new)] <- "VOLCFNET_eu_strat_se"
+  colnames(v_Yhd_new)[ncol(v_Yhd_new)-1] <- "VOLCFNET_eu_strat_se_1"
+  colnames(v_Yhd_new)[ncol(v_Yhd_new)] <- "VOLCFNET_eu_strat_se_2"
   
   # add the stratum point/pixel count stuff to the latter
   v_Yhd_plus_total_new <- merge(v_Yhd_new,pop_stratum)
   
   # copy the list of estimation units for building estn unit level variances 
   pop_estn_unit_total_new <- pop_estn_unit_total
-  pop_estn_unit_total_new$var_vol_new <- 0
+  pop_estn_unit_total_new$var_vol_new_1 <- 0
+  pop_estn_unit_total_new$var_vol_new_2 <- 0
+  
   # loop through the estn units
   for (eu in unique(pop_estn_unit_total$ESTN_UNIT)){
     # pull all strata in this estn unit
@@ -148,20 +177,27 @@ for(i in 1:nsim){
     # get the total p2 sample size in this estimation unit
     n <- sum(strata_in_unit$P2POINTCNT)
     # implement GB2 equation 3 page 8 in two parts for this estimation unit
-    part1 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se))
-    part2 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se)/n)
+    part1_1 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se_1))
+    part2_1 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se_1)/n)
+    part1_2 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se_2))
+    part2_2 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se_2)/n)
     # stick the result on the  copied list of estimation units
-    pop_estn_unit_total_new$var_vol_new[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1 + part2)/n
+    pop_estn_unit_total_new$var_vol_new_1[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1_1 + part2_1)/n
+    pop_estn_unit_total_new$var_vol_new_2[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1_1 + part2_1)/n
   }
   
   # combine the estimation unit level variances together, using the area variable
-  total_var_new <- sum(pop_estn_unit_total_new$var_vol_new*pop_estn_unit_total_new$AREA_USED^2)
-  se_new <- sqrt(total_var_new)
+  total_var_new_1 <- sum(pop_estn_unit_total_new$var_vol_new_1*pop_estn_unit_total_new$AREA_USED^2)
+  se_new_1 <- sqrt(total_var_new_1)
+  total_var_new_2 <- sum(pop_estn_unit_total_new$var_vol_new_2*pop_estn_unit_total_new$AREA_USED^2)
+  se_new_2 <- sqrt(total_var_new_2)
   
   #se_new / NEW_ESTIMATED_TOTAL * 100 # Compute new SE%
   
-  slow_results$total[i] <- NEW_ESTIMATED_TOTAL
-  slow_results$se_pct[i] <- se_new / NEW_ESTIMATED_TOTAL * 100
+  slow_results$total_weibull[i] <- NEW_ESTIMATED_TOTAL_1
+  slow_results$se_pct_weibull[i] <- se_new_1 / NEW_ESTIMATED_TOTAL_1 * 100
+  slow_results$total_empirical[i] <- NEW_ESTIMATED_TOTAL_2
+  slow_results$se_pct_empirical[i] <- se_new_2 / NEW_ESTIMATED_TOTAL_2 * 100
 }
 
 head(slow_results)
@@ -205,18 +241,39 @@ table(fast$INVDIFF,useNA = "always") # So in Maine under this case
 
 nsim <- 1000
 
-fast_results <- data.frame(matrix(NA, nrow = nsim, ncol = 2))
-colnames(fast_results) <- c("total","se_pct")
+fast_results <- data.frame(matrix(NA, nrow = nsim, ncol = 4))
+colnames(fast_results) <- c("total_weibull","se_pct_weibull","total_empirical","se_pct_empirical")
 
 for(i in 1:nsim){
   set.seed(i)
-  growths <- rweibull(n=nrow(fast), shape = fit[1]$estimate[1], scale = fit[1]$estimate[2]) - shift
+  # Weibull growth
+  growths_1 <- rweibull(n=nrow(fast), shape = fit[1]$estimate[1], scale = fit[1]$estimate[2]) - shift
+  fast$growths_1 <- growths_1
+
+  fast$NEWVOL_1 <- 0
+  fast$NEWVOL_1 <- ifelse(fast$PLOT_STATUS_CD==1,
+                          fast$VOLCFNET_plot + (fast$INVDIFF * fast$growths_1),
+                          0)
+  fast$NEWVOL_1 <- ifelse(fast$NEWVOL_1 < 0, 0, fast$NEWVOL_1)
   
-  fast$NEWVOL <- 0
-  fast$NEWVOL <- ifelse(fast$PLOT_STATUS_CD==1,
-                        fast$VOLCFNET_plot + (fast$INVDIFF * growths),
-                        0)
-  fast$NEWVOL <- ifelse(fast$NEWVOL < 0, 0, fast$NEWVOL)
+  # Empirical CDF growth: SRSwR
+  growths_2 <- sample(changes, size = nrow(fast), replace = TRUE)
+  fast$growths_2 <- growths_2
+  fast$NEWVOL_2 <- 0
+  fast$NEWVOL_2 <- ifelse(fast$PLOT_STATUS_CD==1,
+                          fast$VOLCFNET_plot + (fast$INVDIFF * fast$growths_2),
+                          0)
+  fast$NEWVOL_2 <- ifelse(fast$NEWVOL_2 < 0, 0, fast$NEWVOL_2)
+  
+  # Empirical CDF growth: SRSwoR
+  # fast$NEWVOL_2 <- 0
+  # for(j in 1:nrow(fast)){
+  #   my_id <- round(runif(n=1, min = 1, max = max(changes_df$id)),0)
+  #   my_growth <- changes_df$difs[changes_df$id==my_id]
+  #   if(fast$PLOT_STATUS_CD[j]==1){fast$NEWVOL_2[j] <- fast$VOLCFNET_plot[j] + (fast$INVDIFF[j] * my_growth)} else {
+  #     fast$NEWVOL_2[j] <- 0}
+  # }
+  # fast$NEWVOL_2 <- ifelse(fast$NEWVOL_2 < 0, 0, fast$NEWVOL_2)
   
   # Compare original volumes to new "grown" volumes
   # plot(density(plots_p70$VOLCFNET_plot))
@@ -225,24 +282,29 @@ for(i in 1:nsim){
   # summary(fast$NEWVOL)
   
   # Compute the ith new estimated total in the simulation 
-  NEW_ESTIMATED_TOTAL <- sum(fast$NEWVOL * fast$EXPNS)
+  NEW_ESTIMATED_TOTAL_1 <- sum(fast$NEWVOL_1 * fast$EXPNS)
+  NEW_ESTIMATED_TOTAL_2 <- sum(fast$NEWVOL_2 * fast$EXPNS)
   
-  # Standard Error
+  # Standard error estimator
   # get within stratum standard errors [GB2 eq 4 on page 8]
-  v_Yhd_new <- aggregate(fast$NEWVOL,
+  v_Yhd_new <- aggregate(cbind(fast$NEWVOL_1,
+                               fast$NEWVOL_2),
                          by=list(ESTN_UNIT=fast$ESTN_UNIT,
                                  STRATUMCD=fast$STRATUMCD),
                          FUN=function(z){var(z)/length(z)}) 
   # note: var includes /(n-1), /n added via /length(z)
   
-  colnames(v_Yhd_new)[ncol(v_Yhd_new)] <- "VOLCFNET_eu_strat_se"
+  colnames(v_Yhd_new)[ncol(v_Yhd_new)-1] <- "VOLCFNET_eu_strat_se_1"
+  colnames(v_Yhd_new)[ncol(v_Yhd_new)] <- "VOLCFNET_eu_strat_se_2"
   
   # add the stratum point/pixel count stuff to the latter
   v_Yhd_plus_total_new <- merge(v_Yhd_new,pop_stratum)
   
   # copy the list of estimation units for building estn unit level variances 
   pop_estn_unit_total_new <- pop_estn_unit_total
-  pop_estn_unit_total_new$var_vol_new <- 0
+  pop_estn_unit_total_new$var_vol_new_1 <- 0
+  pop_estn_unit_total_new$var_vol_new_2 <- 0
+  
   # loop through the estn units
   for (eu in unique(pop_estn_unit_total$ESTN_UNIT)){
     # pull all strata in this estn unit
@@ -252,20 +314,27 @@ for(i in 1:nsim){
     # get the total p2 sample size in this estimation unit
     n <- sum(strata_in_unit$P2POINTCNT)
     # implement GB2 equation 3 page 8 in two parts for this estimation unit
-    part1 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se))
-    part2 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se)/n)
+    part1_1 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se_1))
+    part2_1 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se_1)/n)
+    part1_2 <- sum(with(strata_in_unit,W_h*P2POINTCNT*VOLCFNET_eu_strat_se_2))
+    part2_2 <- sum(with(strata_in_unit,(1-W_h)*P2POINTCNT*VOLCFNET_eu_strat_se_2)/n)
     # stick the result on the  copied list of estimation units
-    pop_estn_unit_total_new$var_vol_new[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1 + part2)/n
+    pop_estn_unit_total_new$var_vol_new_1[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1_1 + part2_1)/n
+    pop_estn_unit_total_new$var_vol_new_2[pop_estn_unit_total_new$ESTN_UNIT==eu] <- (part1_1 + part2_1)/n
   }
   
   # combine the estimation unit level variances together, using the area variable
-  total_var_new <- sum(pop_estn_unit_total_new$var_vol_new*pop_estn_unit_total_new$AREA_USED^2)
-  se_new <- sqrt(total_var_new)
+  total_var_new_1 <- sum(pop_estn_unit_total_new$var_vol_new_1*pop_estn_unit_total_new$AREA_USED^2)
+  se_new_1 <- sqrt(total_var_new_1)
+  total_var_new_2 <- sum(pop_estn_unit_total_new$var_vol_new_2*pop_estn_unit_total_new$AREA_USED^2)
+  se_new_2 <- sqrt(total_var_new_2)
   
   #se_new / NEW_ESTIMATED_TOTAL * 100 # Compute new SE%
   
-  fast_results$total[i] <- NEW_ESTIMATED_TOTAL
-  fast_results$se_pct[i] <- se_new / NEW_ESTIMATED_TOTAL * 100
+  fast_results$total_weibull[i] <- NEW_ESTIMATED_TOTAL_1
+  fast_results$se_pct_weibull[i] <- se_new_1 / NEW_ESTIMATED_TOTAL_1 * 100
+  fast_results$total_empirical[i] <- NEW_ESTIMATED_TOTAL_2
+  fast_results$se_pct_empirical[i] <- se_new_2 / NEW_ESTIMATED_TOTAL_2 * 100
 }
 
 head(fast_results)
@@ -275,17 +344,21 @@ se <- sqrt(total_var)
 
 t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
 t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
+t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
 
 plot(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,
      ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
-     ylim = c(1.22,1.24),xlim = c(ESTIMATED_TOTAL - (0.0043*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (0.0043*ESTIMATED_TOTAL)),
+     ylim = c(1.22,1.245),xlim = c(ESTIMATED_TOTAL - (0.0043*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (0.0043*ESTIMATED_TOTAL)),
      xaxt = "n", main = "Maine")
-points(fast_results$total,fast_results$se_pct, pch=19, col = t_grn)
-points(slow_results$total,slow_results$se_pct, pch=19, col = t_blk)
+points(fast_results$total_empirical,fast_results$se_pct_empirical, pch=19, col = t_org)
+points(fast_results$total_weibull,fast_results$se_pct_weibull, pch=19, col = t_grn)
+points(slow_results$total_empirical,slow_results$se_pct_empirical, pch=19, col = t_org)
+points(slow_results$total_weibull,slow_results$se_pct_weibull, pch=19, col = t_blk)
+
 
 legend("bottomleft", 
-       legend = c("Slow start", "Fast start"), 
-       col = c(t_blk, t_grn), 
+       legend = c("Slow start Weibull", "Fast start Weibull", "Slow/Fast Empirical"), 
+       col = c(t_blk, t_grn,t_org), 
        pch = 19, 
        title = "VAE Regimen")
 
