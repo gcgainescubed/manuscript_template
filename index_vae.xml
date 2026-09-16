@@ -1,0 +1,669 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving
+and Interchange DTD v1.2 20190208//EN" "JATS-archivearticle1.dtd">
+
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+
+<front>
+<journal-meta>
+<journal-id></journal-id>
+
+<journal-title-group>
+<journal-title>Forest Ecology and Management</journal-title>
+</journal-title-group>
+<issn></issn>
+
+<publisher>
+<publisher-name></publisher-name>
+</publisher>
+</journal-meta>
+
+
+<article-meta>
+
+
+<title-group>
+<article-title>Assessing the influence of variable annual sampling
+effort on official national forest inventory statistics</article-title>
+</title-group>
+
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0002-4341-6802</contrib-id>
+<name>
+<surname>III</surname>
+<given-names>George C. Gaines</given-names>
+</name>
+<string-name>George C. Gaines III</string-name>
+
+<email>george.gaines@usda.gov</email>
+<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
+<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+<xref ref-type="aff" rid="aff-1">a</xref>
+<xref ref-type="corresp" rid="cor-gg">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
+<name>
+<surname>Frank</surname>
+<given-names>Bryce</given-names>
+</name>
+<string-name>Bryce Frank</string-name>
+
+<xref ref-type="aff" rid="aff-2">b</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
+<name>
+<surname>Randolph</surname>
+<given-names>KaDonna</given-names>
+</name>
+<string-name>KaDonna Randolph</string-name>
+
+<xref ref-type="aff" rid="aff-3">c</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
+<name>
+<surname>Westfall</surname>
+<given-names>Jim</given-names>
+</name>
+<string-name>Jim Westfall</string-name>
+
+<xref ref-type="aff" rid="aff-4">d</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1">
+<institution-wrap>
+<institution>USDA Forest Service, Rocky Mountain Research
+Station</institution>
+</institution-wrap>
+
+<city>Missoula</city>
+<state>MT</state>
+
+
+
+
+</aff>
+<aff id="aff-2">
+<institution-wrap>
+<institution>USDA Forest Service, Pacific Northwest Research
+Station</institution>
+</institution-wrap>
+
+<city>XXX</city>
+<state>WA</state>
+
+
+
+
+</aff>
+<aff id="aff-3">
+<institution-wrap>
+<institution>USDA Forest Service, Southern Research
+Station,</institution>
+</institution-wrap>
+
+<city>Knoxville</city>
+<state>TN</state>
+
+
+
+
+</aff>
+<aff id="aff-4">
+<institution-wrap>
+<institution>USDA Forest Service, Northern Research
+Station</institution>
+</institution-wrap>
+
+<city>XXX</city>
+<state>PA</state>
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-gg">george.gaines@usda.gov</corresp>
+</author-notes>
+
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2026-09-16">
+<year>2026</year>
+<month>9</month>
+<day>16</day>
+</pub-date>
+
+
+
+
+
+
+
+<history></history>
+
+
+<abstract>
+<p>In this study we…</p>
+</abstract>
+<kwd-group kwd-group-type="author">
+<kwd>Forest Inventory and Analysis</kwd>
+</kwd-group>
+
+
+<funding-group>
+<funding-statement>The authors received no funding for this
+work.</funding-statement>
+</funding-group>
+
+
+</article-meta>
+
+</front>
+
+<body>
+<sec id="introduction">
+  <title>1 Introduction</title>
+  <p>The USFS Forest Inventory and Analysis (FIA) Program surveys and
+  analyzes the forests of the United States through a nationwide network
+  of permanent sample locations. These plot locations are distributed
+  across all lands with a spatial sampling intensity of about 1 location
+  per 2400 ha according to an unaligned, quasi-systematic equal
+  probability sample design. This design forces desirable spatial
+  dispersion while limiting the potential for alignment of sample
+  locations with periodic population features. Statistical inference on
+  forest population status and change parameters is enabled by
+  measurements of forest vegetation traits made at these locations by
+  field crews.</p>
+  <p>Historically, FIA sample locations in each state were visited
+  periodically as time, budgets, and workforce capacity allowed. This
+  approach offered logistical flexibility but complicated analysis and
+  reporting timelines. In the early 2000’s the program shifted from
+  periodic to annual inventory protocols calling for approximately equal
+  numbers of plot remeasurements each year on schedules intended to be
+  fixed and consistent within states. Under the annual inventory, each
+  plot location in a state is assigned to one of a set of panels, and
+  all plots assigned to a panel are designated for measurement in the
+  same year. Once the final panel in an inventory cycle is complete,
+  remeasurements at sample locations in the first panel begin the
+  following year. For more information regarding the FIA sample design
+  see
+  (<xref alt="Westfall, Coulston, et al. 2022, chap. 2" rid="ref-gb2" ref-type="bibr">Westfall,
+  Coulston, et al. 2022, chap. 2</xref>).</p>
+  <p>In general, FIA requires that a panel be complete before the
+  associated raw tabular data are pushed to its public-facing databases,
+  and requires a complete inventory cycle within a state to publish
+  official state-scale estimates of forest parameters in fulfillment of
+  Congressional reporting obligations. Unfortunately, in practice,
+  adherence to the annual design described above has proven very
+  challenging or impossible for the FIA Program. Instead, delayed and
+  skipped field measurements cause unintentional lengthening of
+  inventory cycles and/or survey nonresponse (see, e.g.,
+  <xref alt="Särndal and Lundström 2005" rid="ref-sarndal_nonresponse" ref-type="bibr">Särndal
+  and Lundström 2005</xref>), at rates that vary regionally and over
+  time. The underlying causes of delayed and skipped field measurements
+  are varied, and can be chronic (e.g., denied access to private lands
+  (<xref alt="Westfall, Schroeder, et al. 2022" rid="ref-westfall2022spatial" ref-type="bibr">Westfall,
+  Schroeder, et al. 2022</xref>), logistical or administrative
+  challenges in remote regions
+  (<xref alt="Affleck et al. 2026" rid="ref-affleck2026inventory" ref-type="bibr">Affleck
+  et al. 2026</xref>), persistent workforce and budgetary constraints
+  (<xref alt="Conroy 2026" rid="ref-conroy_thesis" ref-type="bibr">Conroy
+  2026</xref>)) or result from discrete events (e.g., the COVID19
+  pandemic). Better understanding of patterns in late and skipped
+  measurements
+  (<xref alt="Conroy 2026" rid="ref-conroy_thesis" ref-type="bibr">Conroy
+  2026</xref>), and the investigation of new sampling and estimation
+  techniques to ameliorate the statistical consequences nonresponse
+  (<xref alt="Westfall 2022" rid="ref-westfall2022estimation" ref-type="bibr">Westfall
+  2022</xref>;
+  <xref alt="Westfall and Patterson 2026" rid="ref-westfall2026double" ref-type="bibr">Westfall
+  and Patterson 2026</xref>), are active research topics.</p>
+  <p>Of immediate practical concern for FIA and its external partners
+  are the strain on field staff and delays to tabular data publication
+  that result from delayed field measurements. Methods have been
+  proposed to control the measurement delay process by disaggregating
+  FIA’s annual panel structure while still preserving the spatial
+  dispersion of the FIA sample network within field season years. Panel
+  disaggregation enables intentional alignment of workloads with
+  anticipated data acquisition workforce capacity in each field season
+  year through the application of variable annual field sampling effort
+  within individual states.</p>
+  <p>Though the logistical advantages of variable annual effort (VAE)
+  are profound (i.e., it can help ensure the long-term viability of the
+  inventory in the context of funding and staffing volatility), the
+  statistical consequences of the redistribution of partial panels
+  within inventory cycles, and of extended and variable inventory cycle
+  lengths, are unknown across states and epochs. In particular, a need
+  exists to understand and communicate to stakeholders how adoption of
+  VAE protocols may influence the statistical properties of forest
+  parameter estimates published by FIA in fulfillment of Congressional
+  reporting imperatives.</p>
+  <p>In this study, we seek to…</p>
+</sec>
+<sec id="sec-data-methods">
+  <title>2 Data &amp; Methods</title>
+  <fig id="fig-spatial-plot">
+    <caption><p>Figure 1: Locations of earthquakes on La Palma since
+    2017</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="index_vae_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
+  </fig>
+</sec>
+<sec id="conclusion">
+  <title>3 Conclusion</title>
+</sec>
+</body>
+
+<back>
+<ref-list>
+  <title>References</title>
+  <ref id="ref-westfall2022spatial">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Westfall</surname><given-names>James A</given-names></name>
+        <name><surname>Schroeder</surname><given-names>Todd A</given-names></name>
+        <name><surname>McCollum</surname><given-names>Joseph M</given-names></name>
+        <name><surname>Patterson</surname><given-names>Paul L</given-names></name>
+      </person-group>
+      <article-title>A spatial and temporal assessment of nonresponse in the national forest inventory of the US</article-title>
+      <source>Environmental Monitoring and Assessment</source>
+      <publisher-name>Springer</publisher-name>
+      <year iso-8601-date="2022">2022</year>
+      <volume>194</volume>
+      <issue>8</issue>
+      <fpage>530</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-westfall2022estimation">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Westfall</surname><given-names>James A</given-names></name>
+      </person-group>
+      <article-title>An estimation method to reduce complete and partial nonresponse bias in forest inventory</article-title>
+      <source>European Journal of Forest Research</source>
+      <publisher-name>Springer</publisher-name>
+      <year iso-8601-date="2022">2022</year>
+      <volume>141</volume>
+      <issue>5</issue>
+      <fpage>901</fpage>
+      <lpage>907</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-westfall2026double">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Westfall</surname><given-names>James A</given-names></name>
+        <name><surname>Patterson</surname><given-names>Paul L</given-names></name>
+      </person-group>
+      <article-title>Double ratio estimation within a design-based nonresponse bias mitigation strategy</article-title>
+      <source>Forestry: An International Journal of Forest Research</source>
+      <publisher-name>Oxford University Press</publisher-name>
+      <year iso-8601-date="2026">2026</year>
+      <volume>99</volume>
+      <issue>1</issue>
+      <fpage>cpaf032</fpage>
+      <lpage></lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-affleck2026inventory">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Affleck</surname><given-names>David LR</given-names></name>
+        <name><surname>Gaines III</surname><given-names>George C</given-names></name>
+        <name><surname>Conroy</surname><given-names>Cici</given-names></name>
+        <name><surname>Santino</surname><given-names>Gianna</given-names></name>
+        <name><surname>Larson</surname><given-names>Andrew J</given-names></name>
+      </person-group>
+      <article-title>Inventory measurement rates lag in wilderness areas across the western USA</article-title>
+      <source>Forest Science</source>
+      <publisher-name>Springer</publisher-name>
+      <year iso-8601-date="2026">2026</year>
+      <volume>72</volume>
+      <issue>1</issue>
+      <fpage>95</fpage>
+      <lpage>102</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-gb2">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Westfall</surname><given-names>James A</given-names></name>
+        <name><surname>Coulston</surname><given-names>John W</given-names></name>
+        <name><surname>Moisen</surname><given-names>Gretchen G</given-names></name>
+        <name><surname>Andersen</surname><given-names>H-E</given-names></name>
+      </person-group>
+      <article-title>Sampling and estimation documentation for the enhanced forest inventory and analysis program: 2022</article-title>
+      <source>Gen. Tech. Rep. NRS-GTR-207. Madison, WI: US Department of Agriculture, Forest Service, Northern Research Station. 129 p.</source>
+      <year iso-8601-date="2022">2022</year>
+      <volume>207</volume>
+      <fpage>1</fpage>
+      <lpage>129</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-sarndal_nonresponse">
+    <element-citation publication-type="book">
+      <person-group person-group-type="author">
+        <name><surname>Särndal</surname><given-names>Carl-Erik</given-names></name>
+        <name><surname>Lundström</surname><given-names>Sixten</given-names></name>
+      </person-group>
+      <source>Estimation in surveys with nonresponse</source>
+      <publisher-name>John Wiley &amp; Sons</publisher-name>
+      <year iso-8601-date="2005">2005</year>
+    </element-citation>
+  </ref>
+  <ref id="ref-conroy_thesis">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Conroy</surname><given-names>Cici</given-names></name>
+      </person-group>
+      <article-title>Elevated FIA nonresponse rates in wilderness: Investigating barriers and potential solutions</article-title>
+      <publisher-name>University of Montana</publisher-name>
+      <year iso-8601-date="2026">2026</year>
+    </element-citation>
+  </ref>
+</ref-list>
+</back>
+
+<sub-article article-type="notebook" id="nb-5-nb-1">
+<front-stub>
+<title-group>
+<article-title>Assessing the influence of variable annual sampling
+effort on official forest inventory statistics</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author" corresp="yes">
+<contrib-id contrib-id-type="orcid">0000-0002-4341-6802</contrib-id>
+<name>
+<surname>III</surname>
+<given-names>George C. Gaines</given-names>
+</name>
+<string-name>George C. Gaines III</string-name>
+
+<email>george.gaines@usda.gov</email>
+<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
+<role vocab="https://credit.niso.org" vocab-term="project
+administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
+administration</role>
+<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
+<xref ref-type="aff" rid="aff-1-nb-1">a</xref>
+<xref ref-type="corresp" rid="cor-1-nb-1">&#x002A;</xref>
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
+<name>
+<surname>Frank</surname>
+<given-names>Bryce</given-names>
+</name>
+<string-name>Bryce Frank</string-name>
+
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
+<name>
+<surname>Randolph</surname>
+<given-names>KaDonna</given-names>
+</name>
+<string-name>KaDonna Randolph</string-name>
+
+</contrib>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
+<name>
+<surname>Westfall</surname>
+<given-names>Jim</given-names>
+</name>
+<string-name>Jim Westfall</string-name>
+
+<xref ref-type="aff" rid="aff-1-nb-1">a</xref>
+</contrib>
+</contrib-group>
+<aff id="aff-1-nb-1">
+<institution-wrap>
+<institution>Curvenote</institution>
+</institution-wrap>
+
+
+
+
+
+
+
+</aff>
+<author-notes>
+<corresp id="cor-1-nb-1">george.gaines@usda.gov</corresp>
+</author-notes>
+<abstract>
+<p>In this study we…</p>
+</abstract>
+</front-stub>
+
+<body>
+<sec id="introduction-nb-1">
+  <title>Introduction</title>
+  <sec specific-use="notebook-content">
+  <code language="r script">eruptions &lt;- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
+n_eruptions &lt;- length(eruptions)
+  </code>
+  </sec>
+  <sec id="cell-fig-timeline-nb-1" specific-use="notebook-content">
+  <code language="r script">par(mar = c(3, 1, 1, 1) + 0.1)
+plot(eruptions, rep(0, n_eruptions), 
+  pch = &quot;|&quot;, axes = FALSE)
+axis(1)
+box()
+  </code>
+  <fig id="fig-timeline-nb-1">
+    <caption><p>Timeline of recent earthquakes on La Palma</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="index_original_files/figure-jats/fig-timeline-1.png" />
+  </fig>
+  </sec>
+  <sec specific-use="notebook-content">
+  <code language="r script">avg_years_between_eruptions &lt;- mean(diff(eruptions[-n_eruptions]))
+avg_years_between_eruptions
+  </code>
+  <preformat>[1] 79.83333</preformat>
+  </sec>
+  <p>Based on data up to and including 1971, eruptions on La Palma
+  happen every 79.8 years on average.</p>
+  <p>Studies of the magma systems feeding the volcano, such as
+  (<xref alt="marrero2019?" rid="ref-marrero2019-nb-1" ref-type="bibr"><bold>marrero2019?</bold></xref>),
+  have proposed that there are two main magma reservoirs feeding the
+  Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
+  and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
+  <p>Eight eruptions have been recorded since the late 1400s
+  ((<xref alt="fig-timeline?" rid="ref-fig-timeline-nb-1" ref-type="bibr"><bold>fig-timeline?</bold></xref>)).</p>
+  <p>Data and methods are discussed in
+  (<xref alt="sec-data-methods?" rid="ref-sec-data-methods-nb-1" ref-type="bibr"><bold>sec-data-methods?</bold></xref>).</p>
+  <p>Let <inline-formula><alternatives>
+  <tex-math><![CDATA[x]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
+  denote the number of eruptions in a year. Then,
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[x]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
+  can be modeled by a Poisson distribution</p>
+  <p><disp-formula><alternatives>
+  <tex-math><![CDATA[
+  p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
+  ]]></tex-math>
+  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mi>−</mml:mi><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula>
+  {#eq-poisson}</p>
+  <p>where <inline-formula><alternatives>
+  <tex-math><![CDATA[\lambda]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
+  is the rate of eruptions per year. Using
+  (<xref alt="eq-poisson?" rid="ref-eq-poisson-nb-1" ref-type="bibr"><bold>eq-poisson?</bold></xref>),
+  the probability of an eruption in the next
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[t]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
+  years can be calculated.</p>
+  <fig id="tbl-history-nb-1">
+    <caption><p>Recent historic eruptions on La Palma</p></caption>
+    <table-wrap>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Year</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Current</td>
+            <td>2021</td>
+          </tr>
+          <tr>
+            <td>Teneguía</td>
+            <td>1971</td>
+          </tr>
+          <tr>
+            <td>Nambroque</td>
+            <td>1949</td>
+          </tr>
+          <tr>
+            <td>El Charco</td>
+            <td>1712</td>
+          </tr>
+          <tr>
+            <td>Volcán San Antonio</td>
+            <td>1677</td>
+          </tr>
+          <tr>
+            <td>Volcán San Martin</td>
+            <td>1646</td>
+          </tr>
+          <tr>
+            <td>Tajuya near El Paso</td>
+            <td>1585</td>
+          </tr>
+          <tr>
+            <td>Montaña Quemada</td>
+            <td>1492</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+  </fig>
+  <p>(<xref alt="tbl-history?" rid="ref-tbl-history-nb-1" ref-type="bibr"><bold>tbl-history?</bold></xref>)
+  summarises the eruptions recorded since the colonization of the
+  islands by Europeans in the late 1400s.</p>
+  <fig id="fig-map-nb-1">
+    <caption><p>Map of La Palma</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
+  </fig>
+  <p>La Palma is one of the west most islands in the Volcanic
+  Archipelago of the Canary Islands
+  ((<xref alt="fig-map?" rid="ref-fig-map-nb-1" ref-type="bibr"><bold>fig-map?</bold></xref>)).</p>
+  <sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-content">
+  <code language="python">la_palma |&gt; 
+  ggplot(aes(Longitude, Latitude)) +
+  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
+  scale_color_viridis_c(direction = -1) + 
+  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
+  theme_bw()
+  </code>
+  <fig id="fig-spatial-plot-nb-1">
+    <caption><p>Locations of earthquakes on La Palma since
+    2017</p></caption>
+    <graphic mimetype="image" mime-subtype="png" xlink:href="index_original_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
+  </fig>
+  </sec>
+  <p>(<xref alt="fig-spatial-plot?" rid="ref-fig-spatial-plot-nb-1" ref-type="bibr"><bold>fig-spatial-plot?</bold></xref>)
+  shows the location of recent Earthquakes on La Palma.</p>
+</sec>
+<sec id="sec-data-methods-nb-1">
+  <title>Data &amp; Methods</title>
+</sec>
+<sec id="conclusion-nb-1">
+  <title>Conclusion</title>
+</sec>
+<sec id="references-nb-1">
+  <title>References</title>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-8-nb-2">
+<front-stub>
+<title-group>
+<article-title>Explore Earthquakes</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Wickham</surname>
+<given-names>Charlotte</given-names>
+</name>
+<string-name>Charlotte Wickham</string-name>
+
+</contrib>
+</contrib-group>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script">library(tidyverse)
+</code>
+<preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+</sec>
+<p>Read a clean version of data:</p>
+<sec specific-use="notebook-content">
+<code language="r script">la_palma &lt;- read_csv(&quot;la-palma.csv&quot;)
+</code>
+<preformat>Rows: 11347 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+dbl  (4): Longitude, Latitude, Depth(km), Magnitude
+dttm (1): DateTime
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
+</sec>
+<p>Create spatial plot:</p>
+<sec id="cell-fig-spatial-plot-nb-2" specific-use="notebook-content">
+<code language="r script">#|   against longitude.&quot;
+la_palma |&gt; 
+  ggplot(aes(Longitude, Latitude)) +
+  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
+  scale_color_viridis_c(direction = -1) + 
+  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
+  theme_bw()
+</code>
+<fig id="fig-spatial-plot-nb-2">
+  <caption><p>Locations of earthquakes on La Palma since
+  2017</p></caption>
+  <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png" />
+</fig>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+
+</article>
