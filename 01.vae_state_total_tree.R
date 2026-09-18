@@ -14,8 +14,9 @@ library(sf)
 # Adjustment factor (ADJ_FACTOR_*): "A value that adjusts population estimates to account for partially nonsampled plots (* = MICR, SUBP, or MACR) due to hazardous conditions or denied access. Used with COND.CONDPROP_UNADJ and EXPNS for area estimates; used with EXPNS and TREE.TPA_UNADJ for tree estimates."
 
 # Specify an Evaluation (EVALID)
-my_evalids <- c(232401) # This is the evaluation for [Maine, 2020-2024, Sampled plots used for current area and condition-level estimates.])
+#my_evalids <- c(232401) # This is the evaluation for [Maine, 2020-2024, Sampled plots used for current area and condition-level estimates.])
 #my_evalids <- c(302201) # This is the evaluation for [Montana, 2013-2022, Sampled plots used for current area and condition-level estimates.])
+my_evalids <- c(011901) # This is the evaluation for [Alabama, 2013-2019 (most recent complete 7 yr cycle?), Sampled plots used for current area and condition-level estimates.])
 
 # Specify a Research Station (RSCD)
 #my_stations <- c(24) # 24 is NERS, appropriate Research Station for Maine (Does not matter for FIADB because "we don't publish NFS crossover plots")
@@ -100,7 +101,7 @@ con <- dbConnect(SQLite(),file.path(FIAdata,db_name))
 cond <- dbGetQuery(con,cond_query)
 dbDisconnect(con)
 
-head(cond);dim(cond) # 4658 unique conditions on these plots
+head(cond);dim(cond) # 4658 unique observed conditions on these plots for ME; xx for MT; 8093 for AL 
 
 colnames(cond)[colnames(cond) == "CN"] <- "COND.CN"
 
@@ -200,7 +201,7 @@ test[test$COND_STATUS_CD==1,]
 # duplicated_rows <- tree_plots[duplicated(tree_plots), ]
 # dup_tree_cns <- tree_plots[duplicated(tree_plots[, "TREE.CN"]), ]
 # head(dup_tree_cns)
-# tree_plots <- tree_plots[!duplicated(tree_plots[, "TREE.CN"]), ]
+#tree_plots <- tree_plots[!duplicated(tree_plots[, "TREE.CN"]), ]
 # dim(tree_plots)
 
 ### 6. Read Species Reference (REF_SPECIES) Table 
@@ -323,6 +324,10 @@ save(pop_estn_unit_total,ESTIMATED_TOTAL, for_trees_plots2, v_Yhd_plus_total, fi
 # Save ESTIMATED_TOTAL, for_trees_plots_2, and v_Yhd_plus_total for Montana 302022
 #save(pop_estn_unit_total,ESTIMATED_TOTAL, for_trees_plots2, v_Yhd_plus_total, file=file.path("data","total_vol_mt.Rdata"))
 # Last saved 7/17/2026
+
+# Save ESTIMATED_TOTAL, for_trees_plots_2, and v_Yhd_plus_total for Maine 232401
+save(pop_estn_unit_total,ESTIMATED_TOTAL, for_trees_plots2, v_Yhd_plus_total, file=file.path("data","total_vol_al.Rdata"))
+# Last saved 9/18/2026
 
 
 

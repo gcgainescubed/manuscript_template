@@ -7,14 +7,14 @@ library(knitr)
 library(sf)
 
 # Specify EVALID and Research Station for Maine
-my_evalids <- c(232401) # This is the evaluation for [Maine, 2020-2024, Sampled plots used for current area and condition-level estimates.])
-stations <- "NRS"
+#my_evalids <- c(232401) # This is the evaluation for [Maine, 2020-2024, Sampled plots used for current area and condition-level estimates.])
+#stations <- "NRS"
 
 # Load current cycle data for Maine
-load(file.path("data","total_vol_me.Rdata"))
+#load(file.path("data","total_vol_me.Rdata"))
 
 # Load previous cycle data for Maine
-load(file.path("data","prev_cycle_me.Rdata"))
+#load(file.path("data","prev_cycle_me.Rdata"))
 
 # # Specify EVALID and Research Station for Montana 
 # my_evalids <- c(302201) # This is the evaluation for [Montana, 2013-2022, Sampled plots used for current area and condition-level estimates.])
@@ -25,6 +25,16 @@ load(file.path("data","prev_cycle_me.Rdata"))
 # 
 # # Load previous cycle data for Montana
 # load(file.path("data","prev_cycle_mt.Rdata"))
+
+# Specify EVALID and Research Station for Alabama
+my_evalids <- c(011901) # This is the evaluation for [Alabama, 2013-2019 (most recent complete 7 yr cycle?), Sampled plots used for current area and condition-level estimates.])
+stations <- "SRS"
+
+# Load current cycle data for Maine
+load(file.path("data","total_vol_al.Rdata"))
+
+# Load previous cycle data for Maine
+load(file.path("data","prev_cycle_al.Rdata"))
 
 # Rearrange/rename some stuff from the previous cycle plot data
 colnames(for_trees_plots_prev_cycle)[colnames(for_trees_plots_prev_cycle)=="VOLCFNET_plot"] <- "VOLCFNET_plot_0"
@@ -83,7 +93,8 @@ con <- DBI::dbConnect(odbc::odbc(), TNSname, rows_at_time = 500)
 
 #states <- c(4,8,16,30,32,35,49,56) # RMRS
 #states <- c(2,6,25,41,53) # PNWRS
-states <- as.numeric(substr(my_evalids,1,2))
+#states <- as.numeric(substr(my_evalids,1,2))
+states <- 01 # Alabama
 
 hex.tbl <- "NIMS_BASE_HEX"
 # hex.vars <- "CN, STATECD, P2HEX, P2PANEL, SUBPANEL, PANEL_70, 
@@ -109,6 +120,7 @@ for(station in stations){
 # But do I need to do it for Montana? And if so, maybe intensified plots need to be removed for MT in previous scripts?
 #all_hex <- all_hex[all_hex$INTENSITY==1,] 
 head(all_hex)
+dim(all_hex)
 
 # NIMS_BASE_PLOT
 plot.tbl <- "NIMS_BASE_PLOT"
@@ -129,10 +141,14 @@ for(station in stations){
   all_plot <- rbind(all_plot, plot)
 }
 
+head(all_plot)
+dim(all_plot)
+
 dbDisconnect(con)
 
 # Merge hexagon and plot info from NIMS
-nims_hex_plot <- merge(all_hex,all_plot,by.x="CN", by.y = "NBH_CN")
+nims_hex_plot <- merge(all_hex, all_plot, by.x="CN", by.y = "NBH_CN")
+dim(nims_hex_plot)
 
 head(nims_hex_plot)
 
@@ -172,9 +188,11 @@ head(plots_p70)
 
 # How many P70's per panel in 5 year cycle?
 table(ceiling(plots_p70$PANEL_70/14)) # How many P70's per panel in 5 year cycle?
+table(ceiling(plots_p70$PANEL_70/10)) # How many P70's per panel in 10 year cycle?
 table(ceiling(plots_p70$PANEL_70/7)) # How many P70's per panel in 10 year cycle?
 
 table(plots_p70$P2PANEL,plots_p70$PANEL_70)
+table(plots_p70$INVYR,plots_p70$PANEL_70)
 
 #hist(plots_p70$VOLCFNET_plot)
 plot(density(plots_p70$VOLCFNET_plot), main = "Distribution of current cycle volume measurements")
@@ -195,4 +213,6 @@ save(plots_p70, pop_stratum, file=file.path("data","plots_p70_me.Rdata"))
 # Save plots_p70 and pop_stratum for Montana 302022
 #save(plots_p70, pop_stratum, file=file.path("data","plots_p70_mt.Rdata"))
 
+# Save plots_p70 for Alabama 011901
+save(plots_p70, pop_stratum, file=file.path("data","plots_p70_al.Rdata"))
 

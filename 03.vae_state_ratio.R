@@ -14,8 +14,12 @@ library(sf)
 #load(file.path("data","total_area_me.Rdata"))
 
 # Read in data from previous scripts for Montana
-load(file.path("data","total_vol_mt.Rdata"))
-load(file.path("data","total_area_mt.Rdata"))
+#load(file.path("data","total_vol_mt.Rdata"))
+#load(file.path("data","total_area_mt.Rdata"))
+
+# Read in data from previous scripts for Montana
+load(file.path("data","total_vol_al.Rdata"))
+load(file.path("data","total_area_al.Rdata"))
 
 # Compute variance (and se %) of the tree-attriubte total
 total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
@@ -41,7 +45,7 @@ RAT # Should be 1,574.0762 for VOLCFNET in Maine 232401
 # merge plot totals of tree attribute and forest condition proportion
 # (in the following data frames, VOLCFSND_plot and COND_PROP_plot are 
 # the p-adjusted plot observations (eq 18/19 GBII) "y_hid")
-plots <- merge(for_trees_plots,for_area_plots,by=c("CN","EXPNS","ESTN_UNIT","STRATUMCD"))
+plots <- merge(for_trees_plots2,for_area_plots,by=c("CN","EXPNS","ESTN_UNIT","STRATUMCD"))
 head(plots);dim(plots) # as many rows as unique plot measurements (zero and non-zero alike) 
 
 head(pop_estn_unit_area);dim(pop_estn_unit_area) # as many rows as estimation units

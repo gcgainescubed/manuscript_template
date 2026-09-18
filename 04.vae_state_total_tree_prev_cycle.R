@@ -8,7 +8,8 @@ library(sf)
 
 # Specify an Evaluation (EVALID)
 #my_evalids <- c(231901) # This is the evaluation for [Maine, 2015-2019, Sampled plots used for current area and condition-level estimates.])
-my_evalids <- c(301201) # This is the evaluation for [Montana, 2003-2012, Sampled plots used for current area and condition-level estimates.])
+#my_evalids <- c(301201) # This is the evaluation for [Montana, 2003-2012, Sampled plots used for current area and condition-level estimates.])
+my_evalids <- c(011201) # This is the evaluation for [Alabama, 2006-2012 (most recent previous complete 7 yr cycle?), Sampled plots used for current area and condition-level estimates.])
 
 # Specify a Research Station (RSCD)
 #my_stations <- c(24) # 24 is NERS, appropriate Research Station for Maine (Does not matter for FIADB because "we don't publish NFS crossover plots")
@@ -194,3 +195,7 @@ for_trees_plots_prev_cycle <- for_trees_plots2
 # Save for_trees_plots_prev_cycle, Montana, 2003-2012
 #save(for_trees_plots_prev_cycle,file=file.path("data","prev_cycle_mt.Rdata"))
 # Last saved 7/17/2026
+
+# Save for_trees_plots_prev_cycle, Alabama, 2006-2012
+save(for_trees_plots_prev_cycle,file=file.path("data","prev_cycle_al.Rdata"))
+# Last saved 9/18/2026

@@ -15,7 +15,8 @@ library(sf)
 
 # Specify an Evaluation (EVALID)
 #my_evalids <- c(232401) # This is the evaluation for [Maine, 2020-2024, Sampled plots used for current area and condition-level estimates.])
-my_evalids <- c(302201) # This is the evaluation for [Montana, 2013-2022, Sampled plots used for current area and condition-level estimates.])
+#my_evalids <- c(302201) # This is the evaluation for [Montana, 2013-2022, Sampled plots used for current area and condition-level estimates.])
+my_evalids <- c(011901) # This is the evaluation for [Alabama, 2013-2019 (most recent complete 7 yr cycle?), Sampled plots used for current area and condition-level estimates.])
 
 # Specify a Research Station (RSCD)
 #my_stations <- c(24) # 24 is NERS, appropriate Research Station for Maine (Does not matter for FIADB because "we don't publish NFS crossover plots")
@@ -223,3 +224,7 @@ se / ESTIMATED_AREA * 100 # Should be 0.568 for Montana 302201
 # Save ESTIMATED_AREA, for_area_plots, v_Yhd_plus_area, pop_estn_unit_2 for Montana 302201
 #save(pop_estn_unit_area,ESTIMATED_AREA, for_area_plots,v_Yhd_plus_area,file=file.path("data","total_area_mt.Rdata"))
 # Last saved 7/16/2026
+
+# Save ESTIMATED_AREA, for_area_plots, v_Yhd_plus_area, pop_estn_unit_2 for Montana 302201
+save(pop_estn_unit_area,ESTIMATED_AREA, for_area_plots,v_Yhd_plus_area,file=file.path("data","total_area_al.Rdata"))
+# Last saved 9/18/2026
