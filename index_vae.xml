@@ -132,10 +132,10 @@ Station</institution>
 <corresp id="cor-gg">george.gaines@usda.gov</corresp>
 </author-notes>
 
-<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2026-09-18">
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2026-09-23">
 <year>2026</year>
 <month>9</month>
-<day>18</day>
+<day>23</day>
 </pub-date>
 
 
@@ -369,7 +369,77 @@ work.</funding-statement>
 </ref-list>
 </back>
 
-<sub-article article-type="notebook" id="nb-5-nb-1">
+<sub-article article-type="notebook" id="nb-4-nb-1">
+<front-stub>
+<title-group>
+<article-title>Explore Earthquakes</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<name>
+<surname>Wickham</surname>
+<given-names>Charlotte</given-names>
+</name>
+<string-name>Charlotte Wickham</string-name>
+
+</contrib>
+</contrib-group>
+</front-stub>
+
+<body>
+<sec specific-use="notebook-content">
+<code language="r script">library(tidyverse)
+</code>
+<preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.0     ✔ tibble    3.2.1
+✔ lubridate 1.9.3     ✔ tidyr     1.3.1
+✔ purrr     1.0.2     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
+</sec>
+<p>Read a clean version of data:</p>
+<sec specific-use="notebook-content">
+<code language="r script">la_palma &lt;- read_csv(&quot;la-palma.csv&quot;)
+</code>
+<preformat>Rows: 11347 Columns: 5
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: &quot;,&quot;
+dbl  (4): Longitude, Latitude, Depth(km), Magnitude
+dttm (1): DateTime
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
+</sec>
+<p>Create spatial plot:</p>
+<sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-content">
+<code language="r script">#|   against longitude.&quot;
+la_palma |&gt; 
+  ggplot(aes(Longitude, Latitude)) +
+  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
+  scale_color_viridis_c(direction = -1) + 
+  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
+  theme_bw()
+</code>
+<fig id="fig-spatial-plot-nb-1">
+  <caption><p>Locations of earthquakes on La Palma since
+  2017</p></caption>
+  <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png" />
+</fig>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-8-nb-2">
 <front-stub>
 <title-group>
 <article-title>Assessing the influence of variable annual sampling
@@ -390,8 +460,8 @@ effort on official forest inventory statistics</article-title>
 administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
 administration</role>
 <role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
-<xref ref-type="aff" rid="aff-1-nb-1">a</xref>
-<xref ref-type="corresp" rid="cor-1-nb-1">&#x002A;</xref>
+<xref ref-type="aff" rid="aff-1-nb-2">a</xref>
+<xref ref-type="corresp" rid="cor-1-nb-2">&#x002A;</xref>
 </contrib>
 <contrib contrib-type="author">
 <contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
@@ -419,10 +489,10 @@ administration</role>
 </name>
 <string-name>Jim Westfall</string-name>
 
-<xref ref-type="aff" rid="aff-1-nb-1">a</xref>
+<xref ref-type="aff" rid="aff-1-nb-2">a</xref>
 </contrib>
 </contrib-group>
-<aff id="aff-1-nb-1">
+<aff id="aff-1-nb-2">
 <institution-wrap>
 <institution>Curvenote</institution>
 </institution-wrap>
@@ -435,7 +505,7 @@ administration</role>
 
 </aff>
 <author-notes>
-<corresp id="cor-1-nb-1">george.gaines@usda.gov</corresp>
+<corresp id="cor-1-nb-2">george.gaines@usda.gov</corresp>
 </author-notes>
 <abstract>
 <p>In this study we…</p>
@@ -443,21 +513,21 @@ administration</role>
 </front-stub>
 
 <body>
-<sec id="introduction-nb-1">
+<sec id="introduction-nb-2">
   <title>Introduction</title>
   <sec specific-use="notebook-content">
   <code language="r script">eruptions &lt;- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
 n_eruptions &lt;- length(eruptions)
   </code>
   </sec>
-  <sec id="cell-fig-timeline-nb-1" specific-use="notebook-content">
+  <sec id="cell-fig-timeline-nb-2" specific-use="notebook-content">
   <code language="r script">par(mar = c(3, 1, 1, 1) + 0.1)
 plot(eruptions, rep(0, n_eruptions), 
   pch = &quot;|&quot;, axes = FALSE)
 axis(1)
 box()
   </code>
-  <fig id="fig-timeline-nb-1">
+  <fig id="fig-timeline-nb-2">
     <caption><p>Timeline of recent earthquakes on La Palma</p></caption>
     <graphic mimetype="image" mime-subtype="png" xlink:href="index_original_files/figure-jats/fig-timeline-1.png" />
   </fig>
@@ -471,14 +541,14 @@ avg_years_between_eruptions
   <p>Based on data up to and including 1971, eruptions on La Palma
   happen every 79.8 years on average.</p>
   <p>Studies of the magma systems feeding the volcano, such as
-  (<xref alt="marrero2019?" rid="ref-marrero2019-nb-1" ref-type="bibr"><bold>marrero2019?</bold></xref>),
+  (<xref alt="marrero2019?" rid="ref-marrero2019-nb-2" ref-type="bibr"><bold>marrero2019?</bold></xref>),
   have proposed that there are two main magma reservoirs feeding the
   Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
   and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
   <p>Eight eruptions have been recorded since the late 1400s
-  ((<xref alt="fig-timeline?" rid="ref-fig-timeline-nb-1" ref-type="bibr"><bold>fig-timeline?</bold></xref>)).</p>
+  ((<xref alt="fig-timeline?" rid="ref-fig-timeline-nb-2" ref-type="bibr"><bold>fig-timeline?</bold></xref>)).</p>
   <p>Data and methods are discussed in
-  (<xref alt="sec-data-methods?" rid="ref-sec-data-methods-nb-1" ref-type="bibr"><bold>sec-data-methods?</bold></xref>).</p>
+  (<xref alt="sec-data-methods?" rid="ref-sec-data-methods-nb-2" ref-type="bibr"><bold>sec-data-methods?</bold></xref>).</p>
   <p>Let <inline-formula><alternatives>
   <tex-math><![CDATA[x]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
@@ -497,13 +567,13 @@ avg_years_between_eruptions
   <tex-math><![CDATA[\lambda]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
   is the rate of eruptions per year. Using
-  (<xref alt="eq-poisson?" rid="ref-eq-poisson-nb-1" ref-type="bibr"><bold>eq-poisson?</bold></xref>),
+  (<xref alt="eq-poisson?" rid="ref-eq-poisson-nb-2" ref-type="bibr"><bold>eq-poisson?</bold></xref>),
   the probability of an eruption in the next
   <inline-formula><alternatives>
   <tex-math><![CDATA[t]]></tex-math>
   <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
   years can be calculated.</p>
-  <fig id="tbl-history-nb-1">
+  <fig id="tbl-history-nb-2">
     <caption><p>Recent historic eruptions on La Palma</p></caption>
     <table-wrap>
       <table>
@@ -550,17 +620,17 @@ avg_years_between_eruptions
       </table>
     </table-wrap>
   </fig>
-  <p>(<xref alt="tbl-history?" rid="ref-tbl-history-nb-1" ref-type="bibr"><bold>tbl-history?</bold></xref>)
+  <p>(<xref alt="tbl-history?" rid="ref-tbl-history-nb-2" ref-type="bibr"><bold>tbl-history?</bold></xref>)
   summarises the eruptions recorded since the colonization of the
   islands by Europeans in the late 1400s.</p>
-  <fig id="fig-map-nb-1">
+  <fig id="fig-map-nb-2">
     <caption><p>Map of La Palma</p></caption>
     <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
   </fig>
   <p>La Palma is one of the west most islands in the Volcanic
   Archipelago of the Canary Islands
-  ((<xref alt="fig-map?" rid="ref-fig-map-nb-1" ref-type="bibr"><bold>fig-map?</bold></xref>)).</p>
-  <sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-content">
+  ((<xref alt="fig-map?" rid="ref-fig-map-nb-2" ref-type="bibr"><bold>fig-map?</bold></xref>)).</p>
+  <sec id="cell-fig-spatial-plot-nb-2" specific-use="notebook-content">
   <code language="python">la_palma |&gt; 
   ggplot(aes(Longitude, Latitude)) +
   geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
@@ -568,93 +638,23 @@ avg_years_between_eruptions
   scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
   theme_bw()
   </code>
-  <fig id="fig-spatial-plot-nb-1">
+  <fig id="fig-spatial-plot-nb-2">
     <caption><p>Locations of earthquakes on La Palma since
     2017</p></caption>
     <graphic mimetype="image" mime-subtype="png" xlink:href="index_original_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
   </fig>
   </sec>
-  <p>(<xref alt="fig-spatial-plot?" rid="ref-fig-spatial-plot-nb-1" ref-type="bibr"><bold>fig-spatial-plot?</bold></xref>)
+  <p>(<xref alt="fig-spatial-plot?" rid="ref-fig-spatial-plot-nb-2" ref-type="bibr"><bold>fig-spatial-plot?</bold></xref>)
   shows the location of recent Earthquakes on La Palma.</p>
 </sec>
-<sec id="sec-data-methods-nb-1">
+<sec id="sec-data-methods-nb-2">
   <title>Data &amp; Methods</title>
 </sec>
-<sec id="conclusion-nb-1">
+<sec id="conclusion-nb-2">
   <title>Conclusion</title>
 </sec>
-<sec id="references-nb-1">
+<sec id="references-nb-2">
   <title>References</title>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-8-nb-2">
-<front-stub>
-<title-group>
-<article-title>Explore Earthquakes</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author">
-<name>
-<surname>Wickham</surname>
-<given-names>Charlotte</given-names>
-</name>
-<string-name>Charlotte Wickham</string-name>
-
-</contrib>
-</contrib-group>
-</front-stub>
-
-<body>
-<sec specific-use="notebook-content">
-<code language="r script">library(tidyverse)
-</code>
-<preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
-</sec>
-<p>Read a clean version of data:</p>
-<sec specific-use="notebook-content">
-<code language="r script">la_palma &lt;- read_csv(&quot;la-palma.csv&quot;)
-</code>
-<preformat>Rows: 11347 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-dbl  (4): Longitude, Latitude, Depth(km), Magnitude
-dttm (1): DateTime
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-</sec>
-<p>Create spatial plot:</p>
-<sec id="cell-fig-spatial-plot-nb-2" specific-use="notebook-content">
-<code language="r script">#|   against longitude.&quot;
-la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()
-</code>
-<fig id="fig-spatial-plot-nb-2">
-  <caption><p>Locations of earthquakes on La Palma since
-  2017</p></caption>
-  <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png" />
-</fig>
 </sec>
 </body>
 
