@@ -112,7 +112,14 @@ for(i in 1:nsim){
 head(incomplete_results)
 
 total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
-se_pct <- sqrt(total_var) / ESTIMATED_TOTAL * 100
+se_pct_mt <- sqrt(total_var) / ESTIMATED_TOTAL * 100
+
+# Rename some stuff, and save fast/slow results for MT
+incomplete_results_mt <- incomplete_results
+ESTIMATED_TOTAL_mt <- ESTIMATED_TOTAL 
+
+save(incomplete_results_mt,ESTIMATED_TOTAL_mt,se_pct_mt,file=file.path("data","incomplete_mt.Rdata"))
+
 
 x_bump <- 0.05
 y_bump <- 0.5
@@ -121,19 +128,20 @@ t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
 t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
 t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
 
-plot(ESTIMATED_TOTAL, se_pct, col="red", pch = 19,
+plot(ESTIMATED_TOTAL_mt, se_pct_mt, col="red", pch = 19,
      ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
-     ylim = c(se_pct - (0.5*y_bump), se_pct + (y_bump)),xlim = c(ESTIMATED_TOTAL - (x_bump*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (x_bump*ESTIMATED_TOTAL)),
+     ylim = c(se_pct_mt - (0.5*y_bump), se_pct_mt + (y_bump)),
+     xlim = c(ESTIMATED_TOTAL_mt - (x_bump*ESTIMATED_TOTAL_mt),ESTIMATED_TOTAL_mt + (x_bump*ESTIMATED_TOTAL_mt)),
      xaxt = "n",
      main="Montana")
 points(incomplete_results$total_1,incomplete_results$se_pct_1, pch=19, col = t_blk) # Drop 1 P70/INVYR
 points(incomplete_results$total_2,incomplete_results$se_pct_2, pch=19, col = t_grn) # Drop 2 P70/INVYR
 points(incomplete_results$total_3,incomplete_results$se_pct_3, pch=19, col = t_org) # Drop 3 P70/INVYR
 
-x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.05, 0.05, by = 0.005))
+x_vals <- ESTIMATED_TOTAL_mt * (1 + seq(-0.05, 0.05, by = 0.005))
 axis(side = 1, at = x_vals, labels = paste0(round(seq(-5.0, 5.0, 0.5),1), "%"))
-abline(h = se_pct, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
-points(ESTIMATED_TOTAL, se_pct, col="red", pch = 19)
+abline(h = se_pct_mt, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
+points(ESTIMATED_TOTAL_mt, se_pct_mt, col="red", pch = 19)
 
 legend("bottomleft", 
        legend = c("Original Estimate","Drop 1 P70", "Drop 2 P70s", "Drop 3 P70s"), 

@@ -350,6 +350,14 @@ head(fast_results)
 total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
 se_pct <- sqrt(total_var) / ESTIMATED_TOTAL * 100
 
+# Rename some stuff, and save fast/slow results for AL
+slow_results_al <- slow_results
+fast_results_al <- fast_results
+ESTIMATED_TOTAL_al <- ESTIMATED_TOTAL 
+se_pct_al <- se_pct
+
+save(slow_results_al,fast_results_al,ESTIMATED_TOTAL_al,se_pct_al,file=file.path("data","fast_slow_al.Rdata"))
+
 t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
 t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
 t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
@@ -357,9 +365,9 @@ t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
 x_bump <- 0.015
 y_bump <- 0.03
 
-plot(ESTIMATED_TOTAL, se_pct, col="red", pch = 19,
+plot(ESTIMATED_TOTAL, se_pct_al, col="red", pch = 19,
      ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
-     ylim = c(se_pct - (y_bump), se_pct + (y_bump)),xlim = c(ESTIMATED_TOTAL - (x_bump*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (x_bump*ESTIMATED_TOTAL)),
+     ylim = c(se_pct_al - (y_bump), se_pct_al + (y_bump)),xlim = c(ESTIMATED_TOTAL_al - (x_bump*ESTIMATED_TOTAL_al),ESTIMATED_TOTAL_al + (x_bump*ESTIMATED_TOTAL_al)),
      xaxt = "n",
      main="Alabama")
 
@@ -374,7 +382,7 @@ legend("bottomleft",
        pch = 19, 
        title = "VAE Regimen")
 
-x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.015, 0.015, by = 0.001))
+x_vals <- ESTIMATED_TOTAL_al * (1 + seq(-0.015, 0.015, by = 0.001))
 axis(side = 1, at = x_vals, labels = paste0(seq(-1.5, 1.5, 0.1), "%"))
-abline(h = se / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
-points(ESTIMATED_TOTAL,se / ESTIMATED_TOTAL * 100, col="red", pch = 19, cex = 1.5)
+abline(h = se_pct_al, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
+points(ESTIMATED_TOTAL,se_pct_al, col="red", pch = 19, cex = 1.5)

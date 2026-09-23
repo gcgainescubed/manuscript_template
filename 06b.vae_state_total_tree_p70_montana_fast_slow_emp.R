@@ -234,28 +234,28 @@ round(props_measured*100,2) # 12.67 / 14.51 / 12.83 / 10.11 / 6.80 / 7.17 / 7.13
 # This one moderates that behavior by a "less fast" start, and by not slowing down as much mid-late cycle,
 # and by having 1 more speed-up in penultimate INVYR;
 # But, it still slows down enough to push some plots forward from their original INVYRS (INVDIFF==1):
-fast$NEWINVYR <- 0
-for(i in 1:nrow(fast)){
-  if(fast$PANEL_70[i] > 0 & fast$PANEL_70[i] <= 9){fast$NEWINVYR[i] <- 2013} else # Fast: 9 P70's
-    if(fast$PANEL_70[i] > 9 & fast$PANEL_70[i] <= 17){fast$NEWINVYR[i] <- 2014} else # Fast: 8 P70's
-      if(fast$PANEL_70[i] > 17 & fast$PANEL_70[i] <= 25){fast$NEWINVYR[i] <- 2015} else # Fast: 8 P70's
-        if(fast$PANEL_70[i] > 25 & fast$PANEL_70[i] <= 32){fast$NEWINVYR[i] <- 2016} else # On time: 7 P70's
-          if(fast$PANEL_70[i] > 32 & fast$PANEL_70[i] <= 37){fast$NEWINVYR[i] <- 2017} else # Slow: 5 P70's
-            if(fast$PANEL_70[i] > 37 & fast$PANEL_70[i] <= 42){fast$NEWINVYR[i] <- 2018} else # Slow: 5 P70's
-              if(fast$PANEL_70[i] > 42 & fast$PANEL_70[i] <= 48){fast$NEWINVYR[i] <- 2019} else # Slow: 6 P70's
-                if(fast$PANEL_70[i] > 48 & fast$PANEL_70[i] <= 54){fast$NEWINVYR[i] <- 2020} else # Slow: 6 P70's
-                  if(fast$PANEL_70[i] > 54 & fast$PANEL_70[i] <= 63){fast$NEWINVYR[i] <- 2021} else # Fast: 9 P70's
-                    if(fast$PANEL_70[i] > 63 & fast$PANEL_70[i] <= 70){fast$NEWINVYR[i] <- 2022} # On time: 7 P70's
-}
+# fast$NEWINVYR <- 0
+# for(i in 1:nrow(fast)){
+#   if(fast$PANEL_70[i] > 0 & fast$PANEL_70[i] <= 9){fast$NEWINVYR[i] <- 2013} else # Fast: 9 P70's
+#     if(fast$PANEL_70[i] > 9 & fast$PANEL_70[i] <= 17){fast$NEWINVYR[i] <- 2014} else # Fast: 8 P70's
+#       if(fast$PANEL_70[i] > 17 & fast$PANEL_70[i] <= 25){fast$NEWINVYR[i] <- 2015} else # Fast: 8 P70's
+#         if(fast$PANEL_70[i] > 25 & fast$PANEL_70[i] <= 32){fast$NEWINVYR[i] <- 2016} else # On time: 7 P70's
+#           if(fast$PANEL_70[i] > 32 & fast$PANEL_70[i] <= 37){fast$NEWINVYR[i] <- 2017} else # Slow: 5 P70's
+#             if(fast$PANEL_70[i] > 37 & fast$PANEL_70[i] <= 42){fast$NEWINVYR[i] <- 2018} else # Slow: 5 P70's
+#               if(fast$PANEL_70[i] > 42 & fast$PANEL_70[i] <= 48){fast$NEWINVYR[i] <- 2019} else # Slow: 6 P70's
+#                 if(fast$PANEL_70[i] > 48 & fast$PANEL_70[i] <= 54){fast$NEWINVYR[i] <- 2020} else # Slow: 6 P70's
+#                   if(fast$PANEL_70[i] > 54 & fast$PANEL_70[i] <= 63){fast$NEWINVYR[i] <- 2021} else # Fast: 9 P70's
+#                     if(fast$PANEL_70[i] > 63 & fast$PANEL_70[i] <= 70){fast$NEWINVYR[i] <- 2022} # On time: 7 P70's
+# }
 
 # Under this VAE regimen, what prop/pct of plots are measured in each INVYR?
-invyrs <- unique(sort(fast$NEWINVYR))
-props_measured <- vector(mode = "numeric", length = length(invyrs))
-for(i in 1:length(invyrs)){
-  props_measured[i] <- nrow(fast[fast$NEWINVYR==invyrs[i],])/nrow(fast)
-}
+# invyrs <- unique(sort(fast$NEWINVYR))
+# props_measured <- vector(mode = "numeric", length = length(invyrs))
+# for(i in 1:length(invyrs)){
+#   props_measured[i] <- nrow(fast[fast$NEWINVYR==invyrs[i],])/nrow(fast)
+# }
 
-round(props_measured*100,2) # 12.67 / 11.66 / 11.47 / 10.03 / 7.02 / 6.85 / 8.71 / 8.51 / 13.09 / 9.99
+#round(props_measured*100,2) # 12.67 / 11.66 / 11.47 / 10.03 / 7.02 / 6.85 / 8.71 / 8.51 / 13.09 / 9.99
 
 # # Fast 3: 5433 plots measured 1 year late, 9802 measured on time 
 # # This one...
@@ -394,8 +394,17 @@ range(slow_results$total)
 range(fast_results$se_pct)
 
 total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
-se <- sqrt(total_var)
+se_pct <- sqrt(total_var) / ESTIMATED_TOTAL * 100
 
+# Rename some stuff, and save fast/slow results for MT
+slow_results_mt <- slow_results
+fast_results_mt <- fast_results
+ESTIMATED_TOTAL_mt <- ESTIMATED_TOTAL 
+se_pct_mt <- se_pct
+
+save(slow_results_mt,fast_results_mt,ESTIMATED_TOTAL_mt,se_pct_mt,file=file.path("data","fast_slow_mt.Rdata"))
+
+# Make some colors
 t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
 t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
 t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
@@ -409,14 +418,14 @@ y_bump <- 0.02
 #x_bump <- 0.02 # Fast 2 
 #y_bump <- 0.04
   
-plot(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,
+plot(ESTIMATED_TOTAL, se_mt / ESTIMATED_TOTAL * 100, col="red", pch = 19,
      ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
      #ylim = c(1.22,1.24),xlim = c(ESTIMATED_TOTAL - 100000000,ESTIMATED_TOTAL + 100000000))
-     ylim = c(se / ESTIMATED_TOTAL * 100 - y_bump, se / ESTIMATED_TOTAL * 100 + y_bump),
+     ylim = c(se_mt / ESTIMATED_TOTAL * 100 - y_bump, se_mt / ESTIMATED_TOTAL * 100 + y_bump),
      xlim = c(ESTIMATED_TOTAL - (x_bump*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (x_bump*ESTIMATED_TOTAL)),
      xaxt = "n",
      main="Montana")
-abline(h = se / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
+abline(h = se_mt / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
 points(slow_results$total_weibull,slow_results$se_pct_weibull, pch=19, col = t_blk)
 points(slow_results$total_empirical,slow_results$se_pct_empirical, pch=19, col = t_prp)
 points(fast_results$total_weibull,fast_results$se_pct_weibull, pch=19, col = t_grn) # Fast 1 Weibull
@@ -425,7 +434,7 @@ points(fast_results$total_empirical,fast_results$se_pct_empirical, pch=19, col =
 #points(fast_results$total_empirical,fast_results$se_pct_empirical, pch=19, col = t_org) # Fast 2 Emp
 #points(fast_results$total,fast_results$se_pct, pch=19, col = t_prp) # Fast 3
 
-points(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,)
+points(ESTIMATED_TOTAL, se_mt / ESTIMATED_TOTAL * 100, col="red", pch = 19,)
 
 
 x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.04, 0.04, by = 0.002))

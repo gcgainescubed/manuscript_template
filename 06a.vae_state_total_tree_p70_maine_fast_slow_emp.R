@@ -340,13 +340,21 @@ for(i in 1:nsim){
 head(fast_results)
 
 total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
-se <- sqrt(total_var)
+se_pct <- sqrt(total_var) / ESTIMATED_TOTAL * 100
+
+# Rename some stuff, and save fast/slow results for MT
+slow_results_me <- slow_results
+fast_results_me <- fast_results
+ESTIMATED_TOTAL_me <- ESTIMATED_TOTAL 
+se_pct_me <- se_pct
+
+save(slow_results_me,fast_results_me,ESTIMATED_TOTAL_me,se_pct_me,file=file.path("data","fast_slow_me.Rdata"))
 
 t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
 t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
 t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
 
-plot(ESTIMATED_TOTAL, se / ESTIMATED_TOTAL * 100, col="red", pch = 19,
+plot(ESTIMATED_TOTAL, se_me / ESTIMATED_TOTAL * 100, col="red", pch = 19,
      ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
      ylim = c(1.22,1.245),xlim = c(ESTIMATED_TOTAL - (0.0043*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (0.0043*ESTIMATED_TOTAL)),
      xaxt = "n", main = "Maine")
@@ -364,5 +372,5 @@ legend("bottomleft",
 
 x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.005, 0.005, by = 0.001))
 axis(side = 1, at = x_vals, labels = paste0(seq(-0.5, 0.5, 0.1), "%"))
-abline(h = se / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
-points(ESTIMATED_TOTAL,se / ESTIMATED_TOTAL * 100, col="red", pch = 19, cex = 1.5)
+abline(h = se_me / ESTIMATED_TOTAL * 100, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
+points(ESTIMATED_TOTAL, se_me / ESTIMATED_TOTAL * 100, col="red", pch = 19, cex = 1.5)

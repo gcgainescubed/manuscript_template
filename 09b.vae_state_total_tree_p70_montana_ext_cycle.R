@@ -255,28 +255,35 @@ for(i in 1:nsim){
 head(ext_cycle_results)
 
 total_var <- sum(pop_estn_unit_total$var_vol*pop_estn_unit_total$AREA_USED^2)
-se_pct <- sqrt(total_var) / ESTIMATED_TOTAL * 100
+se_pct_mt <- sqrt(total_var) / ESTIMATED_TOTAL * 100
 
-x_bump <- 0.08
+# Rename some stuff, and save fast/slow results for MT
+ext_cycle_results_mt <- ext_cycle_results
+ESTIMATED_TOTAL_mt <- ESTIMATED_TOTAL 
+
+save(ext_cycle_results_mt,ESTIMATED_TOTAL_mt,se_pct_mt,file=file.path("data","ext_cycle_mt.Rdata"))
+
+x_bump <- 0.06
 y_bump <- 0.05
 
 t_blk <- rgb(0, 0, 0, alpha = 128, maxColorValue = 255)
 t_grn <- rgb(0, 155, 0, alpha = 128, maxColorValue = 255)
 t_org <- rgb(255, 69, 0, alpha = 128, maxColorValue = 255)
 
-plot(ESTIMATED_TOTAL, se_pct, col="red", pch = 19,
+plot(ESTIMATED_TOTAL_mt, se_pct_mt, col="red", pch = 19,
      ylab = "Standard Error (% of Estimated Total)", xlab = "Percent Change in Estimated Total",
-     ylim = c(se_pct - (y_bump), se_pct + (y_bump)),xlim = c(ESTIMATED_TOTAL - (x_bump*ESTIMATED_TOTAL),ESTIMATED_TOTAL + (x_bump*ESTIMATED_TOTAL)),
+     ylim = c(se_pct_mt - (y_bump), se_pct_mt + (y_bump)),
+     xlim = c(ESTIMATED_TOTAL_mt - (x_bump*ESTIMATED_TOTAL_mt),ESTIMATED_TOTAL_mt + (x_bump*ESTIMATED_TOTAL_mt)),
      xaxt = "n",
      main = "Montana")
 points(ext_cycle_results$total_5,ext_cycle_results$se_pct_5, pch=19, col = t_blk) # 7 year cycle
 points(ext_cycle_results$total_7,ext_cycle_results$se_pct_7, pch=19, col = t_grn) # 7 year cycle
 points(ext_cycle_results$total_14,ext_cycle_results$se_pct_14, pch=19, col = t_org) # 14 year cycle
 
-x_vals <- ESTIMATED_TOTAL * (1 + seq(-0.1, 0.1, by = 0.005))
+x_vals <- ESTIMATED_TOTAL_mt * (1 + seq(-0.1, 0.1, by = 0.005))
 axis(side = 1, at = x_vals, labels = paste0(round(seq(-10.0, 10.0, 0.5),1), "%"))
-abline(h = se_pct, v = ESTIMATED_TOTAL, col = "lightgray", lty = 3)
-points(ESTIMATED_TOTAL, se_pct, col="red", pch = 19)
+abline(h = se_pct_mt, v = ESTIMATED_TOTAL_mt, col = "lightgray", lty = 3)
+points(ESTIMATED_TOTAL_mt, se_pct_mt, col="red", pch = 19)
 
 legend("bottomleft", 
        legend = c("Original Estimate","5 Year Cycle", "7 Year Cycle", "14 Year Cycle"), 

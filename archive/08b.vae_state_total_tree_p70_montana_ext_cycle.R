@@ -37,6 +37,9 @@ delayed <- plots_p70
 # NEED TO ACOUNT FOR THE FACT THAT 2020 INVYR WAS NOT PANEL70 1-14, 2020 STARTED WITH P70=15 as the following shows:
 table(plots_p70$INVYR,plots_p70$PANEL_70)
 table(plots_p70$P2PANEL,plots_p70$PANEL_70) # P70's are aligned with P2 Panels, not necessarily INVYRS at beginning of cycle...
+plots_p70$full_panel <- (plots_p70$SUBPANEL-1)*5+plots_p70$P2PANEL # Convert panel/subpanel to 10-year panels
+
+table(plots_p70$full_panel,plots_p70$PANEL_70) # P70's are aligned with P2 Panels, not necessarily INVYRS at beginning of cycle...
 
 # What prop/pct of plots are measured in each INVYR in this state/cycle?
 invyrs <- unique(sort(delayed$INVYR))
