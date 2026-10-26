@@ -1,0 +1,12 @@
+---
+title: "macros"
+---
+
+% Drafting helpers. Remove before final submission.
+\newcommand{\todo}[1]{\textcolor{blue}{[TODO: #1]}}
+% Material that can be lifted/adapted from the NISAR DART proposal.
+\newcommand{\reuse}[1]{\textcolor{teal}{[Reuse: #1]}}
+% Points that respond to the NISAR DART panel review (25-NISAR25_2-0049).
+\newcommand{\rev}[1]{\textcolor{red}{[Prior review: #1]}}
+% Maps content to A.13 Sec. 3.1 required items / Sec. 3.3 criteria.
+\newcommand{\req}[1]{\textcolor{violet}{[A.13 req: #1]}}

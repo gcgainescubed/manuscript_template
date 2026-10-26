@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.11.5">
+<meta name="generator" content="quarto-1.11.6">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,7 +10,7 @@
 <meta name="author" content="Bryce Frank">
 <meta name="author" content="KaDonna Randolph">
 <meta name="author" content="Jim Westfall">
-<meta name="keywords" content="Forest Inventory and Analysis">
+<meta name="keywords" content="Forest Inventory and Analysis, national forest inventory, sample design">
 
 <title>Assessing the influence of variable annual sampling effort on official national forest inventory statistics</title>
 <style>
@@ -56,17 +56,15 @@ div.csl-indent {
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-3b9ea68436acb9022c2fbce6dbb58b06.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-35fc0813589bbfbfa0b8ec974497eeb2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap-deb10828e67638621ea84613cdc954fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -78,24 +76,26 @@ div.csl-indent {
 <meta name="citation_title" content="Assessing the influence of variable annual sampling effort on official national forest inventory statistics">
 <meta name="citation_abstract" content="In this study we...
 ">
-<meta name="citation_keywords" content="Forest Inventory and Analysis">
+<meta name="citation_keywords" content="Forest Inventory and Analysis, national forest inventory, sample design">
 <meta name="citation_author" content="George C. Gaines III">
 <meta name="citation_author" content="Bryce Frank">
 <meta name="citation_author" content="KaDonna Randolph">
 <meta name="citation_author" content="Jim Westfall">
-<meta name="citation_publication_date" content="2026-09-23">
-<meta name="citation_cover_date" content="2026-09-23">
+<meta name="citation_publication_date" content="2026-10-26">
+<meta name="citation_cover_date" content="2026-10-26">
 <meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-09-23">
+<meta name="citation_online_date" content="2026-10-26">
 <meta name="citation_language" content="en">
 <meta name="citation_journal_title" content="Forest Ecology and Management">
 <meta name="citation_reference" content="citation_title=A spatial and temporal assessment of nonresponse in the national forest inventory of the US;,citation_author=James A Westfall;,citation_author=Todd A Schroeder;,citation_author=Joseph M McCollum;,citation_author=Paul L Patterson;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=8;,citation_volume=194;,citation_journal_title=Environmental Monitoring and Assessment;,citation_publisher=Springer;">
 <meta name="citation_reference" content="citation_title=An estimation method to reduce complete and partial nonresponse bias in forest inventory;,citation_author=James A Westfall;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=5;,citation_volume=141;,citation_journal_title=European Journal of Forest Research;,citation_publisher=Springer;">
 <meta name="citation_reference" content="citation_title=Double ratio estimation within a design-based nonresponse bias mitigation strategy;,citation_author=James A Westfall;,citation_author=Paul L Patterson;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=1;,citation_volume=99;,citation_journal_title=Forestry: An International Journal of Forest Research;,citation_publisher=Oxford University Press;">
 <meta name="citation_reference" content="citation_title=Inventory measurement rates lag in wilderness areas across the western USA;,citation_author=David LR Affleck;,citation_author=George C Gaines III;,citation_author=Cici Conroy;,citation_author=Gianna Santino;,citation_author=Andrew J Larson;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=1;,citation_volume=72;,citation_journal_title=Forest Science;,citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=The enhanced forest inventory and analysis program–national sampling design and estimation procedures;,citation_author=William A Bechtold;,citation_author=Paul L Patterson;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;">
 <meta name="citation_reference" content="citation_title=Sampling and estimation documentation for the enhanced forest inventory and analysis program: 2022;,citation_author=James A Westfall;,citation_author=John W Coulston;,citation_author=Gretchen G Moisen;,citation_author=H-E Andersen;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_volume=207;,citation_journal_title=Gen. Tech. Rep. NRS-GTR-207. Madison, WI: US Department of Agriculture, Forest Service, Northern Research Station. 129 p.;">
 <meta name="citation_reference" content="citation_title=Estimation in surveys with nonresponse;,citation_author=Carl-Erik Särndal;,citation_author=Sixten Lundström;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;">
 <meta name="citation_reference" content="citation_title=Elevated FIA nonresponse rates in wilderness: Investigating barriers and potential solutions;,citation_author=Cici Conroy;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_publisher=University of Montana;">
+<meta name="citation_reference" content="citation_title=Corona virus pandemic: Implication on biodiversity conservation;,citation_author=Oluseun A Akinsorotan;,citation_author=Oluwatobi E Olaniyi;,citation_author=Ayomide A Adeyemi;,citation_author=Adeola H Olasunkanmi;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_volume=3;,citation_journal_title=Frontiers in Water;,citation_publisher=Frontiers Media SA;">
 </head>
 
 <body class="quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
@@ -153,7 +153,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">Sep 23, 2026</p>
+              <p class="date">Oct 26, 2026</p>
             </div>
           </div>
           
@@ -161,7 +161,7 @@ div.csl-indent {
               </div>
       </div>
       <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index_vae.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index_vae.pdf"><i class="bi bi-file-pdf"></i>PDF (agu)</a></p></div><div class="quarto-title-meta-contents"><p><a href="index_vae-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
+      <div class="quarto-alternate-formats"><div class="quarto-title-meta-heading">Other Formats</div><div class="quarto-title-meta-contents"><p><a href="index_vae.docx"><i class="bi bi-file-word"></i>MS Word</a></p></div><div class="quarto-title-meta-contents"><p><a href="index_vae.pdf"><i class="bi bi-file-pdf"></i>PDF (elsevier)</a></p></div><div class="quarto-title-meta-contents"><p><a href="index_vae-meca.zip" data-meca-link="true"><i class="bi bi-archive"></i>MECA Bundle</a></p></div></div></div>
     </div>
 
     <div>
@@ -174,7 +174,7 @@ div.csl-indent {
     <div>
       <div class="keywords">
         <div class="block-title">Keywords</div>
-        <p>Forest Inventory and Analysis</p>
+        <p>Forest Inventory and Analysis, national forest inventory, sample design</p>
       </div>
     </div>
 
@@ -188,10 +188,11 @@ div.csl-indent {
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
   <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a></li>
-  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3</span> Conclusion</a></li>
+  <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">3</span> Discussion</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index_original-preview.html"><i class="bi bi-journal-code"></i>Assessing the influence of variable annual sampling effort on official forest inventory statistics</a></li><li><a href="notebooks/explore-earthquakes-preview.html"><i class="bi bi-journal-code"></i>Explore Earthquakes</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index_original-preview.html"><i class="bi bi-journal-code"></i>Assessing the influence of variable annual sampling effort on official forest inventory statistics</a></li><li><a href="notebooks/explore-earthquakes-preview.html"><i class="bi bi-journal-code"></i>Explore Earthquakes</a></li><li><a href="macros-preview.html"><i class="bi bi-journal-code"></i>macros</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -204,40 +205,40 @@ div.csl-indent {
 
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
-<p>The USFS Forest Inventory and Analysis (FIA) Program surveys and analyzes the forests of the United States through a nationwide network of permanent sample locations. These plot locations are distributed across all lands with a spatial sampling intensity of about 1 location per 2400 ha according to an unaligned, quasi-systematic equal probability sample design. This design forces desirable spatial dispersion while limiting the potential for alignment of sample locations with periodic population features. Statistical inference on forest population status and change parameters is enabled by measurements of forest vegetation traits made at these locations by field crews.</p>
-<p>Historically, FIA sample locations in each state were visited periodically as time, budgets, and workforce capacity allowed. This approach offered logistical flexibility but complicated analysis and reporting timelines. In the early 2000’s the program shifted from periodic to annual inventory protocols calling for approximately equal numbers of plot remeasurements each year on schedules intended to be fixed and consistent within states. Under the annual inventory, each plot location in a state is assigned to one of a set of panels, and all plots assigned to a panel are designated for measurement in the same year. Once the final panel in an inventory cycle is complete, remeasurements at sample locations in the first panel begin the following year. For more information regarding the FIA sample design see <span class="citation" data-cites="gb2">(<a href="#ref-gb2" role="doc-biblioref">Westfall, Coulston, et al. 2022, chap. 2</a>)</span>.</p>
-<p>In general, FIA requires that a panel be complete before the associated raw tabular data are pushed to its public-facing databases, and requires a complete inventory cycle within a state to publish official state-scale estimates of forest parameters in fulfillment of Congressional reporting obligations. Unfortunately, in practice, adherence to the annual design described above has proven very challenging or impossible for the FIA Program. Instead, delayed and skipped field measurements cause unintentional lengthening of inventory cycles and/or survey nonresponse <span class="citation" data-cites="sarndal_nonresponse">(see, e.g., <a href="#ref-sarndal_nonresponse" role="doc-biblioref">Särndal and Lundström 2005</a>)</span>, at rates that vary regionally and over time. The underlying causes of delayed and skipped field measurements are varied, and can be chronic (e.g., denied access to private lands <span class="citation" data-cites="westfall2022spatial">(<a href="#ref-westfall2022spatial" role="doc-biblioref">Westfall, Schroeder, et al. 2022</a>)</span>, logistical or administrative challenges in remote regions <span class="citation" data-cites="affleck2026inventory">(<a href="#ref-affleck2026inventory" role="doc-biblioref">Affleck et al. 2026</a>)</span>, persistent workforce and budgetary constraints <span class="citation" data-cites="conroy_thesis">(<a href="#ref-conroy_thesis" role="doc-biblioref">Conroy 2026</a>)</span>) or result from discrete events (e.g., the COVID19 pandemic). Better understanding of patterns in late and skipped measurements <span class="citation" data-cites="conroy_thesis">(<a href="#ref-conroy_thesis" role="doc-biblioref">Conroy 2026</a>)</span>, and the investigation of new sampling and estimation techniques to ameliorate the statistical consequences nonresponse <span class="citation" data-cites="westfall2022estimation westfall2026double">(<a href="#ref-westfall2022estimation" role="doc-biblioref">Westfall 2022</a>; <a href="#ref-westfall2026double" role="doc-biblioref">Westfall and Patterson 2026</a>)</span>, are active research topics.</p>
-<p>Of immediate practical concern for FIA and its external partners are the strain on field staff and delays to tabular data publication that result from delayed field measurements. Methods have been proposed to control the measurement delay process by disaggregating FIA’s annual panel structure while still preserving the spatial dispersion of the FIA sample network within field season years. Panel disaggregation enables intentional alignment of workloads with anticipated data acquisition workforce capacity in each field season year through the application of variable annual field sampling effort within individual states.</p>
+<p>The USFS Forest Inventory and Analysis (FIA) Program surveys and analyzes the forests of the United States through a nationwide network of permanent sample locations. These plot locations are distributed across all lands with a spatial sampling intensity of about 1 location per 2400 ha according to an unaligned, quasi-systematic equal probability sample design. This design is spatially dispersed with deviation from a regular grid to avoid alignment of sample locations with periodic population features. Statistical inference on forest population status and change parameters is enabled by measurements of forest vegetation traits made at these locations by field crews.</p>
+<p>Historically, FIA sample locations in each state were visited periodically as time, budgets, and workforce capacity allowed. This approach offered logistical flexibility but complicated analysis and reporting timelines. In the early 2000’s the program shifted from periodic to annual inventory protocols calling for approximately equal numbers of plot measurements each year on schedules intended to be fixed and consistent within states. Under this annual inventory, each plot location in a state is assigned to one of a set of panels, and all plot locations assigned to a panel are designated for measurement in the same year. The panels in a state together comprise an inventory cycle, and inventory cycles range in length from 5 or 7 years in the eastern US to 10 years in the west. Once the final panel in an inventory cycle is complete, remeasurements at sample locations in the first panel begin the following year. For more information regarding the FIA sample design see <span class="citation" data-cites="gb1 gb2">(<a href="#ref-gb1" role="doc-biblioref">Bechtold and Patterson 2005</a>; <a href="#ref-gb2" role="doc-biblioref">Westfall, Coulston, et al. 2022, chap. 2</a>)</span>.</p>
+<p>In general, FIA requires that a panel be complete before the associated tabular data are pushed to its public-facing databases, which the program endeavors to do within 1 year of panel completion. Similarly, FIA requires a complete inventory cycle within a state to publish official state-scale estimates of forest parameters in fulfillment of Congressional reporting obligations. In practice, however, adherence to the annual design described above has proven very challenging or impossible for the FIA Program. Instead, delayed and skipped field measurements cause unintentional lengthening of inventory cycles and/or survey nonresponse <span class="citation" data-cites="sarndal_nonresponse">(see, e.g., <a href="#ref-sarndal_nonresponse" role="doc-biblioref">Särndal and Lundström 2005</a>)</span>, at rates that vary regionally and over time.</p>
+<p>The underlying causes of delayed and skipped field measurements are varied, and can be chronic (e.g., denied access to private lands <span class="citation" data-cites="westfall2022spatial">(<a href="#ref-westfall2022spatial" role="doc-biblioref">Westfall, Schroeder, et al. 2022</a>)</span>, logistical or administrative challenges in remote regions <span class="citation" data-cites="affleck2026inventory">(<a href="#ref-affleck2026inventory" role="doc-biblioref">Affleck et al. 2026</a>)</span>, persistent workforce and budgetary constraints <span class="citation" data-cites="conroy_thesis">(<a href="#ref-conroy_thesis" role="doc-biblioref">Conroy 2026</a>)</span>) or can result from discrete events (e.g., the COVID19 pandemic <span class="citation" data-cites="covid">(<a href="#ref-covid" role="doc-biblioref">Akinsorotan et al. 2021</a>)</span>). Late measurements of temporally dynamic variables can induce a “time lag” bias in point estimates when the time component of the estimand is not adjusted accordkingly. Further, survey nonresponse can introduce nonresponse bias to estimates of population parameters when response propensity is correlated with the attribute of interest. Better understanding of patterns in late and skipped measurements <span class="citation" data-cites="conroy_thesis">(<a href="#ref-conroy_thesis" role="doc-biblioref">Conroy 2026</a>)</span>, and the investigation of new sampling and estimation techniques to ameliorate the statistical consequences of nonresponse <span class="citation" data-cites="westfall2022estimation westfall2026double">(<a href="#ref-westfall2022estimation" role="doc-biblioref">Westfall 2022</a>; <a href="#ref-westfall2026double" role="doc-biblioref">Westfall and Patterson 2026</a>)</span> are active research topics, but beyond the scope of the present study.</p>
+<p>Of immediate practical concern for FIA and its external partners are the strain on field staff and delays to tabular data publication that result from delayed field measurements. Methods have been proposed to control the measurement delay process by disaggregating FIA’s annual panel structure into subpanels while still preserving the spatial dispersion of the FIA sample network within field season years. Disaggregation of panels into subpanels enables intentional alignment of workloads with anticipated data acquisition workforce capacity in each field season year through the application of variable annual field sampling effort within individual states.</p>
 <p>Though the logistical advantages of variable annual effort (VAE) are profound (i.e., it can help ensure the long-term viability of the inventory in the context of funding and staffing volatility), the statistical consequences of the redistribution of partial panels within inventory cycles, and of extended and variable inventory cycle lengths, are unknown across states and epochs. In particular, a need exists to understand and communicate to stakeholders how adoption of VAE protocols may influence the statistical properties of forest parameter estimates published by FIA in fulfillment of Congressional reporting imperatives.</p>
-<p>In this study, we seek to…</p>
+<p>Therefore, our research objectives in this study are to:</p>
+<ol type="1">
+<li>define three VAE regimens with respect to subpanels (fast and slow start, dropped subpanels, and extended and shortened cycle lengths) intended to be representative of circumstances FIA could conceivably encounter in program administration</li>
+<li>simulate the influence of those three VAE regimens on state-scale, inventory-cycle wide estimates of total net merchantable timber volume for three US states with distinct forest types, ecological attributes, and FIA inventory cycle lengths.</li>
+<li>visualize and discuss simulation results in the context of implications for FIA program operations and the management of US forests.</li>
+</ol>
 </section>
 <section id="sec-data-methods" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</h2>
-<div class="quarto-embed-nb-cell">
-<div id="cell-fig-spatial-plot" class="cell">
-<div class="cell-output cell-output-display">
-<div id="fig-spatial-plot" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot of earthquake locations plotting latitude against longitude.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<a href="index_vae_files/figure-html/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Locations of earthquakes on La Palma since 2017"><img src="index_vae_files/figure-html/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" class="img-fluid figure-img" alt="A scatterplot of earthquake locations plotting latitude against longitude."></a>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-spatial-plot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: Locations of earthquakes on La Palma since 2017
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
+<!-- {{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}} -->
 </section>
-<section id="conclusion" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3</span> Conclusion</h2>
+<section id="discussion" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="discussion"><span class="header-section-number">3</span> Discussion</h2>
+</section>
+<section id="conclusion" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">4</span> Conclusion</h2>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-affleck2026inventory" class="csl-entry" role="listitem">
 Affleck, David LR, George C Gaines III, Cici Conroy, Gianna Santino, and Andrew J Larson. 2026. <span>“Inventory Measurement Rates Lag in Wilderness Areas Across the Western USA.”</span> <em>Forest Science</em> 72 (1): 95–102.
+</div>
+<div id="ref-covid" class="csl-entry" role="listitem">
+Akinsorotan, Oluseun A, Oluwatobi E Olaniyi, Ayomide A Adeyemi, and Adeola H Olasunkanmi. 2021. <span>“Corona Virus Pandemic: Implication on Biodiversity Conservation.”</span> <em>Frontiers in Water</em> 3: 635529.
+</div>
+<div id="ref-gb1" class="csl-entry" role="listitem">
+Bechtold, William A, and Paul L Patterson. 2005. <em>The Enhanced Forest Inventory and Analysis Program–National Sampling Design and Estimation Procedures</em>. USDA Forest Service, Southern Research Station.
 </div>
 <div id="ref-conroy_thesis" class="csl-entry" role="listitem">
 Conroy, Cici. 2026. <em>Elevated FIA Nonresponse Rates in Wilderness: Investigating Barriers and Potential Solutions</em>.
@@ -265,7 +266,7 @@ Westfall, James A, Todd A Schroeder, Joseph M McCollum, and Paul L Patterson. 20
     and Westfall, Jim},
   title = {Assessing the Influence of Variable Annual Sampling Effort on
     Official National Forest Inventory Statistics},
-  date = {2026-09-23},
+  date = {2026-10-26},
   langid = {en},
   abstract = {In this study we...}
 }
@@ -273,7 +274,7 @@ Westfall, James A, Todd A Schroeder, Joseph M McCollum, and Paul L Patterson. 20
 C. Gaines III, George, Bryce Frank, KaDonna Randolph, and Jim Westfall.
 2026. <span>“Assessing the Influence of Variable Annual Sampling Effort
 on Official National Forest Inventory Statistics.”</span> Forest Ecology
-and Management, September 23.
+and Management, October 26.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -676,39 +677,10 @@ and Management, September 23.
     }
   });
   </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","loop":false,"openEffect":"zoom","selector":".lightbox"});
-(function() {
-  let previousOnload = window.onload;
-  window.onload = () => {
-    if (previousOnload) {
-      previousOnload();
-    }
-    lightboxQuarto.on('slide_before_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      const href = trigger.getAttribute('href');
-      if (href !== null) {
-        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-        if (imgEl !== null) {
-          const srcAttr = imgEl.getAttribute("src");
-          if (srcAttr && srcAttr.startsWith("data:")) {
-            slideConfig.href = srcAttr;
-          }
-        }
-      } 
-    });
-  
-    lightboxQuarto.on('slide_after_load', (data) => {
-      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-      if (window.Quarto?.typesetMath) {
-        window.Quarto.typesetMath(slideNode);
-      }
-    });
-  
-  };
-  
-})();
-          </script>
 
 
 

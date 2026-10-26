@@ -5,7 +5,7 @@
 \PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
 %
 \documentclass[
-]{agujournal2019}
+  number]{elsarticle}
 \usepackage{xcolor}
 \usepackage{amsmath,amssymb}
 \setcounter{secnumdepth}{5}
@@ -92,39 +92,6 @@
 \makeatother
 
 
-% definitions for citeproc citations
-\NewDocumentCommand\citeproctext{}{}
-\NewDocumentCommand\citeproc{mm}{%
-  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
-\makeatletter
- % allow citations to break across lines
- \let\@cite@ofmt\@firstofone
- % avoid brackets around text for \cite:
- \def\@biblabel#1{}
- \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
-\makeatother
-\newlength{\cslhangindent}
-\setlength{\cslhangindent}{1.5em}
-\newlength{\csllabelwidth}
-\setlength{\csllabelwidth}{3em}
-\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
- {\begin{list}{}{%
-  \setlength{\itemindent}{0pt}
-  \setlength{\leftmargin}{0pt}
-  \setlength{\parsep}{0pt}
-  % turn on hanging indent if param 1 is 1
-  \ifodd #1
-   \setlength{\leftmargin}{\cslhangindent}
-   \setlength{\itemindent}{-1\cslhangindent}
-  \fi
-  % set entry spacing
-  \setlength{\itemsep}{#2\baselineskip}}}
- {\end{list}}
-\usepackage{calc}
-\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
-\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
-\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
 
 
 
@@ -136,13 +103,10 @@
 
 
  
+\usepackage[]{natbib}
+\bibliographystyle{elsarticle-num}
 
 
-\usepackage{url} %this package should fix any errors with URLs in refs.
-\usepackage{lineno}
-\usepackage[inline]{trackchanges} %for better track changes. finalnew option will compile document with changes incorporated.
-\usepackage{soul}
-\linenumbers
 \makeatletter
 \@ifpackageloaded{caption}{}{\usepackage{caption}}
 \AtBeginDocument{%
@@ -194,7 +158,8 @@
 \hypersetup{
   pdftitle={Assessing the influence of variable annual sampling effort on official national forest inventory statistics},
   pdfauthor={George C. Gaines III; Bryce Frank; KaDonna Randolph; Jim Westfall},
-  pdfkeywords={\xmpquote{Forest Inventory and Analysis}},
+  pdfkeywords={\xmpquote{Forest Inventory and Analysis, national forest
+inventory, sample design}},
   colorlinks=true,
   linkcolor={blue},
   filecolor={Maroon},
@@ -203,25 +168,44 @@
   pdfcreator={LaTeX via pandoc}}
 
 
-\journalname{Forest Ecology and Management}
-
-\draftfalse
-
+\setlength{\parindent}{6pt}
 \begin{document}
+
+\begin{frontmatter}
 \title{Assessing the influence of variable annual sampling effort on
 official national forest inventory statistics}
+\author[1]{George C. Gaines III%
+\corref{cor1}%
+}
+ \ead{george.gaines@usda.gov} 
+\author[2]{Bryce Frank%
+%
+}
 
-\authors{George C. Gaines III\affil{1}, Bryce Frank\affil{2}, KaDonna
-Randolph\affil{3}, Jim Westfall\affil{4}}
-\affiliation{1}{USDA Forest Service, Rocky Mountain Research
-Station, Missoula, MT, }\affiliation{2}{USDA Forest Service, Pacific
-Northwest Research Station, XXX, WA, }\affiliation{3}{USDA Forest
-Service, Southern Research
-Station,, Knoxville, TN, }\affiliation{4}{USDA Forest Service, Northern
-Research Station, XXX, PA, }
-\correspondingauthor{George C. Gaines III}{george.gaines@usda.gov}
+\author[3]{KaDonna Randolph%
+%
+}
+
+\author[4]{Jim Westfall%
+%
+}
 
 
+\affiliation[1]{organization={USDA Forest Service, Rocky Mountain
+Research Station},city={Missoula},postcodesep={}}
+\affiliation[2]{organization={USDA Forest Service, Pacific Northwest
+Research Station},city={XXX},postcodesep={}}
+\affiliation[3]{organization={USDA Forest Service, Southern Research
+Station,},city={Knoxville},postcodesep={}}
+\affiliation[4]{organization={USDA Forest Service, Northern Research
+Station},city={XXX},postcodesep={}}
+
+\cortext[cor1]{Corresponding author}
+
+
+
+
+        
 \begin{abstract}
 In this study we\ldots{}
 \end{abstract}
@@ -230,6 +214,14 @@ In this study we\ldots{}
 
 
 
+\begin{keyword}
+    
+    Forest Inventory and Analysis, national forest inventory, sample
+design
+\end{keyword}
+\end{frontmatter}
+    
+
 \section{Introduction}\label{introduction}
 
 The USFS Forest Inventory and Analysis (FIA) Program surveys and
@@ -237,57 +229,67 @@ analyzes the forests of the United States through a nationwide network
 of permanent sample locations. These plot locations are distributed
 across all lands with a spatial sampling intensity of about 1 location
 per 2400 ha according to an unaligned, quasi-systematic equal
-probability sample design. This design forces desirable spatial
-dispersion while limiting the potential for alignment of sample
-locations with periodic population features. Statistical inference on
-forest population status and change parameters is enabled by
-measurements of forest vegetation traits made at these locations by
-field crews.
+probability sample design. This design is spatially dispersed with
+deviation from a regular grid to avoid alignment of sample locations
+with periodic population features. Statistical inference on forest
+population status and change parameters is enabled by measurements of
+forest vegetation traits made at these locations by field crews.
 
 Historically, FIA sample locations in each state were visited
 periodically as time, budgets, and workforce capacity allowed. This
 approach offered logistical flexibility but complicated analysis and
 reporting timelines. In the early 2000's the program shifted from
 periodic to annual inventory protocols calling for approximately equal
-numbers of plot remeasurements each year on schedules intended to be
-fixed and consistent within states. Under the annual inventory, each
-plot location in a state is assigned to one of a set of panels, and all
-plots assigned to a panel are designated for measurement in the same
-year. Once the final panel in an inventory cycle is complete,
-remeasurements at sample locations in the first panel begin the
-following year. For more information regarding the FIA sample design see
-(Westfall, Coulston, et al., 2022, Chapter 2).
+numbers of plot measurements each year on schedules intended to be fixed
+and consistent within states. Under this annual inventory, each plot
+location in a state is assigned to one of a set of panels, and all plot
+locations assigned to a panel are designated for measurement in the same
+year. The panels in a state together comprise an inventory cycle, and
+inventory cycles range in length from 5 or 7 years in the eastern US to
+10 years in the west. Once the final panel in an inventory cycle is
+complete, remeasurements at sample locations in the first panel begin
+the following year. For more information regarding the FIA sample design
+see \citep[ Chapter 2]{gb1, gb2}.
 
 In general, FIA requires that a panel be complete before the associated
-raw tabular data are pushed to its public-facing databases, and requires
-a complete inventory cycle within a state to publish official
-state-scale estimates of forest parameters in fulfillment of
-Congressional reporting obligations. Unfortunately, in practice,
-adherence to the annual design described above has proven very
-challenging or impossible for the FIA Program. Instead, delayed and
-skipped field measurements cause unintentional lengthening of inventory
-cycles and/or survey nonresponse (see, e.g., Särndal \& Lundström,
-2005), at rates that vary regionally and over time. The underlying
-causes of delayed and skipped field measurements are varied, and can be
-chronic (e.g., denied access to private lands (Westfall, Schroeder, et
-al., 2022), logistical or administrative challenges in remote regions
-(Affleck et al., 2026), persistent workforce and budgetary constraints
-(Conroy, 2026)) or result from discrete events (e.g., the COVID19
-pandemic). Better understanding of patterns in late and skipped
-measurements (Conroy, 2026), and the investigation of new sampling and
-estimation techniques to ameliorate the statistical consequences
-nonresponse (Westfall, 2022; Westfall \& Patterson, 2026), are active
-research topics.
+tabular data are pushed to its public-facing databases, which the
+program endeavors to do within 1 year of panel completion. Similarly,
+FIA requires a complete inventory cycle within a state to publish
+official state-scale estimates of forest parameters in fulfillment of
+Congressional reporting obligations. In practice, however, adherence to
+the annual design described above has proven very challenging or
+impossible for the FIA Program. Instead, delayed and skipped field
+measurements cause unintentional lengthening of inventory cycles and/or
+survey nonresponse \citep[see, e.g.,][]{sarndal_nonresponse}, at rates
+that vary regionally and over time.
+
+The underlying causes of delayed and skipped field measurements are
+varied, and can be chronic (e.g., denied access to private lands
+\citep{westfall2022spatial}, logistical or administrative challenges in
+remote regions \citep{affleck2026inventory}, persistent workforce and
+budgetary constraints \citep{conroy_thesis}) or can result from discrete
+events (e.g., the COVID19 pandemic \citep{covid}). Late measurements of
+temporally dynamic variables can induce a ``time lag'' bias in point
+estimates when the time component of the estimand is not adjusted
+accordkingly. Further, survey nonresponse can introduce nonresponse bias
+to estimates of population parameters when response propensity is
+correlated with the attribute of interest. Better understanding of
+patterns in late and skipped measurements \citep{conroy_thesis}, and the
+investigation of new sampling and estimation techniques to ameliorate
+the statistical consequences of nonresponse
+\citep{westfall2022estimation, westfall2026double} are active research
+topics, but beyond the scope of the present study.
 
 Of immediate practical concern for FIA and its external partners are the
 strain on field staff and delays to tabular data publication that result
 from delayed field measurements. Methods have been proposed to control
 the measurement delay process by disaggregating FIA's annual panel
-structure while still preserving the spatial dispersion of the FIA
-sample network within field season years. Panel disaggregation enables
-intentional alignment of workloads with anticipated data acquisition
-workforce capacity in each field season year through the application of
-variable annual field sampling effort within individual states.
+structure into subpanels while still preserving the spatial dispersion
+of the FIA sample network within field season years. Disaggregation of
+panels into subpanels enables intentional alignment of workloads with
+anticipated data acquisition workforce capacity in each field season
+year through the application of variable annual field sampling effort
+within individual states.
 
 Though the logistical advantages of variable annual effort (VAE) are
 profound (i.e., it can help ensure the long-term viability of the
@@ -299,74 +301,39 @@ understand and communicate to stakeholders how adoption of VAE protocols
 may influence the statistical properties of forest parameter estimates
 published by FIA in fulfillment of Congressional reporting imperatives.
 
-In this study, we seek to\ldots{}
+Therefore, our research objectives in this study are to:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  define three VAE regimens with respect to subpanels (fast and slow
+  start, dropped subpanels, and extended and shortened cycle lengths)
+  intended to be representative of circumstances FIA could conceivably
+  encounter in program administration
+\item
+  simulate the influence of those three VAE regimens on state-scale,
+  inventory-cycle wide estimates of total net merchantable timber volume
+  for three US states with distinct forest types, ecological attributes,
+  and FIA inventory cycle lengths.
+\item
+  visualize and discuss simulation results in the context of
+  implications for FIA program operations and the management of US
+  forests.
+\end{enumerate}
 
 \section{Data \& Methods}\label{sec-data-methods}
 
-\begin{figure}[H]
-
-\centering{
-
-\pandocbounded{\includegraphics[keepaspectratio,alt={A scatterplot of earthquake locations plotting latitude against longitude.}]{index_vae_files/figure-latex/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png}}
-
-}
-
-\caption{\label{fig-spatial-plot}Locations of earthquakes on La Palma
-since 2017}
-
-\end{figure}%
-
-\textsubscript{Source:
-\href{https://gcgainescubed.github.io/manuscript_template/notebooks/explore-earthquakes-preview.html\#cell-fig-spatial-plot}{Explore
-Earthquakes}}
+\section{Discussion}\label{discussion}
 
 \section{Conclusion}\label{conclusion}
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
 
-\protect\phantomsection\label{refs}
-\begin{CSLReferences}{1}{0}
-\vspace{1em}
+\renewcommand{\bibsection}{}
+\bibliography{vae.bib}
 
-\bibitem[\citeproctext]{ref-affleck2026inventory}
-Affleck, D. L., Gaines III, G. C., Conroy, C., Santino, G., \& Larson,
-A. J. (2026). Inventory measurement rates lag in wilderness areas across
-the western USA. \emph{Forest Science}, \emph{72}(1), 95--102.
-
-\bibitem[\citeproctext]{ref-conroy_thesis}
-Conroy, C. (2026). Elevated FIA nonresponse rates in wilderness:
-Investigating barriers and potential solutions.
-
-\bibitem[\citeproctext]{ref-sarndal_nonresponse}
-Särndal, C.-E., \& Lundström, S. (2005). \emph{Estimation in surveys
-with nonresponse}. John Wiley \& Sons.
-
-\bibitem[\citeproctext]{ref-westfall2022estimation}
-Westfall, J. A. (2022). An estimation method to reduce complete and
-partial nonresponse bias in forest inventory. \emph{European Journal of
-Forest Research}, \emph{141}(5), 901--907.
-
-\bibitem[\citeproctext]{ref-westfall2026double}
-Westfall, J. A., \& Patterson, P. L. (2026). Double ratio estimation
-within a design-based nonresponse bias mitigation strategy.
-\emph{Forestry: An International Journal of Forest Research},
-\emph{99}(1), cpaf032.
-
-\bibitem[\citeproctext]{ref-westfall2022spatial}
-Westfall, J. A., Schroeder, T. A., McCollum, J. M., \& Patterson, P. L.
-(2022). A spatial and temporal assessment of nonresponse in the national
-forest inventory of the US. \emph{Environmental Monitoring and
-Assessment}, \emph{194}(8), 530.
-
-\bibitem[\citeproctext]{ref-gb2}
-Westfall, J. A., Coulston, J. W., Moisen, G. G., \& Andersen, H.-E.
-(2022). Sampling and estimation documentation for the enhanced forest
-inventory and analysis program: 2022. \emph{Gen. Tech. Rep. NRS-GTR-207.
-Madison, WI: US Department of Agriculture, Forest Service, Northern
-Research Station. 129 p.}, \emph{207}, 1--129.
-
-\end{CSLReferences}
 
 
 
