@@ -41,6 +41,7 @@ slow <- plots_p70
 
 # NEED TO ACOUNT FOR THE FACT THAT 2020 INVYR WAS NOT PANEL70 1-14, 2020 STARTED WITH P70=15 as the following shows:
 table(plots_p70$INVYR,plots_p70$PANEL_70)
+table(plots_p70$MEASYEAR,plots_p70$PANEL_70)
 table(plots_p70$P2PANEL,plots_p70$PANEL_70) # P70's are aligned with P2 Panels, not necessarily INVYRS at beginning of cycle...
 # I.e., as the following shows for Maine,
 table(plots_p70$INVYR) # Original INVYR distribution
