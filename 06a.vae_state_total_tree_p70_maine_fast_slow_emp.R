@@ -72,10 +72,10 @@ round(props_measured*100,2) # 20.38 / 20.07 / 19.95 / 19.84 / 19.75
 
 slow$NEWINVYR <- 0
 for(i in 1:nrow(slow)){
-  if(slow$PANEL_70[i] > 14 & slow$PANEL_70[i] <= 24){slow$NEWINVYR[i] <- 2020} else # slow: 9 P70's
-    if(slow$PANEL_70[i] > 24 & slow$PANEL_70[i] <= 34){slow$NEWINVYR[i] <- 2021} else # slow: 9 P70's
-      if(slow$PANEL_70[i] > 34 & slow$PANEL_70[i] <= 53){slow$NEWINVYR[i] <- 2022} else # fast: 18 P70's
-        if(slow$PANEL_70[i] > 53 & slow$PANEL_70[i] <= 70){slow$NEWINVYR[i] <- 2023} else # fast: 16 P70's
+  if(slow$PANEL_70[i] > 14 & slow$PANEL_70[i] <= 24){slow$NEWINVYR[i] <- 2020} else # slow: 10 P70's
+    if(slow$PANEL_70[i] > 24 & slow$PANEL_70[i] <= 34){slow$NEWINVYR[i] <- 2021} else # slow: 10 P70's
+      if(slow$PANEL_70[i] > 34 & slow$PANEL_70[i] <= 52){slow$NEWINVYR[i] <- 2022} else # fast: 18 P70's
+        if(slow$PANEL_70[i] > 52 & slow$PANEL_70[i] <= 70){slow$NEWINVYR[i] <- 2023} else # fast: 18 P70's
           if(slow$PANEL_70[i] > 0 & slow$PANEL_70[i] <= 14){slow$NEWINVYR[i] <- 2024} # on time: 14 P70's
 }
 
@@ -214,10 +214,10 @@ table(fast$INVYR,fast$PANEL_70)
 # Need to account for fact that Panel 70s 1 - 14 are in Panel 5, not Panel 1... 
 
 for(i in 1:nrow(fast)){
-  if(fast$PANEL_70[i] > 14 & fast$PANEL_70[i] <= 33){fast$NEWINVYR[i] <- 2020} else # Fast: 18 P70's
-    if(fast$PANEL_70[i] > 33 & fast$PANEL_70[i] <= 50){fast$NEWINVYR[i] <- 2021} else # Fast: 16 P70's
-      if(fast$PANEL_70[i] > 50 & fast$PANEL_70[i] <= 60){fast$NEWINVYR[i] <- 2022} else # Slow: 9 P70's
-        if(fast$PANEL_70[i] > 60 & fast$PANEL_70[i] <= 70){fast$NEWINVYR[i] <- 2023} else # Slow: 9 P70's
+  if(fast$PANEL_70[i] > 14 & fast$PANEL_70[i] <= 32){fast$NEWINVYR[i] <- 2020} else # Fast: 18 P70's
+    if(fast$PANEL_70[i] > 32 & fast$PANEL_70[i] <= 50){fast$NEWINVYR[i] <- 2021} else # Fast: 18 P70's
+      if(fast$PANEL_70[i] > 50 & fast$PANEL_70[i] <= 60){fast$NEWINVYR[i] <- 2022} else # Slow: 10 P70's
+        if(fast$PANEL_70[i] > 60 & fast$PANEL_70[i] <= 70){fast$NEWINVYR[i] <- 2023} else # Slow: 10 P70's
           if(fast$PANEL_70[i] > 0 & fast$PANEL_70[i] <= 14){fast$NEWINVYR[i] <- 2024} # On time: ==14 P70's
 }
 

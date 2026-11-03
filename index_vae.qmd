@@ -1,3 +1,8 @@
+<!-- The following includes _macros.qmd, which contains various latex \newcommands. -->
+<!-- https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
+::: {.content-hidden}
+{{< include _macros.qmd >}}
+:::
 ---
 title: "Assessing the influence of variable annual sampling effort on official national forest inventory statistics"
 author:
@@ -152,9 +157,20 @@ forest types, ecological attributes, and FIA inventory cycle lengths.
 3. visualize and discuss simulation results in the context of implications for 
 FIA program operations and the management of US forests.
 
-
 ## Data & Methods {#sec-data-methods}
-<!-- {{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}} -->
+
+### Study Area
+
+3 states...
+
+### FIA Data
+
+Data from those 3 states...
+
+{{< include notebooks/initial-notation.qmd >}}
+
+{{< include notebooks/fast-slow.qmd >}}
+
 
 ## Discussion
 

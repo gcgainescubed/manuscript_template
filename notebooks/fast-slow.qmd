@@ -1,0 +1,94 @@
+<!-- ---
+title: "fast-slow" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+
+### Slow/Fast Start
+
+#### Modified Partition Notation (Shifted Configurations)
+For an uneven or shifted layout where subpanels are structurally rearranged, the uniform mapping breaks down. To formalize this, we introduce an explicit boundary sequence vector $\mathbf{B}$ containing $M+1$ elements:
+
+$$\mathbf{B} = (b_0, b_1, \dots, b_M)$$
+
+For the specific modified configuration where $M = 5$, the boundaries are explicitly assigned as:
+
+$$\mathbf{B} = (0, 10, 20, 38, 56, 70)$$
+
+Each individual macro panel $P_i$ (for $i = 1, 2, \dots, M$) is then constructed by pulling indices between adjacent elements of the boundary sequence:
+
+$$P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}$$
+
+#### Explicit Macro Panel Contents
+
+* $P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}$
+* $P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}$
+* $P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}$
+* $P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}$
+* $P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}$
+
+#### Modified Panel Lookup Function Alternatives
+Because the subpanel distributions are no longer uniform, the scalar ceiling function cannot be used. Below are two equivalent mathematical approaches to express the lookup function $f(j)$ for the shifted configuration.
+
+#### Approach 1: The Summation / Indicator Function Approach
+We can define the lookup function $f(j)$ by counting how many boundaries the subpanel index $j$ has successfully crossed. Using the Iverson bracket notation (where the brackets evaluate to $1$ if the enclosed condition is true, and $0$ if false), the macro panel index can be calculated directly by checking membership across all intervals:
+
+$$f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]$$
+
+Alternatively, an even more concise formulation counts how many upper bounds $b_i$ from our sequence $\mathbf{B} = (0, 10, 20, 38, 56, 70)$ are strictly less than $j$, then offsets the result by 1:
+
+$$f(j) = 1 + \sum_{i=1}^{M-1} [j > b_i]$$
+
+##### Example Evaluation
+To locate subpanel $q_{25}$ using the upper bounds $b_1=10, b_2=20, b_3=38, b_4=56$:
+
+$$f(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]$$
+$$f(25) = 1 + 1 + 1 + 0 + 0 = 3$$
+
+This correctly maps subpanel $q_{25}$ to Macro Panel $P_3$.
+
+### Approach 2: The Interval Mapping / Step Function Approach
+Alternatively, the lookup function $f(j)$ can be explicitly mapped using a piecewise step function that matches the distinct index windows of our chosen $M=5$ shifted layout:
+
+$$f(j) = \begin{cases} 
+1 & \text{if } 1 \le j \le 10 \\ 
+2 & \text{if } 11 \le j \le 20 \\ 
+3 & \text{if } 21 \le j \le 38 \\ 
+4 & \text{if } 39 \le j \le 56 \\ 
+5 & \text{if } 57 \le j \le 70 
+\end{cases}$$
+
+#### Generalization of Shifted Boundaries
+
+To scale the shifting mechanism across any active configuration $M \in \{5, 7, 10, 14\}$, we define a formal transformation framework. Let $\mathbf{U}_M$ be the baseline **uniform boundary sequence vector** of length $M+1$, where the elements are strictly determined by the constant step-size $k = \frac{70}{M}$:
+
+$$\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_i = i \cdot k$$
+
+### The Boundary Deviation Framework
+To construct a non-uniform layout, we define a **boundary deviation vector** $\boldsymbol{\delta}$ of length $M+1$:
+
+$$\boldsymbol{\delta} = (\delta_0, \delta_1, \dots, \delta_M)$$
+
+The shifted boundary sequence vector $\mathbf{B}_M$ is created by adding the deviation vector directly to the uniform baseline:
+
+$$\mathbf{B}_M = \mathbf{U}_M + \boldsymbol{\delta} = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)$$
+
+### Structural Constraints on Deviations
+To ensure that the shifted sequence remains physically valid (non-overlapping, covers all 70 subpanels, and keeps panels non-empty), the elements of $\boldsymbol{\delta}$ must satisfy the following three axioms:
+
+1. **Endpoint Anchors:** The global boundaries cannot shift. The sequence must always start at 0 and end at 70:
+   $$\delta_0 = 0 \quad \text{and} \quad \delta_M = 0$$
+
+2. **Integer Domain:** Every deviation must be an integer to preserve whole subpanel blocks:
+   $$\delta_i \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}$$
+
+3. **Strict Monotonicity:** To prevent empty macro panels or inverted boundaries, adjacent elements must maintain a strict ordering:
+   $$(u_i + \delta_i) > (u_{i-1} + \delta_{i-1}) \quad \forall i \in \{1, 2, \dots, M\}$$
+
+### Concrete Example Matrix ($M = 5$)
+For the configuration where $M = 5$ and baseline step size $k = 14$, the transformation from uniform to your specific shifted setup is explicitly formalized below:
+
+$$\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)$$
+$$\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)$$
+
+Evaluating the vector addition:
+
+$$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)$$

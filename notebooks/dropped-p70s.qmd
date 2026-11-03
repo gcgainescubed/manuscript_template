@@ -1,0 +1,35 @@
+<!-- ---
+title: "dropped-p70s" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+
+### Dropped P70s
+
+#### Subpanel Exclusion Notation (Dropping Truncated Subpanels)
+To represent a scenario where the system layout remains uniform but structural constraints require dropping the last subpanel from every macro panel, we modify the upper bound constraint of the index sets. 
+
+Let $\mathcal{D}_M \subset \mathcal{Q}$ be the set of dropped subpanels under configuration $M$. Because the last subpanel of each macro panel corresponds exactly to the global indices $j = ik$, the set of dropped subpanels is formalized as:
+
+$$\mathcal{D}_M = \{ q_j \in \mathcal{Q} \mid j = i \cdot k, \text{ for } i = 1, 2, \dots, M \}$$
+
+###3 Modified Partition Layout
+The active system layout partition $\mathcal{P}'_M$ preserves the original $M$ distinct macro panels but truncates the inner index constraint to stop at $ik - 1$:
+
+$$\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}$$
+
+Where each truncated macro panel $P'_i$ (for $i = 1, 2, \dots, M$) is explicitly defined by:
+
+$$P'_i = \{ q_j \in \mathcal{Q} \mid (i-1)k + 1 \leq j \leq ik - 1 \}$$
+
+#### Truncated Configuration Matrix Examples
+
+Under this setup, the cardinality (number of active subpanels) of each macro panel is reduced from $k$ to $k-1$:
+
+* **For $M = 5$** ($k = 14$): 
+  * Dropped Set: $\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}$
+  * Macro Panel 1: $P'_1 = \{q_1, q_2, \dots, q_{13}\}$
+* **For $M = 7$** ($k = 10$): 
+  * Dropped Set: $\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}$
+  * Macro Panel 1: $P'_1 = \{q_1, q_2, \dots, q_{9}\}$
+* **For $M = 14$** ($k = 5$): 
+  * Dropped Set: $\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}$
+  * Macro Panel 1: $P'_1 = \{q_1, q_2, q_3, q_4\}$

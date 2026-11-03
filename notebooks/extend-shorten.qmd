@@ -1,0 +1,135 @@
+<!-- ---
+title: "extend-shorten" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+
+### Extended and Shortened Cycle Lengths
+
+#### Subpanel Redistribution: From $\mathcal{P}_{5}$ to $\mathcal{P}_{7}$
+
+The 70 subpanels are reallocated from 5 blocks of 14 into 7 blocks of 10. This redistribution preserves a perfectly even contiguous partitioning across the entire universe $Q$. 
+
+---
+
+#### 1. The Original Partition Structure ($\mathcal{P}_{5}$)
+When $M = 5$ and $k = 14$, the layout partition $\mathcal{P}_5 = \{P_1, P_2, P_3, P_4, P_5\}$ groups the global indices contiguously as follows:
+
+*   $P_1 = \{q_1, \dots, q_{14}\}$
+*   $P_2 = \{q_{15}, \dots, q_{28}\}$
+*   $P_3 = \{q_{29}, \dots, q_{42}\}$
+*   $P_4 = \{q_{43}, \dots, q_{56}\}$
+*   $P_5 = \{q_{57}, \dots, q_{70}\}$
+
+---
+
+#### 2. The New Extended Partition Structure ($\mathcal{P}_{7}$)
+When the configuration expands to $M = 7$ and $k = 10$, the layout partition updates to $\mathcal{P}_7 = \{P'_1, P'_2, P'_3, P'_4, P'_5, P'_6, P'_7\}$:
+
+*   $P'_1 = \{q_1, \dots, q_{10}\}$
+*   $P'_2 = \{q_{11}, \dots, q_{20}\}$
+*   $P'_3 = \{q_{21}, \dots, q_{30}\}$
+*   $P'_4 = \{q_{31}, \dots, q_{40}\}$
+*   $P'_5 = \{q_{41}, \dots, q_{50}\}$
+*   $P'_6 = \{q_{51}, \dots, q_{60}\}$
+*   $P'_7 = \{q_{61}, \dots, q_{70}\}$
+
+---
+
+#### 3. Subpanel Lineage Mapping
+To visualize exactly how the components of the original macro panels are split and redistributed to form the new configuration, the lineage maps as follows:
+
+| New Macro Panel ($P'_i$) | Composition from Original Macro Panels ($P_j$) | Subpanel Range |
+| :--- | :--- | :--- |
+| **$P'_1$** | Completely carved out of $P_1$ | $\{q_1, \dots, q_{10}\}$ |
+| **$P'_2$** | Composed of the remainder of $P_1$ (4 subpanels) + the first part of $P_2$ (6 subpanels) | $\{q_{11}, \dots, q_{14}\} \cup \{q_{15}, \dots, q_{20}\}$ |
+| **$P'_3$** | Composed of the remainder of $P_2$ (8 subpanels) + the first part of $P_3$ (2 subpanels) | $\{q_{21}, \dots, q_{28}\} \cup \{q_{29}, \dots, q_{30}\}$ |
+| **$P'_4$** | Completely carved out of the middle of $P_3$ | $\{q_{31}, \dots, q_{40}\}$ |
+| **$P'_5$** | Composed of the remainder of $P_3$ (2 subpanels) + the first part of $P_4$ (8 subpanels) | $\{q_{41}, \dots, q_{42}\} \cup \{q_{43}, \dots, q_{50}\}$ |
+| **$P'_6$** | Composed of the remainder of $P_4$ (6 subpanels) + the first part of $P_5$ (4 subpanels) | $\{q_{51}, \dots, q_{56}\} \cup \{q_{57}, \dots, q_{60}\}$ |
+| **$P'_7$** | Completely carved out of the remainder of $P_5$ | $\{q_{61}, \dots, q_{70}\}$ |
+
+#### The General Closed-Form Mapping Function
+
+To map any subpanel from an original configuration to its new destination, we define a function that explicitly takes both the **old macro panel index $i_{\text{old}}$** and the **local subpanel offset $l$** within that macro panel.
+
+##### 1. System Parameters and Variables
+Let:
+* $M_1, k_1$ be the parameters of the original configuration (e.g., $M_1=5, k_1=14$).
+* $M_2, k_2$ be the parameters of the new configuration (e.g., $M_2=7, k_2=10$).
+* $i_{\text{old}}$ be the original macro panel index, where $i_{\text{old}} \in \{1, 2, \dots, M_1\}$.
+* $l$ be the local index of the subpanel inside $P_{i_{\text{old}}}$, where $l \in \{1, 2, \dots, k_1\}$.
+
+##### 2. Mapping Function Formulation
+
+**Step 1: Reconstruct the static global subpanel index $j$**  
+Using the original partition notation, a subpanel's local coordinate $(i_{\text{old}}, l)$ map to its static global index $j$ via:
+$$j = (i_{\text{old}} - 1)k_1 + l$$
+
+**Step 2: Map the global index $j$ to the new macro panel index $i_{\text{new}}$**  
+In the new configuration, each macro panel contains exactly $k_2$ subpanels. To determine which block of size $k_2$ the index $j$ falls into, we divide $j$ by $k_2$ and apply the ceiling function $\lceil \dots \rceil$ to round up to the nearest integer:
+$$i_{\text{new}} = \left\lceil \frac{j}{k_2} \right\rceil$$
+
+---
+
+#### The General Mapping Function
+
+Combining both steps yields the definitive closed-form mapping function $\mathbf{f}(i_{\text{old}}, l)$:
+
+$$\mathbf{f}(i_{\text{old}}, l) = \left\lceil \frac{(i_{\text{old}} - 1)k_1 + l}{k_2} \right\rceil$$
+
+Where:
+* $\mathbf{f}(i_{\text{old}}, l) = i_{\text{new}}$ represents the destination macro panel index ($i_{\text{new}} \in \{1, 2, \dots, M_2\}$).
+* $\lceil x \rceil$ represents the ceiling function, which rounds $x$ up to the nearest integer.
+
+---
+
+#### Concrete Verification Examples ($M_1=5, k_1=14 \implies M_2=7, k_2=10$)
+
+*   **Boundary Case A: The absolute first subpanel**  
+    *   Input: $i_{\text{old}} = 1$, $l = 1$
+    *   Calculation: 
+        $$\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)14 + 1}{10} \right\rceil = \left\lceil \frac{1}{10} \right\rceil = 1$$
+    *   *Result:* Destination is **$P'_1$** (Correct).
+
+*   **Boundary Case B: An overlapping boundary subpanel**  
+    *   Input: $i_{\text{old}} = 1$, $l = 12$
+    *   Calculation:
+        $$\mathbf{f}(1, 12) = \left\lceil \frac{(1 - 1)14 + 12}{10} \right\rceil = \left\lceil \frac{12}{10} \right\rceil = \lceil 1.2 \rceil = 2$$
+    *   *Result:* Destination is **$P'_2$** (Correct, as global subpanel $q_{12}$ shifts into the second macro panel).
+
+*   **Boundary Case C: The absolute final subpanel**  
+    *   Input: $i_{\text{old}} = 5$, $l = 14$
+    *   Calculation:
+        $$\mathbf{f}(5, 14) = \left\lceil \frac{(5 - 1)14 + 14}{10} \right\rceil = \left\lceil \frac{56 + 14}{10} \right\rceil = \left\lceil \frac{70}{10} \right\rceil = 7$$
+    *   *Result:* Destination is **$P'_7$** (Correct).
+
+#### Verification for Configuration Shortening ($M_1=14 \implies M_2=10$)
+
+The general mapping formula works perfectly for shortening the layout structure. Because the formula tracks the invariant global sequence index $j$, it remains structurally valid whether the macro panel count $M$ expands or contracts.
+
+Using the primary parameters for this contraction:
+* Original setup: $M_1 = 14, k_1 = 5$
+* New shortened setup: $M_2 = 10, k_2 = 7$
+
+$$\mathbf{f}(i_{\text{old}}, l) = \left\lceil \frac{(i_{\text{old}} - 1)k_1 + l}{k_2} \right\rceil$$
+
+---
+
+#### Step-by-Step Test Cases
+
+*   **Test Case A: The absolute first subpanel ($q_1$)**  
+    *   Input: $i_{\text{old}} = 1, l = 1$
+    *   Calculation: 
+        $$\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)5 + 1}{7} \right\rceil = \left\lceil \frac{1}{7} \right\rceil = 1$$
+    *   *Result:* Destination is **$P'_1$** (Correct).
+
+*   **Test Case B: A mid-point boundary crossing subpanel ($q_8$)**  
+    *   Input: $i_{\text{old}} = 2, l = 3$ (The 3rd subpanel of the 2nd original macro panel)
+    *   Calculation:
+        $$\mathbf{f}(2, 3) = \left\lceil \frac{(2 - 1)5 + 3}{7} \right\rceil = \left\lceil \frac{8}{7} \right\rceil = \lceil 1.14 \rceil = 2$$
+    *   *Result:* Destination is **$P'_2$** (Correct, as global subpanel $q_8$ shifts into the second new macro panel).
+
+*   **Test Case C: The absolute final subpanel ($q_{70}$)**  
+    *   Input: $i_{\text{old}} = 14, l = 5$
+    *   Calculation:
+        $$\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10$$
+    *   *Result:* Destination is **$P'_{10}$** (Correct).

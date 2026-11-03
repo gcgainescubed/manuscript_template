@@ -1,0 +1,41 @@
+::: {.hidden}
+
+<!-- Drafting helpers. Remove before final submission.-->
+\newcommand{\todo}[1]{\textcolor{blue}{[TODO: #1]}}
+<!-- Material that can be lifted/adapted from the NISAR DART proposal.-->
+\newcommand{\reuse}[1]{\textcolor{teal}{[Reuse: #1]}}
+<!-- Points that respond to the NISAR DART panel review (25-NISAR25_2-0049).-->
+\newcommand{\rev}[1]{\textcolor{red}{[Prior review: #1]}}
+<!-- Maps content to A.13 Sec. 3.1 required items / Sec. 3.3 criteria.-->
+\newcommand{\req}[1]{\textcolor{violet}{[A.13 req: #1]}}
+
+\newcommand{\foo}{E=mc^{2}}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\newcommand{\bs}{\boldsymbol{s}}
+\newcommand{\bsnaught}{\boldsymbol{s_0}}
+\newcommand{\bnnaught}{\boldsymbol{n_0}}
+
+\newcommand{\by}{\boldsymbol{y}}
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\bX}{\boldsymbol{X}}
+\newcommand{\bw}{\boldsymbol{w}}
+\newcommand{\bbeta}{\boldsymbol{\beta}}
+\newcommand{\ba}{\boldsymbol{a}}
+\newcommand{\bb}{\boldsymbol{b}}
+\newcommand{\bc}{\boldsymbol{c}}
+\newcommand{\bd}{\boldsymbol{d}}
+\newcommand{\bgamma}{\boldsymbol{\gamma}}
+\newcommand{\bargamma}{\bar{\bgamma}}
+\newcommand{\bSigma}{\boldsymbol{\Sigma}}
+\newcommand{\bmu}{\boldsymbol{\mu}}
+\newcommand{\bm}{\boldsymbol{m}}
+\newcommand{\ones}{\boldsymbol{1}}
+\newcommand{\zeros}{\boldsymbol{0}}
+\newcommand{\bepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\btheta}{\boldsymbol{\theta}}
+\newcommand{\data}{\mathcal{D}}
+
+:::

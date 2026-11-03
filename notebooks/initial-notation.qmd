@@ -1,0 +1,88 @@
+<!-- ---
+title: "initial-notation" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+### Initial Notation
+
+#### Sample locations
+
+Let 
+
+$$\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}$$
+be the bivariate spatial coordinate vector for the $i^{th}$ FIA sample location in
+a focal US state, $i = 1,\ldots,n$, where is $n$ is the number of all sample locations in 
+the focal state, and $x_1$ and $x_2$ are measures of longitude and latitude respectively.
+
+#### Micropanels
+Let 
+
+$$\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}$$
+
+be a set of "micropanels" $q_r$ that partition the $n$ sample locations into approximately 
+equivalently-sized subsets, such that each $q_r \in \mathcal{Q}$ achieves approximate spatial 
+dispersion across the focal state of each of the $s_i$ it contains. The $q_r$ 
+defined here are meant to correspond to collections of sample locations referred
+to in the FIA Program as "Panel 70's", which imply $R = 70$, or "Panel 140's",
+which imply $R = 140$. 
+
+In CONUS states where the FIA Program is administered by the Pacific Northwest Research Station,
+$R = 140$ in present day inventory operations. In the rest of the CONUS states,
+$R = 70$. Though this notation is intended to be flexible enough 
+to accommodate a range of possible values of $R$, in this study we don't consider 
+PNWRS states, and so we'll only consider $R = 70$ for practical purposes.
+
+#### Macropanels
+The $R$ micropanels are further partitioned into the set of $M$ macropanels
+
+$$\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}$$
+for any value of $M$ such that $M \vert R$; that is, $R$ is evenly divisible by $M$,
+and so the macropanels $P_m \in \mathcal{P}$ form perfectly evenly sized partitions 
+of the micropanels $q_r \in \mathcal{Q}$.
+
+In the context of FIA, each $P_m \in \mathcal{P}$ can be thought of as an "annual 
+panel", meaning that each $s_i \subset q_r \subset P_m$ is scheduled to be visited
+by a field crew in year in the $t^{th}$ year in a chronological series of years 
+indexed in the set 
+
+$$\mathcal{T} = \{t: t = 1,\ldots,T\}.$$
+where $T = M$. Therefore, $\mathcal{P}$ can be thought of as in inventory cycle,
+of cycle length $M$, composed of the annual panels $P_m \in \mathcal{P}$, which 
+themselves are evenly subdivided into the micropanels $q_r \in \mathcal{Q}$.
+
+$M = T$ here is intended to correspond to the common state-level inventory cycle lengths
+prescribed in the FIA program, and so in this study $M \in \{5, 7, 10, 14\}$, and, 
+because the micropanels are evenly distributed across the annual panels, the number 
+of micropanels per macropanel, denoted as $k$, is strictly determined by the choice of $M$:
+
+$$k = \frac{R}{M}.$$
+
+Specifically,
+each individual macro panel $P_m$ (for $m = 1, 2, \dots, M$) is the collection of 
+micropanels defined by
+
+$$P_m = \{ q_r \in \mathcal{Q} : (m - 1) k + 1 \leq r \leq m k \}$$
+
+Because the subpanels are evenly distributed, the number of subpanels grouped into each macro panel, denoted as $k$, is strictly determined by the choice of $M$:
+
+$$k = \frac{70}{M}$$
+
+#### Panel Lookup Function
+To map any given subpanel global index $j$ directly to its corresponding macro panel index $i$ under configuration $M$, we define the lookup function using the ceiling function $\lceil \cdot \rceil$:
+
+$$f(j) = \left\lceil \frac{j}{k} \right\rceil = \left\lceil \frac{j \cdot M}{70} \right\rceil$$
+
+Where:
+
+* $j$ is the global index of the subpanel ($1 \leq j \leq 70$).
+* $M$ is the number of active macro panels ($M \in \{5, 7, 10, 14\}$).
+* $f(j) = i$ outputs the macro panel index ($1 \leq i \leq M$).
+
+##### Boundary Mappings for Active Configurations
+
+| Config ($M$) | Subpanels/Panel ($k$) | Subpanel Index ($j$) | Formula Evaluation | Panel Index ($i$) |
+|:---:|:---:|:---:|:---:|:---:|
+| $M = 5$  | $k = 14$ | $j = 1, 14, 15, 70$ | $\lceil 1/14 \rceil, \lceil 14/14 \rceil, \lceil 15/14 \rceil, \lceil 70/14 \rceil$ | $1, 1, 2, 5$ |
+| $M = 7$  | $k = 10$ | $j = 1, 10, 11, 70$ | $\lceil 1/10 \rceil, \lceil 10/10 \rceil, \lceil 11/10 \rceil, \lceil 70/10 \rceil$ | $1, 1, 2, 7$ |
+| $M = 10$ | $k = 7$  | $j = 1, 7, 8, 70$   | $\lceil 1/7 \rceil, \lceil 7/7 \rceil, \lceil 8/7 \rceil, \lceil 70/7 \rceil$   | $1, 1, 2, 10$ |
+| $M = 14$ | $k = 5$  | $j = 1, 5, 6, 70$   | $\lceil 1/5 \rceil, \lceil 5/5 \rceil, \lceil 6/5 \rceil, \lceil 70/5 \rceil$   | $1, 1, 2, 14$ |
+
+: Boundary Mappings for Active Configurations {#tbl-boundary}
