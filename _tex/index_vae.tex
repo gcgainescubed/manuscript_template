@@ -157,7 +157,6 @@
 \makeatother
 \hypersetup{
   pdftitle={Assessing the influence of variable annual sampling effort on official national forest inventory statistics},
-  pdfauthor={George C. Gaines III; Bryce Frank; KaDonna Randolph; Jim Westfall},
   pdfkeywords={\xmpquote{Forest Inventory and Analysis, national forest
 inventory, sample design}},
   colorlinks=true,
@@ -323,6 +322,175 @@ Therefore, our research objectives in this study are to:
 \end{enumerate}
 
 \section{Data \& Methods}\label{sec-data-methods}
+
+\subsection{Study Area}\label{study-area}
+
+3 states\ldots{}
+
+\subsection{FIA Data}\label{fia-data}
+
+Data from those 3 states\ldots{}
+
+\subsection{Initial Notation}\label{initial-notation}
+
+\subsubsection{Sample locations}\label{sample-locations}
+
+Let
+
+\[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\] be the
+bivariate spatial coordinate vector for the \(i^{th}\) FIA sample
+location in a focal US state, \(i = 1,\ldots,n\), where \(n\) is the
+number of all sample locations in the focal state, and \(x_1\) and
+\(x_2\) are measures of longitude and latitude respectively.
+
+\subsubsection{Micropanels}\label{micropanels}
+
+Let
+
+\[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}\]
+
+be a set of ``micropanels'' \(q_r\) that partition the \(n\) sample
+locations into approximately equivalently-sized subsets, such that each
+\(q_r \in \mathcal{Q}\) achieves approximate spatial dispersion across
+the focal state of each of the \(s_i\) it contains. The \(q_r\) defined
+here are meant to correspond to collections of sample locations referred
+to in the FIA Program as ``Panel 70's'', which imply \(R = 70\), or
+``Panel 140's'', which imply \(R = 140\).
+
+In CONUS states where the FIA Program is administered by the Pacific
+Northwest Research Station, \(R = 140\) in present day inventory
+operations. In the rest of the CONUS states, \(R = 70\). Though this
+notation is intended to be flexible enough to accommodate a range of
+possible values of \(R\), in this study we don't consider PNWRS states,
+and so we'll only consider \(R = 70\) for practical purposes.
+
+\subsubsection{Macropanels}\label{macropanels}
+
+The \(R\) micropanels can be further aggregated into the set of \(M\)
+macropanels
+
+\[\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}\] for any value of \(M\) such
+that \(M \vert R\). That is, \(R\) is evenly divisible by \(M\), and so
+the macropanels \(P_m \in \mathcal{P}\) are perfectly evenly partitioned
+by the micropanels \(q_r \in \mathcal{Q}\).
+
+In the context of FIA, each \(P_m \in \mathcal{P}\) can be thought of as
+an ``annual panel'', meaning that each \(s_i \subset q_r \subset P_m\)
+is scheduled to be visited by a field crew in year in the \(t^{th}\)
+year in a chronological series of years indexed in the set
+
+\[\mathcal{T} = \{t: t = 1,\ldots,T\}\] where \(T = M\). Therefore,
+\(\mathcal{P}\) can be thought of as in inventory cycle, of cycle length
+\(M\), composed of the annual panels \(P_m \in \mathcal{P}\), which
+themselves are evenly subdivided into the micropanels
+\(q_r \in \mathcal{Q}\).
+
+\(M = T\) here is intended to correspond to the common state-level
+inventory cycle lengths prescribed in the FIA program, and so in this
+study \(M \in \{5, 7, 10, 14\}\). Because the micropanels are initially
+evenly distributed across the annual panels, the number of micropanels
+per macropanel can be denoted by \(k\) as
+
+\[k = \frac{R}{M}\]
+
+A general expression to recover the identities of the micropanels
+contained in any macropanel \(P_m\) is given by
+
+\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\]
+
+\subsubsection{Macropanel Lookup
+Function}\label{macropanel-lookup-function}
+
+Conversely, to determine the identity of the macropanel to which
+micropanel \(r\) belongs, we can define a macropanel lookup function
+
+\[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil\]
+where the ceiling function \(\lceil x \rceil\) returns the smallest
+integer not less than \(x\), and \(f(r) = m\) outputs the macropanel
+index (\(1 \leq m \leq M\)).
+
+\subsection{VAE Scenarios}\label{vae-scenarios}
+
+We will now extend this notation to describe in general terms three VAE
+scenarios achieved by either i) reassigning micropanels to different
+macropanels, or ii) dropping fixed numbers of micropanels per macropanel
+over the course of an inventory cycle.
+
+\subsubsection{Slow/Fast Start}\label{slowfast-start}
+
+\paragraph{Modified Partition Notation (Shifted
+Configurations)}\label{modified-partition-notation-shifted-configurations}
+
+For an uneven or shifted layout where subpanels are structurally
+rearranged, the uniform mapping breaks down. To formalize this, we
+introduce an explicit boundary sequence vector \(\mathbf{B}\) containing
+\(M+1\) elements:
+
+\[\mathbf{B} = (b_0, b_1, \dots, b_M)\]
+
+For the specific modified configuration where \(M = 5\), the boundaries
+are explicitly assigned as:
+
+\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]
+
+Each individual macro panel \(P_i\) (for \(i = 1, 2, \dots, M\)) is then
+constructed by pulling indices between adjacent elements of the boundary
+sequence:
+
+\[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}\]
+
+\paragraph{Explicit Macro Panel
+Contents}\label{explicit-macro-panel-contents}
+
+\begin{itemize}
+\tightlist
+\item
+  \(P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}\)
+\item
+  \(P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}\)
+\item
+  \(P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}\)
+\item
+  \(P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}\)
+\item
+  \(P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}\)
+\end{itemize}
+
+\paragraph{Modified Panel Lookup Function
+Alternatives}\label{modified-panel-lookup-function-alternatives}
+
+Because the subpanel distributions are no longer uniform, the scalar
+ceiling function cannot be used. Below are two equivalent mathematical
+approaches to express the lookup function \(f(j)\) for the shifted
+configuration.
+
+\paragraph{Approach 1: The Summation / Indicator Function
+Approach}\label{approach-1-the-summation-indicator-function-approach}
+
+We can define the lookup function \(f(j)\) by counting how many
+boundaries the subpanel index \(j\) has successfully crossed. Using the
+Iverson bracket notation (where the brackets evaluate to \(1\) if the
+enclosed condition is true, and \(0\) if false), the macro panel index
+can be calculated directly by checking membership across all intervals:
+
+\[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]\]
+
+Alternatively, an even more concise formulation counts how many upper
+bounds \(b_i\) from our sequence
+\(\mathbf{B} = (0, 10, 20, 38, 56, 70)\) are strictly less than \(j\),
+then offsets the result by 1:
+
+\[f(j) = 1 + \sum_{i=1}^{M-1} [j > b_i]\]
+
+\paragraph{Example Evaluation}\label{example-evaluation}
+
+To locate subpanel \(q_{25}\) using the upper bounds
+\(b_1=10, b_2=20, b_3=38, b_4=56\):
+
+\[f(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]\]
+\[f(25) = 1 + 1 + 1 + 0 + 0 = 3\]
+
+This correctly maps subpanel \(q_{25}\) to Macro Panel \(P_3\).
 
 \section{Discussion}\label{discussion}
 

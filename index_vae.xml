@@ -132,11 +132,7 @@ Station</institution>
 <corresp id="cor-gg">george.gaines@usda.gov</corresp>
 </author-notes>
 
-<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2026-10-26">
-<year>2026</year>
-<month>10</month>
-<day>26</day>
-</pub-date>
+
 
 
 
@@ -281,6 +277,355 @@ work.</funding-statement>
 </sec>
 <sec id="sec-data-methods">
   <title>2 Data &amp; Methods</title>
+  <sec id="study-area">
+    <title>2.1 Study Area</title>
+    <p>3 states…</p>
+  </sec>
+  <sec id="fia-data">
+    <title>2.2 FIA Data</title>
+    <p>Data from those 3 states…</p>
+  </sec>
+  <sec id="initial-notation">
+    <title>2.3 Initial Notation</title>
+    <sec id="sample-locations">
+      <title>2.3.1 Sample locations</title>
+      <p>Let</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">[</mml:mo><mml:mtable><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mtd></mml:mtr></mml:mtable><mml:mo stretchy="true" form="postfix">]</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+      be the bivariate spatial coordinate vector for the
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[i^{th}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>i</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
+      FIA sample location in a focal US state,
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[i = 1,\ldots,n]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+      where <inline-formula><alternatives>
+      <tex-math><![CDATA[n]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
+      is the number of all sample locations in the focal state, and
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[x_1]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+      and <inline-formula><alternatives>
+      <tex-math><![CDATA[x_2]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+      are measures of longitude and latitude respectively.</p>
+    </sec>
+    <sec id="micropanels">
+      <title>2.3.2 Micropanels</title>
+      <p>Let</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+      <p>be a set of “micropanels” <inline-formula><alternatives>
+      <tex-math><![CDATA[q_r]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+      that partition the <inline-formula><alternatives>
+      <tex-math><![CDATA[n]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
+      sample locations into approximately equivalently-sized subsets,
+      such that each <inline-formula><alternatives>
+      <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      achieves approximate spatial dispersion across the focal state of
+      each of the <inline-formula><alternatives>
+      <tex-math><![CDATA[s_i]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>s</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+      it contains. The <inline-formula><alternatives>
+      <tex-math><![CDATA[q_r]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+      defined here are meant to correspond to collections of sample
+      locations referred to in the FIA Program as “Panel 70’s”, which
+      imply <inline-formula><alternatives>
+      <tex-math><![CDATA[R = 70]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+      or “Panel 140’s”, which imply <inline-formula><alternatives>
+      <tex-math><![CDATA[R = 140]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+      <p>In CONUS states where the FIA Program is administered by the
+      Pacific Northwest Research Station, <inline-formula><alternatives>
+      <tex-math><![CDATA[R = 140]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+      in present day inventory operations. In the rest of the CONUS
+      states, <inline-formula><alternatives>
+      <tex-math><![CDATA[R = 70]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.
+      Though this notation is intended to be flexible enough to
+      accommodate a range of possible values of
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[R]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>,
+      in this study we don’t consider PNWRS states, and so we’ll only
+      consider <inline-formula><alternatives>
+      <tex-math><![CDATA[R = 70]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+      for practical purposes.</p>
+    </sec>
+    <sec id="macropanels">
+      <title>2.3.3 Macropanels</title>
+      <p>The <inline-formula><alternatives>
+      <tex-math><![CDATA[R]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+      micropanels can be further aggregated into the set of
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+      macropanels</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒫</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+      for any value of <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+      such that <inline-formula><alternatives>
+      <tex-math><![CDATA[M \vert R]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">|</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.
+      That is, <inline-formula><alternatives>
+      <tex-math><![CDATA[R]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+      is evenly divisible by <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+      and so the macropanels <inline-formula><alternatives>
+      <tex-math><![CDATA[P_m \in \mathcal{P}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒫</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      are perfectly evenly partitioned by the micropanels
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+      <p>In the context of FIA, each <inline-formula><alternatives>
+      <tex-math><![CDATA[P_m \in \mathcal{P}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒫</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      can be thought of as an “annual panel”, meaning that each
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[s_i \subset q_r \subset P_m]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+      is scheduled to be visited by a field crew in year in the
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[t^{th}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>t</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
+      year in a chronological series of years indexed in the set</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{T} = \{t: t = 1,\ldots,T\}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒯</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mi>t</mml:mi><mml:mo>:</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>T</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+      where <inline-formula><alternatives>
+      <tex-math><![CDATA[T = M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>T</mml:mi><mml:mo>=</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.
+      Therefore, <inline-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{P}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi mathvariant="script">𝒫</mml:mi></mml:math></alternatives></inline-formula>
+      can be thought of as in inventory cycle, of cycle length
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+      composed of the annual panels <inline-formula><alternatives>
+      <tex-math><![CDATA[P_m \in \mathcal{P}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒫</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+      which themselves are evenly subdivided into the micropanels
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+      <p><inline-formula><alternatives>
+      <tex-math><![CDATA[M = T]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      here is intended to correspond to the common state-level inventory
+      cycle lengths prescribed in the FIA program, and so in this study
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[M \in \{5, 7, 10, 14\}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.
+      Because the micropanels are initially evenly distributed across
+      the annual panels, the number of micropanels per macropanel can be
+      denoted by <inline-formula><alternatives>
+      <tex-math><![CDATA[k]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+      as</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[k = \frac{R}{M}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mi>R</mml:mi><mml:mi>M</mml:mi></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula></p>
+      <p>A general expression to recover the identities of the
+      micropanels contained in any macropanel
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[P_m]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+      is given by</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mspace width="0.222em"></mml:mspace><mml:mo>+</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    </sec>
+    <sec id="macropanel-lookup-function">
+      <title>2.3.4 Macropanel Lookup Function</title>
+      <p>Conversely, to determine the identity of the macropanel to
+      which micropanel <inline-formula><alternatives>
+      <tex-math><![CDATA[r]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+      belongs, we can define a macropanel lookup function</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>r</mml:mi><mml:mi>k</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mi>r</mml:mi><mml:mo>⋅</mml:mo><mml:mi>M</mml:mi></mml:mrow><mml:mi>R</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+      where the ceiling function <inline-formula><alternatives>
+      <tex-math><![CDATA[\lceil x \rceil]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+      returns the smallest integer not less than
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[x]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>,
+      and <inline-formula><alternatives>
+      <tex-math><![CDATA[f(r) = m]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi>m</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      outputs the macropanel index (<inline-formula><alternatives>
+      <tex-math><![CDATA[1 \leq m \leq M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mo>≤</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>).</p>
+    </sec>
+  </sec>
+  <sec id="vae-scenarios">
+    <title>2.4 VAE Scenarios</title>
+    <p>We will now extend this notation to describe in general terms
+    three VAE scenarios achieved by either i) reassigning micropanels to
+    different macropanels, or ii) dropping fixed numbers of micropanels
+    per macropanel over the course of an inventory cycle.</p>
+    <sec id="slowfast-start">
+      <title>2.4.1 Slow/Fast Start</title>
+      <sec id="modified-partition-notation-shifted-configurations">
+        <title>2.4.1.1 Modified Partition Notation (Shifted
+        Configurations)</title>
+        <p>For an uneven or shifted layout where subpanels are
+        structurally rearranged, the uniform mapping breaks down. To
+        formalize this, we introduce an explicit boundary sequence
+        vector <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathbf{B}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi mathvariant="bold-italic">𝑩</mml:mi></mml:math></alternatives></inline-formula>
+        containing <inline-formula><alternatives>
+        <tex-math><![CDATA[M+1]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+        elements:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[\mathbf{B} = (b_0, b_1, \dots, b_M)]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>For the specific modified configuration where
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[M = 5]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+        the boundaries are explicitly assigned as:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[\mathbf{B} = (0, 10, 20, 38, 56, 70)]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>Each individual macro panel <inline-formula><alternatives>
+        <tex-math><![CDATA[P_i]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+        (for <inline-formula><alternatives>
+        <tex-math><![CDATA[i = 1, 2, \dots, M]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+        is then constructed by pulling indices between adjacent elements
+        of the boundary sequence:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+      </sec>
+      <sec id="explicit-macro-panel-contents">
+        <title>2.4.1.2 Explicit Macro Panel Contents</title>
+        <list list-type="bullet">
+          <list-item>
+            <p><inline-formula><alternatives>
+            <tex-math><![CDATA[P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>10</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p><inline-formula><alternatives>
+            <tex-math><![CDATA[P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>11</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>20</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p><inline-formula><alternatives>
+            <tex-math><![CDATA[P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>21</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>38</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p><inline-formula><alternatives>
+            <tex-math><![CDATA[P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>39</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>56</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p><inline-formula><alternatives>
+            <tex-math><![CDATA[P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>57</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+        </list>
+      </sec>
+      <sec id="modified-panel-lookup-function-alternatives">
+        <title>2.4.1.3 Modified Panel Lookup Function
+        Alternatives</title>
+        <p>Because the subpanel distributions are no longer uniform, the
+        scalar ceiling function cannot be used. Below are two equivalent
+        mathematical approaches to express the lookup function
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[f(j)]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+        for the shifted configuration.</p>
+      </sec>
+      <sec id="approach-1-the-summation-indicator-function-approach">
+        <title>2.4.1.4 Approach 1: The Summation / Indicator Function
+        Approach</title>
+        <p>We can define the lookup function
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[f(j)]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+        by counting how many boundaries the subpanel index
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[j]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>
+        has successfully crossed. Using the Iverson bracket notation
+        (where the brackets evaluate to <inline-formula><alternatives>
+        <tex-math><![CDATA[1]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mn>1</mml:mn></mml:math></alternatives></inline-formula>
+        if the enclosed condition is true, and
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[0]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mn>0</mml:mn></mml:math></alternatives></inline-formula>
+        if false), the macro panel index can be calculated directly by
+        checking membership across all intervals:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>M</mml:mi></mml:munderover><mml:mi>i</mml:mi><mml:mo>⋅</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>Alternatively, an even more concise formulation counts how
+        many upper bounds <inline-formula><alternatives>
+        <tex-math><![CDATA[b_i]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+        from our sequence <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathbf{B} = (0, 10, 20, 38, 56, 70)]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+        are strictly less than <inline-formula><alternatives>
+        <tex-math><![CDATA[j]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>,
+        then offsets the result by 1:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[f(j) = 1 + \sum_{i=1}^{M-1} [j > b_i]]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>M</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mi>j</mml:mi><mml:mo>&gt;</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+      </sec>
+      <sec id="example-evaluation">
+        <title>2.4.1.5 Example Evaluation</title>
+        <p>To locate subpanel <inline-formula><alternatives>
+        <tex-math><![CDATA[q_{25}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>25</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+        using the upper bounds <inline-formula><alternatives>
+        <tex-math><![CDATA[b_1=10, b_2=20, b_3=38, b_4=56]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>b</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>56</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[f(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>25</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>10</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>20</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>38</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>56</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+        <disp-formula><alternatives>
+        <tex-math><![CDATA[f(25) = 1 + 1 + 1 + 0 + 0 = 3]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>25</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>=</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>This correctly maps subpanel <inline-formula><alternatives>
+        <tex-math><![CDATA[q_{25}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>25</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+        to Macro Panel <inline-formula><alternatives>
+        <tex-math><![CDATA[P_3]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:math></alternatives></inline-formula>.</p>
+      </sec>
+    </sec>
+  </sec>
 </sec>
 <sec id="discussion">
   <title>3 Discussion</title>
@@ -431,64 +776,201 @@ work.</funding-statement>
 
 <sub-article article-type="notebook" id="nb-4-nb-1">
 <front-stub>
-<title-group>
-<article-title>Explore Earthquakes</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author">
-<name>
-<surname>Wickham</surname>
-<given-names>Charlotte</given-names>
-</name>
-<string-name>Charlotte Wickham</string-name>
-
-</contrib>
-</contrib-group>
 </front-stub>
 
 <body>
-<sec specific-use="notebook-content">
-<code language="r script">library(tidyverse)
-</code>
-<preformat>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.0     ✔ tibble    3.2.1
-✔ lubridate 1.9.3     ✔ tidyr     1.3.1
-✔ purrr     1.0.2     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</preformat>
-</sec>
-<p>Read a clean version of data:</p>
-<sec specific-use="notebook-content">
-<code language="r script">la_palma &lt;- read_csv(&quot;la-palma.csv&quot;)
-</code>
-<preformat>Rows: 11347 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: &quot;,&quot;
-dbl  (4): Longitude, Latitude, Depth(km), Magnitude
-dttm (1): DateTime
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</preformat>
-</sec>
-<p>Create spatial plot:</p>
-<sec id="cell-fig-spatial-plot-nb-1" specific-use="notebook-content">
-<code language="r script">#|   against longitude.&quot;
-la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()
-</code>
-<fig id="fig-spatial-plot-nb-1">
-  <caption><p>Locations of earthquakes on La Palma since
-  2017</p></caption>
-  <graphic mimetype="image" mime-subtype="png" xlink:href="explore-earthquakes_files/figure-jats/fig-spatial-plot-1.png" />
-</fig>
+<sec id="initial-notation-nb-1">
+  <title>Initial Notation</title>
+  <sec id="sample-locations-nb-1">
+    <title>Sample locations</title>
+    <p>Let</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">[</mml:mo><mml:mtable><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mtd></mml:mtr></mml:mtable><mml:mo stretchy="true" form="postfix">]</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+    be the bivariate spatial coordinate vector for the
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[i^{th}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>i</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
+    FIA sample location in a focal US state,
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[i = 1,\ldots,n]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    where <inline-formula><alternatives>
+    <tex-math><![CDATA[n]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
+    is the number of all sample locations in the focal state, and
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[x_1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[x_2]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    are measures of longitude and latitude respectively.</p>
+  </sec>
+  <sec id="micropanels-nb-1">
+    <title>Micropanels</title>
+    <p>Let</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>be a set of “micropanels” <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    that partition the <inline-formula><alternatives>
+    <tex-math><![CDATA[n]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
+    sample locations into approximately equivalently-sized subsets, such
+    that each <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    achieves approximate spatial dispersion across the focal state of
+    each of the <inline-formula><alternatives>
+    <tex-math><![CDATA[s_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>s</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    it contains. The <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    defined here are meant to correspond to collections of sample
+    locations referred to in the FIA Program as “Panel 70’s”, which
+    imply <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    or “Panel 140’s”, which imply <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 140]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+    <p>In CONUS states where the FIA Program is administered by the
+    Pacific Northwest Research Station, <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 140]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    in present day inventory operations. In the rest of the CONUS
+    states, <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.
+    Though this notation is intended to be flexible enough to
+    accommodate a range of possible values of
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>,
+    in this study we don’t consider PNWRS states, and so we’ll only
+    consider <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    for practical purposes.</p>
+  </sec>
+  <sec id="macropanels-nb-1">
+    <title>Macropanels</title>
+    <p>The <inline-formula><alternatives>
+    <tex-math><![CDATA[R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+    micropanels can be further aggregated into the set of
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    macropanels</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒫</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+    for any value of <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    such that <inline-formula><alternatives>
+    <tex-math><![CDATA[M \vert R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">|</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.
+    That is, <inline-formula><alternatives>
+    <tex-math><![CDATA[R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+    is evenly divisible by <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+    and so the macropanels <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m \in \mathcal{P}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒫</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    are perfectly evenly partitioned by the micropanels
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+    <p>In the context of FIA, each <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m \in \mathcal{P}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒫</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    can be thought of as an “annual panel”, meaning that each
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[s_i \subset q_r \subset P_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>s</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    is scheduled to be visited by a field crew in year in the
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[t^{th}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>t</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
+    year in a chronological series of years indexed in the set</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{T} = \{t: t = 1,\ldots,T\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒯</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mi>t</mml:mi><mml:mo>:</mml:mo><mml:mi>t</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>T</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+    where <inline-formula><alternatives>
+    <tex-math><![CDATA[T = M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>T</mml:mi><mml:mo>=</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.
+    Therefore, <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi mathvariant="script">𝒫</mml:mi></mml:math></alternatives></inline-formula>
+    can be thought of as in inventory cycle, of cycle length
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+    composed of the annual panels <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m \in \mathcal{P}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒫</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    which themselves are evenly subdivided into the micropanels
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+    <p><inline-formula><alternatives>
+    <tex-math><![CDATA[M = T]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mi>T</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    here is intended to correspond to the common state-level inventory
+    cycle lengths prescribed in the FIA program, and so in this study
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M \in \{5, 7, 10, 14\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.
+    Because the micropanels are initially evenly distributed across the
+    annual panels, the number of micropanels per macropanel can be
+    denoted by <inline-formula><alternatives>
+    <tex-math><![CDATA[k]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+    as</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[k = \frac{R}{M}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mi>R</mml:mi><mml:mi>M</mml:mi></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>A general expression to recover the identities of the micropanels
+    contained in any macropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    is given by</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mspace width="0.222em"></mml:mspace><mml:mo>+</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+  </sec>
+  <sec id="macropanel-lookup-function-nb-1">
+    <title>Macropanel Lookup Function</title>
+    <p>Conversely, to determine the identity of the macropanel to which
+    micropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+    belongs, we can define a macropanel lookup function</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>r</mml:mi><mml:mi>k</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mi>r</mml:mi><mml:mo>⋅</mml:mo><mml:mi>M</mml:mi></mml:mrow><mml:mi>R</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+    where the ceiling function <inline-formula><alternatives>
+    <tex-math><![CDATA[\lceil x \rceil]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    returns the smallest integer not less than
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[x]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>,
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[f(r) = m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi>m</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    outputs the macropanel index (<inline-formula><alternatives>
+    <tex-math><![CDATA[1 \leq m \leq M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mo>≤</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>).</p>
+  </sec>
 </sec>
 </body>
 
@@ -501,220 +983,569 @@ la_palma |&gt;
 </sub-article>
 <sub-article article-type="notebook" id="nb-8-nb-2">
 <front-stub>
-<title-group>
-<article-title>Assessing the influence of variable annual sampling
-effort on official forest inventory statistics</article-title>
-</title-group>
-<contrib-group>
-<contrib contrib-type="author" corresp="yes">
-<contrib-id contrib-id-type="orcid">0000-0002-4341-6802</contrib-id>
-<name>
-<surname>III</surname>
-<given-names>George C. Gaines</given-names>
-</name>
-<string-name>George C. Gaines III</string-name>
-
-<email>george.gaines@usda.gov</email>
-<role vocab="https://credit.niso.org" vocab-term="investigation" vocab-term-identifier="https://credit.niso.org/contributor-roles/investigation/">Investigation</role>
-<role vocab="https://credit.niso.org" vocab-term="project
-administration" vocab-term-identifier="https://credit.niso.org/contributor-roles/project-administration/">Project
-administration</role>
-<role vocab="https://credit.niso.org" vocab-term="visualization" vocab-term-identifier="https://credit.niso.org/contributor-roles/visualization/">Visualization</role>
-<xref ref-type="aff" rid="aff-1-nb-2">a</xref>
-<xref ref-type="corresp" rid="cor-1-nb-2">&#x002A;</xref>
-</contrib>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
-<name>
-<surname>Frank</surname>
-<given-names>Bryce</given-names>
-</name>
-<string-name>Bryce Frank</string-name>
-
-</contrib>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
-<name>
-<surname>Randolph</surname>
-<given-names>KaDonna</given-names>
-</name>
-<string-name>KaDonna Randolph</string-name>
-
-</contrib>
-<contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">0000-0000-0000-0000</contrib-id>
-<name>
-<surname>Westfall</surname>
-<given-names>Jim</given-names>
-</name>
-<string-name>Jim Westfall</string-name>
-
-<xref ref-type="aff" rid="aff-1-nb-2">a</xref>
-</contrib>
-</contrib-group>
-<aff id="aff-1-nb-2">
-<institution-wrap>
-<institution>Curvenote</institution>
-</institution-wrap>
-
-
-
-
-
-
-
-</aff>
-<author-notes>
-<corresp id="cor-1-nb-2">george.gaines@usda.gov</corresp>
-</author-notes>
-<abstract>
-<p>In this study we…</p>
-</abstract>
 </front-stub>
 
 <body>
-<sec id="introduction-nb-2">
-  <title>Introduction</title>
-  <sec specific-use="notebook-content">
-  <code language="r script">eruptions &lt;- c(1492, 1585, 1646, 1677, 1712, 1949, 1971, 2021)
-n_eruptions &lt;- length(eruptions)
-  </code>
+<sec id="extended-and-shortened-cycle-lengths-nb-2">
+  <title>Extended and Shortened Cycle Lengths</title>
+  <sec id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7-nb-2">
+    <title>Subpanel Redistribution: From <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_{5}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    to <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_{7}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>7</mml:mn></mml:msub></mml:math></alternatives></inline-formula></title>
+    <p>The 70 subpanels are reallocated from 5 blocks of 14 into 7
+    blocks of 10. This redistribution preserves a perfectly even
+    contiguous partitioning across the entire universe
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[Q]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>Q</mml:mi></mml:math></alternatives></inline-formula>.</p>
   </sec>
-  <sec id="cell-fig-timeline-nb-2" specific-use="notebook-content">
-  <code language="r script">par(mar = c(3, 1, 1, 1) + 0.1)
-plot(eruptions, rep(0, n_eruptions), 
-  pch = &quot;|&quot;, axes = FALSE)
-axis(1)
-box()
-  </code>
-  <fig id="fig-timeline-nb-2">
-    <caption><p>Timeline of recent earthquakes on La Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_original_files/figure-jats/fig-timeline-1.png" />
-  </fig>
+  <sec id="the-original-partition-structure-mathcalp_5-nb-2">
+    <title>1. The Original Partition Structure
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_{5}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</title>
+    <p>When <inline-formula><alternatives>
+    <tex-math><![CDATA[M = 5]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[k = 14]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    the layout partition <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_5 = \{P_1, P_2, P_3, P_4, P_5\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    groups the global indices contiguously as follows:</p>
+    <list list-type="bullet">
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_1 = \{q_1, \dots, q_{14}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_2 = \{q_{15}, \dots, q_{28}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>15</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>28</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_3 = \{q_{29}, \dots, q_{42}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>29</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>42</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_4 = \{q_{43}, \dots, q_{56}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>43</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>56</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_5 = \{q_{57}, \dots, q_{70}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>57</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+    </list>
   </sec>
-  <sec specific-use="notebook-content">
-  <code language="r script">avg_years_between_eruptions &lt;- mean(diff(eruptions[-n_eruptions]))
-avg_years_between_eruptions
-  </code>
-  <preformat>[1] 79.83333</preformat>
+  <sec id="the-new-extended-partition-structure-mathcalp_7-nb-2">
+    <title>2. The New Extended Partition Structure
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_{7}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>7</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</title>
+    <p>When the configuration expands to <inline-formula><alternatives>
+    <tex-math><![CDATA[M = 7]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[k = 10]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    the layout partition updates to <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_7 = \{P'_1, P'_2, P'_3, P'_4, P'_5, P'_6, P'_7\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>7</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>3</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>4</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>5</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>6</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>7</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <list list-type="bullet">
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_1 = \{q_1, \dots, q_{10}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_2 = \{q_{11}, \dots, q_{20}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>11</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>20</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_3 = \{q_{21}, \dots, q_{30}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>3</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>21</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>30</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_4 = \{q_{31}, \dots, q_{40}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>4</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>31</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>40</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_5 = \{q_{41}, \dots, q_{50}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>5</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>41</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>50</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_6 = \{q_{51}, \dots, q_{60}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>6</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>51</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>60</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P'_7 = \{q_{61}, \dots, q_{70}\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>7</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>61</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+    </list>
   </sec>
-  <p>Based on data up to and including 1971, eruptions on La Palma
-  happen every 79.8 years on average.</p>
-  <p>Studies of the magma systems feeding the volcano, such as
-  (<xref alt="marrero2019?" rid="ref-marrero2019-nb-2" ref-type="bibr"><bold>marrero2019?</bold></xref>),
-  have proposed that there are two main magma reservoirs feeding the
-  Cumbre Vieja volcano; one in the mantle (30-40km depth) which charges
-  and in turn feeds a shallower crustal reservoir (10-20km depth).</p>
-  <p>Eight eruptions have been recorded since the late 1400s
-  ((<xref alt="fig-timeline?" rid="ref-fig-timeline-nb-2" ref-type="bibr"><bold>fig-timeline?</bold></xref>)).</p>
-  <p>Data and methods are discussed in
-  (<xref alt="sec-data-methods?" rid="ref-sec-data-methods-nb-2" ref-type="bibr"><bold>sec-data-methods?</bold></xref>).</p>
-  <p>Let <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  denote the number of eruptions in a year. Then,
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[x]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
-  can be modeled by a Poisson distribution</p>
-  <p><disp-formula><alternatives>
-  <tex-math><![CDATA[
-  p(x) = \frac{e^{-\lambda} \lambda^{x}}{x !}
-  ]]></tex-math>
-  <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>p</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mfrac><mml:mrow><mml:msup><mml:mi>e</mml:mi><mml:mrow><mml:mi>−</mml:mi><mml:mi>λ</mml:mi></mml:mrow></mml:msup><mml:msup><mml:mi>λ</mml:mi><mml:mi>x</mml:mi></mml:msup></mml:mrow><mml:mrow><mml:mi>x</mml:mi><mml:mi>!</mml:mi></mml:mrow></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula>
-  {#eq-poisson}</p>
-  <p>where <inline-formula><alternatives>
-  <tex-math><![CDATA[\lambda]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>λ</mml:mi></mml:math></alternatives></inline-formula>
-  is the rate of eruptions per year. Using
-  (<xref alt="eq-poisson?" rid="ref-eq-poisson-nb-2" ref-type="bibr"><bold>eq-poisson?</bold></xref>),
-  the probability of an eruption in the next
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[t]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>t</mml:mi></mml:math></alternatives></inline-formula>
-  years can be calculated.</p>
-  <fig id="tbl-history-nb-2">
-    <caption><p>Recent historic eruptions on La Palma</p></caption>
+  <sec id="subpanel-lineage-mapping-nb-2">
+    <title>3. Subpanel Lineage Mapping</title>
+    <p>To visualize exactly how the components of the original macro
+    panels are split and redistributed to form the new configuration,
+    the lineage maps as follows:</p>
     <table-wrap>
       <table>
+        <colgroup>
+          <col width="33%" />
+          <col width="33%" />
+          <col width="33%" />
+        </colgroup>
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Year</th>
+            <th align="left">New Macro Panel
+            (<inline-formula><alternatives>
+            <tex-math><![CDATA[P'_i]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>i</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>)</th>
+            <th align="left">Composition from Original Macro Panels
+            (<inline-formula><alternatives>
+            <tex-math><![CDATA[P_j]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>j</mml:mi></mml:msub></mml:math></alternatives></inline-formula>)</th>
+            <th align="left">Subpanel Range</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Current</td>
-            <td>2021</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Completely carved out of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula></td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_1, \dots, q_{10}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
           <tr>
-            <td>Teneguía</td>
-            <td>1971</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_2]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Composed of the remainder of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (4 subpanels) + the first part of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_2]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (6 subpanels)</td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_{11}, \dots, q_{14}\} \cup \{q_{15}, \dots, q_{20}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>11</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mo>∪</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>15</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>20</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
           <tr>
-            <td>Nambroque</td>
-            <td>1949</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_3]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>3</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Composed of the remainder of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_2]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (8 subpanels) + the first part of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_3]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (2 subpanels)</td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_{21}, \dots, q_{28}\} \cup \{q_{29}, \dots, q_{30}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>21</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>28</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mo>∪</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>29</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>30</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
           <tr>
-            <td>El Charco</td>
-            <td>1712</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_4]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>4</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Completely carved out of the middle of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_3]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:math></alternatives></inline-formula></td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_{31}, \dots, q_{40}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>31</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>40</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
           <tr>
-            <td>Volcán San Antonio</td>
-            <td>1677</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>5</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Composed of the remainder of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_3]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (2 subpanels) + the first part of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_4]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>4</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (8 subpanels)</td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_{41}, \dots, q_{42}\} \cup \{q_{43}, \dots, q_{50}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>41</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>42</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mo>∪</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>43</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>50</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
           <tr>
-            <td>Volcán San Martin</td>
-            <td>1646</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_6]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>6</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Composed of the remainder of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_4]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>4</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (6 subpanels) + the first part of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            (4 subpanels)</td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_{51}, \dots, q_{56}\} \cup \{q_{57}, \dots, q_{60}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>51</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>56</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mo>∪</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>57</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>60</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
           <tr>
-            <td>Tajuya near El Paso</td>
-            <td>1585</td>
-          </tr>
-          <tr>
-            <td>Montaña Quemada</td>
-            <td>1492</td>
+            <td align="left"><bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_7]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>7</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold></td>
+            <td align="left">Completely carved out of the remainder of
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[P_5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math></alternatives></inline-formula></td>
+            <td align="left"><inline-formula><alternatives>
+            <tex-math><![CDATA[\{q_{61}, \dots, q_{70}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>61</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></td>
           </tr>
         </tbody>
       </table>
     </table-wrap>
-  </fig>
-  <p>(<xref alt="tbl-history?" rid="ref-tbl-history-nb-2" ref-type="bibr"><bold>tbl-history?</bold></xref>)
-  summarises the eruptions recorded since the colonization of the
-  islands by Europeans in the late 1400s.</p>
-  <fig id="fig-map-nb-2">
-    <caption><p>Map of La Palma</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="images/la-palma-map.png" />
-  </fig>
-  <p>La Palma is one of the west most islands in the Volcanic
-  Archipelago of the Canary Islands
-  ((<xref alt="fig-map?" rid="ref-fig-map-nb-2" ref-type="bibr"><bold>fig-map?</bold></xref>)).</p>
-  <sec id="cell-fig-spatial-plot-nb-2" specific-use="notebook-content">
-  <code language="python">la_palma |&gt; 
-  ggplot(aes(Longitude, Latitude)) +
-  geom_point(aes(color = Magnitude, size = 40-`Depth(km)`)) +
-  scale_color_viridis_c(direction = -1) + 
-  scale_size(range = c(0.5, 2), guide = &quot;none&quot;) +
-  theme_bw()
-  </code>
-  <fig id="fig-spatial-plot-nb-2">
-    <caption><p>Locations of earthquakes on La Palma since
-    2017</p></caption>
-    <graphic mimetype="image" mime-subtype="png" xlink:href="index_original_files/figure-jats/notebooks-explore-earthquakes-fig-spatial-plot-output-1.png" />
-  </fig>
   </sec>
-  <p>(<xref alt="fig-spatial-plot?" rid="ref-fig-spatial-plot-nb-2" ref-type="bibr"><bold>fig-spatial-plot?</bold></xref>)
-  shows the location of recent Earthquakes on La Palma.</p>
-</sec>
-<sec id="sec-data-methods-nb-2">
-  <title>Data &amp; Methods</title>
-</sec>
-<sec id="conclusion-nb-2">
-  <title>Conclusion</title>
-</sec>
-<sec id="references-nb-2">
-  <title>References</title>
+  <sec id="the-general-closed-form-mapping-function-nb-2">
+    <title>The General Closed-Form Mapping Function</title>
+    <p>To map any subpanel from an original configuration to its new
+    destination, we define a function that explicitly takes both the
+    <bold>old macro panel index <inline-formula><alternatives>
+    <tex-math><![CDATA[i_{\text{old}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub></mml:math></alternatives></inline-formula></bold>
+    and the <bold>local subpanel offset <inline-formula><alternatives>
+    <tex-math><![CDATA[l]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula></bold>
+    within that macro panel.</p>
+    <sec id="system-parameters-and-variables-nb-2">
+      <title>1. System Parameters and Variables</title>
+      <p>Let: * <inline-formula><alternatives>
+      <tex-math><![CDATA[M_1, k_1]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+      be the parameters of the original configuration (e.g.,
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[M_1=5, k_1=14]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>).
+      * <inline-formula><alternatives>
+      <tex-math><![CDATA[M_2, k_2]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+      be the parameters of the new configuration (e.g.,
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[M_2=7, k_2=10]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>).
+      * <inline-formula><alternatives>
+      <tex-math><![CDATA[i_{\text{old}}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub></mml:math></alternatives></inline-formula>
+      be the original macro panel index, where
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[i_{\text{old}} \in \{1, 2, \dots, M_1\}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.
+      * <inline-formula><alternatives>
+      <tex-math><![CDATA[l]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
+      be the local index of the subpanel inside
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[P_{i_{\text{old}}}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub></mml:msub></mml:math></alternatives></inline-formula>,
+      where <inline-formula><alternatives>
+      <tex-math><![CDATA[l \in \{1, 2, \dots, k_1\}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+    </sec>
+    <sec id="mapping-function-formulation-nb-2">
+      <title>2. Mapping Function Formulation</title>
+      <p><bold>Step 1: Reconstruct the static global subpanel index
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[j]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula></bold>
+      Using the original partition notation, a subpanel’s local
+      coordinate <inline-formula><alternatives>
+      <tex-math><![CDATA[(i_{\text{old}}, l)]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+      map to its static global index <inline-formula><alternatives>
+      <tex-math><![CDATA[j]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>
+      via: <disp-formula><alternatives>
+      <tex-math><![CDATA[j = (i_{\text{old}} - 1)k_1 + l]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow></mml:math></alternatives></disp-formula></p>
+      <p><bold>Step 2: Map the global index
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[j]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>
+      to the new macro panel index <inline-formula><alternatives>
+      <tex-math><![CDATA[i_{\text{new}}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">new</mml:mtext></mml:msub></mml:math></alternatives></inline-formula></bold>
+      In the new configuration, each macro panel contains exactly
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[k_2]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+      subpanels. To determine which block of size
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[k_2]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+      the index <inline-formula><alternatives>
+      <tex-math><![CDATA[j]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>
+      falls into, we divide <inline-formula><alternatives>
+      <tex-math><![CDATA[j]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>
+      by <inline-formula><alternatives>
+      <tex-math><![CDATA[k_2]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+      and apply the ceiling function <inline-formula><alternatives>
+      <tex-math><![CDATA[\lceil \dots \rceil]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>…</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+      to round up to the nearest integer: <disp-formula><alternatives>
+      <tex-math><![CDATA[i_{\text{new}} = \left\lceil \frac{j}{k_2} \right\rceil]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">new</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>j</mml:mi><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
+    </sec>
+  </sec>
+  <sec id="the-general-mapping-function-nb-2">
+    <title>The General Mapping Function</title>
+    <p>Combining both steps yields the definitive closed-form mapping
+    function <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{f}(i_{\text{old}}, l)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{f}(i_{\text{old}}, l) = \left\lceil \frac{(i_{\text{old}} - 1)k_1 + l}{k_2} \right\rceil]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Where: * <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{f}(i_{\text{old}}, l) = i_{\text{new}}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">new</mml:mtext></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    represents the destination macro panel index
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[i_{\text{new}} \in \{1, 2, \dots, M_2\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">new</mml:mtext></mml:msub><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>).
+    * <inline-formula><alternatives>
+    <tex-math><![CDATA[\lceil x \rceil]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    represents the ceiling function, which rounds
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[x]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>
+    up to the nearest integer.</p>
+  </sec>
+  <sec id="concrete-verification-examples-m_15-k_114-implies-m_27-k_210-nb-2">
+    <title>Concrete Verification Examples
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[M_1=5, k_1=14 \implies M_2=7, k_2=10]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>14</mml:mn><mml:mo>⟹</mml:mo><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)</title>
+    <list list-type="bullet">
+      <list-item>
+        <p><bold>Boundary Case A: The absolute first subpanel</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Input: <inline-formula><alternatives>
+            <tex-math><![CDATA[i_{\text{old}} = 1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[l = 1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Calculation: <disp-formula><alternatives>
+            <tex-math><![CDATA[\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)14 + 1}{10} \right\rceil = \left\lceil \frac{1}{10} \right\rceil = 1]]></tex-math>
+            <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mn>14</mml:mn><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+          </list-item>
+          <list-item>
+            <p><italic>Result:</italic> Destination is
+            <bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold>
+            (Correct).</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Boundary Case B: An overlapping boundary
+        subpanel</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Input: <inline-formula><alternatives>
+            <tex-math><![CDATA[i_{\text{old}} = 1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[l = 12]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mn>12</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Calculation: <disp-formula><alternatives>
+            <tex-math><![CDATA[\mathbf{f}(1, 12) = \left\lceil \frac{(1 - 1)14 + 12}{10} \right\rceil = \left\lceil \frac{12}{10} \right\rceil = \lceil 1.2 \rceil = 2]]></tex-math>
+            <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>12</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mn>14</mml:mn><mml:mo>+</mml:mo><mml:mn>12</mml:mn></mml:mrow><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mn>12</mml:mn><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mn>1.2</mml:mn><mml:mo stretchy="false" form="postfix">⌉</mml:mo><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+          </list-item>
+          <list-item>
+            <p><italic>Result:</italic> Destination is
+            <bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_2]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold>
+            (Correct, as global subpanel <inline-formula><alternatives>
+            <tex-math><![CDATA[q_{12}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>12</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            shifts into the second macro panel).</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Boundary Case C: The absolute final subpanel</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Input: <inline-formula><alternatives>
+            <tex-math><![CDATA[i_{\text{old}} = 5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+            <inline-formula><alternatives>
+            <tex-math><![CDATA[l = 14]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Calculation: <disp-formula><alternatives>
+            <tex-math><![CDATA[\mathbf{f}(5, 14) = \left\lceil \frac{(5 - 1)14 + 14}{10} \right\rceil = \left\lceil \frac{56 + 14}{10} \right\rceil = \left\lceil \frac{70}{10} \right\rceil = 7]]></tex-math>
+            <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>5</mml:mn><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mn>14</mml:mn><mml:mo>+</mml:mo><mml:mn>14</mml:mn></mml:mrow><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mn>56</mml:mn><mml:mo>+</mml:mo><mml:mn>14</mml:mn></mml:mrow><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mn>70</mml:mn><mml:mn>10</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+          </list-item>
+          <list-item>
+            <p><italic>Result:</italic> Destination is
+            <bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_7]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>7</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold>
+            (Correct).</p>
+          </list-item>
+        </list>
+      </list-item>
+    </list>
+  </sec>
+  <sec id="verification-for-configuration-shortening-m_114-implies-m_210-nb-2">
+    <title>Verification for Configuration Shortening
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[M_1=14 \implies M_2=10]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>14</mml:mn><mml:mo>⟹</mml:mo><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)</title>
+    <p>The general mapping formula works perfectly for shortening the
+    layout structure. Because the formula tracks the invariant global
+    sequence index <inline-formula><alternatives>
+    <tex-math><![CDATA[j]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>,
+    it remains structurally valid whether the macro panel count
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    expands or contracts.</p>
+    <p>Using the primary parameters for this contraction: * Original
+    setup: <inline-formula><alternatives>
+    <tex-math><![CDATA[M_1 = 14, k_1 = 5]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>14</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    * New shortened setup: <inline-formula><alternatives>
+    <tex-math><![CDATA[M_2 = 10, k_2 = 7]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>M</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{f}(i_{\text{old}}, l) = \left\lceil \frac{(i_{\text{old}} - 1)k_1 + l}{k_2} \right\rceil]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:msub><mml:mi>k</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow><mml:msub><mml:mi>k</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
+  </sec>
+  <sec id="step-by-step-test-cases-nb-2">
+    <title>Step-by-Step Test Cases</title>
+    <list list-type="bullet">
+      <list-item>
+        <p><bold>Test Case A: The absolute first subpanel
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[q_1]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Input: <inline-formula><alternatives>
+            <tex-math><![CDATA[i_{\text{old}} = 1, l = 1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Calculation: <disp-formula><alternatives>
+            <tex-math><![CDATA[\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)5 + 1}{7} \right\rceil = \left\lceil \frac{1}{7} \right\rceil = 1]]></tex-math>
+            <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mn>5</mml:mn><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mn>1</mml:mn><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+          </list-item>
+          <list-item>
+            <p><italic>Result:</italic> Destination is
+            <bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_1]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold>
+            (Correct).</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Test Case B: A mid-point boundary crossing subpanel
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[q_8]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>8</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Input: <inline-formula><alternatives>
+            <tex-math><![CDATA[i_{\text{old}} = 2, l = 3]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+            (The 3rd subpanel of the 2nd original macro panel)</p>
+          </list-item>
+          <list-item>
+            <p>Calculation: <disp-formula><alternatives>
+            <tex-math><![CDATA[\mathbf{f}(2, 3) = \left\lceil \frac{(2 - 1)5 + 3}{7} \right\rceil = \left\lceil \frac{8}{7} \right\rceil = \lceil 1.14 \rceil = 2]]></tex-math>
+            <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mn>3</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>2</mml:mn><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mn>5</mml:mn><mml:mo>+</mml:mo><mml:mn>3</mml:mn></mml:mrow><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mn>8</mml:mn><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mn>1.14</mml:mn><mml:mo stretchy="false" form="postfix">⌉</mml:mo><mml:mo>=</mml:mo><mml:mn>2</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+          </list-item>
+          <list-item>
+            <p><italic>Result:</italic> Destination is
+            <bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_2]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold>
+            (Correct, as global subpanel <inline-formula><alternatives>
+            <tex-math><![CDATA[q_8]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>8</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+            shifts into the second new macro panel).</p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>Test Case C: The absolute final subpanel
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[q_{70}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</bold></p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Input: <inline-formula><alternatives>
+            <tex-math><![CDATA[i_{\text{old}} = 14, l = 5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>i</mml:mi><mml:mtext mathvariant="normal">old</mml:mtext></mml:msub><mml:mo>=</mml:mo><mml:mn>14</mml:mn><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Calculation: <disp-formula><alternatives>
+            <tex-math><![CDATA[\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10]]></tex-math>
+            <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>14</mml:mn><mml:mo>,</mml:mo><mml:mn>5</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>14</mml:mn><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mn>5</mml:mn><mml:mo>+</mml:mo><mml:mn>5</mml:mn></mml:mrow><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mn>65</mml:mn><mml:mo>+</mml:mo><mml:mn>5</mml:mn></mml:mrow><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mn>70</mml:mn><mml:mn>7</mml:mn></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+          </list-item>
+          <list-item>
+            <p><italic>Result:</italic> Destination is
+            <bold><inline-formula><alternatives>
+            <tex-math><![CDATA[P'_{10}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>10</mml:mn><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula></bold>
+            (Correct).</p>
+          </list-item>
+        </list>
+      </list-item>
+    </list>
+  </sec>
 </sec>
 </body>
 
@@ -727,16 +1558,282 @@ avg_years_between_eruptions
 </sub-article>
 <sub-article article-type="notebook" id="nb-12-nb-3">
 <front-stub>
-<title-group>
-<article-title>macros</article-title>
-</title-group>
 </front-stub>
 
 <body>
-<p>% Drafting helpers. Remove before final submission. % Material that
-can be lifted/adapted from the NISAR DART proposal. % Points that
-respond to the NISAR DART panel review (25-NISAR25_2-0049). % Maps
-content to A.13 Sec. 3.1 required items / Sec. 3.3 criteria. </p>
+<sec id="dropped-p70s-nb-3">
+  <title>Dropped P70s</title>
+  <sec id="subpanel-exclusion-notation-dropping-truncated-subpanels-nb-3">
+    <title>Subpanel Exclusion Notation (Dropping Truncated
+    Subpanels)</title>
+    <p>To represent a scenario where the system layout remains uniform
+    but structural constraints require dropping the last subpanel from
+    every macro panel, we modify the upper bound constraint of the index
+    sets.</p>
+    <p>Let <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_M \subset \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    be the set of dropped subpanels under configuration
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>.
+    Because the last subpanel of each macro panel corresponds exactly to
+    the global indices <inline-formula><alternatives>
+    <tex-math><![CDATA[j = ik]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mi>i</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    the set of dropped subpanels is formalized as:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_M = \{ q_j \in \mathcal{Q} \mid j = i \cdot k, \text{ for } i = 1, 2, \dots, M \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mi>i</mml:mi><mml:mo>⋅</mml:mo><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> for </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>###3 Modified Partition Layout The active system layout partition
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+    preserves the original <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    distinct macro panels but truncates the inner index constraint to
+    stop at <inline-formula><alternatives>
+    <tex-math><![CDATA[ik - 1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Where each truncated macro panel <inline-formula><alternatives>
+    <tex-math><![CDATA[P'_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>i</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+    (for <inline-formula><alternatives>
+    <tex-math><![CDATA[i = 1, 2, \dots, M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+    is explicitly defined by:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[P'_i = \{ q_j \in \mathcal{Q} \mid (i-1)k + 1 \leq j \leq ik - 1 \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>i</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mi>i</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+  </sec>
+  <sec id="truncated-configuration-matrix-examples-nb-3">
+    <title>Truncated Configuration Matrix Examples</title>
+    <p>Under this setup, the cardinality (number of active subpanels) of
+    each macro panel is reduced from <inline-formula><alternatives>
+    <tex-math><![CDATA[k]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+    to <inline-formula><alternatives>
+    <tex-math><![CDATA[k-1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <list list-type="bullet">
+      <list-item>
+        <p><bold>For <inline-formula><alternatives>
+        <tex-math><![CDATA[M = 5]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[k = 14]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Dropped Set: <inline-formula><alternatives>
+            <tex-math><![CDATA[\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>28</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>42</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>56</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Macro Panel 1: <inline-formula><alternatives>
+            <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{13}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>13</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>For <inline-formula><alternatives>
+        <tex-math><![CDATA[M = 7]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[k = 10]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Dropped Set: <inline-formula><alternatives>
+            <tex-math><![CDATA[\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>7</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>20</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>30</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>40</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>50</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>60</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Macro Panel 1: <inline-formula><alternatives>
+            <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{9}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>9</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+        </list>
+      </list-item>
+      <list-item>
+        <p><bold>For <inline-formula><alternatives>
+        <tex-math><![CDATA[M = 14]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[k = 5]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+        <list list-type="bullet">
+          <list-item>
+            <p>Dropped Set: <inline-formula><alternatives>
+            <tex-math><![CDATA[\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+          <list-item>
+            <p>Macro Panel 1: <inline-formula><alternatives>
+            <tex-math><![CDATA[P'_1 = \{q_1, q_2, q_3, q_4\}]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+          </list-item>
+        </list>
+      </list-item>
+    </list>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-16-nb-4">
+<front-stub>
+</front-stub>
+
+<body>
+<sec id="slowfast-start-nb-4">
+  <title>Slow/Fast Start</title>
+  <sec id="modified-partition-notation-shifted-configurations-nb-4">
+    <title>Modified Partition Notation (Shifted Configurations)</title>
+    <p>For an uneven or shifted layout where subpanels are structurally
+    rearranged, the uniform mapping breaks down. To formalize this, we
+    introduce an explicit boundary sequence vector
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{B}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi mathvariant="bold-italic">𝑩</mml:mi></mml:math></alternatives></inline-formula>
+    containing <inline-formula><alternatives>
+    <tex-math><![CDATA[M+1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    elements:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{B} = (b_0, b_1, \dots, b_M)]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>0</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>For the specific modified configuration where
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M = 5]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    the boundaries are explicitly assigned as:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{B} = (0, 10, 20, 38, 56, 70)]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Each individual macro panel <inline-formula><alternatives>
+    <tex-math><![CDATA[P_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    (for <inline-formula><alternatives>
+    <tex-math><![CDATA[i = 1, 2, \dots, M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+    is then constructed by pulling indices between adjacent elements of
+    the boundary sequence:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+  </sec>
+  <sec id="explicit-macro-panel-contents-nb-4">
+    <title>Explicit Macro Panel Contents</title>
+    <list list-type="bullet">
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>10</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>11</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>20</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>21</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>38</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>39</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>56</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mn>57</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+      </list-item>
+    </list>
+  </sec>
+  <sec id="modified-panel-lookup-function-alternatives-nb-4">
+    <title>Modified Panel Lookup Function Alternatives</title>
+    <p>Because the subpanel distributions are no longer uniform, the
+    scalar ceiling function cannot be used. Below are two equivalent
+    mathematical approaches to express the lookup function
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[f(j)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    for the shifted configuration.</p>
+  </sec>
+  <sec id="approach-1-the-summation-indicator-function-approach-nb-4">
+    <title>Approach 1: The Summation / Indicator Function
+    Approach</title>
+    <p>We can define the lookup function <inline-formula><alternatives>
+    <tex-math><![CDATA[f(j)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    by counting how many boundaries the subpanel index
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[j]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>
+    has successfully crossed. Using the Iverson bracket notation (where
+    the brackets evaluate to <inline-formula><alternatives>
+    <tex-math><![CDATA[1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mn>1</mml:mn></mml:math></alternatives></inline-formula>
+    if the enclosed condition is true, and
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[0]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mn>0</mml:mn></mml:math></alternatives></inline-formula>
+    if false), the macro panel index can be calculated directly by
+    checking membership across all intervals:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mi>M</mml:mi></mml:munderover><mml:mi>i</mml:mi><mml:mo>⋅</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Alternatively, an even more concise formulation counts how many
+    upper bounds <inline-formula><alternatives>
+    <tex-math><![CDATA[b_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    from our sequence <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{B} = (0, 10, 20, 38, 56, 70)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    are strictly less than <inline-formula><alternatives>
+    <tex-math><![CDATA[j]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>j</mml:mi></mml:math></alternatives></inline-formula>,
+    then offsets the result by 1:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[f(j) = 1 + \sum_{i=1}^{M-1} [j > b_i]]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>j</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:munderover><mml:mo>∑</mml:mo><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow><mml:mrow><mml:mi>M</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:munderover><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mi>j</mml:mi><mml:mo>&gt;</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+  </sec>
+  <sec id="example-evaluation-nb-4">
+    <title>Example Evaluation</title>
+    <p>To locate subpanel <inline-formula><alternatives>
+    <tex-math><![CDATA[q_{25}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>25</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    using the upper bounds <inline-formula><alternatives>
+    <tex-math><![CDATA[b_1=10, b_2=20, b_3=38, b_4=56]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>b</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mn>56</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[f(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>25</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>10</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>20</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>38</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo><mml:mo>+</mml:mo><mml:mo stretchy="false" form="prefix">[</mml:mo><mml:mn>25</mml:mn><mml:mo>&gt;</mml:mo><mml:mn>56</mml:mn><mml:mo stretchy="false" form="postfix">]</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+    <disp-formula><alternatives>
+    <tex-math><![CDATA[f(25) = 1 + 1 + 1 + 0 + 0 = 3]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>25</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>=</mml:mo><mml:mn>3</mml:mn></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>This correctly maps subpanel <inline-formula><alternatives>
+    <tex-math><![CDATA[q_{25}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mn>25</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    to Macro Panel <inline-formula><alternatives>
+    <tex-math><![CDATA[P_3]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub></mml:math></alternatives></inline-formula>.</p>
+  </sec>
+</sec>
 </body>
 
 

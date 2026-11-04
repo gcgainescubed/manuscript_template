@@ -2,14 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.11.6">
+<meta name="generator" content="quarto-1.12.0">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="George C. Gaines III">
-<meta name="author" content="Bryce Frank">
-<meta name="author" content="KaDonna Randolph">
-<meta name="author" content="Jim Westfall">
 <meta name="keywords" content="Forest Inventory and Analysis, national forest inventory, sample design">
 
 <title>Assessing the influence of variable annual sampling effort on official national forest inventory statistics</title>
@@ -61,10 +57,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-35fc0813589bbfbfa0b8ec974497eeb2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-f0688f390a76b21125ecd060a3d0a4db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-deb10828e67638621ea84613cdc954fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-27e7aecbfd76940d03b8e4778a6b0ae4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -72,6 +68,35 @@ div.csl-indent {
   });
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta name="citation_title" content="Assessing the influence of variable annual sampling effort on official national forest inventory statistics">
 <meta name="citation_abstract" content="In this study we...
@@ -81,21 +106,21 @@ div.csl-indent {
 <meta name="citation_author" content="Bryce Frank">
 <meta name="citation_author" content="KaDonna Randolph">
 <meta name="citation_author" content="Jim Westfall">
-<meta name="citation_publication_date" content="2026-10-26">
-<meta name="citation_cover_date" content="2026-10-26">
+<meta name="citation_publication_date" content="2026-11-04">
+<meta name="citation_cover_date" content="2026-11-04">
 <meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-10-26">
+<meta name="citation_online_date" content="2026-11-04">
 <meta name="citation_language" content="en">
 <meta name="citation_journal_title" content="Forest Ecology and Management">
-<meta name="citation_reference" content="citation_title=A spatial and temporal assessment of nonresponse in the national forest inventory of the US;,citation_author=James A Westfall;,citation_author=Todd A Schroeder;,citation_author=Joseph M McCollum;,citation_author=Paul L Patterson;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=8;,citation_volume=194;,citation_journal_title=Environmental Monitoring and Assessment;,citation_publisher=Springer;">
-<meta name="citation_reference" content="citation_title=An estimation method to reduce complete and partial nonresponse bias in forest inventory;,citation_author=James A Westfall;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_issue=5;,citation_volume=141;,citation_journal_title=European Journal of Forest Research;,citation_publisher=Springer;">
-<meta name="citation_reference" content="citation_title=Double ratio estimation within a design-based nonresponse bias mitigation strategy;,citation_author=James A Westfall;,citation_author=Paul L Patterson;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=1;,citation_volume=99;,citation_journal_title=Forestry: An International Journal of Forest Research;,citation_publisher=Oxford University Press;">
-<meta name="citation_reference" content="citation_title=Inventory measurement rates lag in wilderness areas across the western USA;,citation_author=David LR Affleck;,citation_author=George C Gaines III;,citation_author=Cici Conroy;,citation_author=Gianna Santino;,citation_author=Andrew J Larson;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_issue=1;,citation_volume=72;,citation_journal_title=Forest Science;,citation_publisher=Springer;">
-<meta name="citation_reference" content="citation_title=The enhanced forest inventory and analysis program–national sampling design and estimation procedures;,citation_author=William A Bechtold;,citation_author=Paul L Patterson;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;">
-<meta name="citation_reference" content="citation_title=Sampling and estimation documentation for the enhanced forest inventory and analysis program: 2022;,citation_author=James A Westfall;,citation_author=John W Coulston;,citation_author=Gretchen G Moisen;,citation_author=H-E Andersen;,citation_publication_date=2022;,citation_cover_date=2022;,citation_year=2022;,citation_volume=207;,citation_journal_title=Gen. Tech. Rep. NRS-GTR-207. Madison, WI: US Department of Agriculture, Forest Service, Northern Research Station. 129 p.;">
-<meta name="citation_reference" content="citation_title=Estimation in surveys with nonresponse;,citation_author=Carl-Erik Särndal;,citation_author=Sixten Lundström;,citation_publication_date=2005;,citation_cover_date=2005;,citation_year=2005;">
-<meta name="citation_reference" content="citation_title=Elevated FIA nonresponse rates in wilderness: Investigating barriers and potential solutions;,citation_author=Cici Conroy;,citation_publication_date=2026;,citation_cover_date=2026;,citation_year=2026;,citation_publisher=University of Montana;">
-<meta name="citation_reference" content="citation_title=Corona virus pandemic: Implication on biodiversity conservation;,citation_author=Oluseun A Akinsorotan;,citation_author=Oluwatobi E Olaniyi;,citation_author=Ayomide A Adeyemi;,citation_author=Adeola H Olasunkanmi;,citation_publication_date=2021;,citation_cover_date=2021;,citation_year=2021;,citation_volume=3;,citation_journal_title=Frontiers in Water;,citation_publisher=Frontiers Media SA;">
+<meta name="citation_reference" content="citation_title=A spatial and temporal assessment of nonresponse in the national forest inventory of the US; citation_author=James A Westfall; citation_author=Todd A Schroeder; citation_author=Joseph M McCollum; citation_author=Paul L Patterson; citation_publication_date=2022; citation_cover_date=2022; citation_year=2022; citation_issue=8; citation_volume=194; citation_firstpage=530; citation_journal_title=Environmental Monitoring and Assessment; citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=An estimation method to reduce complete and partial nonresponse bias in forest inventory; citation_author=James A Westfall; citation_publication_date=2022; citation_cover_date=2022; citation_year=2022; citation_issue=5; citation_volume=141; citation_firstpage=901; citation_lastpage=907; citation_journal_title=European Journal of Forest Research; citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=Double ratio estimation within a design-based nonresponse bias mitigation strategy; citation_author=James A Westfall; citation_author=Paul L Patterson; citation_publication_date=2026; citation_cover_date=2026; citation_year=2026; citation_issue=1; citation_volume=99; citation_firstpage=cpaf032; citation_journal_title=Forestry: An International Journal of Forest Research; citation_publisher=Oxford University Press;">
+<meta name="citation_reference" content="citation_title=Inventory measurement rates lag in wilderness areas across the western USA; citation_author=David LR Affleck; citation_author=George C Gaines III; citation_author=Cici Conroy; citation_author=Gianna Santino; citation_author=Andrew J Larson; citation_publication_date=2026; citation_cover_date=2026; citation_year=2026; citation_issue=1; citation_volume=72; citation_firstpage=95; citation_lastpage=102; citation_journal_title=Forest Science; citation_publisher=Springer;">
+<meta name="citation_reference" content="citation_title=The enhanced forest inventory and analysis program–national sampling design and estimation procedures; citation_author=William A Bechtold; citation_author=Paul L Patterson; citation_publication_date=2005; citation_cover_date=2005; citation_year=2005;">
+<meta name="citation_reference" content="citation_title=Sampling and estimation documentation for the enhanced forest inventory and analysis program: 2022; citation_author=James A Westfall; citation_author=John W Coulston; citation_author=Gretchen G Moisen; citation_author=H-E Andersen; citation_publication_date=2022; citation_cover_date=2022; citation_year=2022; citation_volume=207; citation_firstpage=1; citation_lastpage=129; citation_journal_title=Gen. Tech. Rep. NRS-GTR-207. Madison, WI: US Department of Agriculture, Forest Service, Northern Research Station. 129 p.;">
+<meta name="citation_reference" content="citation_title=Estimation in surveys with nonresponse; citation_author=Carl-Erik Särndal; citation_author=Sixten Lundström; citation_publication_date=2005; citation_cover_date=2005; citation_year=2005;">
+<meta name="citation_reference" content="citation_title=Elevated FIA nonresponse rates in wilderness: Investigating barriers and potential solutions; citation_author=Cici Conroy; citation_publication_date=2026; citation_cover_date=2026; citation_year=2026; citation_publisher=University of Montana;">
+<meta name="citation_reference" content="citation_title=Corona virus pandemic: Implication on biodiversity conservation; citation_author=Oluseun A Akinsorotan; citation_author=Oluwatobi E Olaniyi; citation_author=Ayomide A Adeyemi; citation_author=Adeola H Olasunkanmi; citation_publication_date=2021; citation_cover_date=2021; citation_year=2021; citation_volume=3; citation_firstpage=635529; citation_journal_title=Frontiers in Water; citation_publisher=Frontiers Media SA;">
 </head>
 
 <body class="quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
@@ -153,7 +178,7 @@ div.csl-indent {
                 <div>
             <div class="quarto-title-meta-heading">Published</div>
             <div class="quarto-title-meta-contents">
-              <p class="date">Oct 26, 2026</p>
+              <p class="date">today</p>
             </div>
           </div>
           
@@ -187,12 +212,18 @@ div.csl-indent {
    
   <ul>
   <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
-  <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a></li>
+  <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a>
+  <ul class="collapse">
+  <li><a href="#study-area" id="toc-study-area" class="nav-link" data-scroll-target="#study-area"><span class="header-section-number">2.1</span> Study Area</a></li>
+  <li><a href="#fia-data" id="toc-fia-data" class="nav-link" data-scroll-target="#fia-data"><span class="header-section-number">2.2</span> FIA Data</a></li>
+  <li><a href="#initial-notation" id="toc-initial-notation" class="nav-link" data-scroll-target="#initial-notation"><span class="header-section-number">2.3</span> Initial Notation</a></li>
+  <li><a href="#vae-scenarios" id="toc-vae-scenarios" class="nav-link" data-scroll-target="#vae-scenarios"><span class="header-section-number">2.4</span> VAE Scenarios</a></li>
+  </ul></li>
   <li><a href="#discussion" id="toc-discussion" class="nav-link" data-scroll-target="#discussion"><span class="header-section-number">3</span> Discussion</a></li>
   <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="index_original-preview.html"><i class="bi bi-journal-code"></i>Assessing the influence of variable annual sampling effort on official forest inventory statistics</a></li><li><a href="notebooks/explore-earthquakes-preview.html"><i class="bi bi-journal-code"></i>Explore Earthquakes</a></li><li><a href="macros-preview.html"><i class="bi bi-journal-code"></i>macros</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/dropped-p70s-preview.html"><i class="bi bi-journal-code"></i>Dropped P70s</a></li><li><a href="notebooks/extend-shorten-preview.html"><i class="bi bi-journal-code"></i>Extended and Shortened Cycle Lengths</a></li><li><a href="notebooks/initial-notation-preview.html"><i class="bi bi-journal-code"></i>Initial Notation</a></li><li><a href="notebooks/fast-slow-preview.html"><i class="bi bi-journal-code"></i>Slow/Fast Start</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -203,6 +234,8 @@ div.csl-indent {
   
 
 
+<!-- The following includes _macros.qmd, which contains various latex \newcommands. -->
+<!-- https://stackoverflow.com/questions/76398554/how-to-define-latex-macros-globally-for-a-quarto-book -->
 <section id="introduction" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>The USFS Forest Inventory and Analysis (FIA) Program surveys and analyzes the forests of the United States through a nationwide network of permanent sample locations. These plot locations are distributed across all lands with a spatial sampling intensity of about 1 location per 2400 ha according to an unaligned, quasi-systematic equal probability sample design. This design is spatially dispersed with deviation from a regular grid to avoid alignment of sample locations with periodic population features. Statistical inference on forest population status and change parameters is enabled by measurements of forest vegetation traits made at these locations by field crews.</p>
@@ -220,7 +253,151 @@ div.csl-indent {
 </section>
 <section id="sec-data-methods" class="level2" data-number="2">
 <h2 data-number="2" class="anchored" data-anchor-id="sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</h2>
-<!-- {{< embed notebooks/explore-earthquakes.qmd#fig-spatial-plot >}} -->
+<section id="study-area" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="study-area"><span class="header-section-number">2.1</span> Study Area</h3>
+<p>3 states…</p>
+</section>
+<section id="fia-data" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="fia-data"><span class="header-section-number">2.2</span> FIA Data</h3>
+<p>Data from those 3 states…</p>
+<!-- ---
+title: "initial-notation" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+</section>
+<section id="initial-notation" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="initial-notation"><span class="header-section-number">2.3</span> Initial Notation</h3>
+<section id="sample-locations" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="sample-locations"><span class="header-section-number">2.3.1</span> Sample locations</h4>
+<p>Let</p>
+<p><span class="math display">\[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\]</span> be the bivariate spatial coordinate vector for the <span class="math inline">\(i^{th}\)</span> FIA sample location in a focal US state, <span class="math inline">\(i = 1,\ldots,n\)</span>, where <span class="math inline">\(n\)</span> is the number of all sample locations in the focal state, and <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are measures of longitude and latitude respectively.</p>
+</section>
+<section id="micropanels" class="level4" data-number="2.3.2">
+<h4 data-number="2.3.2" class="anchored" data-anchor-id="micropanels"><span class="header-section-number">2.3.2</span> Micropanels</h4>
+<p>Let</p>
+<p><span class="math display">\[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}\]</span></p>
+<p>be a set of “micropanels” <span class="math inline">\(q_r\)</span> that partition the <span class="math inline">\(n\)</span> sample locations into approximately equivalently-sized subsets, such that each <span class="math inline">\(q_r \in \mathcal{Q}\)</span> achieves approximate spatial dispersion across the focal state of each of the <span class="math inline">\(s_i\)</span> it contains. The <span class="math inline">\(q_r\)</span> defined here are meant to correspond to collections of sample locations referred to in the FIA Program as “Panel 70’s”, which imply <span class="math inline">\(R = 70\)</span>, or “Panel 140’s”, which imply <span class="math inline">\(R = 140\)</span>.</p>
+<p>In CONUS states where the FIA Program is administered by the Pacific Northwest Research Station, <span class="math inline">\(R = 140\)</span> in present day inventory operations. In the rest of the CONUS states, <span class="math inline">\(R = 70\)</span>. Though this notation is intended to be flexible enough to accommodate a range of possible values of <span class="math inline">\(R\)</span>, in this study we don’t consider PNWRS states, and so we’ll only consider <span class="math inline">\(R = 70\)</span> for practical purposes.</p>
+</section>
+<section id="macropanels" class="level4" data-number="2.3.3">
+<h4 data-number="2.3.3" class="anchored" data-anchor-id="macropanels"><span class="header-section-number">2.3.3</span> Macropanels</h4>
+<p>The <span class="math inline">\(R\)</span> micropanels can be further aggregated into the set of <span class="math inline">\(M\)</span> macropanels</p>
+<p><span class="math display">\[\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}\]</span> for any value of <span class="math inline">\(M\)</span> such that <span class="math inline">\(M \vert R\)</span>. That is, <span class="math inline">\(R\)</span> is evenly divisible by <span class="math inline">\(M\)</span>, and so the macropanels <span class="math inline">\(P_m \in \mathcal{P}\)</span> are perfectly evenly partitioned by the micropanels <span class="math inline">\(q_r \in \mathcal{Q}\)</span>.</p>
+<p>In the context of FIA, each <span class="math inline">\(P_m \in \mathcal{P}\)</span> can be thought of as an “annual panel”, meaning that each <span class="math inline">\(s_i \subset q_r \subset P_m\)</span> is scheduled to be visited by a field crew in year in the <span class="math inline">\(t^{th}\)</span> year in a chronological series of years indexed in the set</p>
+<p><span class="math display">\[\mathcal{T} = \{t: t = 1,\ldots,T\}\]</span> where <span class="math inline">\(T = M\)</span>. Therefore, <span class="math inline">\(\mathcal{P}\)</span> can be thought of as in inventory cycle, of cycle length <span class="math inline">\(M\)</span>, composed of the annual panels <span class="math inline">\(P_m \in \mathcal{P}\)</span>, which themselves are evenly subdivided into the micropanels <span class="math inline">\(q_r \in \mathcal{Q}\)</span>.</p>
+<p><span class="math inline">\(M = T\)</span> here is intended to correspond to the common state-level inventory cycle lengths prescribed in the FIA program, and so in this study <span class="math inline">\(M \in \{5, 7, 10, 14\}\)</span>. Because the micropanels are initially evenly distributed across the annual panels, the number of micropanels per macropanel can be denoted by <span class="math inline">\(k\)</span> as</p>
+<p><span class="math display">\[k = \frac{R}{M}\]</span></p>
+<p>A general expression to recover the identities of the micropanels contained in any macropanel <span class="math inline">\(P_m\)</span> is given by</p>
+<p><span class="math display">\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\]</span></p>
+</section>
+<section id="macropanel-lookup-function" class="level4" data-number="2.3.4">
+<h4 data-number="2.3.4" class="anchored" data-anchor-id="macropanel-lookup-function"><span class="header-section-number">2.3.4</span> Macropanel Lookup Function</h4>
+<p>Conversely, to determine the identity of the macropanel to which micropanel <span class="math inline">\(r\)</span> belongs, we can define a macropanel lookup function</p>
+<p><span class="math display">\[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil\]</span> where the ceiling function <span class="math inline">\(\lceil x \rceil\)</span> returns the smallest integer not less than <span class="math inline">\(x\)</span>, and <span class="math inline">\(f(r) = m\)</span> outputs the macropanel index (<span class="math inline">\(1 \leq m \leq M\)</span>).</p>
+<!--
+| Cycle Length ($M$) | Micropanels/Macropanel ($k$) | Micropaenl Index ($r$) | Formula Evaluation | Panel Index ($m$) |
+|:---:|:---:|:---:|:---:|:---:|
+| $M = 5$  | $k = 14$ | $j = 1, 14, 15, 70$ | $\lceil 1/14 \rceil, \lceil 14/14 \rceil, \lceil 15/14 \rceil, \lceil 70/14 \rceil$ | $1, 1, 2, 5$ |
+| $M = 7$  | $k = 10$ | $j = 1, 10, 11, 70$ | $\lceil 1/10 \rceil, \lceil 10/10 \rceil, \lceil 11/10 \rceil, \lceil 70/10 \rceil$ | $1, 1, 2, 7$ |
+| $M = 10$ | $k = 7$  | $j = 1, 7, 8, 70$   | $\lceil 1/7 \rceil, \lceil 7/7 \rceil, \lceil 8/7 \rceil, \lceil 70/7 \rceil$   | $1, 1, 2, 10$ |
+| $M = 14$ | $k = 5$  | $j = 1, 5, 6, 70$   | $\lceil 1/5 \rceil, \lceil 5/5 \rceil, \lceil 6/5 \rceil, \lceil 70/5 \rceil$   | $1, 1, 2, 14$ |
+: Boundary Mappings for Active Configurations {#tbl-boundary}
+-->
+</section>
+</section>
+<section id="vae-scenarios" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="vae-scenarios"><span class="header-section-number">2.4</span> VAE Scenarios</h3>
+<p>We will now extend this notation to describe in general terms three VAE scenarios achieved by either i) reassigning micropanels to different macropanels, or ii) dropping fixed numbers of micropanels per macropanel over the course of an inventory cycle.</p>
+<!-- ---
+title: "fast-slow" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+<section id="slowfast-start" class="level4" data-number="2.4.1">
+<h4 data-number="2.4.1" class="anchored" data-anchor-id="slowfast-start"><span class="header-section-number">2.4.1</span> Slow/Fast Start</h4>
+<section id="modified-partition-notation-shifted-configurations" class="level5" data-number="2.4.1.1">
+<h5 data-number="2.4.1.1" class="anchored" data-anchor-id="modified-partition-notation-shifted-configurations"><span class="header-section-number">2.4.1.1</span> Modified Partition Notation (Shifted Configurations)</h5>
+<p>For an uneven or shifted layout where subpanels are structurally rearranged, the uniform mapping breaks down. To formalize this, we introduce an explicit boundary sequence vector <span class="math inline">\(\mathbf{B}\)</span> containing <span class="math inline">\(M+1\)</span> elements:</p>
+<p><span class="math display">\[\mathbf{B} = (b_0, b_1, \dots, b_M)\]</span></p>
+<p>For the specific modified configuration where <span class="math inline">\(M = 5\)</span>, the boundaries are explicitly assigned as:</p>
+<p><span class="math display">\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]</span></p>
+<p>Each individual macro panel <span class="math inline">\(P_i\)</span> (for <span class="math inline">\(i = 1, 2, \dots, M\)</span>) is then constructed by pulling indices between adjacent elements of the boundary sequence:</p>
+<p><span class="math display">\[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}\]</span></p>
+</section>
+<section id="explicit-macro-panel-contents" class="level5" data-number="2.4.1.2">
+<h5 data-number="2.4.1.2" class="anchored" data-anchor-id="explicit-macro-panel-contents"><span class="header-section-number">2.4.1.2</span> Explicit Macro Panel Contents</h5>
+<ul>
+<li><span class="math inline">\(P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}\)</span></li>
+<li><span class="math inline">\(P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}\)</span></li>
+<li><span class="math inline">\(P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}\)</span></li>
+<li><span class="math inline">\(P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}\)</span></li>
+<li><span class="math inline">\(P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}\)</span></li>
+</ul>
+</section>
+<section id="modified-panel-lookup-function-alternatives" class="level5" data-number="2.4.1.3">
+<h5 data-number="2.4.1.3" class="anchored" data-anchor-id="modified-panel-lookup-function-alternatives"><span class="header-section-number">2.4.1.3</span> Modified Panel Lookup Function Alternatives</h5>
+<p>Because the subpanel distributions are no longer uniform, the scalar ceiling function cannot be used. Below are two equivalent mathematical approaches to express the lookup function <span class="math inline">\(f(j)\)</span> for the shifted configuration.</p>
+</section>
+<section id="approach-1-the-summation-indicator-function-approach" class="level5" data-number="2.4.1.4">
+<h5 data-number="2.4.1.4" class="anchored" data-anchor-id="approach-1-the-summation-indicator-function-approach"><span class="header-section-number">2.4.1.4</span> Approach 1: The Summation / Indicator Function Approach</h5>
+<p>We can define the lookup function <span class="math inline">\(f(j)\)</span> by counting how many boundaries the subpanel index <span class="math inline">\(j\)</span> has successfully crossed. Using the Iverson bracket notation (where the brackets evaluate to <span class="math inline">\(1\)</span> if the enclosed condition is true, and <span class="math inline">\(0\)</span> if false), the macro panel index can be calculated directly by checking membership across all intervals:</p>
+<p><span class="math display">\[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]\]</span></p>
+<p>Alternatively, an even more concise formulation counts how many upper bounds <span class="math inline">\(b_i\)</span> from our sequence <span class="math inline">\(\mathbf{B} = (0, 10, 20, 38, 56, 70)\)</span> are strictly less than <span class="math inline">\(j\)</span>, then offsets the result by 1:</p>
+<p><span class="math display">\[f(j) = 1 + \sum_{i=1}^{M-1} [j &gt; b_i]\]</span></p>
+</section>
+<section id="example-evaluation" class="level5" data-number="2.4.1.5">
+<h5 data-number="2.4.1.5" class="anchored" data-anchor-id="example-evaluation"><span class="header-section-number">2.4.1.5</span> Example Evaluation</h5>
+<p>To locate subpanel <span class="math inline">\(q_{25}\)</span> using the upper bounds <span class="math inline">\(b_1=10, b_2=20, b_3=38, b_4=56\)</span>:</p>
+<p><span class="math display">\[f(25) = 1 + [25 &gt; 10] + [25 &gt; 20] + [25 &gt; 38] + [25 &gt; 56]\]</span> <span class="math display">\[f(25) = 1 + 1 + 1 + 0 + 0 = 3\]</span></p>
+<p>This correctly maps subpanel <span class="math inline">\(q_{25}\)</span> to Macro Panel <span class="math inline">\(P_3\)</span>.</p>
+<!-- #### Approach 2: The Interval Mapping / Step Function Approach
+Alternatively, the lookup function $f(j)$ can be explicitly mapped using a piecewise step function that matches the distinct index windows of our chosen $M=5$ shifted layout:
+
+$$f(j) = \begin{cases} 
+1 & \text{if } 1 \le j \le 10 \\ 
+2 & \text{if } 11 \le j \le 20 \\ 
+3 & \text{if } 21 \le j \le 38 \\ 
+4 & \text{if } 39 \le j \le 56 \\ 
+5 & \text{if } 57 \le j \le 70 
+\end{cases}$$
+
+##### Generalization of Shifted Boundaries
+
+To scale the shifting mechanism across any active configuration $M \in \{5, 7, 10, 14\}$, we define a formal transformation framework. Let $\mathbf{U}_M$ be the baseline **uniform boundary sequence vector** of length $M+1$, where the elements are strictly determined by the constant step-size $k = \frac{70}{M}$:
+
+$$\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_i = i \cdot k$$
+
+#### The Boundary Deviation Framework
+To construct a non-uniform layout, we define a **boundary deviation vector** $\boldsymbol{\delta}$ of length $M+1$:
+
+$$\boldsymbol{\delta} = (\delta_0, \delta_1, \dots, \delta_M)$$
+
+The shifted boundary sequence vector $\mathbf{B}_M$ is created by adding the deviation vector directly to the uniform baseline:
+
+$$\mathbf{B}_M = \mathbf{U}_M + \boldsymbol{\delta} = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)$$
+
+### Structural Constraints on Deviations
+To ensure that the shifted sequence remains physically valid (non-overlapping, covers all 70 subpanels, and keeps panels non-empty), the elements of $\boldsymbol{\delta}$ must satisfy the following three axioms:
+
+1. **Endpoint Anchors:** The global boundaries cannot shift. The sequence must always start at 0 and end at 70:
+   $$\delta_0 = 0 \quad \text{and} \quad \delta_M = 0$$
+
+2. **Integer Domain:** Every deviation must be an integer to preserve whole subpanel blocks:
+   $$\delta_i \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}$$
+
+3. **Strict Monotonicity:** To prevent empty macro panels or inverted boundaries, adjacent elements must maintain a strict ordering:
+   $$(u_i + \delta_i) > (u_{i-1} + \delta_{i-1}) \quad \forall i \in \{1, 2, \dots, M\}$$
+
+#### Concrete Example Matrix ($M = 5$)
+For the configuration where $M = 5$ and baseline step size $k = 14$, the transformation from uniform to your specific shifted setup is explicitly formalized below:
+
+$$\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)$$
+$$\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)$$
+
+Evaluating the vector addition:
+
+$$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)$$
+-->
+</section>
+</section>
+</section>
 </section>
 <section id="discussion" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="discussion"><span class="header-section-number">3</span> Discussion</h2>
@@ -261,20 +438,20 @@ Westfall, James A, Todd A Schroeder, Joseph M McCollum, and Paul L Patterson. 20
 </div>
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><pre class="sourceCode code-with-copy quarto-appendix-bibtex"><code class="sourceCode bibtex">@online{c._gaines_iii2026,
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{c._gaines_iii2026,
   author = {C. Gaines III, George and Frank, Bryce and Randolph, KaDonna
     and Westfall, Jim},
   title = {Assessing the Influence of Variable Annual Sampling Effort on
     Official National Forest Inventory Statistics},
-  date = {2026-10-26},
+  date = {2026-11-04},
   langid = {en},
   abstract = {In this study we...}
 }
-</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-c._gaines_iii2026" class="csl-entry quarto-appendix-citeas" role="listitem">
+</code></pre><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div><div class="quarto-appendix-secondary-label">For attribution, please cite this work as:</div><div id="ref-c._gaines_iii2026" class="csl-entry quarto-appendix-citeas" role="listitem">
 C. Gaines III, George, Bryce Frank, KaDonna Randolph, and Jim Westfall.
 2026. <span>“Assessing the Influence of Variable Annual Sampling Effort
 on Official National Forest Inventory Statistics.”</span> Forest Ecology
-and Management, October 26.
+and Management, November 4.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -355,7 +532,8 @@ and Management, October 26.
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -364,8 +542,69 @@ and Management, October 26.
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -379,6 +618,7 @@ and Management, October 26.
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -541,44 +781,54 @@ and Management, October 26.
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };

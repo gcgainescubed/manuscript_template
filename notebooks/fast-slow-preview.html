@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.11.6">
+    <meta name="generator" content="quarto-1.12.0">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-    <title>macros</title>
+    <title>fast-slow</title>
     <style>
       /* Default styles provided by pandoc.
       ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -105,7 +105,7 @@
             // if location was not changed in 100 ms, then there is no history back
             if(currentUrl === window.location.href){              
                 // redirect to site root
-                window.location.href = "index.html";
+                window.location.href = "../index.html";
             }
         }, 100);
       }
@@ -124,70 +124,132 @@
     </script>
 
     
-<script src="site_libs/manuscript-notebook/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-35fc0813589bbfbfa0b8ec974497eeb2.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-deb10828e67638621ea84613cdc954fe.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/manuscript-notebook/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f0688f390a76b21125ecd060a3d0a4db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-27e7aecbfd76940d03b8e4778a6b0ae4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
     document.body.classList.add('hypothesis-enabled');
   });
-</script>  
+</script>   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script> 
       </head>
 
   <body class="quarto-notebook quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
     <nav id="quarto-embed-header" class="headroom fixed-top bg-primary" aria-labelledby="quarto-embed-title">
 
-      <a href="index.html" onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> macros</h6>
+      <a href="../index.html" onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Slow/Fast Start</h6>
 
-            <a href="./macros.qmd" class="btn btn-primary quarto-download-embed" download="macros.qmd">Download Source</a>
+            <a href="../notebooks/fast-slow.qmd" class="btn btn-primary quarto-download-embed" download="fast-slow.qmd">Download Source</a>
           </nav>
 
-     <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">macros</h1>
-          </div>
-
-    
-    <div class="quarto-title-meta-container">
-      <div class="quarto-title-meta-column-start">
-        
-        <div class="quarto-title-meta">
-
-                
-          
-                
-              </div>
-      </div>
-      <div class="quarto-title-meta-column-end quarto-other-formats-target">
-      </div>
-    </div>
-
-
-
-    <div class="quarto-other-links-text-target">
-    </div>  </div>
-</header><div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
   
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">      
+<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">    <!-- ---
+title: "fast-slow" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+<section id="slowfast-start" class="level4">
+<h4 class="anchored" data-anchor-id="slowfast-start">Slow/Fast Start</h4>
+<section id="modified-partition-notation-shifted-configurations" class="level5">
+<h5 class="anchored" data-anchor-id="modified-partition-notation-shifted-configurations">Modified Partition Notation (Shifted Configurations)</h5>
+<p>For an uneven or shifted layout where subpanels are structurally rearranged, the uniform mapping breaks down. To formalize this, we introduce an explicit boundary sequence vector <span class="math inline">\(\mathbf{B}\)</span> containing <span class="math inline">\(M+1\)</span> elements:</p>
+<p><span class="math display">\[\mathbf{B} = (b_0, b_1, \dots, b_M)\]</span></p>
+<p>For the specific modified configuration where <span class="math inline">\(M = 5\)</span>, the boundaries are explicitly assigned as:</p>
+<p><span class="math display">\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]</span></p>
+<p>Each individual macro panel <span class="math inline">\(P_i\)</span> (for <span class="math inline">\(i = 1, 2, \dots, M\)</span>) is then constructed by pulling indices between adjacent elements of the boundary sequence:</p>
+<p><span class="math display">\[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}\]</span></p>
+</section>
+<section id="explicit-macro-panel-contents" class="level5">
+<h5 class="anchored" data-anchor-id="explicit-macro-panel-contents">Explicit Macro Panel Contents</h5>
+<ul>
+<li><span class="math inline">\(P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}\)</span></li>
+<li><span class="math inline">\(P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}\)</span></li>
+<li><span class="math inline">\(P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}\)</span></li>
+<li><span class="math inline">\(P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}\)</span></li>
+<li><span class="math inline">\(P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}\)</span></li>
+</ul>
+</section>
+<section id="modified-panel-lookup-function-alternatives" class="level5">
+<h5 class="anchored" data-anchor-id="modified-panel-lookup-function-alternatives">Modified Panel Lookup Function Alternatives</h5>
+<p>Because the subpanel distributions are no longer uniform, the scalar ceiling function cannot be used. Below are two equivalent mathematical approaches to express the lookup function <span class="math inline">\(f(j)\)</span> for the shifted configuration.</p>
+</section>
+<section id="approach-1-the-summation-indicator-function-approach" class="level5">
+<h5 class="anchored" data-anchor-id="approach-1-the-summation-indicator-function-approach">Approach 1: The Summation / Indicator Function Approach</h5>
+<p>We can define the lookup function <span class="math inline">\(f(j)\)</span> by counting how many boundaries the subpanel index <span class="math inline">\(j\)</span> has successfully crossed. Using the Iverson bracket notation (where the brackets evaluate to <span class="math inline">\(1\)</span> if the enclosed condition is true, and <span class="math inline">\(0\)</span> if false), the macro panel index can be calculated directly by checking membership across all intervals:</p>
+<p><span class="math display">\[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]\]</span></p>
+<p>Alternatively, an even more concise formulation counts how many upper bounds <span class="math inline">\(b_i\)</span> from our sequence <span class="math inline">\(\mathbf{B} = (0, 10, 20, 38, 56, 70)\)</span> are strictly less than <span class="math inline">\(j\)</span>, then offsets the result by 1:</p>
+<p><span class="math display">\[f(j) = 1 + \sum_{i=1}^{M-1} [j &gt; b_i]\]</span></p>
+</section>
+<section id="example-evaluation" class="level5">
+<h5 class="anchored" data-anchor-id="example-evaluation">Example Evaluation</h5>
+<p>To locate subpanel <span class="math inline">\(q_{25}\)</span> using the upper bounds <span class="math inline">\(b_1=10, b_2=20, b_3=38, b_4=56\)</span>:</p>
+<p><span class="math display">\[f(25) = 1 + [25 &gt; 10] + [25 &gt; 20] + [25 &gt; 38] + [25 &gt; 56]\]</span> <span class="math display">\[f(25) = 1 + 1 + 1 + 0 + 0 = 3\]</span></p>
+<p>This correctly maps subpanel <span class="math inline">\(q_{25}\)</span> to Macro Panel <span class="math inline">\(P_3\)</span>.</p>
+<!-- #### Approach 2: The Interval Mapping / Step Function Approach
+Alternatively, the lookup function $f(j)$ can be explicitly mapped using a piecewise step function that matches the distinct index windows of our chosen $M=5$ shifted layout:
 
-     <p>% Drafting helpers. Remove before final submission. % Material that can be lifted/adapted from the NISAR DART proposal. % Points that respond to the NISAR DART panel review (25-NISAR25_2-0049). % Maps content to A.13 Sec. 3.1 required items / Sec. 3.3 criteria. </p>
+$$f(j) = \begin{cases} 
+1 & \text{if } 1 \le j \le 10 \\ 
+2 & \text{if } 11 \le j \le 20 \\ 
+3 & \text{if } 21 \le j \le 38 \\ 
+4 & \text{if } 39 \le j \le 56 \\ 
+5 & \text{if } 57 \le j \le 70 
+\end{cases}$$
+
+##### Generalization of Shifted Boundaries
+
+To scale the shifting mechanism across any active configuration $M \in \{5, 7, 10, 14\}$, we define a formal transformation framework. Let $\mathbf{U}_M$ be the baseline **uniform boundary sequence vector** of length $M+1$, where the elements are strictly determined by the constant step-size $k = \frac{70}{M}$:
+
+$$\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_i = i \cdot k$$
+
+#### The Boundary Deviation Framework
+To construct a non-uniform layout, we define a **boundary deviation vector** $\boldsymbol{\delta}$ of length $M+1$:
+
+$$\boldsymbol{\delta} = (\delta_0, \delta_1, \dots, \delta_M)$$
+
+The shifted boundary sequence vector $\mathbf{B}_M$ is created by adding the deviation vector directly to the uniform baseline:
+
+$$\mathbf{B}_M = \mathbf{U}_M + \boldsymbol{\delta} = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)$$
+
+### Structural Constraints on Deviations
+To ensure that the shifted sequence remains physically valid (non-overlapping, covers all 70 subpanels, and keeps panels non-empty), the elements of $\boldsymbol{\delta}$ must satisfy the following three axioms:
+
+1. **Endpoint Anchors:** The global boundaries cannot shift. The sequence must always start at 0 and end at 70:
+   $$\delta_0 = 0 \quad \text{and} \quad \delta_M = 0$$
+
+2. **Integer Domain:** Every deviation must be an integer to preserve whole subpanel blocks:
+   $$\delta_i \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}$$
+
+3. **Strict Monotonicity:** To prevent empty macro panels or inverted boundaries, adjacent elements must maintain a strict ordering:
+   $$(u_i + \delta_i) > (u_{i-1} + \delta_{i-1}) \quad \forall i \in \{1, 2, \dots, M\}$$
+
+#### Concrete Example Matrix ($M = 5$)
+For the configuration where $M = 5$ and baseline step size $k = 14$, the transformation from uniform to your specific shifted setup is explicitly formalized below:
+
+$$\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)$$
+$$\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)$$
+
+Evaluating the vector addition:
+
+$$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)$$
+-->
+</section>
+</section>
      </main>
 <!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -267,7 +329,8 @@
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
       // Inspect non-navigation links and adorn them if external
-     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
       for (var i=0; i<links.length; i++) {
         const link = links[i];
         if (!isInternal(link.href)) {
@@ -276,8 +339,69 @@
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+          if (!link.classList.contains('no-external-icon')) {
+          }
         }
       }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
       const config = {
         allowHTML: true,
@@ -291,6 +415,7 @@
         interactiveBorder: 10,
         theme: 'quarto',
         placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
       };
       if (contentFn) {
         config.content = contentFn;
@@ -453,44 +578,54 @@
           const lineIds = lines.map((line) => {
             return targetCell + "-" + line;
           })
-          let top = null;
-          let height = null;
-          let parent = null;
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
           if (lineIds.length > 0) {
-              //compute the position of the single el (top and bottom and make a div)
-              const el = window.document.getElementById(lineIds[0]);
-              top = el.offsetTop;
-              height = el.offsetHeight;
-              parent = el.parentElement.parentElement;
-            if (lineIds.length > 1) {
-              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
-              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
-              height = bottom - top;
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
             }
-            if (top !== null && height !== null && parent !== null) {
-              // cook up a div (if necessary) and position it 
-              let div = window.document.getElementById("code-annotation-line-highlight");
-              if (div === null) {
-                div = window.document.createElement("div");
-                div.setAttribute("id", "code-annotation-line-highlight");
-                div.style.position = 'absolute';
-                parent.appendChild(div);
-              }
-              div.style.top = top - 2 + "px";
-              div.style.height = height + 4 + "px";
-              div.style.left = 0;
-              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
-              if (gutterDiv === null) {
-                gutterDiv = window.document.createElement("div");
-                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
-                gutterDiv.style.position = 'absolute';
-                const codeCell = window.document.getElementById(targetCell);
-                const gutter = codeCell.querySelector('.code-annotation-gutter');
-                gutter.appendChild(gutterDiv);
-              }
-              gutterDiv.style.top = top - 2 + "px";
-              gutterDiv.style.height = height + 4 + "px";
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
             }
+            placeBand(gutterDiv, el, lastEl);
             selectedAnnoteEl = annoteEl;
           }
         };
