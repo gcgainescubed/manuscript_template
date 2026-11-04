@@ -169,6 +169,13 @@ Data from those 3 states...
 
 {{< include notebooks/initial-notation.qmd >}}
 
+### VAE Scenarios
+
+We will now extend this notation to describe in general terms three 
+VAE scenarios achieved by either i) reassigning micropanels to different macropanels,
+or ii) dropping fixed numbers of micropanels per macropanel over the course of
+an inventory cycle.
+
 {{< include notebooks/fast-slow.qmd >}}
 
 
