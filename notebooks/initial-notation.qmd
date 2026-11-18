@@ -19,7 +19,7 @@ $$\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}$$
 
 be a set of "micropanels" $q_r$ that partition the $n$ sample locations into approximately 
 equivalently-sized subsets, such that each $q_r \in \mathcal{Q}$ achieves approximate spatial 
-dispersion across the focal state of each of the $s_i$ it contains. The $q_r$ 
+dispersion across the focal state of each of the $\mathbf{s}_i$ it contains. The $q_r$ 
 defined here are meant to correspond to collections of sample locations referred
 to in the FIA Program as "Panel 70's", which imply $R = 70$, or "Panel 140's",
 which imply $R = 140$. 
@@ -33,24 +33,27 @@ PNWRS states, and so we'll only consider $R = 70$ for practical purposes.
 #### Macropanels
 The $R$ micropanels can be further aggregated into the set of $M$ macropanels
 
-$$\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}$$
-for any value of $M$ such that $M \vert R$. That is, $R$ is evenly divisible by $M$,
-and so the macropanels $P_m \in \mathcal{P}$ are perfectly evenly partitioned 
-by the micropanels $q_r \in \mathcal{Q}$.
+$$\mathcal{P}_M = \{P_m : \ m = 1,\ldots,M\}$$
+for any value of $M$ such that $M \vert R$; that is, such that $R$ is evenly divisible by $M$,
+and so the macropanels $P_m \in \mathcal{P}_M$ are perfectly evenly partitioned 
+by the micropanels $q_r \in \mathcal{Q}$ (though the micropanels themselves may contain
+slightly different numbers of $\mathbf{s}_i$.
 
-In the context of FIA, each $P_m \in \mathcal{P}$ can be thought of as an "annual 
+<!--In the context of FIA, each $P_m \in \mathcal{P}_M$ can be thought of as an "annual 
 panel", meaning that each $s_i \subset q_r \subset P_m$ is scheduled to be visited
 by a field crew in year in the $t^{th}$ year in a chronological series of years 
 indexed in the set 
 
 $$\mathcal{T} = \{t: t = 1,\ldots,T\}$$
-where $T = M$. Therefore, $\mathcal{P}$ can be thought of as in inventory cycle,
-of cycle length $M$, composed of the annual panels $P_m \in \mathcal{P}$, which 
-themselves are evenly subdivided into the micropanels $q_r \in \mathcal{Q}$.
+where $T = M$. Therefore, $\mathcal{P}_M$ can be thought of as in inventory cycle,
+of cycle length $M$, composed of the annual panels $P_m \in \mathcal{P}_M$, which 
+themselves are evenly subdivided into the micropanels $q_r \in \mathcal{Q}$. -->
 
-$M = T$ here is intended to correspond to the common state-level inventory cycle lengths
-prescribed in the FIA program, and so in this study $M \in \{5, 7, 10, 14\}$. 
-Because the micropanels are initially evenly distributed across the annual panels, the number 
+The macropanels described above are intended to correspond to the ``annual panels'' 
+into which the $s_i$ in each state are partitioned for measurement scheduling 
+purposes. $M$, therefore, is intended to correspond to conceivable state-level inventory cycle lengths
+prescribed in the FIA program for $R = 70$, and so in this study $M \in \{5, 7, 10, 14\}$. 
+Because the micropanels are initially evenly distributed across the macropanels, the number 
 of micropanels per macropanel can be denoted by $k$ as
 
 $$k = \frac{R}{M}$$
@@ -58,7 +61,7 @@ $$k = \frac{R}{M}$$
 A general expression to recover the identities of the micropanels contained in any 
 macropanel $P_m$ is given by 
 
-$$P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}$$
+$$P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}$$.
 
 #### Macropanel Lookup Function
 Conversely, to determine the identity of the macropanel to which micropanel $r$ 
@@ -66,7 +69,8 @@ belongs, we can define a macropanel lookup function
 
 $$f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil$$
 where the ceiling function $\lceil x \rceil$ returns the smallest integer not 
-less than $x$, and $f(r) = m$ outputs the macropanel index ($1 \leq m \leq M$).
+less than $x$, and $f(r) = m$ outputs the index of the macropanel ($1 \leq m \leq M$)
+to which the $r^{th}$ micropanel is assigned.
 
 <!--
 | Cycle Length ($M$) | Micropanels/Macropanel ($k$) | Micropaenl Index ($r$) | Formula Evaluation | Panel Index ($m$) |

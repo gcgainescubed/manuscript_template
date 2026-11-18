@@ -2,94 +2,98 @@
 title: "fast-slow" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
 
-#### Slow/Fast Start
+#### Slow Start and Fast Start Scenarios
 
-##### Modified Partition Notation (Shifted Configurations)
-For an uneven or shifted layout where subpanels are structurally rearranged, the uniform mapping breaks down. To formalize this, we introduce an explicit boundary sequence vector $\mathbf{B}$ containing $M+1$ elements:
+##### Slow Start
 
-$$\mathbf{B} = (b_0, b_1, \dots, b_M)$$
+In the context of FIA, the "slow start" scenarios we simulated are intended 
+to represent a budgetary or workforce 
+shortfall in the first $z$ years early in an inventory cycle, necessitating a planned 
+reduction of field visitation by a fixed proportion of micropanels per macropanel 
+in the first $z$ macropanels in $\mathcal{P}_M$. 
 
-For the specific modified configuration where $M = 5$, the boundaries are explicitly assigned as:
+Then, a budgetary or workforce recovery occurs, enabling a planned 
+increase of field visitation by the same fixed proportion of micropanels per macropanel 
+in the subsequent $z$ macropanels. Finally, work capacity stabilizes, 
+and the $k$ micropanels in the final macropanel $P_M$ in $\mathcal{P}_M$ 
+retain their original assignments (i.e., we're "back on time"). 
 
-$$\mathbf{B} = (0, 10, 20, 38, 56, 70)$$
+##### Fast Start
 
-Each individual macro panel $P_i$ (for $i = 1, 2, \dots, M$) is then constructed by pulling indices between adjacent elements of the boundary sequence:
+Under the "fast start" scenarios we simulated, our VAE intentions are 
+analogous to the slow start scenario described above, but the timing of the 
+availability of resources of field work is reversed.
+That is, extra resources for field work enable a fixed proportion of "early" 
+micropanels per macropanel for the first $z$ macropanels in $\mathcal{P}_M$. 
+Annual sampling effort is then reduced by the same proportion 
+micropanels per macropanel for the subsequent $z$ macropanels to  
+"get back on schedule"; and the nominally prescribed rate of $k$ micropanels 
+per macropanel is reestablished for macropanel $M$. A more detailed demonstrative
+example can be found in @sec-supp-mat.
 
-$$P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}$$
+##### Generalizing Shifted Macropanel Boundaries
 
-##### Explicit Macro Panel Contents
+If we preserve $R$ and $M$, but modify the original macropanel assignments of some
+micropanels for VAE purposes as the slow and fast start scenarios are intended to 
+represent, the micropanels no longer evenly partition the macropanels
+throughout $\mathcal{P}_M$. Therefore, it is
+convenient to extend our notation to represent an arbitraty, newly constituted cycle
+$\mathcal{P}^\prime_M$ following repositioning of micropanels (i.e., to represent and 
+facilitate the application of a particular slow or fast start VAE regimen across 
+any value of $M \in \{5, 7, 10, 14\}$).
 
-* $P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}$
-* $P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}$
-* $P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}$
-* $P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}$
-* $P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}$
+Let $\mathbf{U}_M$ be the baseline uniform boundary sequence vector of length $M+1$, 
+where the elements are determined by the constant step-size $k = \frac{R}{M}$:
 
-##### Modified Panel Lookup Function Alternatives
-Because the subpanel distributions are no longer uniform, the scalar ceiling function cannot be used. Below are two equivalent mathematical approaches to express the lookup function $f(j)$ for the shifted configuration.
+$$\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_m = m \cdot k$$
 
-##### Approach 1: The Summation / Indicator Function Approach
-We can define the lookup function $f(j)$ by counting how many boundaries the subpanel index $j$ has successfully crossed. Using the Iverson bracket notation (where the brackets evaluate to $1$ if the enclosed condition is true, and $0$ if false), the macro panel index can be calculated directly by checking membership across all intervals:
+To then specify a slow or fast start regimen that can be applied arbitrarily for 
+any value of $M$, we further define the boundary deviation vector 
+$\boldsymbol{\delta}_M$ of length $M+1$ as:
 
-$$f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]$$
+$$\boldsymbol{\delta}_M = (\delta_0, \delta_1, \ldots, \delta_M)$$
 
-Alternatively, an even more concise formulation counts how many upper bounds $b_i$ from our sequence $\mathbf{B} = (0, 10, 20, 38, 56, 70)$ are strictly less than $j$, then offsets the result by 1:
+The shifted boundary sequence vector $\mathbf{B}$ can then be obtained by summing the 
+baseline boundary vector and the boundary deviation vector:
 
-$$f(j) = 1 + \sum_{i=1}^{M-1} [j > b_i]$$
+$$\mathbf{B} = \mathbf{U}_M + \boldsymbol{\delta}_M = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)$$
 
-##### Example Evaluation
-To locate subpanel $q_{25}$ using the upper bounds $b_1=10, b_2=20, b_3=38, b_4=56$:
+If the originally prescribed boundaries are unshifted, $\boldsymbol{\delta}_M$ is 
+an $M + 1$ vector of $0$'s, and
+$\mathbf{B}$ is therefore simply the baseline boundary vector $\mathbf{U}_M$ 
+under the originally prescribed
+distribution of micropanels across macropanels.
 
-$$f(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]$$
-$$f(25) = 1 + 1 + 1 + 0 + 0 = 3$$
+$\mathbf{B}$ then takes the form
 
-This correctly maps subpanel $q_{25}$ to Macro Panel $P_3$.
+$$\mathbf{B} = (b_0, b_1, \ldots,b_M),$$
+where the $M+1$ elements therein represent an intitial index $b_0$ and the $M$ new upper 
+micropanel boundaries; i.e., the values of $r$ associated with the last of each  
+of the sequence of shifted micropanels in the newly reconstituted macropanels.
+Each modified macropanel $P_m*$ ($m* = 1,\ldots, M$) can then be constructed by obtaining 
+indices for micropanels from between adjacent elements of $\mathbf{B}$:
 
-<!-- #### Approach 2: The Interval Mapping / Step Function Approach
-Alternatively, the lookup function $f(j)$ can be explicitly mapped using a piecewise step function that matches the distinct index windows of our chosen $M=5$ shifted layout:
+$$P_m* = \{ q_r \in \mathcal{Q} : b_{m-1} + 1 \leq r \leq b_m \}.$$
 
-$$f(j) = \begin{cases} 
-1 & \text{if } 1 \le j \le 10 \\ 
-2 & \text{if } 11 \le j \le 20 \\ 
-3 & \text{if } 21 \le j \le 38 \\ 
-4 & \text{if } 39 \le j \le 56 \\ 
-5 & \text{if } 57 \le j \le 70 
-\end{cases}$$
+##### Modified Macropanel Lookup Function
+Because the distributions of micropanels across macropanels are no longer uniform
+under these shifted configurations, the scalar ceiling function cannot be used to 
+determine macropanel assignment $m$ of any macropanel $r$.  
+However, such a function is still needed to describe and implement the slow start 
+and fast start VAE scenarios.
 
-##### Generalization of Shifted Boundaries
+We can define a modified macropanel lookup function $f_b(r)$ that 
+counts how many upper bounds 
+$b_m$ from the sequence $\mathbf{B}$ are strictly less than $r$, and then offsets 
+the result by 1. Using bracket notation (where the brackets evaluate to 
+$1$ if the enclosed condition is true, and $0$ if false):
 
-To scale the shifting mechanism across any active configuration $M \in \{5, 7, 10, 14\}$, we define a formal transformation framework. Let $\mathbf{U}_M$ be the baseline **uniform boundary sequence vector** of length $M+1$, where the elements are strictly determined by the constant step-size $k = \frac{70}{M}$:
+$$f_b(r) = 1 + \sum_{m=1}^{M-1} [r > b_m]$$
 
-$$\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_i = i \cdot k$$
+Demonstrative examples of the construction of $\mathbf{U}_M$, $\boldsymbol{\delta}_M$,
+$\mathbf{B}$, and the use of $f_b(r)$ can be found in @sec-supp-mat.
 
-#### The Boundary Deviation Framework
-To construct a non-uniform layout, we define a **boundary deviation vector** $\boldsymbol{\delta}$ of length $M+1$:
-
-$$\boldsymbol{\delta} = (\delta_0, \delta_1, \dots, \delta_M)$$
-
-The shifted boundary sequence vector $\mathbf{B}_M$ is created by adding the deviation vector directly to the uniform baseline:
-
-$$\mathbf{B}_M = \mathbf{U}_M + \boldsymbol{\delta} = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)$$
-
-### Structural Constraints on Deviations
-To ensure that the shifted sequence remains physically valid (non-overlapping, covers all 70 subpanels, and keeps panels non-empty), the elements of $\boldsymbol{\delta}$ must satisfy the following three axioms:
-
-1. **Endpoint Anchors:** The global boundaries cannot shift. The sequence must always start at 0 and end at 70:
-   $$\delta_0 = 0 \quad \text{and} \quad \delta_M = 0$$
-
-2. **Integer Domain:** Every deviation must be an integer to preserve whole subpanel blocks:
-   $$\delta_i \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}$$
-
-3. **Strict Monotonicity:** To prevent empty macro panels or inverted boundaries, adjacent elements must maintain a strict ordering:
-   $$(u_i + \delta_i) > (u_{i-1} + \delta_{i-1}) \quad \forall i \in \{1, 2, \dots, M\}$$
-
-#### Concrete Example Matrix ($M = 5$)
-For the configuration where $M = 5$ and baseline step size $k = 14$, the transformation from uniform to your specific shifted setup is explicitly formalized below:
-
-$$\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)$$
-$$\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)$$
-
-Evaluating the vector addition:
-
-$$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)$$
--->
+[I think the idea of a baseline vector and a deviation vector is useful for 
+generalization, but the way this is written doesn't give the analyst any 
+useful instructions for application. Should the deviation vector maybe
+be expressed in terms of proportions of micropanels to hold back or push forward?]{style="color: red;"}

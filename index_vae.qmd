@@ -68,7 +68,7 @@ number-sections: true
 funding: "The authors received no funding for this work."
 ---
 
-## Introduction
+## Introduction {#sec-intro}
 
 The USFS Forest Inventory and Analysis (FIA) Program surveys and analyzes the forests of the
 United States through a nationwide network of 
@@ -171,19 +171,27 @@ Data from those 3 states...
 
 ### VAE Scenarios
 
-We will now extend this notation to describe in general terms three 
+The basic premise of VAE is to enable the modification of remeasurement schedules 
+by adjusting the macropanel assignments of some micropanels in a focal state. However, in
+the scenarios explored below, all $\mathbf{s}_i$ retain their original micropanel assignments.
+We now extend the initial notation to describe in general terms three 
 VAE scenarios achieved by either i) reassigning micropanels to different macropanels,
 or ii) dropping fixed numbers of micropanels per macropanel over the course of
 an inventory cycle.
 
 {{< include notebooks/fast-slow.qmd >}}
 
+{{< include notebooks/extend-shorten.qmd >}}
 
-## Discussion
+## Discussion {#sec-discussion}
 
-## Conclusion
+## Conclusion {#sec-conclusion}
 
 ## References {.unnumbered}
+
+## Supplementary Materials {#sec-supp-mat}
+
+{{< include notebooks/supplementary_materials.qmd >}}
 
 :::{#refs}
 
