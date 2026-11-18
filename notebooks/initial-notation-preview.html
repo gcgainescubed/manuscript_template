@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.12.0">
+    <meta name="generator" content="quarto-1.12.3">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,27 @@
         margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
         vertical-align: middle;
       }
-    </style>
+      @media print {
+        html {
+          color-scheme: light only;
+        }
+        html, body, pre, code {
+          background-color: transparent;
+        }
+        body, a, a:visited, blockquote {
+          color: black;
+        }
+        pre, code {
+          padding: 0;
+        }
+        p, h2, h3 {
+          orphans: 3;
+          widows: 3;
+        }
+        h2, h3, h4 {
+          page-break-after: avoid;
+        }
+      }    </style>
 
     <style>
       body.hypothesis-enabled #quarto-embed-header {
@@ -41,12 +61,15 @@
         border-bottom: solid 1px;
       }
 
+      /* The title sits on the theme's primary background, so it inherits the
+         header's contrasting text color instead of the theme heading color */
       #quarto-embed-header h6 {
         font-size: 1.1em;
         padding-top: 0.6em;
         margin-left: 1em;
         margin-right: 1em;
         font-weight: 400;
+        color: inherit;
       }
 
       #quarto-embed-header a.quarto-back-link,
@@ -133,10 +156,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f0688f390a76b21125ecd060a3d0a4db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27e7aecbfd76940d03b8e4778a6b0ae4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -146,7 +169,7 @@
       </head>
 
   <body class="quarto-notebook quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
-    <nav id="quarto-embed-header" class="headroom fixed-top bg-primary" aria-labelledby="quarto-embed-title">
+    <nav id="quarto-embed-header" class="headroom fixed-top text-bg-primary" aria-labelledby="quarto-embed-title">
 
       <a href="../index.html" onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
       <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Initial Notation</h6>
@@ -180,24 +203,31 @@ title: "initial-notation" (commenting out title to keep it from replacing main t
 <h4 class="anchored" data-anchor-id="micropanels">Micropanels</h4>
 <p>Let</p>
 <p><span class="math display">\[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}\]</span></p>
-<p>be a set of “micropanels” <span class="math inline">\(q_r\)</span> that partition the <span class="math inline">\(n\)</span> sample locations into approximately equivalently-sized subsets, such that each <span class="math inline">\(q_r \in \mathcal{Q}\)</span> achieves approximate spatial dispersion across the focal state of each of the <span class="math inline">\(s_i\)</span> it contains. The <span class="math inline">\(q_r\)</span> defined here are meant to correspond to collections of sample locations referred to in the FIA Program as “Panel 70’s”, which imply <span class="math inline">\(R = 70\)</span>, or “Panel 140’s”, which imply <span class="math inline">\(R = 140\)</span>.</p>
+<p>be a set of “micropanels” <span class="math inline">\(q_r\)</span> that partition the <span class="math inline">\(n\)</span> sample locations into approximately equivalently-sized subsets, such that each <span class="math inline">\(q_r \in \mathcal{Q}\)</span> achieves approximate spatial dispersion across the focal state of each of the <span class="math inline">\(\mathbf{s}_i\)</span> it contains. The <span class="math inline">\(q_r\)</span> defined here are meant to correspond to collections of sample locations referred to in the FIA Program as “Panel 70’s”, which imply <span class="math inline">\(R = 70\)</span>, or “Panel 140’s”, which imply <span class="math inline">\(R = 140\)</span>.</p>
 <p>In CONUS states where the FIA Program is administered by the Pacific Northwest Research Station, <span class="math inline">\(R = 140\)</span> in present day inventory operations. In the rest of the CONUS states, <span class="math inline">\(R = 70\)</span>. Though this notation is intended to be flexible enough to accommodate a range of possible values of <span class="math inline">\(R\)</span>, in this study we don’t consider PNWRS states, and so we’ll only consider <span class="math inline">\(R = 70\)</span> for practical purposes.</p>
 </section>
 <section id="macropanels" class="level4">
 <h4 class="anchored" data-anchor-id="macropanels">Macropanels</h4>
 <p>The <span class="math inline">\(R\)</span> micropanels can be further aggregated into the set of <span class="math inline">\(M\)</span> macropanels</p>
-<p><span class="math display">\[\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}\]</span> for any value of <span class="math inline">\(M\)</span> such that <span class="math inline">\(M \vert R\)</span>. That is, <span class="math inline">\(R\)</span> is evenly divisible by <span class="math inline">\(M\)</span>, and so the macropanels <span class="math inline">\(P_m \in \mathcal{P}\)</span> are perfectly evenly partitioned by the micropanels <span class="math inline">\(q_r \in \mathcal{Q}\)</span>.</p>
-<p>In the context of FIA, each <span class="math inline">\(P_m \in \mathcal{P}\)</span> can be thought of as an “annual panel”, meaning that each <span class="math inline">\(s_i \subset q_r \subset P_m\)</span> is scheduled to be visited by a field crew in year in the <span class="math inline">\(t^{th}\)</span> year in a chronological series of years indexed in the set</p>
-<p><span class="math display">\[\mathcal{T} = \{t: t = 1,\ldots,T\}\]</span> where <span class="math inline">\(T = M\)</span>. Therefore, <span class="math inline">\(\mathcal{P}\)</span> can be thought of as in inventory cycle, of cycle length <span class="math inline">\(M\)</span>, composed of the annual panels <span class="math inline">\(P_m \in \mathcal{P}\)</span>, which themselves are evenly subdivided into the micropanels <span class="math inline">\(q_r \in \mathcal{Q}\)</span>.</p>
-<p><span class="math inline">\(M = T\)</span> here is intended to correspond to the common state-level inventory cycle lengths prescribed in the FIA program, and so in this study <span class="math inline">\(M \in \{5, 7, 10, 14\}\)</span>. Because the micropanels are initially evenly distributed across the annual panels, the number of micropanels per macropanel can be denoted by <span class="math inline">\(k\)</span> as</p>
+<p><span class="math display">\[\mathcal{P}_M = \{P_m : \ m = 1,\ldots,M\}\]</span> for any value of <span class="math inline">\(M\)</span> such that <span class="math inline">\(M \vert R\)</span>; that is, such that <span class="math inline">\(R\)</span> is evenly divisible by <span class="math inline">\(M\)</span>, and so the macropanels <span class="math inline">\(P_m \in \mathcal{P}_M\)</span> are perfectly evenly partitioned by the micropanels <span class="math inline">\(q_r \in \mathcal{Q}\)</span> (though the micropanels themselves may contain slightly different numbers of <span class="math inline">\(\mathbf{s}_i\)</span>.</p>
+<!--In the context of FIA, each $P_m \in \mathcal{P}_M$ can be thought of as an "annual 
+panel", meaning that each $s_i \subset q_r \subset P_m$ is scheduled to be visited
+by a field crew in year in the $t^{th}$ year in a chronological series of years 
+indexed in the set 
+
+$$\mathcal{T} = \{t: t = 1,\ldots,T\}$$
+where $T = M$. Therefore, $\mathcal{P}_M$ can be thought of as in inventory cycle,
+of cycle length $M$, composed of the annual panels $P_m \in \mathcal{P}_M$, which 
+themselves are evenly subdivided into the micropanels $q_r \in \mathcal{Q}$. -->
+<p>The macropanels described above are intended to correspond to the ``annual panels’’ into which the <span class="math inline">\(s_i\)</span> in each state are partitioned for measurement scheduling purposes. <span class="math inline">\(M\)</span>, therefore, is intended to correspond to conceivable state-level inventory cycle lengths prescribed in the FIA program for <span class="math inline">\(R = 70\)</span>, and so in this study <span class="math inline">\(M \in \{5, 7, 10, 14\}\)</span>. Because the micropanels are initially evenly distributed across the macropanels, the number of micropanels per macropanel can be denoted by <span class="math inline">\(k\)</span> as</p>
 <p><span class="math display">\[k = \frac{R}{M}\]</span></p>
 <p>A general expression to recover the identities of the micropanels contained in any macropanel <span class="math inline">\(P_m\)</span> is given by</p>
-<p><span class="math display">\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\]</span></p>
+<p><span class="math display">\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\]</span>.</p>
 </section>
 <section id="macropanel-lookup-function" class="level4">
 <h4 class="anchored" data-anchor-id="macropanel-lookup-function">Macropanel Lookup Function</h4>
 <p>Conversely, to determine the identity of the macropanel to which micropanel <span class="math inline">\(r\)</span> belongs, we can define a macropanel lookup function</p>
-<p><span class="math display">\[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil\]</span> where the ceiling function <span class="math inline">\(\lceil x \rceil\)</span> returns the smallest integer not less than <span class="math inline">\(x\)</span>, and <span class="math inline">\(f(r) = m\)</span> outputs the macropanel index (<span class="math inline">\(1 \leq m \leq M\)</span>).</p>
+<p><span class="math display">\[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil\]</span> where the ceiling function <span class="math inline">\(\lceil x \rceil\)</span> returns the smallest integer not less than <span class="math inline">\(x\)</span>, and <span class="math inline">\(f(r) = m\)</span> outputs the index of the macropanel (<span class="math inline">\(1 \leq m \leq M\)</span>) to which the <span class="math inline">\(r^{th}\)</span> micropanel is assigned.</p>
 <!--
 | Cycle Length ($M$) | Micropanels/Macropanel ($k$) | Micropaenl Index ($r$) | Formula Evaluation | Panel Index ($m$) |
 |:---:|:---:|:---:|:---:|:---:|
@@ -284,6 +314,28 @@ title: "initial-notation" (commenting out title to keep it from replacing main t
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp('/' + window.location.host + '/');
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var opensNewContext = (link) => {
+        var target = (link.getAttribute("target") || "").toLowerCase();
+        return target !== "" && !["_self", "_parent", "_top"].includes(target);
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -300,6 +352,9 @@ title: "initial-notation" (commenting out title to keep it from replacing main t
           }
           if (!link.classList.contains('no-external-icon')) {
           }
+        }
+        if (opensNewContext(link)) {
+          describeNewWindow(link);
         }
       }
       };

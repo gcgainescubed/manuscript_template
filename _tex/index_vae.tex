@@ -65,6 +65,8 @@
 
 
 \usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
 \newcounter{none} % for unnumbered tables
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -72,9 +74,6 @@
 \makeatletter
 \patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
 \makeatother
-% Allow footnotes in longtable head/foot
-\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
-\makesavenoteenv{longtable}
 \usepackage{graphicx}
 \makeatletter
 \newsavebox\pandoc@box
@@ -221,7 +220,7 @@ design
 \end{frontmatter}
     
 
-\section{Introduction}\label{introduction}
+\section{Introduction}\label{sec-intro}
 
 The USFS Forest Inventory and Analysis (FIA) Program surveys and
 analyzes the forests of the United States through a nationwide network
@@ -352,10 +351,10 @@ Let
 be a set of ``micropanels'' \(q_r\) that partition the \(n\) sample
 locations into approximately equivalently-sized subsets, such that each
 \(q_r \in \mathcal{Q}\) achieves approximate spatial dispersion across
-the focal state of each of the \(s_i\) it contains. The \(q_r\) defined
-here are meant to correspond to collections of sample locations referred
-to in the FIA Program as ``Panel 70's'', which imply \(R = 70\), or
-``Panel 140's'', which imply \(R = 140\).
+the focal state of each of the \(\mathbf{s}_i\) it contains. The \(q_r\)
+defined here are meant to correspond to collections of sample locations
+referred to in the FIA Program as ``Panel 70's'', which imply
+\(R = 70\), or ``Panel 140's'', which imply \(R = 140\).
 
 In CONUS states where the FIA Program is administered by the Pacific
 Northwest Research Station, \(R = 140\) in present day inventory
@@ -369,34 +368,28 @@ and so we'll only consider \(R = 70\) for practical purposes.
 The \(R\) micropanels can be further aggregated into the set of \(M\)
 macropanels
 
-\[\mathcal{P} = \{P_m : \ m = 1,\ldots,M\}\] for any value of \(M\) such
-that \(M \vert R\). That is, \(R\) is evenly divisible by \(M\), and so
-the macropanels \(P_m \in \mathcal{P}\) are perfectly evenly partitioned
-by the micropanels \(q_r \in \mathcal{Q}\).
+\[\mathcal{P}_M = \{P_m : \ m = 1,\ldots,M\}\] for any value of \(M\)
+such that \(M \vert R\); that is, such that \(R\) is evenly divisible by
+\(M\), and so the macropanels \(P_m \in \mathcal{P}_M\) are perfectly
+evenly partitioned by the micropanels \(q_r \in \mathcal{Q}\) (though
+the micropanels themselves may contain slightly different numbers of
+\(\mathbf{s}_i\).
 
-In the context of FIA, each \(P_m \in \mathcal{P}\) can be thought of as
-an ``annual panel'', meaning that each \(s_i \subset q_r \subset P_m\)
-is scheduled to be visited by a field crew in year in the \(t^{th}\)
-year in a chronological series of years indexed in the set
-
-\[\mathcal{T} = \{t: t = 1,\ldots,T\}\] where \(T = M\). Therefore,
-\(\mathcal{P}\) can be thought of as in inventory cycle, of cycle length
-\(M\), composed of the annual panels \(P_m \in \mathcal{P}\), which
-themselves are evenly subdivided into the micropanels
-\(q_r \in \mathcal{Q}\).
-
-\(M = T\) here is intended to correspond to the common state-level
-inventory cycle lengths prescribed in the FIA program, and so in this
-study \(M \in \{5, 7, 10, 14\}\). Because the micropanels are initially
-evenly distributed across the annual panels, the number of micropanels
-per macropanel can be denoted by \(k\) as
+The macropanels described above are intended to correspond to the
+``annual panels'\,' into which the \(s_i\) in each state are partitioned
+for measurement scheduling purposes. \(M\), therefore, is intended to
+correspond to conceivable state-level inventory cycle lengths prescribed
+in the FIA program for \(R = 70\), and so in this study
+\(M \in \{5, 7, 10, 14\}\). Because the micropanels are initially evenly
+distributed across the macropanels, the number of micropanels per
+macropanel can be denoted by \(k\) as
 
 \[k = \frac{R}{M}\]
 
 A general expression to recover the identities of the micropanels
 contained in any macropanel \(P_m\) is given by
 
-\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\]
+\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\].
 
 \subsubsection{Macropanel Lookup
 Function}\label{macropanel-lookup-function}
@@ -406,98 +399,568 @@ micropanel \(r\) belongs, we can define a macropanel lookup function
 
 \[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil\]
 where the ceiling function \(\lceil x \rceil\) returns the smallest
-integer not less than \(x\), and \(f(r) = m\) outputs the macropanel
-index (\(1 \leq m \leq M\)).
+integer not less than \(x\), and \(f(r) = m\) outputs the index of the
+macropanel (\(1 \leq m \leq M\)) to which the \(r^{th}\) micropanel is
+assigned.
 
 \subsection{VAE Scenarios}\label{vae-scenarios}
 
-We will now extend this notation to describe in general terms three VAE
+The basic premise of VAE is to enable the modification of remeasurement
+schedules by adjusting the macropanel assignments of some micropanels in
+a focal state. However, in the scenarios explored below, all
+\(\mathbf{s}_i\) retain their original micropanel assignments. We now
+extend the initial notation to describe in general terms three VAE
 scenarios achieved by either i) reassigning micropanels to different
 macropanels, or ii) dropping fixed numbers of micropanels per macropanel
 over the course of an inventory cycle.
 
-\subsubsection{Slow/Fast Start}\label{slowfast-start}
+\subsubsection{Slow Start and Fast Start
+Scenarios}\label{slow-start-and-fast-start-scenarios}
 
-\paragraph{Modified Partition Notation (Shifted
-Configurations)}\label{modified-partition-notation-shifted-configurations}
+\paragraph{Slow Start}\label{slow-start}
 
-For an uneven or shifted layout where subpanels are structurally
-rearranged, the uniform mapping breaks down. To formalize this, we
-introduce an explicit boundary sequence vector \(\mathbf{B}\) containing
-\(M+1\) elements:
+In the context of FIA, the ``slow start'' scenarios we simulated are
+intended to represent a budgetary or workforce shortfall in the first
+\(z\) years early in an inventory cycle, necessitating a planned
+reduction of field visitation by a fixed proportion of micropanels per
+macropanel in the first \(z\) macropanels in \(\mathcal{P}_M\).
 
-\[\mathbf{B} = (b_0, b_1, \dots, b_M)\]
+Then, a budgetary or workforce recovery occurs, enabling a planned
+increase of field visitation by the same fixed proportion of micropanels
+per macropanel in the subsequent \(z\) macropanels. Finally, work
+capacity stabilizes, and the \(k\) micropanels in the final macropanel
+\(P_M\) in \(\mathcal{P}_M\) retain their original assignments (i.e.,
+we're ``back on time'').
 
-For the specific modified configuration where \(M = 5\), the boundaries
-are explicitly assigned as:
+\paragraph{Fast Start}\label{fast-start}
 
-\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]
+Under the ``fast start'' scenarios we simulated, our VAE intentions are
+analogous to the slow start scenario described above, but the timing of
+the availability of resources of field work is reversed. That is, extra
+resources for field work enable a fixed proportion of ``early''
+micropanels per macropanel for the first \(z\) macropanels in
+\(\mathcal{P}_M\). Annual sampling effort is then reduced by the same
+proportion micropanels per macropanel for the subsequent \(z\)
+macropanels to\\
+``get back on schedule''; and the nominally prescribed rate of \(k\)
+micropanels per macropanel is reestablished for macropanel \(M\). A more
+detailed demonstrative example can be found in
+Section~\ref{sec-supp-mat}.
 
-Each individual macro panel \(P_i\) (for \(i = 1, 2, \dots, M\)) is then
-constructed by pulling indices between adjacent elements of the boundary
-sequence:
+\paragraph{Generalizing Shifted Macropanel
+Boundaries}\label{generalizing-shifted-macropanel-boundaries}
 
-\[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}\]
+If we preserve \(R\) and \(M\), but modify the original macropanel
+assignments of some micropanels for VAE purposes as the slow and fast
+start scenarios are intended to represent, the micropanels no longer
+evenly partition the macropanels throughout \(\mathcal{P}_M\).
+Therefore, it is convenient to extend our notation to represent an
+arbitraty, newly constituted cycle \(\mathcal{P}^\prime_M\) following
+repositioning of micropanels (i.e., to represent and facilitate the
+application of a particular slow or fast start VAE regimen across any
+value of \(M \in \{5, 7, 10, 14\}\)).
 
-\paragraph{Explicit Macro Panel
-Contents}\label{explicit-macro-panel-contents}
+Let \(\mathbf{U}_M\) be the baseline uniform boundary sequence vector of
+length \(M+1\), where the elements are determined by the constant
+step-size \(k = \frac{R}{M}\):
+
+\[\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_m = m \cdot k\]
+
+To then specify a slow or fast start regimen that can be applied
+arbitrarily for any value of \(M\), we further define the boundary
+deviation vector \(\boldsymbol{\delta}_M\) of length \(M+1\) as:
+
+\[\boldsymbol{\delta}_M = (\delta_0, \delta_1, \ldots, \delta_M)\]
+
+The shifted boundary sequence vector \(\mathbf{B}\) can then be obtained
+by summing the baseline boundary vector and the boundary deviation
+vector:
+
+\[\mathbf{B} = \mathbf{U}_M + \boldsymbol{\delta}_M = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)\]
+
+If the originally prescribed boundaries are unshifted,
+\(\boldsymbol{\delta}_M\) is an \(M + 1\) vector of \(0\)'s, and
+\(\mathbf{B}\) is therefore simply the baseline boundary vector
+\(\mathbf{U}_M\) under the originally prescribed distribution of
+micropanels across macropanels.
+
+\(\mathbf{B}\) then takes the form
+
+\[\mathbf{B} = (b_0, b_1, \ldots,b_M),\] where the \(M+1\) elements
+therein represent an intitial index \(b_0\) and the \(M\) new upper
+micropanel boundaries; i.e., the values of \(r\) associated with the
+last of each\\
+of the sequence of shifted micropanels in the newly reconstituted
+macropanels. Each modified macropanel \(P_m*\) (\(m* = 1,\ldots, M\))
+can then be constructed by obtaining indices for micropanels from
+between adjacent elements of \(\mathbf{B}\):
+
+\[P_m* = \{ q_r \in \mathcal{Q} : b_{m-1} + 1 \leq r \leq b_m \}.\]
+
+\paragraph{Modified Macropanel Lookup
+Function}\label{modified-macropanel-lookup-function}
+
+Because the distributions of micropanels across macropanels are no
+longer uniform under these shifted configurations, the scalar ceiling
+function cannot be used to determine macropanel assignment \(m\) of any
+macropanel \(r\).\\
+However, such a function is still needed to describe and implement the
+slow start and fast start VAE scenarios.
+
+We can define a modified macropanel lookup function \(f_b(r)\) that
+counts how many upper bounds \(b_m\) from the sequence \(\mathbf{B}\)
+are strictly less than \(r\), and then offsets the result by 1. Using
+bracket notation (where the brackets evaluate to \(1\) if the enclosed
+condition is true, and \(0\) if false):
+
+\[f_b(r) = 1 + \sum_{m=1}^{M-1} [r > b_m]\]
+
+Demonstrative examples of the construction of \(\mathbf{U}_M\),
+\(\boldsymbol{\delta}_M\), \(\mathbf{B}\), and the use of \(f_b(r)\) can
+be found in Section~\ref{sec-supp-mat}.
+
+{I think the idea of a baseline vector and a deviation vector is useful
+for generalization, but the way this is written doesn't give the analyst
+any useful instructions for application. Should the deviation vector
+maybe be expressed in terms of proportions of micropanels to hold back
+or push forward?}
+
+\subsubsection{Extended and Shortened Cycle
+Lengths}\label{extended-and-shortened-cycle-lengths}
+
+Under the slow and fast start VAE scenarios described above, the number
+of macropanels in the cycle \(\mathcal{P}_M\) (i.e., \(M\), which we can
+think of as corresponding to ``inventory cycle length'' in the context
+of FIA) is preserved by shifting an equivalent number of micropanels
+forward (for delayed field visitation) in some macropanels as are held
+backward (for early field visitation) in others.
+
+Another way VAE might be applied, for particular values of \(R\) and
+\(M\), is to evenly redistribute micropanels into a modified total
+number of macropanels, say
+\(M^{\prime} \in \{5,7,10,14\}, \quad M^{\prime} \neq M\), where
+\(M^{\prime}\) is still a factor of \(R\). If \(M^{\prime} > M\) the
+cycle length is extended, and the macropanel sampling intensity \(k\)
+(i.e., the annual effort) is reduced. Conversely, if \(M^{\prime} < M\)
+the cycle length is shortened and the annual effort in each newly
+configured macropanel \(P^\prime_m\) in in the modified cycle
+\(\mathcal{P}^\prime_M\) is increased.
+
+{I would prefer for the modified macropanels and cycles to be
+respectively symbolized as \(P_{m^\prime}\) and
+\(\mathcal{P}_{M^\prime}\) to align with the respective assignments of
+\(m^\prime\) and \(M^\prime\) as modified macropanel index and cycle
+length. However, as an example, for \(m = 1\) and \(M = 1\), it makes
+more sense to write \(P^\prime_1\) and \(\mathcal{P}^\prime_1\) than
+\(P_{1^\prime}\) and \(\mathcal{P}_{1^\prime}\)\ldots right?}
+
+\paragraph{A modified macropanel lookup function for extended and
+shortened cycle
+lengths}\label{a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths}
+
+To map any micropanel from its originally prescribed macropanel \(P_m\)
+to its new macropanel \(P^\prime_m\) under a shortened or extended cycle
+length, we define a function that uses both the original macropanel
+index \(m\) and the local micropanel offset \(l\) within that
+macropanel.
+
+Let:
 
 \begin{itemize}
 \tightlist
 \item
-  \(P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}\)
+  \(M, k\) be the parameters of the original configuration (e.g.,
+  \(M=5, k=14\)).
 \item
-  \(P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}\)
+  \(M^\prime, k^\prime\) be the parameters of the new configuration
+  (e.g., \(M^\prime=7, k^\prime=10\)).
 \item
-  \(P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}\)
+  \(m\) be the original macropanel index, where
+  \(m \in \{1, 2, \dots, M\}\).
 \item
-  \(P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}\)
-\item
-  \(P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}\)
+  \(l\) be the local index of the micropanel within \(P_m\), where
+  \(l \in \{1, 2, \dots, k\}\).
 \end{itemize}
 
-\paragraph{Modified Panel Lookup Function
-Alternatives}\label{modified-panel-lookup-function-alternatives}
+A micropanel's local macropanel coordinate (i.e., the two unique values
+that determine its chronological position within its originally assigned
+macropanel and cycle) \((m,l)\) maps to its static global index \(r\)
+via:
 
-Because the subpanel distributions are no longer uniform, the scalar
-ceiling function cannot be used. Below are two equivalent mathematical
-approaches to express the lookup function \(f(j)\) for the shifted
-configuration.
+\[r = (m - 1)k + l\]
 
-\paragraph{Approach 1: The Summation / Indicator Function
-Approach}\label{approach-1-the-summation-indicator-function-approach}
+In the new cycle configuration \(\mathcal{P}^\prime_M\), each macropanel
+\(P^\prime_m\) contains exactly \(k^\prime\) micropanels. To determine
+which macropanel (i.e., which sequence of \(k^\prime\) micropanels) the
+index \(r\) falls within, we divide \(r\) by \(k^\prime\) and apply the
+ceiling function \(\lceil \cdot \rceil\) to round up to the nearest
+integer:
 
-We can define the lookup function \(f(j)\) by counting how many
-boundaries the subpanel index \(j\) has successfully crossed. Using the
-Iverson bracket notation (where the brackets evaluate to \(1\) if the
-enclosed condition is true, and \(0\) if false), the macro panel index
-can be calculated directly by checking membership across all intervals:
+\[m^\prime = \left\lceil \frac{r}{k^\prime} \right\rceil\]
 
-\[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]\]
+Combining both steps yields the definitive closed-form mapping function
+\(\mathbf{f}(m,l)\):
 
-Alternatively, an even more concise formulation counts how many upper
-bounds \(b_i\) from our sequence
-\(\mathbf{B} = (0, 10, 20, 38, 56, 70)\) are strictly less than \(j\),
-then offsets the result by 1:
+\[f^\prime(m,l) = \left\lceil \frac{(m - 1) k + l}{k^\prime} \right\rceil\]
 
-\[f(j) = 1 + \sum_{i=1}^{M-1} [j > b_i]\]
+Where \(\mathbf{f}(m,l) = m^\prime\) represents the index of the
+modified macropanel (\(m^\prime \in \{1, 2, \dots, M^\prime\}\)) to
+which micropanel \(r\) is newly assigned and \(\lceil \cdot \rceil\)
+represents the ceiling function described above.
 
-\paragraph{Example Evaluation}\label{example-evaluation}
+\section{Discussion}\label{sec-discussion}
 
-To locate subpanel \(q_{25}\) using the upper bounds
-\(b_1=10, b_2=20, b_3=38, b_4=56\):
-
-\[f(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]\]
-\[f(25) = 1 + 1 + 1 + 0 + 0 = 3\]
-
-This correctly maps subpanel \(q_{25}\) to Macro Panel \(P_3\).
-
-\section{Discussion}\label{discussion}
-
-\section{Conclusion}\label{conclusion}
+\section{Conclusion}\label{sec-conclusion}
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}
+
+\section{Supplementary Materials}\label{sec-supp-mat}
+
+\subsection{Appendix A: Examples}\label{appendix-a-examples}
+
+Below are some demonstrative examples of the use of the notation and
+functions described in the methods section.
+
+\subsubsection{Fast Start and Slow
+Start}\label{fast-start-and-slow-start}
+
+\paragraph{Slow Start}\label{slow-start-1}
+
+Consider a case where \(R = 70\) and \(M = 5\), which implies that
+\(k = \frac{R}{M} = 14\) micropanels per macropanel. Consider further
+that for \(m = \{1,2\}\), we shift the last four micropanels
+\(q_r \in P_m\) forward one macropanel. In the context of FIA, this
+might represent a budgetary or workforce shortfall in the first two
+years in an inventory cycle, necessitating a planned reduction of field
+visitation by \(\frac{2}{7}\) micropanels in the first two macropanels.
+
+Envision then that the for \(m = \{3,4\}\), we shift the first four
+micropanels \(q_r \in P_m\) backward one macropanel. This might
+represent a budgetary or workforce recovery in the following two years
+in the inventory cycle, enabling a planned increase of field visitation
+by \(\frac{2}{7}\) micropanels in those next two macropanels. Finally,
+assume that for the final macropanel, \(m = 5\) work capacity
+stabilizes, and the \(k = 14\) micropanels in \(P_5\) retain their
+original assignments.
+
+Under this ``slow start'' VAE regimen, the boundaries \(b_m\) in
+\(\mathbf{B}\) are explicitly assigned to be:
+
+\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]
+
+yielding the new macropanel assignments
+
+\begin{itemize}
+\tightlist
+\item
+  \(P_1* = \{ q_r \in \mathcal{Q} \mid 1 \leq r \leq 10 \} = \{q_1,\ldots,q_{10}\}\)
+\item
+  \(P_2* = \{ q_r \in \mathcal{Q} \mid 11 \leq r \leq 20 \}\)
+\item
+  \(P_3* = \{ q_r \in \mathcal{Q} \mid 21 \leq r \leq 38 \}\)
+\item
+  \(P_4* = \{ q_r \in \mathcal{Q} \mid 39 \leq r \leq 56 \}\)
+\item
+  \(P_5* = \{ q_r \in \mathcal{Q} \mid 57 \leq r \leq 70 \}.\)
+\end{itemize}
+
+\paragraph{Fast Start}\label{fast-start-1}
+
+Alternatively, consider a case where \(R = 70\) and \(M = 7\), which
+implies \(k = \frac{R}{M} = 10\) micropanels per macropanel, and that
+our VAE intentions are analogous to the slow start scenario described
+above, but the timing of the availability of resources of field work is
+reversed. That is, extra resources for field work enable two ``early''
+micropanels per macropanel for \(m = \{1,2,3\}\); annual sampling effort
+is then reduced by two micropanels per macropanel for \(m = \{4,5,6\}\)
+to\\
+get back on schedule; and the nominal \(k = 10\) is finally
+reestablished for \(m = 7\).
+
+Under this ``fast start'' VAE regimen, the boundaries \(b_m\) in
+\(\mathbf{B}\) are explicitly assigned to be:
+
+\[\mathbf{B} = (0, 12, 24, 36, 44, 52, 60, 70)\]
+
+yielding the new macropanel assignments
+
+\begin{itemize}
+\tightlist
+\item
+  \(P_1* = \{ q_r \in \mathcal{Q} \mid 1 \leq r \leq 12 \} = \{q_1,\ldots,q_{12}\}\)
+\item
+  \(P_2* = \{ q_r \in \mathcal{Q} \mid 13 \leq r \leq 24 \}\)
+\item
+  \(P_3* = \{ q_r \in \mathcal{Q} \mid 25 \leq r \leq 36 \}\)
+\item
+  \(P_4* = \{ q_r \in \mathcal{Q} \mid 37 \leq r \leq 44 \}\)
+\item
+  \(P_5* = \{ q_r \in \mathcal{Q} \mid 45 \leq r \leq 52 \}\)
+\item
+  \(P_6* = \{ q_r \in \mathcal{Q} \mid 53 \leq r \leq 60 \}\)
+\item
+  \(P_7* = \{ q_r \in \mathcal{Q} \mid 61 \leq r \leq 70 \}.\)
+\end{itemize}
+
+\paragraph{Illustration of the baseline and shifted boundary deviation
+vectors}\label{illustration-of-the-baseline-and-shifted-boundary-deviation-vectors}
+
+Continuing with the example above, the transformation from the uniform
+\(R = 70\), \(M = 5\), and \(k = 14\) boundary vector to the specific
+VAE regimen described can be obtained via:
+
+\[\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)\]
+\[\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)\]
+
+Evaluating the vector addition:
+
+\[\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)\]
+
+\paragraph{Conditions to ensure validity of the boundary deviation
+vector}\label{conditions-to-ensure-validity-of-the-boundary-deviation-vector}
+
+To ensure that a boundary deviation vector yields a physically valid
+modified boundary sequence under proposed slow start and fast start VAE
+regimens (i.e., that it precludes overlapping or empty macropanels and
+that it covers all \(R\) micropanels), the elements of
+\(\boldsymbol{\delta}_M\) must satisfy the following three criteria.
+Firstly, the outer micropanel boundaries cannot shift; that is, the
+sequence \(\boldsymbol{\delta}\) must always start at 0 and end at R
+such that \(\delta_0 = 0\) and \(\quad \delta_M = 0\). Secondly, every
+deviation must be an integer to preserve whole micropanel blocks, i.e.,
+\(\delta_m \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}\).
+Finally, to prevent empty macro panels or inverted boundaries, adjacent
+elements must maintain ordering such that
+\((u_m + \delta_m) > (u_{m-1} + \delta_{m-1}), \quad \forall m \in \{1, 2, \dots, M\}\).
+
+\paragraph{Example evaluation of the modified macropanel lookup function
+for fast/slow
+start}\label{example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start}
+
+To locate micropanel \(q_{25}\) using the upper bounds contained in
+\(\mathbf{B}\) for the \(M = 5\) slow start example described above
+(i.e., \(b_1=10, b_2=20, b_3=38, b_4=56, b_5 = 70)\):
+
+\[f_b(25) = 1 + [25 > 10] + [25 > 20] + [25 > 38] + [25 > 56]\]
+\[f_b(25) = 1 + 1 + 1 + 0 + 0 = 3.\]
+
+This correctly links micropanel \(q_{25}\) to modified macropanel
+\(P_3*\).
+
+\subsubsection{Extended and Shortened Cycle
+Lengths}\label{extended-and-shortened-cycle-lengths-1}
+
+\paragraph{\texorpdfstring{Subpanel Redistribution: From
+\(\mathcal{P}_{5}\) to
+\(\mathcal{P}_{7}\)}{Subpanel Redistribution: From \textbackslash mathcal\{P\}\_\{5\} to \textbackslash mathcal\{P\}\_\{7\}}}\label{subpanel-redistribution-from-mathcalp_5-to-mathcalp_7}
+
+The 70 micropanels are reallocated from 5 blocks of 14 into 7 blocks of
+10. This redistribution preserves a contiguous partitioning across the
+entire set of micropanels \(q_r \in Q\).
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\paragraph{\texorpdfstring{1. The Original Partition Structure
+(\(\mathcal{P}_{5}\))}{1. The Original Partition Structure (\textbackslash mathcal\{P\}\_\{5\})}}\label{the-original-partition-structure-mathcalp_5}
+
+When \(M = 5\) and \(k = 14\), the layout partition
+\(\mathcal{P}_5 = \{P_1, P_2, P_3, P_4, P_5\}\) groups the global
+indices contiguously as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  \(P_1 = \{q_1, \dots, q_{14}\}\)
+\item
+  \(P_2 = \{q_{15}, \dots, q_{28}\}\)
+\item
+  \(P_3 = \{q_{29}, \dots, q_{42}\}\)
+\item
+  \(P_4 = \{q_{43}, \dots, q_{56}\}\)
+\item
+  \(P_5 = \{q_{57}, \dots, q_{70}\}\)
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\paragraph{\texorpdfstring{2. The New Extended Partition Structure
+(\(\mathcal{P}_{7}\))}{2. The New Extended Partition Structure (\textbackslash mathcal\{P\}\_\{7\})}}\label{the-new-extended-partition-structure-mathcalp_7}
+
+When the configuration expands to \(M^\prime = 7\) and
+\(k^\prime = 10\), the layout partition updates to
+\(\mathcal{P}^\prime_7 = \{P'_1, P'_2, P'_3, P'_4, P'_5, P'_6, P'_7\}\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(P'_1 = \{q_1, \dots, q_{10}\}\)
+\item
+  \(P'_2 = \{q_{11}, \dots, q_{20}\}\)
+\item
+  \(P'_3 = \{q_{21}, \dots, q_{30}\}\)
+\item
+  \(P'_4 = \{q_{31}, \dots, q_{40}\}\)
+\item
+  \(P'_5 = \{q_{41}, \dots, q_{50}\}\)
+\item
+  \(P'_6 = \{q_{51}, \dots, q_{60}\}\)
+\item
+  \(P'_7 = \{q_{61}, \dots, q_{70}\}\)
+\end{itemize}
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\paragraph{3. Micropanel Lineage
+Mapping}\label{micropanel-lineage-mapping}
+
+To visualize exactly how the micropanel constituents of the original
+macropanels are redistributed to form the new macropanel configuration,
+the lineage maps as follows:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 4\tabcolsep) * \real{0.3333}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+New Macropanel (\(P'_i\))
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Composition from Original Macropanels (\(P_j\))
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Subpanel Range
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+\textbf{\(P'_1\)} & Completely carved out of \(P_1\) &
+\(\{q_1, \dots, q_{10}\}\) \\
+\textbf{\(P'_2\)} & Composed of the remainder of \(P_1\) (4 subpanels) +
+the first part of \(P_2\) (6 subpanels) &
+\(\{q_{11}, \dots, q_{14}\} \cup \{q_{15}, \dots, q_{20}\}\) \\
+\textbf{\(P'_3\)} & Composed of the remainder of \(P_2\) (8 subpanels) +
+the first part of \(P_3\) (2 subpanels) &
+\(\{q_{21}, \dots, q_{28}\} \cup \{q_{29}, \dots, q_{30}\}\) \\
+\textbf{\(P'_4\)} & Completely carved out of the middle of \(P_3\) &
+\(\{q_{31}, \dots, q_{40}\}\) \\
+\textbf{\(P'_5\)} & Composed of the remainder of \(P_3\) (2 subpanels) +
+the first part of \(P_4\) (8 subpanels) &
+\(\{q_{41}, \dots, q_{42}\} \cup \{q_{43}, \dots, q_{50}\}\) \\
+\textbf{\(P'_6\)} & Composed of the remainder of \(P_4\) (6 subpanels) +
+the first part of \(P_5\) (4 subpanels) &
+\(\{q_{51}, \dots, q_{56}\} \cup \{q_{57}, \dots, q_{60}\}\) \\
+\textbf{\(P'_7\)} & Completely carved out of the remainder of \(P_5\) &
+\(\{q_{61}, \dots, q_{70}\}\) \\
+\end{longtable}
+}
+
+\paragraph{Example evaluation of the modified macropanel lookup function
+for extended/shortened cycle
+lengths}\label{example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths}
+
+\subparagraph{\texorpdfstring{Example cases for cycle length extension
+(\(M=5, k=14 \implies M^\prime=7, k^\prime=10\))}{Example cases for cycle length extension (M=5, k=14 \textbackslash implies M\^{}\textbackslash prime=7, k\^{}\textbackslash prime=10)}}\label{example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Boundary Case A: The absolute first micropanel}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Input: \(m = 1\), \(l = 1\)
+  \item
+    Calculation:
+    \[\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)14 + 1}{10} \right\rceil = \left\lceil \frac{1}{10} \right\rceil = 1\]
+  \item
+    \emph{Result:} Destination is \textbf{\(P'_1\)} (Correct).
+  \end{itemize}
+\item
+  \textbf{Boundary Case B: An overlapping boundary micropanel}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Input: \(m = 1\), \(l = 12\)
+  \item
+    Calculation:
+    \[\mathbf{f}(1, 12) = \left\lceil \frac{(1 - 1)14 + 12}{10} \right\rceil 
+    = \left\lceil \frac{12}{10} \right\rceil = \lceil 1.2 \rceil = 2\]
+  \item
+    \emph{Result:} Destination is \textbf{\(P'_2\)} (Correct, as global
+    micropanel \(q_{12}\) shifts into the second macro panel).
+  \end{itemize}
+\item
+  \textbf{Boundary Case C: The absolute final micropanel}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Input: \(m = 5\), \(l = 14\)
+  \item
+    Calculation:
+    \[\mathbf{f}(5, 14) = \left\lceil \frac{(5 - 1)14 + 14}{10} \right\rceil = \left\lceil \frac{56 + 14}{10} \right\rceil = \left\lceil \frac{70}{10} \right\rceil = 7\]
+  \item
+    \emph{Result:} Destination is \textbf{\(P'_7\)} (Correct).
+  \end{itemize}
+\end{itemize}
+
+\subparagraph{\texorpdfstring{Example cases for cycle length shortening
+(\(M=14, k=5 \implies M^\prime=10, k^\prime=7\))}{Example cases for cycle length shortening (M=14, k=5 \textbackslash implies M\^{}\textbackslash prime=10, k\^{}\textbackslash prime=7)}}\label{example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7}
+
+The general mapping formula works for shortening cycle lengths as well.
+Because the formula tracks the unique sequential micropanel index \(r\),
+it remains valid whether the macropanel count \(M\) increases or
+decreases.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Test Case A: The absolute first micropanel (\(q_1\))}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Input: \(m = 1, l = 1\)
+  \item
+    Calculation:
+    \[\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)5 + 1}{7} \right\rceil = \left\lceil \frac{1}{7} \right\rceil = 1\]
+  \item
+    \emph{Result:} Destination is \textbf{\(P'_1\)} (Correct).
+  \end{itemize}
+\item
+  \textbf{Test Case B: A mid-point boundary crossing micropanel
+  (\(q_8\))}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Input: \(m = 2, l = 3\) (The 3rd micropanel of the 2nd original
+    macro panel)
+  \item
+    Calculation:
+    \[\mathbf{f}(2, 3) = \left\lceil \frac{(2 - 1)5 + 3}{7} \right\rceil = \left\lceil \frac{8}{7} \right\rceil = \lceil 1.14 \rceil = 2\]
+  \item
+    \emph{Result:} Destination is \textbf{\(P'_2\)} (Correct, as global
+    micropanel \(q_8\) shifts into the second new macro panel).
+  \end{itemize}
+\item
+  \textbf{Test Case C: The absolute final micropanel (\(q_{70}\))}
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Input: \(m = 14, l = 5\)
+  \item
+    Calculation:
+    \[\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10\]
+  \item
+    \emph{Result:} Destination is \textbf{\(P'_{10}\)} (Correct).
+  \end{itemize}
+\end{itemize}
 
 \renewcommand{\bibsection}{}
 \bibliography{vae.bib}

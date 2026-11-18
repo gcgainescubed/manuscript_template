@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="generator" content="quarto-1.12.3">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+    <title>supplementary_materials</title>
+    <style>
+      /* Default styles provided by pandoc.
+      ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+      */
+      span.smallcaps{font-variant: small-caps;}
+      div.columns{display: flex; gap: 1.5em;}
+      div.column{flex: auto;}
+      @media screen {
+      div.columns{gap: min(4vw, 1.5em);}
+      div.column{overflow-x: auto;}
+      }
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      ul.task-list li input[type="checkbox"] {
+        width: 0.8em;
+        margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+        vertical-align: middle;
+      }
+      @media print {
+        html {
+          color-scheme: light only;
+        }
+        html, body, pre, code {
+          background-color: transparent;
+        }
+        body, a, a:visited, blockquote {
+          color: black;
+        }
+        pre, code {
+          padding: 0;
+        }
+        p, h2, h3 {
+          orphans: 3;
+          widows: 3;
+        }
+        h2, h3, h4 {
+          page-break-after: avoid;
+        }
+      }    </style>
+
+    <style>
+      body.hypothesis-enabled #quarto-embed-header {
+        padding-right: 36px;
+      }
+
+      #quarto-embed-header {
+        height: 3em;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: solid 1px;
+      }
+
+      /* The title sits on the theme's primary background, so it inherits the
+         header's contrasting text color instead of the theme heading color */
+      #quarto-embed-header h6 {
+        font-size: 1.1em;
+        padding-top: 0.6em;
+        margin-left: 1em;
+        margin-right: 1em;
+        font-weight: 400;
+        color: inherit;
+      }
+
+      #quarto-embed-header a.quarto-back-link,
+      #quarto-embed-header a.quarto-download-embed {
+        font-size: 0.8em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      .quarto-back-container {
+        padding-left: 0.5em;
+        display: flex;
+      }
+
+      .headroom {
+          will-change: transform;
+          transition: transform 200ms linear;
+      }
+
+      .headroom--pinned {
+          transform: translateY(0%);
+      }
+
+      .headroom--unpinned {
+          transform: translateY(-100%);
+      }      
+    </style>
+
+    <script>
+    window.document.addEventListener("DOMContentLoaded", function () {
+
+      var header = window.document.querySelector("#quarto-embed-header");
+      // Inside the site header, the site navigation offsets the content
+      // and manages headroom
+      const inSiteHeader = header.parentElement.id === "quarto-header";
+      if (!inSiteHeader) {
+        const titleBannerEl = window.document.querySelector("body > #title-block-header");
+        if (titleBannerEl) {
+          titleBannerEl.style.paddingTop = header.clientHeight + "px";
+        }
+        const contentEl = window.document.getElementById('quarto-content');
+        for (const child of contentEl.children) {
+          child.style.paddingTop = header.clientHeight + "px";
+          child.style.marginTop = "1em";
+        }
+      }
+
+      // Use the article root if the `back` call doesn't work. This isn't perfect
+      // but should typically work
+      window.quartoBackToArticle = () => {
+        var currentUrl = window.location.href;
+        window.history.back();
+        setTimeout(() => {
+            // if location was not changed in 100 ms, then there is no history back
+            if(currentUrl === window.location.href){              
+                // redirect to site root
+                window.location.href = "../index.html";
+            }
+        }, 100);
+      }
+
+      if (!inSiteHeader) {
+        const headroom = new window.Headroom(header, {
+          tolerance: 5,
+          onPin: function () {
+          },
+          onUnpin: function () {
+          },
+        });
+        headroom.init();
+      }
+    });
+    </script>
+
+    
+<script src="../site_libs/manuscript-notebook/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/scrollable-regions/scrollable-regions.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+     <script async="" src="https://hypothes.is/embed.js"></script>
+<script>
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    document.body.classList.add('hypothesis-enabled');
+  });
+</script>   <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script> 
+      </head>
+
+  <body class="quarto-notebook quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
+    <nav id="quarto-embed-header" class="headroom fixed-top text-bg-primary" aria-labelledby="quarto-embed-title">
+
+      <a href="../index.html" onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
+      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Appendix A: Examples</h6>
+
+            <a href="../notebooks/supplementary_materials.qmd" class="btn btn-primary quarto-download-embed" download="supplementary_materials.qmd">Download Source</a>
+          </nav>
+
+     <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#appendix-a-examples" id="toc-appendix-a-examples" class="nav-link active" data-scroll-target="#appendix-a-examples">Appendix A: Examples</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">      <!-- ---
+title: "extend-shorten" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+<section id="appendix-a-examples" class="level3">
+<h3 class="anchored" data-anchor-id="appendix-a-examples">Appendix A: Examples</h3>
+<p>Below are some demonstrative examples of the use of the notation and functions described in the methods section.</p>
+<section id="fast-start-and-slow-start" class="level4">
+<h4 class="anchored" data-anchor-id="fast-start-and-slow-start">Fast Start and Slow Start</h4>
+<section id="slow-start" class="level5">
+<h5 class="anchored" data-anchor-id="slow-start">Slow Start</h5>
+<p>Consider a case where <span class="math inline">\(R = 70\)</span> and <span class="math inline">\(M = 5\)</span>, which implies that <span class="math inline">\(k = \frac{R}{M} = 14\)</span> micropanels per macropanel. Consider further that for <span class="math inline">\(m = \{1,2\}\)</span>, we shift the last four micropanels <span class="math inline">\(q_r \in P_m\)</span> forward one macropanel. In the context of FIA, this might represent a budgetary or workforce shortfall in the first two years in an inventory cycle, necessitating a planned reduction of field visitation by <span class="math inline">\(\frac{2}{7}\)</span> micropanels in the first two macropanels.</p>
+<p>Envision then that the for <span class="math inline">\(m = \{3,4\}\)</span>, we shift the first four micropanels <span class="math inline">\(q_r \in P_m\)</span> backward one macropanel. This might represent a budgetary or workforce recovery in the following two years in the inventory cycle, enabling a planned increase of field visitation by <span class="math inline">\(\frac{2}{7}\)</span> micropanels in those next two macropanels. Finally, assume that for the final macropanel, <span class="math inline">\(m = 5\)</span> work capacity stabilizes, and the <span class="math inline">\(k = 14\)</span> micropanels in <span class="math inline">\(P_5\)</span> retain their original assignments.</p>
+<p>Under this “slow start” VAE regimen, the boundaries <span class="math inline">\(b_m\)</span> in <span class="math inline">\(\mathbf{B}\)</span> are explicitly assigned to be:</p>
+<p><span class="math display">\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]</span></p>
+<p>yielding the new macropanel assignments</p>
+<ul>
+<li><span class="math inline">\(P_1* = \{ q_r \in \mathcal{Q} \mid 1 \leq r \leq 10 \} = \{q_1,\ldots,q_{10}\}\)</span></li>
+<li><span class="math inline">\(P_2* = \{ q_r \in \mathcal{Q} \mid 11 \leq r \leq 20 \}\)</span></li>
+<li><span class="math inline">\(P_3* = \{ q_r \in \mathcal{Q} \mid 21 \leq r \leq 38 \}\)</span></li>
+<li><span class="math inline">\(P_4* = \{ q_r \in \mathcal{Q} \mid 39 \leq r \leq 56 \}\)</span></li>
+<li><span class="math inline">\(P_5* = \{ q_r \in \mathcal{Q} \mid 57 \leq r \leq 70 \}.\)</span></li>
+</ul>
+</section>
+<section id="fast-start" class="level5">
+<h5 class="anchored" data-anchor-id="fast-start">Fast Start</h5>
+<p>Alternatively, consider a case where <span class="math inline">\(R = 70\)</span> and <span class="math inline">\(M = 7\)</span>, which implies <span class="math inline">\(k = \frac{R}{M} = 10\)</span> micropanels per macropanel, and that our VAE intentions are analogous to the slow start scenario described above, but the timing of the availability of resources of field work is reversed. That is, extra resources for field work enable two “early” micropanels per macropanel for <span class="math inline">\(m = \{1,2,3\}\)</span>; annual sampling effort is then reduced by two micropanels per macropanel for <span class="math inline">\(m = \{4,5,6\}\)</span> to<br>
+get back on schedule; and the nominal <span class="math inline">\(k = 10\)</span> is finally reestablished for <span class="math inline">\(m = 7\)</span>.</p>
+<p>Under this “fast start” VAE regimen, the boundaries <span class="math inline">\(b_m\)</span> in <span class="math inline">\(\mathbf{B}\)</span> are explicitly assigned to be:</p>
+<p><span class="math display">\[\mathbf{B} = (0, 12, 24, 36, 44, 52, 60, 70)\]</span></p>
+<p>yielding the new macropanel assignments</p>
+<ul>
+<li><span class="math inline">\(P_1* = \{ q_r \in \mathcal{Q} \mid 1 \leq r \leq 12 \} = \{q_1,\ldots,q_{12}\}\)</span></li>
+<li><span class="math inline">\(P_2* = \{ q_r \in \mathcal{Q} \mid 13 \leq r \leq 24 \}\)</span></li>
+<li><span class="math inline">\(P_3* = \{ q_r \in \mathcal{Q} \mid 25 \leq r \leq 36 \}\)</span></li>
+<li><span class="math inline">\(P_4* = \{ q_r \in \mathcal{Q} \mid 37 \leq r \leq 44 \}\)</span></li>
+<li><span class="math inline">\(P_5* = \{ q_r \in \mathcal{Q} \mid 45 \leq r \leq 52 \}\)</span></li>
+<li><span class="math inline">\(P_6* = \{ q_r \in \mathcal{Q} \mid 53 \leq r \leq 60 \}\)</span></li>
+<li><span class="math inline">\(P_7* = \{ q_r \in \mathcal{Q} \mid 61 \leq r \leq 70 \}.\)</span></li>
+</ul>
+</section>
+<section id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors" class="level5">
+<h5 class="anchored" data-anchor-id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors">Illustration of the baseline and shifted boundary deviation vectors</h5>
+<p>Continuing with the example above, the transformation from the uniform <span class="math inline">\(R = 70\)</span>, <span class="math inline">\(M = 5\)</span>, and <span class="math inline">\(k = 14\)</span> boundary vector to the specific VAE regimen described can be obtained via:</p>
+<p><span class="math display">\[\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)\]</span> <span class="math display">\[\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)\]</span></p>
+<p>Evaluating the vector addition:</p>
+<p><span class="math display">\[\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)\]</span></p>
+</section>
+<section id="conditions-to-ensure-validity-of-the-boundary-deviation-vector" class="level5">
+<h5 class="anchored" data-anchor-id="conditions-to-ensure-validity-of-the-boundary-deviation-vector">Conditions to ensure validity of the boundary deviation vector</h5>
+<p>To ensure that a boundary deviation vector yields a physically valid modified boundary sequence under proposed slow start and fast start VAE regimens (i.e., that it precludes overlapping or empty macropanels and that it covers all <span class="math inline">\(R\)</span> micropanels), the elements of <span class="math inline">\(\boldsymbol{\delta}_M\)</span> must satisfy the following three criteria. Firstly, the outer micropanel boundaries cannot shift; that is, the sequence <span class="math inline">\(\boldsymbol{\delta}\)</span> must always start at 0 and end at R such that <span class="math inline">\(\delta_0 = 0\)</span> and <span class="math inline">\(\quad \delta_M = 0\)</span>. Secondly, every deviation must be an integer to preserve whole micropanel blocks, i.e., <span class="math inline">\(\delta_m \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}\)</span>. Finally, to prevent empty macro panels or inverted boundaries, adjacent elements must maintain ordering such that <span class="math inline">\((u_m + \delta_m) &gt; (u_{m-1} + \delta_{m-1}), \quad \forall m \in \{1, 2, \dots, M\}\)</span>.</p>
+</section>
+<section id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start" class="level5">
+<h5 class="anchored" data-anchor-id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start">Example evaluation of the modified macropanel lookup function for fast/slow start</h5>
+<p>To locate micropanel <span class="math inline">\(q_{25}\)</span> using the upper bounds contained in <span class="math inline">\(\mathbf{B}\)</span> for the <span class="math inline">\(M = 5\)</span> slow start example described above (i.e., <span class="math inline">\(b_1=10, b_2=20, b_3=38, b_4=56, b_5 = 70)\)</span>:</p>
+<p><span class="math display">\[f_b(25) = 1 + [25 &gt; 10] + [25 &gt; 20] + [25 &gt; 38] + [25 &gt; 56]\]</span> <span class="math display">\[f_b(25) = 1 + 1 + 1 + 0 + 0 = 3.\]</span></p>
+<p>This correctly links micropanel <span class="math inline">\(q_{25}\)</span> to modified macropanel <span class="math inline">\(P_3*\)</span>.</p>
+<!--#### Approach 2: The Interval Mapping / Step Function Approach
+Alternatively, the modified macropanel lookup function $f_b(r)$ can be explicitly 
+mapped using a piecewise step function that matches the distinct index windows 
+of our chosen $M=5$ shifted layout:
+
+$$f_b(r) = \begin{cases} 
+1 & \text{if } 1 \le j \le 10 \\ 
+2 & \text{if } 11 \le j \le 20 \\ 
+3 & \text{if } 21 \le j \le 38 \\ 
+4 & \text{if } 39 \le j \le 56 \\ 
+5 & \text{if } 57 \le j \le 70 
+\end{cases}$$
+-->
+</section>
+</section>
+<section id="extended-and-shortened-cycle-lengths" class="level4">
+<h4 class="anchored" data-anchor-id="extended-and-shortened-cycle-lengths">Extended and Shortened Cycle Lengths</h4>
+<section id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7" class="level5">
+<h5 class="anchored" data-anchor-id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7">Subpanel Redistribution: From <span class="math inline">\(\mathcal{P}_{5}\)</span> to <span class="math inline">\(\mathcal{P}_{7}\)</span></h5>
+<p>The 70 micropanels are reallocated from 5 blocks of 14 into 7 blocks of 10. This redistribution preserves a contiguous partitioning across the entire set of micropanels <span class="math inline">\(q_r \in Q\)</span>.</p>
+<hr>
+</section>
+<section id="the-original-partition-structure-mathcalp_5" class="level5">
+<h5 class="anchored" data-anchor-id="the-original-partition-structure-mathcalp_5">1. The Original Partition Structure (<span class="math inline">\(\mathcal{P}_{5}\)</span>)</h5>
+<p>When <span class="math inline">\(M = 5\)</span> and <span class="math inline">\(k = 14\)</span>, the layout partition <span class="math inline">\(\mathcal{P}_5 = \{P_1, P_2, P_3, P_4, P_5\}\)</span> groups the global indices contiguously as follows:</p>
+<ul>
+<li><span class="math inline">\(P_1 = \{q_1, \dots, q_{14}\}\)</span></li>
+<li><span class="math inline">\(P_2 = \{q_{15}, \dots, q_{28}\}\)</span></li>
+<li><span class="math inline">\(P_3 = \{q_{29}, \dots, q_{42}\}\)</span></li>
+<li><span class="math inline">\(P_4 = \{q_{43}, \dots, q_{56}\}\)</span></li>
+<li><span class="math inline">\(P_5 = \{q_{57}, \dots, q_{70}\}\)</span></li>
+</ul>
+<hr>
+</section>
+<section id="the-new-extended-partition-structure-mathcalp_7" class="level5">
+<h5 class="anchored" data-anchor-id="the-new-extended-partition-structure-mathcalp_7">2. The New Extended Partition Structure (<span class="math inline">\(\mathcal{P}_{7}\)</span>)</h5>
+<p>When the configuration expands to <span class="math inline">\(M^\prime = 7\)</span> and <span class="math inline">\(k^\prime = 10\)</span>, the layout partition updates to <span class="math inline">\(\mathcal{P}^\prime_7 = \{P'_1, P'_2, P'_3, P'_4, P'_5, P'_6, P'_7\}\)</span>:</p>
+<ul>
+<li><span class="math inline">\(P'_1 = \{q_1, \dots, q_{10}\}\)</span></li>
+<li><span class="math inline">\(P'_2 = \{q_{11}, \dots, q_{20}\}\)</span></li>
+<li><span class="math inline">\(P'_3 = \{q_{21}, \dots, q_{30}\}\)</span></li>
+<li><span class="math inline">\(P'_4 = \{q_{31}, \dots, q_{40}\}\)</span></li>
+<li><span class="math inline">\(P'_5 = \{q_{41}, \dots, q_{50}\}\)</span></li>
+<li><span class="math inline">\(P'_6 = \{q_{51}, \dots, q_{60}\}\)</span></li>
+<li><span class="math inline">\(P'_7 = \{q_{61}, \dots, q_{70}\}\)</span></li>
+</ul>
+<hr>
+</section>
+<section id="micropanel-lineage-mapping" class="level5">
+<h5 class="anchored" data-anchor-id="micropanel-lineage-mapping">3. Micropanel Lineage Mapping</h5>
+<p>To visualize exactly how the micropanel constituents of the original macropanels are redistributed to form the new macropanel configuration, the lineage maps as follows:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">New Macropanel (<span class="math inline">\(P'_i\)</span>)</th>
+<th style="text-align: left;">Composition from Original Macropanels (<span class="math inline">\(P_j\)</span>)</th>
+<th style="text-align: left;">Subpanel Range</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_1\)</span></strong></td>
+<td style="text-align: left;">Completely carved out of <span class="math inline">\(P_1\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{q_1, \dots, q_{10}\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_2\)</span></strong></td>
+<td style="text-align: left;">Composed of the remainder of <span class="math inline">\(P_1\)</span> (4 subpanels) + the first part of <span class="math inline">\(P_2\)</span> (6 subpanels)</td>
+<td style="text-align: left;"><span class="math inline">\(\{q_{11}, \dots, q_{14}\} \cup \{q_{15}, \dots, q_{20}\}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_3\)</span></strong></td>
+<td style="text-align: left;">Composed of the remainder of <span class="math inline">\(P_2\)</span> (8 subpanels) + the first part of <span class="math inline">\(P_3\)</span> (2 subpanels)</td>
+<td style="text-align: left;"><span class="math inline">\(\{q_{21}, \dots, q_{28}\} \cup \{q_{29}, \dots, q_{30}\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_4\)</span></strong></td>
+<td style="text-align: left;">Completely carved out of the middle of <span class="math inline">\(P_3\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{q_{31}, \dots, q_{40}\}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_5\)</span></strong></td>
+<td style="text-align: left;">Composed of the remainder of <span class="math inline">\(P_3\)</span> (2 subpanels) + the first part of <span class="math inline">\(P_4\)</span> (8 subpanels)</td>
+<td style="text-align: left;"><span class="math inline">\(\{q_{41}, \dots, q_{42}\} \cup \{q_{43}, \dots, q_{50}\}\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_6\)</span></strong></td>
+<td style="text-align: left;">Composed of the remainder of <span class="math inline">\(P_4\)</span> (6 subpanels) + the first part of <span class="math inline">\(P_5\)</span> (4 subpanels)</td>
+<td style="text-align: left;"><span class="math inline">\(\{q_{51}, \dots, q_{56}\} \cup \{q_{57}, \dots, q_{60}\}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong><span class="math inline">\(P'_7\)</span></strong></td>
+<td style="text-align: left;">Completely carved out of the remainder of <span class="math inline">\(P_5\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(\{q_{61}, \dots, q_{70}\}\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths" class="level5">
+<h5 class="anchored" data-anchor-id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths">Example evaluation of the modified macropanel lookup function for extended/shortened cycle lengths</h5>
+<section id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10" class="level6">
+<h6 class="anchored" data-anchor-id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10">Example cases for cycle length extension (<span class="math inline">\(M=5, k=14 \implies M^\prime=7, k^\prime=10\)</span>)</h6>
+<ul>
+<li><strong>Boundary Case A: The absolute first micropanel</strong>
+<ul>
+<li>Input: <span class="math inline">\(m = 1\)</span>, <span class="math inline">\(l = 1\)</span></li>
+<li>Calculation: <span class="math display">\[\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)14 + 1}{10} \right\rceil = \left\lceil \frac{1}{10} \right\rceil = 1\]</span></li>
+<li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_1\)</span></strong> (Correct).</li>
+</ul></li>
+<li><strong>Boundary Case B: An overlapping boundary micropanel</strong>
+<ul>
+<li>Input: <span class="math inline">\(m = 1\)</span>, <span class="math inline">\(l = 12\)</span></li>
+<li>Calculation: <span class="math display">\[\mathbf{f}(1, 12) = \left\lceil \frac{(1 - 1)14 + 12}{10} \right\rceil
+= \left\lceil \frac{12}{10} \right\rceil = \lceil 1.2 \rceil = 2\]</span></li>
+<li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_2\)</span></strong> (Correct, as global micropanel <span class="math inline">\(q_{12}\)</span> shifts into the second macro panel).</li>
+</ul></li>
+<li><strong>Boundary Case C: The absolute final micropanel</strong>
+<ul>
+<li>Input: <span class="math inline">\(m = 5\)</span>, <span class="math inline">\(l = 14\)</span></li>
+<li>Calculation: <span class="math display">\[\mathbf{f}(5, 14) = \left\lceil \frac{(5 - 1)14 + 14}{10} \right\rceil = \left\lceil \frac{56 + 14}{10} \right\rceil = \left\lceil \frac{70}{10} \right\rceil = 7\]</span></li>
+<li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_7\)</span></strong> (Correct).</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7" class="level6">
+<h6 class="anchored" data-anchor-id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7">Example cases for cycle length shortening (<span class="math inline">\(M=14, k=5 \implies M^\prime=10, k^\prime=7\)</span>)</h6>
+<p>The general mapping formula works for shortening cycle lengths as well. Because the formula tracks the unique sequential micropanel index <span class="math inline">\(r\)</span>, it remains valid whether the macropanel count <span class="math inline">\(M\)</span> increases or decreases.</p>
+<ul>
+<li><strong>Test Case A: The absolute first micropanel (<span class="math inline">\(q_1\)</span>)</strong>
+<ul>
+<li>Input: <span class="math inline">\(m = 1, l = 1\)</span></li>
+<li>Calculation: <span class="math display">\[\mathbf{f}(1, 1) = \left\lceil \frac{(1 - 1)5 + 1}{7} \right\rceil = \left\lceil \frac{1}{7} \right\rceil = 1\]</span></li>
+<li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_1\)</span></strong> (Correct).</li>
+</ul></li>
+<li><strong>Test Case B: A mid-point boundary crossing micropanel (<span class="math inline">\(q_8\)</span>)</strong>
+<ul>
+<li>Input: <span class="math inline">\(m = 2, l = 3\)</span> (The 3rd micropanel of the 2nd original macro panel)</li>
+<li>Calculation: <span class="math display">\[\mathbf{f}(2, 3) = \left\lceil \frac{(2 - 1)5 + 3}{7} \right\rceil = \left\lceil \frac{8}{7} \right\rceil = \lceil 1.14 \rceil = 2\]</span></li>
+<li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_2\)</span></strong> (Correct, as global micropanel <span class="math inline">\(q_8\)</span> shifts into the second new macro panel).</li>
+</ul></li>
+<li><strong>Test Case C: The absolute final micropanel (<span class="math inline">\(q_{70}\)</span>)</strong>
+<ul>
+<li>Input: <span class="math inline">\(m = 14, l = 5\)</span></li>
+<li>Calculation: <span class="math display">\[\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10\]</span></li>
+<li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_{10}\)</span></strong> (Correct).</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+</section>
+     </main>
+<!-- /main column -->  <script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var opensNewContext = (link) => {
+        var target = (link.getAttribute("target") || "").toLowerCase();
+        return target !== "" && !["_self", "_parent", "_top"].includes(target);
+      }
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+      window.quartoDecorateExternalLinks = function (root) {
+     var links = (root || window.document).querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+          if (!link.classList.contains('no-external-icon')) {
+          }
+        }
+        if (opensNewContext(link)) {
+          describeNewWindow(link);
+        }
+      }
+      };
+      window.quartoDecorateExternalLinks(window.document);
+    // Esc closes the popup (WCAG 1.4.13) and focus leaving both trigger and
+    // popup closes it (WCAG 2.4.11); tippy handles neither for interactive popups.
+    const hideOnEscAndFocusOut = {
+      name: 'hideOnEscAndFocusOut',
+      defaultValue: true,
+      fn(instance) {
+        const dismiss = () => {
+          // A show scheduled by the trigger delay would otherwise reopen it
+          instance.clearDelayTimeouts();
+          instance.hide();
+        };
+        const onKeyDown = (event) => {
+          if (event.key !== 'Escape') {
+            return;
+          }
+          // Keep Esc from also reaching page handlers (e.g. reveal.js overview),
+          // except an open reveal.js slide menu, which Esc should close too.
+          // The menu handles keys only when its keyboard option is on.
+          const menuHandlesEsc = window.Reveal?.getPlugin?.('menu')?.isOpen() &&
+            window.Reveal.getConfig().menu?.keyboard !== false;
+          if (!menuHandlesEsc) {
+            event.stopPropagation();
+          }
+          if (instance.popper.contains(window.document.activeElement)) {
+            // Disabled while refocusing so the focus trigger does not reopen it
+            instance.disable();
+            instance.reference.focus();
+            instance.enable();
+          }
+          dismiss();
+        };
+        const onFocusOut = (event) => {
+          const target = event.relatedTarget;
+          if (target && !instance.reference.contains(target) &&
+              !instance.popper.contains(target)) {
+            dismiss();
+          }
+        };
+        // On the trigger too: a click trigger (code-annotations: select) has no
+        // blur handling. Attached for the instance's lifetime so leaving the
+        // trigger also cancels a show still pending on the trigger delay.
+        instance.reference.addEventListener('focusout', onFocusOut);
+        return {
+          onShow() {
+            window.document.addEventListener('keydown', onKeyDown, true);
+            instance.popper.addEventListener('focusout', onFocusOut);
+          },
+          onHide() {
+            window.document.removeEventListener('keydown', onKeyDown, true);
+            instance.popper.removeEventListener('focusout', onFocusOut);
+          },
+          onDestroy() {
+            instance.reference.removeEventListener('focusout', onFocusOut);
+          },
+        };
+      },
+    };
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+        plugins: [hideOnEscAndFocusOut],
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          // Each band is positioned against its own containing block, which is
+          // not the offsetParent of the lines, so place it from client rects.
+          const placeBand = (band, firstEl, lastEl, codeBlock) => {
+            const container = band.offsetParent;
+            if (container === null) {
+              return;
+            }
+            const containerRect = container.getBoundingClientRect();
+            // Reveal.js scales slides with a transform, so convert client
+            // pixels back to the CSS pixels of the container.
+            const scale = containerRect.height / container.offsetHeight || 1;
+            const firstRect = firstEl.getBoundingClientRect();
+            const lastRect = lastEl.getBoundingClientRect();
+            const top = (firstRect.top - containerRect.top) / scale - container.clientTop + container.scrollTop;
+            const height = (lastRect.bottom - firstRect.top) / scale;
+            band.style.top = top - 2 + "px";
+            band.style.height = height + 4 + "px";
+            if (codeBlock) {
+              // Without the copy button wrapper, the containing block is wider
+              // than the code block, so span the code block explicitly.
+              const blockRect = codeBlock.getBoundingClientRect();
+              band.style.left = (blockRect.left - containerRect.left) / scale - container.clientLeft + container.scrollLeft + "px";
+              band.style.width = blockRect.width / scale + "px";
+            }
+          };
+          if (lineIds.length > 0) {
+            const el = window.document.getElementById(lineIds[0]);
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const parent = el.parentElement.parentElement;
+            // cook up a div (if necessary) and position it
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            placeBand(div, el, lastEl, parent.closest("div.sourceCode") || parent);
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            placeBand(gutterDiv, el, lastEl);
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+  <script type="application/javascript">
+  window.quartoScrollableRegionsLabels = {"code":"Scrollable code","output":"Scrollable output"};
+  </script>  </div> <!-- /content --> 
+  
+</body></html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
     <meta charset="utf-8">
-    <meta name="generator" content="quarto-1.12.0">
+    <meta name="generator" content="quarto-1.12.3">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -25,7 +25,27 @@
         margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
         vertical-align: middle;
       }
-    </style>
+      @media print {
+        html {
+          color-scheme: light only;
+        }
+        html, body, pre, code {
+          background-color: transparent;
+        }
+        body, a, a:visited, blockquote {
+          color: black;
+        }
+        pre, code {
+          padding: 0;
+        }
+        p, h2, h3 {
+          orphans: 3;
+          widows: 3;
+        }
+        h2, h3, h4 {
+          page-break-after: avoid;
+        }
+      }    </style>
 
     <style>
       body.hypothesis-enabled #quarto-embed-header {
@@ -41,12 +61,15 @@
         border-bottom: solid 1px;
       }
 
+      /* The title sits on the theme's primary background, so it inherits the
+         header's contrasting text color instead of the theme heading color */
       #quarto-embed-header h6 {
         font-size: 1.1em;
         padding-top: 0.6em;
         margin-left: 1em;
         margin-right: 1em;
         font-weight: 400;
+        color: inherit;
       }
 
       #quarto-embed-header a.quarto-back-link,
@@ -133,10 +156,10 @@
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-f0688f390a76b21125ecd060a3d0a4db.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-27e7aecbfd76940d03b8e4778a6b0ae4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -146,10 +169,10 @@
       </head>
 
   <body class="quarto-notebook quarto-light"><a id="quarto-skip-link" class="visually-hidden-focusable" href="#quarto-document-content">Skip to main content</a>
-    <nav id="quarto-embed-header" class="headroom fixed-top bg-primary" aria-labelledby="quarto-embed-title">
+    <nav id="quarto-embed-header" class="headroom fixed-top text-bg-primary" aria-labelledby="quarto-embed-title">
 
       <a href="../index.html" onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Slow/Fast Start</h6>
+      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Slow Start and Fast Start Scenarios</h6>
 
             <a href="../notebooks/fast-slow.qmd" class="btn btn-primary quarto-download-embed" download="fast-slow.qmd">Download Source</a>
           </nav>
@@ -163,91 +186,41 @@
 <main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">    <!-- ---
 title: "fast-slow" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
-<section id="slowfast-start" class="level4">
-<h4 class="anchored" data-anchor-id="slowfast-start">Slow/Fast Start</h4>
-<section id="modified-partition-notation-shifted-configurations" class="level5">
-<h5 class="anchored" data-anchor-id="modified-partition-notation-shifted-configurations">Modified Partition Notation (Shifted Configurations)</h5>
-<p>For an uneven or shifted layout where subpanels are structurally rearranged, the uniform mapping breaks down. To formalize this, we introduce an explicit boundary sequence vector <span class="math inline">\(\mathbf{B}\)</span> containing <span class="math inline">\(M+1\)</span> elements:</p>
-<p><span class="math display">\[\mathbf{B} = (b_0, b_1, \dots, b_M)\]</span></p>
-<p>For the specific modified configuration where <span class="math inline">\(M = 5\)</span>, the boundaries are explicitly assigned as:</p>
-<p><span class="math display">\[\mathbf{B} = (0, 10, 20, 38, 56, 70)\]</span></p>
-<p>Each individual macro panel <span class="math inline">\(P_i\)</span> (for <span class="math inline">\(i = 1, 2, \dots, M\)</span>) is then constructed by pulling indices between adjacent elements of the boundary sequence:</p>
-<p><span class="math display">\[P_i = \{ q_j \in \mathcal{Q} \mid b_{i-1} + 1 \leq j \leq b_i \}\]</span></p>
+<section id="slow-start-and-fast-start-scenarios" class="level4">
+<h4 class="anchored" data-anchor-id="slow-start-and-fast-start-scenarios">Slow Start and Fast Start Scenarios</h4>
+<section id="slow-start" class="level5">
+<h5 class="anchored" data-anchor-id="slow-start">Slow Start</h5>
+<p>In the context of FIA, the “slow start” scenarios we simulated are intended to represent a budgetary or workforce shortfall in the first <span class="math inline">\(z\)</span> years early in an inventory cycle, necessitating a planned reduction of field visitation by a fixed proportion of micropanels per macropanel in the first <span class="math inline">\(z\)</span> macropanels in <span class="math inline">\(\mathcal{P}_M\)</span>.</p>
+<p>Then, a budgetary or workforce recovery occurs, enabling a planned increase of field visitation by the same fixed proportion of micropanels per macropanel in the subsequent <span class="math inline">\(z\)</span> macropanels. Finally, work capacity stabilizes, and the <span class="math inline">\(k\)</span> micropanels in the final macropanel <span class="math inline">\(P_M\)</span> in <span class="math inline">\(\mathcal{P}_M\)</span> retain their original assignments (i.e., we’re “back on time”).</p>
 </section>
-<section id="explicit-macro-panel-contents" class="level5">
-<h5 class="anchored" data-anchor-id="explicit-macro-panel-contents">Explicit Macro Panel Contents</h5>
-<ul>
-<li><span class="math inline">\(P_1 = \{ q_j \in \mathcal{Q} \mid 1 \leq j \leq 10 \}\)</span></li>
-<li><span class="math inline">\(P_2 = \{ q_j \in \mathcal{Q} \mid 11 \leq j \leq 20 \}\)</span></li>
-<li><span class="math inline">\(P_3 = \{ q_j \in \mathcal{Q} \mid 21 \leq j \leq 38 \}\)</span></li>
-<li><span class="math inline">\(P_4 = \{ q_j \in \mathcal{Q} \mid 39 \leq j \leq 56 \}\)</span></li>
-<li><span class="math inline">\(P_5 = \{ q_j \in \mathcal{Q} \mid 57 \leq j \leq 70 \}\)</span></li>
-</ul>
+<section id="fast-start" class="level5">
+<h5 class="anchored" data-anchor-id="fast-start">Fast Start</h5>
+<p>Under the “fast start” scenarios we simulated, our VAE intentions are analogous to the slow start scenario described above, but the timing of the availability of resources of field work is reversed. That is, extra resources for field work enable a fixed proportion of “early” micropanels per macropanel for the first <span class="math inline">\(z\)</span> macropanels in <span class="math inline">\(\mathcal{P}_M\)</span>. Annual sampling effort is then reduced by the same proportion micropanels per macropanel for the subsequent <span class="math inline">\(z\)</span> macropanels to<br>
+“get back on schedule”; and the nominally prescribed rate of <span class="math inline">\(k\)</span> micropanels per macropanel is reestablished for macropanel <span class="math inline">\(M\)</span>. A more detailed demonstrative example can be found in <span class="citation" data-cites="sec-supp-mat">@sec-supp-mat</span>.</p>
 </section>
-<section id="modified-panel-lookup-function-alternatives" class="level5">
-<h5 class="anchored" data-anchor-id="modified-panel-lookup-function-alternatives">Modified Panel Lookup Function Alternatives</h5>
-<p>Because the subpanel distributions are no longer uniform, the scalar ceiling function cannot be used. Below are two equivalent mathematical approaches to express the lookup function <span class="math inline">\(f(j)\)</span> for the shifted configuration.</p>
+<section id="generalizing-shifted-macropanel-boundaries" class="level5">
+<h5 class="anchored" data-anchor-id="generalizing-shifted-macropanel-boundaries">Generalizing Shifted Macropanel Boundaries</h5>
+<p>If we preserve <span class="math inline">\(R\)</span> and <span class="math inline">\(M\)</span>, but modify the original macropanel assignments of some micropanels for VAE purposes as the slow and fast start scenarios are intended to represent, the micropanels no longer evenly partition the macropanels throughout <span class="math inline">\(\mathcal{P}_M\)</span>. Therefore, it is convenient to extend our notation to represent an arbitraty, newly constituted cycle <span class="math inline">\(\mathcal{P}^\prime_M\)</span> following repositioning of micropanels (i.e., to represent and facilitate the application of a particular slow or fast start VAE regimen across any value of <span class="math inline">\(M \in \{5, 7, 10, 14\}\)</span>).</p>
+<p>Let <span class="math inline">\(\mathbf{U}_M\)</span> be the baseline uniform boundary sequence vector of length <span class="math inline">\(M+1\)</span>, where the elements are determined by the constant step-size <span class="math inline">\(k = \frac{R}{M}\)</span>:</p>
+<p><span class="math display">\[\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_m = m \cdot k\]</span></p>
+<p>To then specify a slow or fast start regimen that can be applied arbitrarily for any value of <span class="math inline">\(M\)</span>, we further define the boundary deviation vector <span class="math inline">\(\boldsymbol{\delta}_M\)</span> of length <span class="math inline">\(M+1\)</span> as:</p>
+<p><span class="math display">\[\boldsymbol{\delta}_M = (\delta_0, \delta_1, \ldots, \delta_M)\]</span></p>
+<p>The shifted boundary sequence vector <span class="math inline">\(\mathbf{B}\)</span> can then be obtained by summing the baseline boundary vector and the boundary deviation vector:</p>
+<p><span class="math display">\[\mathbf{B} = \mathbf{U}_M + \boldsymbol{\delta}_M = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)\]</span></p>
+<p>If the originally prescribed boundaries are unshifted, <span class="math inline">\(\boldsymbol{\delta}_M\)</span> is an <span class="math inline">\(M + 1\)</span> vector of <span class="math inline">\(0\)</span>’s, and <span class="math inline">\(\mathbf{B}\)</span> is therefore simply the baseline boundary vector <span class="math inline">\(\mathbf{U}_M\)</span> under the originally prescribed distribution of micropanels across macropanels.</p>
+<p><span class="math inline">\(\mathbf{B}\)</span> then takes the form</p>
+<p><span class="math display">\[\mathbf{B} = (b_0, b_1, \ldots,b_M),\]</span> where the <span class="math inline">\(M+1\)</span> elements therein represent an intitial index <span class="math inline">\(b_0\)</span> and the <span class="math inline">\(M\)</span> new upper micropanel boundaries; i.e., the values of <span class="math inline">\(r\)</span> associated with the last of each<br>
+of the sequence of shifted micropanels in the newly reconstituted macropanels. Each modified macropanel <span class="math inline">\(P_m*\)</span> (<span class="math inline">\(m* = 1,\ldots, M\)</span>) can then be constructed by obtaining indices for micropanels from between adjacent elements of <span class="math inline">\(\mathbf{B}\)</span>:</p>
+<p><span class="math display">\[P_m* = \{ q_r \in \mathcal{Q} : b_{m-1} + 1 \leq r \leq b_m \}.\]</span></p>
 </section>
-<section id="approach-1-the-summation-indicator-function-approach" class="level5">
-<h5 class="anchored" data-anchor-id="approach-1-the-summation-indicator-function-approach">Approach 1: The Summation / Indicator Function Approach</h5>
-<p>We can define the lookup function <span class="math inline">\(f(j)\)</span> by counting how many boundaries the subpanel index <span class="math inline">\(j\)</span> has successfully crossed. Using the Iverson bracket notation (where the brackets evaluate to <span class="math inline">\(1\)</span> if the enclosed condition is true, and <span class="math inline">\(0\)</span> if false), the macro panel index can be calculated directly by checking membership across all intervals:</p>
-<p><span class="math display">\[f(j) = \sum_{i=1}^{M} i \cdot [b_{i-1} + 1 \leq j \leq b_i]\]</span></p>
-<p>Alternatively, an even more concise formulation counts how many upper bounds <span class="math inline">\(b_i\)</span> from our sequence <span class="math inline">\(\mathbf{B} = (0, 10, 20, 38, 56, 70)\)</span> are strictly less than <span class="math inline">\(j\)</span>, then offsets the result by 1:</p>
-<p><span class="math display">\[f(j) = 1 + \sum_{i=1}^{M-1} [j &gt; b_i]\]</span></p>
-</section>
-<section id="example-evaluation" class="level5">
-<h5 class="anchored" data-anchor-id="example-evaluation">Example Evaluation</h5>
-<p>To locate subpanel <span class="math inline">\(q_{25}\)</span> using the upper bounds <span class="math inline">\(b_1=10, b_2=20, b_3=38, b_4=56\)</span>:</p>
-<p><span class="math display">\[f(25) = 1 + [25 &gt; 10] + [25 &gt; 20] + [25 &gt; 38] + [25 &gt; 56]\]</span> <span class="math display">\[f(25) = 1 + 1 + 1 + 0 + 0 = 3\]</span></p>
-<p>This correctly maps subpanel <span class="math inline">\(q_{25}\)</span> to Macro Panel <span class="math inline">\(P_3\)</span>.</p>
-<!-- #### Approach 2: The Interval Mapping / Step Function Approach
-Alternatively, the lookup function $f(j)$ can be explicitly mapped using a piecewise step function that matches the distinct index windows of our chosen $M=5$ shifted layout:
-
-$$f(j) = \begin{cases} 
-1 & \text{if } 1 \le j \le 10 \\ 
-2 & \text{if } 11 \le j \le 20 \\ 
-3 & \text{if } 21 \le j \le 38 \\ 
-4 & \text{if } 39 \le j \le 56 \\ 
-5 & \text{if } 57 \le j \le 70 
-\end{cases}$$
-
-##### Generalization of Shifted Boundaries
-
-To scale the shifting mechanism across any active configuration $M \in \{5, 7, 10, 14\}$, we define a formal transformation framework. Let $\mathbf{U}_M$ be the baseline **uniform boundary sequence vector** of length $M+1$, where the elements are strictly determined by the constant step-size $k = \frac{70}{M}$:
-
-$$\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_i = i \cdot k$$
-
-#### The Boundary Deviation Framework
-To construct a non-uniform layout, we define a **boundary deviation vector** $\boldsymbol{\delta}$ of length $M+1$:
-
-$$\boldsymbol{\delta} = (\delta_0, \delta_1, \dots, \delta_M)$$
-
-The shifted boundary sequence vector $\mathbf{B}_M$ is created by adding the deviation vector directly to the uniform baseline:
-
-$$\mathbf{B}_M = \mathbf{U}_M + \boldsymbol{\delta} = (u_0 + \delta_0, u_1 + \delta_1, \dots, u_M + \delta_M)$$
-
-### Structural Constraints on Deviations
-To ensure that the shifted sequence remains physically valid (non-overlapping, covers all 70 subpanels, and keeps panels non-empty), the elements of $\boldsymbol{\delta}$ must satisfy the following three axioms:
-
-1. **Endpoint Anchors:** The global boundaries cannot shift. The sequence must always start at 0 and end at 70:
-   $$\delta_0 = 0 \quad \text{and} \quad \delta_M = 0$$
-
-2. **Integer Domain:** Every deviation must be an integer to preserve whole subpanel blocks:
-   $$\delta_i \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}$$
-
-3. **Strict Monotonicity:** To prevent empty macro panels or inverted boundaries, adjacent elements must maintain a strict ordering:
-   $$(u_i + \delta_i) > (u_{i-1} + \delta_{i-1}) \quad \forall i \in \{1, 2, \dots, M\}$$
-
-#### Concrete Example Matrix ($M = 5$)
-For the configuration where $M = 5$ and baseline step size $k = 14$, the transformation from uniform to your specific shifted setup is explicitly formalized below:
-
-$$\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)$$
-$$\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)$$
-
-Evaluating the vector addition:
-
-$$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)$$
--->
+<section id="modified-macropanel-lookup-function" class="level5">
+<h5 class="anchored" data-anchor-id="modified-macropanel-lookup-function">Modified Macropanel Lookup Function</h5>
+<p>Because the distributions of micropanels across macropanels are no longer uniform under these shifted configurations, the scalar ceiling function cannot be used to determine macropanel assignment <span class="math inline">\(m\)</span> of any macropanel <span class="math inline">\(r\)</span>.<br>
+However, such a function is still needed to describe and implement the slow start and fast start VAE scenarios.</p>
+<p>We can define a modified macropanel lookup function <span class="math inline">\(f_b(r)\)</span> that counts how many upper bounds <span class="math inline">\(b_m\)</span> from the sequence <span class="math inline">\(\mathbf{B}\)</span> are strictly less than <span class="math inline">\(r\)</span>, and then offsets the result by 1. Using bracket notation (where the brackets evaluate to <span class="math inline">\(1\)</span> if the enclosed condition is true, and <span class="math inline">\(0\)</span> if false):</p>
+<p><span class="math display">\[f_b(r) = 1 + \sum_{m=1}^{M-1} [r &gt; b_m]\]</span></p>
+<p>Demonstrative examples of the construction of <span class="math inline">\(\mathbf{U}_M\)</span>, <span class="math inline">\(\boldsymbol{\delta}_M\)</span>, <span class="math inline">\(\mathbf{B}\)</span>, and the use of <span class="math inline">\(f_b(r)\)</span> can be found in <span class="citation" data-cites="sec-supp-mat">@sec-supp-mat</span>.</p>
+<p><span style="color: red;">I think the idea of a baseline vector and a deviation vector is useful for generalization, but the way this is written doesn’t give the analyst any useful instructions for application. Should the deviation vector maybe be expressed in terms of proportions of micropanels to hold back or push forward?</span></p>
 </section>
 </section>
      </main>
@@ -325,6 +298,28 @@ $$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 3
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
         var filterRegex = new RegExp('/' + window.location.host + '/');
+      const newWindowLabel = "(opens in a new tab)";
+      const newWindowNoteId = "quarto-ext-newwindow-label";
+      // Links reference one hidden label through aria-describedby, so the
+      // announcement never changes their accessible name.
+      var describeNewWindow = (link) => {
+        if (!window.document.getElementById(newWindowNoteId)) {
+          var newWindowNote = window.document.createElement("span");
+          newWindowNote.id = newWindowNoteId;
+          newWindowNote.hidden = true;
+          newWindowNote.textContent = newWindowLabel;
+          window.document.body.appendChild(newWindowNote);
+        }
+        var describedBy = (link.getAttribute("aria-describedby") || "").split(/\s+/).filter(Boolean);
+        if (!describedBy.includes(newWindowNoteId)) {
+          describedBy.push(newWindowNoteId);
+          link.setAttribute("aria-describedby", describedBy.join(" "));
+        }
+      }
+      var opensNewContext = (link) => {
+        var target = (link.getAttribute("target") || "").toLowerCase();
+        return target !== "" && !["_self", "_parent", "_top"].includes(target);
+      }
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -341,6 +336,9 @@ $$\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 3
           }
           if (!link.classList.contains('no-external-icon')) {
           }
+        }
+        if (opensNewContext(link)) {
+          describeNewWindow(link);
         }
       }
       };
