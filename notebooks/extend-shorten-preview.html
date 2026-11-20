@@ -159,7 +159,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-808fa2b54be4417f9355fb1d1925d19c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -201,8 +201,9 @@ title: "extend-shorten" (commenting out title to keep it from replacing main tit
 <li><span class="math inline">\(m\)</span> be the original macropanel index, where <span class="math inline">\(m \in \{1, 2, \dots, M\}\)</span>.</li>
 <li><span class="math inline">\(l\)</span> be the local index of the micropanel within <span class="math inline">\(P_m\)</span>, where <span class="math inline">\(l \in \{1, 2, \dots, k\}\)</span>.</li>
 </ul>
-<p>A micropanel’s local macropanel coordinate (i.e., the two unique values that determine its chronological position within its originally assigned macropanel and cycle) <span class="math inline">\((m,l)\)</span> maps to its static global index <span class="math inline">\(r\)</span> via:</p>
+<p>A micropanel’s local macropanel coordinate (i.e., the two unique values that determine its chronological position within its originally assigned macropanel and cycle) <span class="math inline">\((m,l)\)</span> links to its fixed global index <span class="math inline">\(r \in \{1,\ldots,R\}\)</span> via:</p>
 <p><span class="math display">\[r = (m - 1)k + l\]</span></p>
+<p>which implies the local index <span class="math inline">\(l\)</span> can be obtained via <span class="math inline">\(l = r - (m - 1)k = r - mk + k\)</span>.</p>
 <p>In the new cycle configuration <span class="math inline">\(\mathcal{P}^\prime_M\)</span>, each macropanel <span class="math inline">\(P^\prime_m\)</span> contains exactly <span class="math inline">\(k^\prime\)</span> micropanels. To determine which macropanel (i.e., which sequence of <span class="math inline">\(k^\prime\)</span> micropanels) the index <span class="math inline">\(r\)</span> falls within, we divide <span class="math inline">\(r\)</span> by <span class="math inline">\(k^\prime\)</span> and apply the ceiling function <span class="math inline">\(\lceil \cdot \rceil\)</span> to round up to the nearest integer:</p>
 <p><span class="math display">\[m^\prime = \left\lceil \frac{r}{k^\prime} \right\rceil\]</span></p>
 <p>Combining both steps yields the definitive closed-form mapping function <span class="math inline">\(\mathbf{f}(m,l)\)</span>:</p>

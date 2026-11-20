@@ -159,7 +159,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-808fa2b54be4417f9355fb1d1925d19c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -398,6 +398,35 @@ $$f_b(r) = \begin{cases}
 </ul></li>
 </ul>
 </section>
+</section>
+</section>
+<section id="dropped-micropanels" class="level4">
+<h4 class="anchored" data-anchor-id="dropped-micropanels">Dropped Micropanels</h4>
+<p>To represent the dropped micropanel scenario where the final micropanel in each macropanel in a cycle is dropped, we can modify the upper bound constraint of the index sets. Let <span class="math inline">\(\mathcal{D}_M \subset \mathcal{Q}\)</span> be the set of dropped micropanels for cycle configuration <span class="math inline">\(\mathcal{P}_M\)</span>. Because the final micropanel in each macropanel has index <span class="math inline">\(r = mk\)</span>, the set of dropped micropanels can be generally expressed as</p>
+<p><span class="math display">\[\mathcal{D}_M = \{ q_r \in \mathcal{Q} \mid r = m \cdot k, \text{ for } m = 1, 2, \dots, M \}\]</span></p>
+<p>The modified cycle <span class="math inline">\(\mathcal{P}'_M\)</span> preserves the original <span class="math inline">\(M\)</span> distinct macropanels, but truncates the upper micropanel boundary within each macropanel at the value <span class="math inline">\(r = mk - 1\)</span>:</p>
+<p><span class="math display">\[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}\]</span></p>
+<p>Where each truncated macro panel <span class="math inline">\(P'_m\)</span> (for <span class="math inline">\(m = 1, 2, \dots, M\)</span>) is explicitly defined by:</p>
+<p><span class="math display">\[P'_m = \{ q_r \in \mathcal{Q} \mid (m-1)k + 1 \leq r \leq mk - 1 \}\]</span></p>
+<section id="dropped-micropanel-examples" class="level5">
+<h5 class="anchored" data-anchor-id="dropped-micropanel-examples">Dropped micropanel examples:</h5>
+<ul>
+<li><strong>For <span class="math inline">\(M = 5\)</span></strong> (<span class="math inline">\(k = 14\)</span>):
+<ul>
+<li>Dropped Set: <span class="math inline">\(\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}\)</span></li>
+<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, \dots, q_{13}\}\)</span></li>
+</ul></li>
+<li><strong>For <span class="math inline">\(M = 7\)</span></strong> (<span class="math inline">\(k = 10\)</span>):
+<ul>
+<li>Dropped Set: <span class="math inline">\(\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}\)</span></li>
+<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, \dots, q_{9}\}\)</span></li>
+</ul></li>
+<li><strong>For <span class="math inline">\(M = 14\)</span></strong> (<span class="math inline">\(k = 5\)</span>):
+<ul>
+<li>Dropped Set: <span class="math inline">\(\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}\)</span></li>
+<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, q_3, q_4\}\)</span></li>
+</ul></li>
+</ul>
 </section>
 </section>
 </section>

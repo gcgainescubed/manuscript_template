@@ -324,13 +324,22 @@ Therefore, our research objectives in this study are to:
 
 \subsection{Study Area}\label{study-area}
 
-3 states\ldots{}
+To achieve an adequately comprehensive assessment of the anticipated
+statistical consequences of our simulated VAE scenarios, we focused this
+study on three US states (Maine, Alabama, and Montana) distinct with
+respect to i) the national FIA Program's underlying regional structure;
+ii) their nominally prescribed FIA inventory cycle lengths; and iii) the
+extant range of forest types and conditions, levels of primary
+productivity, and ecological disturbance regimes across CONUS.
 
-\subsection{FIA Data}\label{fia-data}
+\subsection{Sample locations, micropanels, and
+macropanels}\label{sample-locations-micropanels-and-macropanels}
 
-Data from those 3 states\ldots{}
-
-\subsection{Initial Notation}\label{initial-notation}
+In a subsequent section, we describe our use of FIA forest vegetation
+measurement data obtained at fixed sample locations at various points in
+time. However, it is useful to begin with a notation focused solely on
+individual, time-invariant sample locations, and sets thereof aggregated
+into partitions of varying size.
 
 \subsubsection{Sample locations}\label{sample-locations}
 
@@ -584,10 +593,13 @@ Let:
 
 A micropanel's local macropanel coordinate (i.e., the two unique values
 that determine its chronological position within its originally assigned
-macropanel and cycle) \((m,l)\) maps to its static global index \(r\)
-via:
+macropanel and cycle) \((m,l)\) links to its fixed global index
+\(r \in \{1,\ldots,R\}\) via:
 
 \[r = (m - 1)k + l\]
+
+which implies the local index \(l\) can be obtained via
+\(l = r - (m - 1)k = r - mk + k\).
 
 In the new cycle configuration \(\mathcal{P}^\prime_M\), each macropanel
 \(P^\prime_m\) contains exactly \(k^\prime\) micropanels. To determine
@@ -607,6 +619,82 @@ Where \(\mathbf{f}(m,l) = m^\prime\) represents the index of the
 modified macropanel (\(m^\prime \in \{1, 2, \dots, M^\prime\}\)) to
 which micropanel \(r\) is newly assigned and \(\lceil \cdot \rceil\)
 represents the ceiling function described above.
+
+\subsubsection{Dropped Micropanels}\label{dropped-micropanels}
+
+Under the slow and fast start scenarios, both the total number of
+micropanels \(R\) and the total number of macropanels \(M\) within the
+cycle are preserved, but some micropanels are reassigned to other
+macropanels such that the number of micropanels per macropanel is no
+longer the fixed value \(k\) as under the original configuration. Under
+the extended and shortened cycle length scenarios, the total number of
+micropanels \(R\) is retained, but micropanels are evenly and
+sequentially redistributed across macropanels such that \(M\) either
+gets larger or smaller.
+
+It's conceivable that FIA could encounter such dire obstacles to field
+operations that sampling intensities must be consistently reduced within
+every macropanel in a cycle, with no intention (or capability) to regain
+the nominal sampling intensity before the end of the cycle. This could
+be achieved by simply eliminating one or more micropanels per macropanel
+from consideration for field visitation, until its prescribed position
+in the following inventory cycle at the earliest. We refer to this
+cirucmstance as a ``dropped micropanel'' scenario.
+
+\paragraph{Micropanel Exclusion
+Notation}\label{micropanel-exclusion-notation}
+
+To generalize dropped micropanel scenarios, let
+\(d \in \{0, 1, \dots, k\}\) denote the number of trailing micropanels
+dropped from each macropanel in a cycle. Let
+\(\mathcal{D}_{M,d} \subset \mathcal{Q}\) be the set of dropped
+micropanels for cycle configuration \(\mathcal{P}_M\) under a sampling
+intensity reduction of the last \(d\) micropanels in each macropanl.
+Because the final \(d\) micropanels in macropanel \(m\) span the
+micropanel indices \(r = mk - d + 1\) through \(r = mk\), the set of
+dropped micropanels can be expressed as:
+
+\[\mathcal{D}_{M,d} = \{ q_r \in \mathcal{Q} : mk - d + 1 \leq r \leq mk, \text{ for } m = 1, 2, \dots, M \}\]
+
+The modified cycle \(\mathcal{P}'_{M,d}\) preserves the original \(M\)
+distinct macropanels, but truncates the upper micropanel boundary within
+each macropanel at \(r = mk - d\):
+
+\[\mathcal{P}'_{M,d} = \{P'_1, P'_2, \dots, P'_M\}\]
+
+where each truncated macropanel \(P'_m\) (for \(m = 1, 2, \dots, M\)) is
+explicitly defined by:
+
+\[P'_m = \{ q_r \in \mathcal{Q} : (m-1)k + 1 \leq r \leq mk - d \}\]
+
+Under this generalized form, the modified number of micropanels per
+macropanel is reduced from \(k\) to \(k - d\). Note that when \(d = 0\),
+\(\mathcal{D}_{M,0} = \emptyset\) and
+\(\mathcal{P}'_{M,0} = \mathcal{P}_M\) (because the inequality in the
+expression for \(\mathcal{D}_{M,d}\) yields no valid integer solution);
+when \(d = k\), all micropanels are dropped
+(\(\mathcal{D}_{M,k} = \mathcal{Q}\)) and each active macropanel becomes
+empty (\(P'_m = \emptyset\)).
+
+In the simulation study, we evaluated \(d = (1,2,3)\) for each of the
+three states.
+
+\subsection{FIA Data}\label{fia-data}
+
+Apart from some conceptual linkages to inventory cycles and annual
+periods, the Data and Methods section has focused exclusively on the
+development of notation for describing the micropanels and macropanels
+prescribed by the annual FIA sample design, and versions of them
+modified to represent 3 VAE scenarios. However, the purpose of the
+micropanel and macropanel structures is to schedule, in particular field
+season years, measurements of forest attributes at the locations they
+contain.
+
+\subsubsection{Measurement Data}\label{measurement-data}
+
+???
+
+\section{Results}\label{sec-results}
 
 \section{Discussion}\label{sec-discussion}
 
@@ -959,6 +1047,68 @@ decreases.
     \[\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10\]
   \item
     \emph{Result:} Destination is \textbf{\(P'_{10}\)} (Correct).
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Dropped Micropanels}\label{dropped-micropanels-1}
+
+To represent the dropped micropanel scenario where the final micropanel
+in each macropanel in a cycle is dropped, we can modify the upper bound
+constraint of the index sets. Let \(\mathcal{D}_M \subset \mathcal{Q}\)
+be the set of dropped micropanels for cycle configuration
+\(\mathcal{P}_M\). Because the final micropanel in each macropanel has
+index \(r = mk\), the set of dropped micropanels can be generally
+expressed as
+
+\[\mathcal{D}_M = \{ q_r \in \mathcal{Q} \mid r = m \cdot k, \text{ for } m = 1, 2, \dots, M \}\]
+
+The modified cycle \(\mathcal{P}'_M\) preserves the original \(M\)
+distinct macropanels, but truncates the upper micropanel boundary within
+each macropanel at the value \(r = mk - 1\):
+
+\[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}\]
+
+Where each truncated macro panel \(P'_m\) (for \(m = 1, 2, \dots, M\))
+is explicitly defined by:
+
+\[P'_m = \{ q_r \in \mathcal{Q} \mid (m-1)k + 1 \leq r \leq mk - 1 \}\]
+
+\paragraph{Dropped micropanel
+examples:}\label{dropped-micropanel-examples}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{For \(M = 5\)} (\(k = 14\)):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dropped Set:
+    \(\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}\)
+  \item
+    Macro Panel 1: \(P'_1 = \{q_1, q_2, \dots, q_{13}\}\)
+  \end{itemize}
+\item
+  \textbf{For \(M = 7\)} (\(k = 10\)):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dropped Set:
+    \(\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}\)
+  \item
+    Macro Panel 1: \(P'_1 = \{q_1, q_2, \dots, q_{9}\}\)
+  \end{itemize}
+\item
+  \textbf{For \(M = 14\)} (\(k = 5\)):
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Dropped Set: \(\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}\)
+  \item
+    Macro Panel 1: \(P'_1 = \{q_1, q_2, q_3, q_4\}\)
   \end{itemize}
 \end{itemize}
 

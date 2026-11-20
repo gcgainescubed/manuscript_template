@@ -210,3 +210,37 @@ valid whether the macropanel count $M$ increases or decreases.
     *   Calculation:
         $$\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10$$
     *   *Result:* Destination is **$P'_{10}$** (Correct).
+
+#### Dropped Micropanels
+
+To represent the dropped micropanel scenario where the final micropanel in each
+macropanel in a cycle is dropped, 
+we can modify the upper bound constraint of the index sets.
+Let $\mathcal{D}_M \subset \mathcal{Q}$ be the set of dropped micropanels for 
+cycle configuration $\mathcal{P}_M$. Because the final micropanel in each macropanel 
+has index $r = mk$, the set of dropped micropanels can be generally 
+expressed as
+
+$$\mathcal{D}_M = \{ q_r \in \mathcal{Q} \mid r = m \cdot k, \text{ for } m = 1, 2, \dots, M \}$$
+
+The modified cycle $\mathcal{P}'_M$ preserves the original $M$ 
+distinct macropanels, but truncates the upper micropanel boundary within each 
+macropanel at the value $r = mk - 1$:
+
+$$\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}$$
+
+Where each truncated macro panel $P'_m$ (for $m = 1, 2, \dots, M$) is explicitly defined by:
+
+$$P'_m = \{ q_r \in \mathcal{Q} \mid (m-1)k + 1 \leq r \leq mk - 1 \}$$
+
+##### Dropped micropanel examples:  
+
+* **For $M = 5$** ($k = 14$): 
+  * Dropped Set: $\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}$
+  * Macro Panel 1: $P'_1 = \{q_1, q_2, \dots, q_{13}\}$
+* **For $M = 7$** ($k = 10$): 
+  * Dropped Set: $\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}$
+  * Macro Panel 1: $P'_1 = \{q_1, q_2, \dots, q_{9}\}$
+* **For $M = 14$** ($k = 5$): 
+  * Dropped Set: $\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}$
+  * Macro Panel 1: $P'_1 = \{q_1, q_2, q_3, q_4\}$

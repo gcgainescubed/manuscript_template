@@ -42,9 +42,11 @@ Let:
 
 A micropanel's local macropanel coordinate (i.e., the two unique values that determine
 its chronological position within its originally assigned macropanel and cycle)
-$(m,l)$ maps to its static global index $r$ via:
+$(m,l)$ links to its fixed global index $r \in \{1,\ldots,R\}$ via:
 
 $$r = (m - 1)k + l$$
+
+which implies the local index $l$ can be obtained via $l = r - (m - 1)k = r - mk + k$.
 
 In the new cycle configuration $\mathcal{P}^\prime_M$, each macropanel $P^\prime_m$
 contains exactly $k^\prime$ micropanels. To determine which macropanel (i.e., which 

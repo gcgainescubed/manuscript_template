@@ -80,7 +80,7 @@ div.csl-indent {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-808fa2b54be4417f9355fb1d1925d19c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -126,10 +126,10 @@ window.Quarto = {
 <meta name="citation_author" content="Bryce Frank">
 <meta name="citation_author" content="KaDonna Randolph">
 <meta name="citation_author" content="Jim Westfall">
-<meta name="citation_publication_date" content="2026-11-18">
-<meta name="citation_cover_date" content="2026-11-18">
+<meta name="citation_publication_date" content="2026-11-20">
+<meta name="citation_cover_date" content="2026-11-20">
 <meta name="citation_year" content="2026">
-<meta name="citation_online_date" content="2026-11-18">
+<meta name="citation_online_date" content="2026-11-20">
 <meta name="citation_language" content="en">
 <meta name="citation_journal_title" content="Forest Ecology and Management">
 <meta name="citation_reference" content="citation_title=A spatial and temporal assessment of nonresponse in the national forest inventory of the US; citation_author=James A Westfall; citation_author=Todd A Schroeder; citation_author=Joseph M McCollum; citation_author=Paul L Patterson; citation_publication_date=2022; citation_cover_date=2022; citation_year=2022; citation_issue=8; citation_volume=194; citation_firstpage=530; citation_journal_title=Environmental Monitoring and Assessment; citation_publisher=Springer;">
@@ -235,19 +235,20 @@ window.Quarto = {
   <li><a href="#sec-data-methods" id="toc-sec-data-methods" class="nav-link" data-scroll-target="#sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</a>
   <ul class="collapse">
   <li><a href="#study-area" id="toc-study-area" class="nav-link" data-scroll-target="#study-area"><span class="header-section-number">2.1</span> Study Area</a></li>
-  <li><a href="#fia-data" id="toc-fia-data" class="nav-link" data-scroll-target="#fia-data"><span class="header-section-number">2.2</span> FIA Data</a></li>
-  <li><a href="#initial-notation" id="toc-initial-notation" class="nav-link" data-scroll-target="#initial-notation"><span class="header-section-number">2.3</span> Initial Notation</a></li>
-  <li><a href="#vae-scenarios" id="toc-vae-scenarios" class="nav-link" data-scroll-target="#vae-scenarios"><span class="header-section-number">2.4</span> VAE Scenarios</a></li>
+  <li><a href="#sample-locations-micropanels-and-macropanels" id="toc-sample-locations-micropanels-and-macropanels" class="nav-link" data-scroll-target="#sample-locations-micropanels-and-macropanels"><span class="header-section-number">2.2</span> Sample locations, micropanels, and macropanels</a></li>
+  <li><a href="#vae-scenarios" id="toc-vae-scenarios" class="nav-link" data-scroll-target="#vae-scenarios"><span class="header-section-number">2.3</span> VAE Scenarios</a></li>
+  <li><a href="#fia-data" id="toc-fia-data" class="nav-link" data-scroll-target="#fia-data"><span class="header-section-number">2.4</span> FIA Data</a></li>
   </ul></li>
-  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">3</span> Discussion</a></li>
-  <li><a href="#sec-conclusion" id="toc-sec-conclusion" class="nav-link" data-scroll-target="#sec-conclusion"><span class="header-section-number">4</span> Conclusion</a></li>
+  <li><a href="#sec-results" id="toc-sec-results" class="nav-link" data-scroll-target="#sec-results"><span class="header-section-number">3</span> Results</a></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">4</span> Discussion</a></li>
+  <li><a href="#sec-conclusion" id="toc-sec-conclusion" class="nav-link" data-scroll-target="#sec-conclusion"><span class="header-section-number">5</span> Conclusion</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  <li><a href="#sec-supp-mat" id="toc-sec-supp-mat" class="nav-link" data-scroll-target="#sec-supp-mat"><span class="header-section-number">5</span> Supplementary Materials</a>
+  <li><a href="#sec-supp-mat" id="toc-sec-supp-mat" class="nav-link" data-scroll-target="#sec-supp-mat"><span class="header-section-number">6</span> Supplementary Materials</a>
   <ul class="collapse">
-  <li><a href="#appendix-a-examples" id="toc-appendix-a-examples" class="nav-link" data-scroll-target="#appendix-a-examples"><span class="header-section-number">5.1</span> Appendix A: Examples</a></li>
+  <li><a href="#appendix-a-examples" id="toc-appendix-a-examples" class="nav-link" data-scroll-target="#appendix-a-examples"><span class="header-section-number">6.1</span> Appendix A: Examples</a></li>
   </ul></li>
   </ul>
-<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/supplementary_materials-preview.html"><i class="bi bi-journal-code"></i>Appendix A: Examples</a></li><li><a href="notebooks/dropped-p70s-preview.html"><i class="bi bi-journal-code"></i>Dropped P70s</a></li><li><a href="notebooks/extend-shorten-preview.html"><i class="bi bi-journal-code"></i>Extended and Shortened Cycle Lengths</a></li><li><a href="notebooks/initial-notation-preview.html"><i class="bi bi-journal-code"></i>Initial Notation</a></li><li><a href="notebooks/fast-slow-preview.html"><i class="bi bi-journal-code"></i>Slow Start and Fast Start Scenarios</a></li></ul></div></nav>
+<div class="quarto-alternate-notebooks"><h2>Notebooks</h2><ul><li><a href="notebooks/supplementary_materials-preview.html"><i class="bi bi-journal-code"></i>Appendix A: Examples</a></li><li><a href="notebooks/dropped-p70s-preview.html"><i class="bi bi-journal-code"></i>Dropped Micropanels</a></li><li><a href="notebooks/extend-shorten-preview.html"><i class="bi bi-journal-code"></i>Extended and Shortened Cycle Lengths</a></li><li><a href="notebooks/measurements_and_growth-preview.html"><i class="bi bi-journal-code"></i>FIA Data</a></li><li><a href="notebooks/initial-notation-preview.html"><i class="bi bi-journal-code"></i>Sample locations, micropanels, and macropanels</a></li><li><a href="notebooks/fast-slow-preview.html"><i class="bi bi-journal-code"></i>Slow Start and Fast Start Scenarios</a></li></ul></div></nav>
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
@@ -279,31 +280,28 @@ window.Quarto = {
 <h2 data-number="2" class="anchored" data-anchor-id="sec-data-methods"><span class="header-section-number">2</span> Data &amp; Methods</h2>
 <section id="study-area" class="level3" data-number="2.1">
 <h3 data-number="2.1" class="anchored" data-anchor-id="study-area"><span class="header-section-number">2.1</span> Study Area</h3>
-<p>3 states…</p>
-</section>
-<section id="fia-data" class="level3" data-number="2.2">
-<h3 data-number="2.2" class="anchored" data-anchor-id="fia-data"><span class="header-section-number">2.2</span> FIA Data</h3>
-<p>Data from those 3 states…</p>
+<p>To achieve an adequately comprehensive assessment of the anticipated statistical consequences of our simulated VAE scenarios, we focused this study on three US states (Maine, Alabama, and Montana) distinct with respect to i) the national FIA Program’s underlying regional structure; ii) their nominally prescribed FIA inventory cycle lengths; and iii) the extant range of forest types and conditions, levels of primary productivity, and ecological disturbance regimes across CONUS.</p>
 <!-- ---
 title: "initial-notation" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
 </section>
-<section id="initial-notation" class="level3" data-number="2.3">
-<h3 data-number="2.3" class="anchored" data-anchor-id="initial-notation"><span class="header-section-number">2.3</span> Initial Notation</h3>
-<section id="sample-locations" class="level4" data-number="2.3.1">
-<h4 data-number="2.3.1" class="anchored" data-anchor-id="sample-locations"><span class="header-section-number">2.3.1</span> Sample locations</h4>
+<section id="sample-locations-micropanels-and-macropanels" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="sample-locations-micropanels-and-macropanels"><span class="header-section-number">2.2</span> Sample locations, micropanels, and macropanels</h3>
+<p>In a subsequent section, we describe our use of FIA forest vegetation measurement data obtained at fixed sample locations at various points in time. However, it is useful to begin with a notation focused solely on individual, time-invariant sample locations, and sets thereof aggregated into partitions of varying size.</p>
+<section id="sample-locations" class="level4" data-number="2.2.1">
+<h4 data-number="2.2.1" class="anchored" data-anchor-id="sample-locations"><span class="header-section-number">2.2.1</span> Sample locations</h4>
 <p>Let</p>
 <p><span class="math display">\[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}\]</span> be the bivariate spatial coordinate vector for the <span class="math inline">\(i^{th}\)</span> FIA sample location in a focal US state, <span class="math inline">\(i = 1,\ldots,n\)</span>, where <span class="math inline">\(n\)</span> is the number of all sample locations in the focal state, and <span class="math inline">\(x_1\)</span> and <span class="math inline">\(x_2\)</span> are measures of longitude and latitude respectively.</p>
 </section>
-<section id="micropanels" class="level4" data-number="2.3.2">
-<h4 data-number="2.3.2" class="anchored" data-anchor-id="micropanels"><span class="header-section-number">2.3.2</span> Micropanels</h4>
+<section id="micropanels" class="level4" data-number="2.2.2">
+<h4 data-number="2.2.2" class="anchored" data-anchor-id="micropanels"><span class="header-section-number">2.2.2</span> Micropanels</h4>
 <p>Let</p>
 <p><span class="math display">\[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}\]</span></p>
 <p>be a set of “micropanels” <span class="math inline">\(q_r\)</span> that partition the <span class="math inline">\(n\)</span> sample locations into approximately equivalently-sized subsets, such that each <span class="math inline">\(q_r \in \mathcal{Q}\)</span> achieves approximate spatial dispersion across the focal state of each of the <span class="math inline">\(\mathbf{s}_i\)</span> it contains. The <span class="math inline">\(q_r\)</span> defined here are meant to correspond to collections of sample locations referred to in the FIA Program as “Panel 70’s”, which imply <span class="math inline">\(R = 70\)</span>, or “Panel 140’s”, which imply <span class="math inline">\(R = 140\)</span>.</p>
 <p>In CONUS states where the FIA Program is administered by the Pacific Northwest Research Station, <span class="math inline">\(R = 140\)</span> in present day inventory operations. In the rest of the CONUS states, <span class="math inline">\(R = 70\)</span>. Though this notation is intended to be flexible enough to accommodate a range of possible values of <span class="math inline">\(R\)</span>, in this study we don’t consider PNWRS states, and so we’ll only consider <span class="math inline">\(R = 70\)</span> for practical purposes.</p>
 </section>
-<section id="macropanels" class="level4" data-number="2.3.3">
-<h4 data-number="2.3.3" class="anchored" data-anchor-id="macropanels"><span class="header-section-number">2.3.3</span> Macropanels</h4>
+<section id="macropanels" class="level4" data-number="2.2.3">
+<h4 data-number="2.2.3" class="anchored" data-anchor-id="macropanels"><span class="header-section-number">2.2.3</span> Macropanels</h4>
 <p>The <span class="math inline">\(R\)</span> micropanels can be further aggregated into the set of <span class="math inline">\(M\)</span> macropanels</p>
 <p><span class="math display">\[\mathcal{P}_M = \{P_m : \ m = 1,\ldots,M\}\]</span> for any value of <span class="math inline">\(M\)</span> such that <span class="math inline">\(M \vert R\)</span>; that is, such that <span class="math inline">\(R\)</span> is evenly divisible by <span class="math inline">\(M\)</span>, and so the macropanels <span class="math inline">\(P_m \in \mathcal{P}_M\)</span> are perfectly evenly partitioned by the micropanels <span class="math inline">\(q_r \in \mathcal{Q}\)</span> (though the micropanels themselves may contain slightly different numbers of <span class="math inline">\(\mathbf{s}_i\)</span>.</p>
 <!--In the context of FIA, each $P_m \in \mathcal{P}_M$ can be thought of as an "annual 
@@ -320,8 +318,8 @@ themselves are evenly subdivided into the micropanels $q_r \in \mathcal{Q}$. -->
 <p>A general expression to recover the identities of the micropanels contained in any macropanel <span class="math inline">\(P_m\)</span> is given by</p>
 <p><span class="math display">\[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}\]</span>.</p>
 </section>
-<section id="macropanel-lookup-function" class="level4" data-number="2.3.4">
-<h4 data-number="2.3.4" class="anchored" data-anchor-id="macropanel-lookup-function"><span class="header-section-number">2.3.4</span> Macropanel Lookup Function</h4>
+<section id="macropanel-lookup-function" class="level4" data-number="2.2.4">
+<h4 data-number="2.2.4" class="anchored" data-anchor-id="macropanel-lookup-function"><span class="header-section-number">2.2.4</span> Macropanel Lookup Function</h4>
 <p>Conversely, to determine the identity of the macropanel to which micropanel <span class="math inline">\(r\)</span> belongs, we can define a macropanel lookup function</p>
 <p><span class="math display">\[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil\]</span> where the ceiling function <span class="math inline">\(\lceil x \rceil\)</span> returns the smallest integer not less than <span class="math inline">\(x\)</span>, and <span class="math inline">\(f(r) = m\)</span> outputs the index of the macropanel (<span class="math inline">\(1 \leq m \leq M\)</span>) to which the <span class="math inline">\(r^{th}\)</span> micropanel is assigned.</p>
 <!--
@@ -335,26 +333,26 @@ themselves are evenly subdivided into the micropanels $q_r \in \mathcal{Q}$. -->
 -->
 </section>
 </section>
-<section id="vae-scenarios" class="level3" data-number="2.4">
-<h3 data-number="2.4" class="anchored" data-anchor-id="vae-scenarios"><span class="header-section-number">2.4</span> VAE Scenarios</h3>
+<section id="vae-scenarios" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="vae-scenarios"><span class="header-section-number">2.3</span> VAE Scenarios</h3>
 <p>The basic premise of VAE is to enable the modification of remeasurement schedules by adjusting the macropanel assignments of some micropanels in a focal state. However, in the scenarios explored below, all <span class="math inline">\(\mathbf{s}_i\)</span> retain their original micropanel assignments. We now extend the initial notation to describe in general terms three VAE scenarios achieved by either i) reassigning micropanels to different macropanels, or ii) dropping fixed numbers of micropanels per macropanel over the course of an inventory cycle.</p>
 <!-- ---
 title: "fast-slow" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
-<section id="slow-start-and-fast-start-scenarios" class="level4" data-number="2.4.1">
-<h4 data-number="2.4.1" class="anchored" data-anchor-id="slow-start-and-fast-start-scenarios"><span class="header-section-number">2.4.1</span> Slow Start and Fast Start Scenarios</h4>
-<section id="slow-start" class="level5" data-number="2.4.1.1">
-<h5 data-number="2.4.1.1" class="anchored" data-anchor-id="slow-start"><span class="header-section-number">2.4.1.1</span> Slow Start</h5>
+<section id="slow-start-and-fast-start-scenarios" class="level4" data-number="2.3.1">
+<h4 data-number="2.3.1" class="anchored" data-anchor-id="slow-start-and-fast-start-scenarios"><span class="header-section-number">2.3.1</span> Slow Start and Fast Start Scenarios</h4>
+<section id="slow-start" class="level5" data-number="2.3.1.1">
+<h5 data-number="2.3.1.1" class="anchored" data-anchor-id="slow-start"><span class="header-section-number">2.3.1.1</span> Slow Start</h5>
 <p>In the context of FIA, the “slow start” scenarios we simulated are intended to represent a budgetary or workforce shortfall in the first <span class="math inline">\(z\)</span> years early in an inventory cycle, necessitating a planned reduction of field visitation by a fixed proportion of micropanels per macropanel in the first <span class="math inline">\(z\)</span> macropanels in <span class="math inline">\(\mathcal{P}_M\)</span>.</p>
 <p>Then, a budgetary or workforce recovery occurs, enabling a planned increase of field visitation by the same fixed proportion of micropanels per macropanel in the subsequent <span class="math inline">\(z\)</span> macropanels. Finally, work capacity stabilizes, and the <span class="math inline">\(k\)</span> micropanels in the final macropanel <span class="math inline">\(P_M\)</span> in <span class="math inline">\(\mathcal{P}_M\)</span> retain their original assignments (i.e., we’re “back on time”).</p>
 </section>
-<section id="fast-start" class="level5" data-number="2.4.1.2">
-<h5 data-number="2.4.1.2" class="anchored" data-anchor-id="fast-start"><span class="header-section-number">2.4.1.2</span> Fast Start</h5>
+<section id="fast-start" class="level5" data-number="2.3.1.2">
+<h5 data-number="2.3.1.2" class="anchored" data-anchor-id="fast-start"><span class="header-section-number">2.3.1.2</span> Fast Start</h5>
 <p>Under the “fast start” scenarios we simulated, our VAE intentions are analogous to the slow start scenario described above, but the timing of the availability of resources of field work is reversed. That is, extra resources for field work enable a fixed proportion of “early” micropanels per macropanel for the first <span class="math inline">\(z\)</span> macropanels in <span class="math inline">\(\mathcal{P}_M\)</span>. Annual sampling effort is then reduced by the same proportion micropanels per macropanel for the subsequent <span class="math inline">\(z\)</span> macropanels to<br>
-“get back on schedule”; and the nominally prescribed rate of <span class="math inline">\(k\)</span> micropanels per macropanel is reestablished for macropanel <span class="math inline">\(M\)</span>. A more detailed demonstrative example can be found in <a href="#sec-supp-mat" class="quarto-xref">Section&nbsp;5</a>.</p>
+“get back on schedule”; and the nominally prescribed rate of <span class="math inline">\(k\)</span> micropanels per macropanel is reestablished for macropanel <span class="math inline">\(M\)</span>. A more detailed demonstrative example can be found in <a href="#sec-supp-mat" class="quarto-xref">Section&nbsp;6</a>.</p>
 </section>
-<section id="generalizing-shifted-macropanel-boundaries" class="level5" data-number="2.4.1.3">
-<h5 data-number="2.4.1.3" class="anchored" data-anchor-id="generalizing-shifted-macropanel-boundaries"><span class="header-section-number">2.4.1.3</span> Generalizing Shifted Macropanel Boundaries</h5>
+<section id="generalizing-shifted-macropanel-boundaries" class="level5" data-number="2.3.1.3">
+<h5 data-number="2.3.1.3" class="anchored" data-anchor-id="generalizing-shifted-macropanel-boundaries"><span class="header-section-number">2.3.1.3</span> Generalizing Shifted Macropanel Boundaries</h5>
 <p>If we preserve <span class="math inline">\(R\)</span> and <span class="math inline">\(M\)</span>, but modify the original macropanel assignments of some micropanels for VAE purposes as the slow and fast start scenarios are intended to represent, the micropanels no longer evenly partition the macropanels throughout <span class="math inline">\(\mathcal{P}_M\)</span>. Therefore, it is convenient to extend our notation to represent an arbitraty, newly constituted cycle <span class="math inline">\(\mathcal{P}^\prime_M\)</span> following repositioning of micropanels (i.e., to represent and facilitate the application of a particular slow or fast start VAE regimen across any value of <span class="math inline">\(M \in \{5, 7, 10, 14\}\)</span>).</p>
 <p>Let <span class="math inline">\(\mathbf{U}_M\)</span> be the baseline uniform boundary sequence vector of length <span class="math inline">\(M+1\)</span>, where the elements are determined by the constant step-size <span class="math inline">\(k = \frac{R}{M}\)</span>:</p>
 <p><span class="math display">\[\mathbf{U}_M = (u_0, u_1, \dots, u_M), \quad \text{where } u_m = m \cdot k\]</span></p>
@@ -368,26 +366,26 @@ title: "fast-slow" (commenting out title to keep it from replacing main title wh
 of the sequence of shifted micropanels in the newly reconstituted macropanels. Each modified macropanel <span class="math inline">\(P_m*\)</span> (<span class="math inline">\(m* = 1,\ldots, M\)</span>) can then be constructed by obtaining indices for micropanels from between adjacent elements of <span class="math inline">\(\mathbf{B}\)</span>:</p>
 <p><span class="math display">\[P_m* = \{ q_r \in \mathcal{Q} : b_{m-1} + 1 \leq r \leq b_m \}.\]</span></p>
 </section>
-<section id="modified-macropanel-lookup-function" class="level5" data-number="2.4.1.4">
-<h5 data-number="2.4.1.4" class="anchored" data-anchor-id="modified-macropanel-lookup-function"><span class="header-section-number">2.4.1.4</span> Modified Macropanel Lookup Function</h5>
+<section id="modified-macropanel-lookup-function" class="level5" data-number="2.3.1.4">
+<h5 data-number="2.3.1.4" class="anchored" data-anchor-id="modified-macropanel-lookup-function"><span class="header-section-number">2.3.1.4</span> Modified Macropanel Lookup Function</h5>
 <p>Because the distributions of micropanels across macropanels are no longer uniform under these shifted configurations, the scalar ceiling function cannot be used to determine macropanel assignment <span class="math inline">\(m\)</span> of any macropanel <span class="math inline">\(r\)</span>.<br>
 However, such a function is still needed to describe and implement the slow start and fast start VAE scenarios.</p>
 <p>We can define a modified macropanel lookup function <span class="math inline">\(f_b(r)\)</span> that counts how many upper bounds <span class="math inline">\(b_m\)</span> from the sequence <span class="math inline">\(\mathbf{B}\)</span> are strictly less than <span class="math inline">\(r\)</span>, and then offsets the result by 1. Using bracket notation (where the brackets evaluate to <span class="math inline">\(1\)</span> if the enclosed condition is true, and <span class="math inline">\(0\)</span> if false):</p>
 <p><span class="math display">\[f_b(r) = 1 + \sum_{m=1}^{M-1} [r &gt; b_m]\]</span></p>
-<p>Demonstrative examples of the construction of <span class="math inline">\(\mathbf{U}_M\)</span>, <span class="math inline">\(\boldsymbol{\delta}_M\)</span>, <span class="math inline">\(\mathbf{B}\)</span>, and the use of <span class="math inline">\(f_b(r)\)</span> can be found in <a href="#sec-supp-mat" class="quarto-xref">Section&nbsp;5</a>.</p>
+<p>Demonstrative examples of the construction of <span class="math inline">\(\mathbf{U}_M\)</span>, <span class="math inline">\(\boldsymbol{\delta}_M\)</span>, <span class="math inline">\(\mathbf{B}\)</span>, and the use of <span class="math inline">\(f_b(r)\)</span> can be found in <a href="#sec-supp-mat" class="quarto-xref">Section&nbsp;6</a>.</p>
 <p><span style="color: red;">I think the idea of a baseline vector and a deviation vector is useful for generalization, but the way this is written doesn’t give the analyst any useful instructions for application. Should the deviation vector maybe be expressed in terms of proportions of micropanels to hold back or push forward?</span></p>
 <!-- ---
 title: "extend-shorten" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
 </section>
 </section>
-<section id="extended-and-shortened-cycle-lengths" class="level4" data-number="2.4.2">
-<h4 data-number="2.4.2" class="anchored" data-anchor-id="extended-and-shortened-cycle-lengths"><span class="header-section-number">2.4.2</span> Extended and Shortened Cycle Lengths</h4>
+<section id="extended-and-shortened-cycle-lengths" class="level4" data-number="2.3.2">
+<h4 data-number="2.3.2" class="anchored" data-anchor-id="extended-and-shortened-cycle-lengths"><span class="header-section-number">2.3.2</span> Extended and Shortened Cycle Lengths</h4>
 <p>Under the slow and fast start VAE scenarios described above, the number of macropanels in the cycle <span class="math inline">\(\mathcal{P}_M\)</span> (i.e., <span class="math inline">\(M\)</span>, which we can think of as corresponding to “inventory cycle length” in the context of FIA) is preserved by shifting an equivalent number of micropanels forward (for delayed field visitation) in some macropanels as are held backward (for early field visitation) in others.</p>
 <p>Another way VAE might be applied, for particular values of <span class="math inline">\(R\)</span> and <span class="math inline">\(M\)</span>, is to evenly redistribute micropanels into a modified total number of macropanels, say <span class="math inline">\(M^{\prime} \in \{5,7,10,14\}, \quad M^{\prime} \neq M\)</span>, where <span class="math inline">\(M^{\prime}\)</span> is still a factor of <span class="math inline">\(R\)</span>. If <span class="math inline">\(M^{\prime} &gt; M\)</span> the cycle length is extended, and the macropanel sampling intensity <span class="math inline">\(k\)</span> (i.e., the annual effort) is reduced. Conversely, if <span class="math inline">\(M^{\prime} &lt; M\)</span> the cycle length is shortened and the annual effort in each newly configured macropanel <span class="math inline">\(P^\prime_m\)</span> in in the modified cycle <span class="math inline">\(\mathcal{P}^\prime_M\)</span> is increased.</p>
 <p><span style="color: red;">I would prefer for the modified macropanels and cycles to be respectively symbolized as <span class="math inline">\(P_{m^\prime}\)</span> and <span class="math inline">\(\mathcal{P}_{M^\prime}\)</span> to align with the respective assignments of <span class="math inline">\(m^\prime\)</span> and <span class="math inline">\(M^\prime\)</span> as modified macropanel index and cycle length. However, as an example, for <span class="math inline">\(m = 1\)</span> and <span class="math inline">\(M = 1\)</span>, it makes more sense to write <span class="math inline">\(P^\prime_1\)</span> and <span class="math inline">\(\mathcal{P}^\prime_1\)</span> than <span class="math inline">\(P_{1^\prime}\)</span> and <span class="math inline">\(\mathcal{P}_{1^\prime}\)</span>…right?</span></p>
-<section id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths" class="level5" data-number="2.4.2.1">
-<h5 data-number="2.4.2.1" class="anchored" data-anchor-id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths"><span class="header-section-number">2.4.2.1</span> A modified macropanel lookup function for extended and shortened cycle lengths</h5>
+<section id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths" class="level5" data-number="2.3.2.1">
+<h5 data-number="2.3.2.1" class="anchored" data-anchor-id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths"><span class="header-section-number">2.3.2.1</span> A modified macropanel lookup function for extended and shortened cycle lengths</h5>
 <p>To map any micropanel from its originally prescribed macropanel <span class="math inline">\(P_m\)</span> to its new macropanel <span class="math inline">\(P^\prime_m\)</span> under a shortened or extended cycle length, we define a function that uses both the original macropanel index <span class="math inline">\(m\)</span> and the local micropanel offset <span class="math inline">\(l\)</span> within that macropanel.</p>
 <p>Let:</p>
 <ul>
@@ -396,38 +394,72 @@ title: "extend-shorten" (commenting out title to keep it from replacing main tit
 <li><span class="math inline">\(m\)</span> be the original macropanel index, where <span class="math inline">\(m \in \{1, 2, \dots, M\}\)</span>.</li>
 <li><span class="math inline">\(l\)</span> be the local index of the micropanel within <span class="math inline">\(P_m\)</span>, where <span class="math inline">\(l \in \{1, 2, \dots, k\}\)</span>.</li>
 </ul>
-<p>A micropanel’s local macropanel coordinate (i.e., the two unique values that determine its chronological position within its originally assigned macropanel and cycle) <span class="math inline">\((m,l)\)</span> maps to its static global index <span class="math inline">\(r\)</span> via:</p>
+<p>A micropanel’s local macropanel coordinate (i.e., the two unique values that determine its chronological position within its originally assigned macropanel and cycle) <span class="math inline">\((m,l)\)</span> links to its fixed global index <span class="math inline">\(r \in \{1,\ldots,R\}\)</span> via:</p>
 <p><span class="math display">\[r = (m - 1)k + l\]</span></p>
+<p>which implies the local index <span class="math inline">\(l\)</span> can be obtained via <span class="math inline">\(l = r - (m - 1)k = r - mk + k\)</span>.</p>
 <p>In the new cycle configuration <span class="math inline">\(\mathcal{P}^\prime_M\)</span>, each macropanel <span class="math inline">\(P^\prime_m\)</span> contains exactly <span class="math inline">\(k^\prime\)</span> micropanels. To determine which macropanel (i.e., which sequence of <span class="math inline">\(k^\prime\)</span> micropanels) the index <span class="math inline">\(r\)</span> falls within, we divide <span class="math inline">\(r\)</span> by <span class="math inline">\(k^\prime\)</span> and apply the ceiling function <span class="math inline">\(\lceil \cdot \rceil\)</span> to round up to the nearest integer:</p>
 <p><span class="math display">\[m^\prime = \left\lceil \frac{r}{k^\prime} \right\rceil\]</span></p>
 <p>Combining both steps yields the definitive closed-form mapping function <span class="math inline">\(\mathbf{f}(m,l)\)</span>:</p>
 <p><span class="math display">\[f^\prime(m,l) = \left\lceil \frac{(m - 1) k + l}{k^\prime} \right\rceil\]</span></p>
 <p>Where <span class="math inline">\(\mathbf{f}(m,l) = m^\prime\)</span> represents the index of the modified macropanel (<span class="math inline">\(m^\prime \in \{1, 2, \dots, M^\prime\}\)</span>) to which micropanel <span class="math inline">\(r\)</span> is newly assigned and <span class="math inline">\(\lceil \cdot \rceil\)</span> represents the ceiling function described above.</p>
+<!-- ---
+title: "dropped-p70s" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+</section>
+</section>
+<section id="dropped-micropanels" class="level4" data-number="2.3.3">
+<h4 data-number="2.3.3" class="anchored" data-anchor-id="dropped-micropanels"><span class="header-section-number">2.3.3</span> Dropped Micropanels</h4>
+<p>Under the slow and fast start scenarios, both the total number of micropanels <span class="math inline">\(R\)</span> and the total number of macropanels <span class="math inline">\(M\)</span> within the cycle are preserved, but some micropanels are reassigned to other macropanels such that the number of micropanels per macropanel is no longer the fixed value <span class="math inline">\(k\)</span> as under the original configuration. Under the extended and shortened cycle length scenarios, the total number of micropanels <span class="math inline">\(R\)</span> is retained, but micropanels are evenly and sequentially redistributed across macropanels such that <span class="math inline">\(M\)</span> either gets larger or smaller.</p>
+<p>It’s conceivable that FIA could encounter such dire obstacles to field operations that sampling intensities must be consistently reduced within every macropanel in a cycle, with no intention (or capability) to regain the nominal sampling intensity before the end of the cycle. This could be achieved by simply eliminating one or more micropanels per macropanel from consideration for field visitation, until its prescribed position in the following inventory cycle at the earliest. We refer to this cirucmstance as a “dropped micropanel” scenario.</p>
+<section id="micropanel-exclusion-notation" class="level5" data-number="2.3.3.1">
+<h5 data-number="2.3.3.1" class="anchored" data-anchor-id="micropanel-exclusion-notation"><span class="header-section-number">2.3.3.1</span> Micropanel Exclusion Notation</h5>
+<p>To generalize dropped micropanel scenarios, let <span class="math inline">\(d \in \{0, 1, \dots, k\}\)</span> denote the number of trailing micropanels dropped from each macropanel in a cycle. Let <span class="math inline">\(\mathcal{D}_{M,d} \subset \mathcal{Q}\)</span> be the set of dropped micropanels for cycle configuration <span class="math inline">\(\mathcal{P}_M\)</span> under a sampling intensity reduction of the last <span class="math inline">\(d\)</span> micropanels in each macropanl. Because the final <span class="math inline">\(d\)</span> micropanels in macropanel <span class="math inline">\(m\)</span> span the micropanel indices <span class="math inline">\(r = mk - d + 1\)</span> through <span class="math inline">\(r = mk\)</span>, the set of dropped micropanels can be expressed as:</p>
+<p><span class="math display">\[\mathcal{D}_{M,d} = \{ q_r \in \mathcal{Q} : mk - d + 1 \leq r \leq mk, \text{ for } m = 1, 2, \dots, M \}\]</span></p>
+<p>The modified cycle <span class="math inline">\(\mathcal{P}'_{M,d}\)</span> preserves the original <span class="math inline">\(M\)</span> distinct macropanels, but truncates the upper micropanel boundary within each macropanel at <span class="math inline">\(r = mk - d\)</span>:</p>
+<p><span class="math display">\[\mathcal{P}'_{M,d} = \{P'_1, P'_2, \dots, P'_M\}\]</span></p>
+<p>where each truncated macropanel <span class="math inline">\(P'_m\)</span> (for <span class="math inline">\(m = 1, 2, \dots, M\)</span>) is explicitly defined by:</p>
+<p><span class="math display">\[P'_m = \{ q_r \in \mathcal{Q} : (m-1)k + 1 \leq r \leq mk - d \}\]</span></p>
+<p>Under this generalized form, the modified number of micropanels per macropanel is reduced from <span class="math inline">\(k\)</span> to <span class="math inline">\(k - d\)</span>. Note that when <span class="math inline">\(d = 0\)</span>, <span class="math inline">\(\mathcal{D}_{M,0} = \emptyset\)</span> and <span class="math inline">\(\mathcal{P}'_{M,0} = \mathcal{P}_M\)</span> (because the inequality in the expression for <span class="math inline">\(\mathcal{D}_{M,d}\)</span> yields no valid integer solution); when <span class="math inline">\(d = k\)</span>, all micropanels are dropped (<span class="math inline">\(\mathcal{D}_{M,k} = \mathcal{Q}\)</span>) and each active macropanel becomes empty (<span class="math inline">\(P'_m = \emptyset\)</span>).</p>
+<p>In the simulation study, we evaluated <span class="math inline">\(d = (1,2,3)\)</span> for each of the three states.</p>
+<!-- ---
+title: "dropped-p70s" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
 </section>
 </section>
 </section>
+<section id="fia-data" class="level3" data-number="2.4">
+<h3 data-number="2.4" class="anchored" data-anchor-id="fia-data"><span class="header-section-number">2.4</span> FIA Data</h3>
+<p>Apart from some conceptual linkages to inventory cycles and annual periods, the Data and Methods section has focused exclusively on the development of notation for describing the micropanels and macropanels prescribed by the annual FIA sample design, and versions of them modified to represent 3 VAE scenarios. However, the purpose of the micropanel and macropanel structures is to schedule, in particular field season years, measurements of forest attributes at the locations they contain.</p>
+<section id="measurement-data" class="level4" data-number="2.4.1">
+<h4 data-number="2.4.1" class="anchored" data-anchor-id="measurement-data"><span class="header-section-number">2.4.1</span> Measurement Data</h4>
+<p>???</p>
 </section>
-<section id="sec-discussion" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="sec-discussion"><span class="header-section-number">3</span> Discussion</h2>
 </section>
-<section id="sec-conclusion" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="sec-conclusion"><span class="header-section-number">4</span> Conclusion</h2>
+</section>
+<section id="sec-results" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="sec-results"><span class="header-section-number">3</span> Results</h2>
+</section>
+<section id="sec-discussion" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="sec-discussion"><span class="header-section-number">4</span> Discussion</h2>
+</section>
+<section id="sec-conclusion" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="sec-conclusion"><span class="header-section-number">5</span> Conclusion</h2>
 </section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 </section>
-<section id="sec-supp-mat" class="level2" data-number="5">
-<h2 data-number="5" class="anchored" data-anchor-id="sec-supp-mat"><span class="header-section-number">5</span> Supplementary Materials</h2>
+<section id="sec-supp-mat" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="sec-supp-mat"><span class="header-section-number">6</span> Supplementary Materials</h2>
 <!-- ---
 title: "extend-shorten" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
-<section id="appendix-a-examples" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="appendix-a-examples"><span class="header-section-number">5.1</span> Appendix A: Examples</h3>
+<section id="appendix-a-examples" class="level3" data-number="6.1">
+<h3 data-number="6.1" class="anchored" data-anchor-id="appendix-a-examples"><span class="header-section-number">6.1</span> Appendix A: Examples</h3>
 <p>Below are some demonstrative examples of the use of the notation and functions described in the methods section.</p>
-<section id="fast-start-and-slow-start" class="level4" data-number="5.1.1">
-<h4 data-number="5.1.1" class="anchored" data-anchor-id="fast-start-and-slow-start"><span class="header-section-number">5.1.1</span> Fast Start and Slow Start</h4>
-<section id="slow-start-1" class="level5" data-number="5.1.1.1">
-<h5 data-number="5.1.1.1" class="anchored" data-anchor-id="slow-start-1"><span class="header-section-number">5.1.1.1</span> Slow Start</h5>
+<section id="fast-start-and-slow-start" class="level4" data-number="6.1.1">
+<h4 data-number="6.1.1" class="anchored" data-anchor-id="fast-start-and-slow-start"><span class="header-section-number">6.1.1</span> Fast Start and Slow Start</h4>
+<section id="slow-start-1" class="level5" data-number="6.1.1.1">
+<h5 data-number="6.1.1.1" class="anchored" data-anchor-id="slow-start-1"><span class="header-section-number">6.1.1.1</span> Slow Start</h5>
 <p>Consider a case where <span class="math inline">\(R = 70\)</span> and <span class="math inline">\(M = 5\)</span>, which implies that <span class="math inline">\(k = \frac{R}{M} = 14\)</span> micropanels per macropanel. Consider further that for <span class="math inline">\(m = \{1,2\}\)</span>, we shift the last four micropanels <span class="math inline">\(q_r \in P_m\)</span> forward one macropanel. In the context of FIA, this might represent a budgetary or workforce shortfall in the first two years in an inventory cycle, necessitating a planned reduction of field visitation by <span class="math inline">\(\frac{2}{7}\)</span> micropanels in the first two macropanels.</p>
 <p>Envision then that the for <span class="math inline">\(m = \{3,4\}\)</span>, we shift the first four micropanels <span class="math inline">\(q_r \in P_m\)</span> backward one macropanel. This might represent a budgetary or workforce recovery in the following two years in the inventory cycle, enabling a planned increase of field visitation by <span class="math inline">\(\frac{2}{7}\)</span> micropanels in those next two macropanels. Finally, assume that for the final macropanel, <span class="math inline">\(m = 5\)</span> work capacity stabilizes, and the <span class="math inline">\(k = 14\)</span> micropanels in <span class="math inline">\(P_5\)</span> retain their original assignments.</p>
 <p>Under this “slow start” VAE regimen, the boundaries <span class="math inline">\(b_m\)</span> in <span class="math inline">\(\mathbf{B}\)</span> are explicitly assigned to be:</p>
@@ -441,8 +473,8 @@ title: "extend-shorten" (commenting out title to keep it from replacing main tit
 <li><span class="math inline">\(P_5* = \{ q_r \in \mathcal{Q} \mid 57 \leq r \leq 70 \}.\)</span></li>
 </ul>
 </section>
-<section id="fast-start-1" class="level5" data-number="5.1.1.2">
-<h5 data-number="5.1.1.2" class="anchored" data-anchor-id="fast-start-1"><span class="header-section-number">5.1.1.2</span> Fast Start</h5>
+<section id="fast-start-1" class="level5" data-number="6.1.1.2">
+<h5 data-number="6.1.1.2" class="anchored" data-anchor-id="fast-start-1"><span class="header-section-number">6.1.1.2</span> Fast Start</h5>
 <p>Alternatively, consider a case where <span class="math inline">\(R = 70\)</span> and <span class="math inline">\(M = 7\)</span>, which implies <span class="math inline">\(k = \frac{R}{M} = 10\)</span> micropanels per macropanel, and that our VAE intentions are analogous to the slow start scenario described above, but the timing of the availability of resources of field work is reversed. That is, extra resources for field work enable two “early” micropanels per macropanel for <span class="math inline">\(m = \{1,2,3\}\)</span>; annual sampling effort is then reduced by two micropanels per macropanel for <span class="math inline">\(m = \{4,5,6\}\)</span> to<br>
 get back on schedule; and the nominal <span class="math inline">\(k = 10\)</span> is finally reestablished for <span class="math inline">\(m = 7\)</span>.</p>
 <p>Under this “fast start” VAE regimen, the boundaries <span class="math inline">\(b_m\)</span> in <span class="math inline">\(\mathbf{B}\)</span> are explicitly assigned to be:</p>
@@ -458,19 +490,19 @@ get back on schedule; and the nominal <span class="math inline">\(k = 10\)</span
 <li><span class="math inline">\(P_7* = \{ q_r \in \mathcal{Q} \mid 61 \leq r \leq 70 \}.\)</span></li>
 </ul>
 </section>
-<section id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors" class="level5" data-number="5.1.1.3">
-<h5 data-number="5.1.1.3" class="anchored" data-anchor-id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors"><span class="header-section-number">5.1.1.3</span> Illustration of the baseline and shifted boundary deviation vectors</h5>
+<section id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors" class="level5" data-number="6.1.1.3">
+<h5 data-number="6.1.1.3" class="anchored" data-anchor-id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors"><span class="header-section-number">6.1.1.3</span> Illustration of the baseline and shifted boundary deviation vectors</h5>
 <p>Continuing with the example above, the transformation from the uniform <span class="math inline">\(R = 70\)</span>, <span class="math inline">\(M = 5\)</span>, and <span class="math inline">\(k = 14\)</span> boundary vector to the specific VAE regimen described can be obtained via:</p>
 <p><span class="math display">\[\mathbf{U}_5 = (0, 14, 28, 42, 56, 70)\]</span> <span class="math display">\[\boldsymbol{\delta}_5 = (0, -4, -8, -4, 0, 0)\]</span></p>
 <p>Evaluating the vector addition:</p>
 <p><span class="math display">\[\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)\]</span></p>
 </section>
-<section id="conditions-to-ensure-validity-of-the-boundary-deviation-vector" class="level5" data-number="5.1.1.4">
-<h5 data-number="5.1.1.4" class="anchored" data-anchor-id="conditions-to-ensure-validity-of-the-boundary-deviation-vector"><span class="header-section-number">5.1.1.4</span> Conditions to ensure validity of the boundary deviation vector</h5>
+<section id="conditions-to-ensure-validity-of-the-boundary-deviation-vector" class="level5" data-number="6.1.1.4">
+<h5 data-number="6.1.1.4" class="anchored" data-anchor-id="conditions-to-ensure-validity-of-the-boundary-deviation-vector"><span class="header-section-number">6.1.1.4</span> Conditions to ensure validity of the boundary deviation vector</h5>
 <p>To ensure that a boundary deviation vector yields a physically valid modified boundary sequence under proposed slow start and fast start VAE regimens (i.e., that it precludes overlapping or empty macropanels and that it covers all <span class="math inline">\(R\)</span> micropanels), the elements of <span class="math inline">\(\boldsymbol{\delta}_M\)</span> must satisfy the following three criteria. Firstly, the outer micropanel boundaries cannot shift; that is, the sequence <span class="math inline">\(\boldsymbol{\delta}\)</span> must always start at 0 and end at R such that <span class="math inline">\(\delta_0 = 0\)</span> and <span class="math inline">\(\quad \delta_M = 0\)</span>. Secondly, every deviation must be an integer to preserve whole micropanel blocks, i.e., <span class="math inline">\(\delta_m \in \mathbb{Z} \quad \forall i \in \{0, 1, \dots, M\}\)</span>. Finally, to prevent empty macro panels or inverted boundaries, adjacent elements must maintain ordering such that <span class="math inline">\((u_m + \delta_m) &gt; (u_{m-1} + \delta_{m-1}), \quad \forall m \in \{1, 2, \dots, M\}\)</span>.</p>
 </section>
-<section id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start" class="level5" data-number="5.1.1.5">
-<h5 data-number="5.1.1.5" class="anchored" data-anchor-id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start"><span class="header-section-number">5.1.1.5</span> Example evaluation of the modified macropanel lookup function for fast/slow start</h5>
+<section id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start" class="level5" data-number="6.1.1.5">
+<h5 data-number="6.1.1.5" class="anchored" data-anchor-id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start"><span class="header-section-number">6.1.1.5</span> Example evaluation of the modified macropanel lookup function for fast/slow start</h5>
 <p>To locate micropanel <span class="math inline">\(q_{25}\)</span> using the upper bounds contained in <span class="math inline">\(\mathbf{B}\)</span> for the <span class="math inline">\(M = 5\)</span> slow start example described above (i.e., <span class="math inline">\(b_1=10, b_2=20, b_3=38, b_4=56, b_5 = 70)\)</span>:</p>
 <p><span class="math display">\[f_b(25) = 1 + [25 &gt; 10] + [25 &gt; 20] + [25 &gt; 38] + [25 &gt; 56]\]</span> <span class="math display">\[f_b(25) = 1 + 1 + 1 + 0 + 0 = 3.\]</span></p>
 <p>This correctly links micropanel <span class="math inline">\(q_{25}\)</span> to modified macropanel <span class="math inline">\(P_3*\)</span>.</p>
@@ -489,15 +521,15 @@ $$f_b(r) = \begin{cases}
 -->
 </section>
 </section>
-<section id="extended-and-shortened-cycle-lengths-1" class="level4" data-number="5.1.2">
-<h4 data-number="5.1.2" class="anchored" data-anchor-id="extended-and-shortened-cycle-lengths-1"><span class="header-section-number">5.1.2</span> Extended and Shortened Cycle Lengths</h4>
-<section id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7" class="level5" data-number="5.1.2.1">
-<h5 data-number="5.1.2.1" class="anchored" data-anchor-id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7"><span class="header-section-number">5.1.2.1</span> Subpanel Redistribution: From <span class="math inline">\(\mathcal{P}_{5}\)</span> to <span class="math inline">\(\mathcal{P}_{7}\)</span></h5>
+<section id="extended-and-shortened-cycle-lengths-1" class="level4" data-number="6.1.2">
+<h4 data-number="6.1.2" class="anchored" data-anchor-id="extended-and-shortened-cycle-lengths-1"><span class="header-section-number">6.1.2</span> Extended and Shortened Cycle Lengths</h4>
+<section id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7" class="level5" data-number="6.1.2.1">
+<h5 data-number="6.1.2.1" class="anchored" data-anchor-id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7"><span class="header-section-number">6.1.2.1</span> Subpanel Redistribution: From <span class="math inline">\(\mathcal{P}_{5}\)</span> to <span class="math inline">\(\mathcal{P}_{7}\)</span></h5>
 <p>The 70 micropanels are reallocated from 5 blocks of 14 into 7 blocks of 10. This redistribution preserves a contiguous partitioning across the entire set of micropanels <span class="math inline">\(q_r \in Q\)</span>.</p>
 <hr>
 </section>
-<section id="the-original-partition-structure-mathcalp_5" class="level5" data-number="5.1.2.2">
-<h5 data-number="5.1.2.2" class="anchored" data-anchor-id="the-original-partition-structure-mathcalp_5"><span class="header-section-number">5.1.2.2</span> 1. The Original Partition Structure (<span class="math inline">\(\mathcal{P}_{5}\)</span>)</h5>
+<section id="the-original-partition-structure-mathcalp_5" class="level5" data-number="6.1.2.2">
+<h5 data-number="6.1.2.2" class="anchored" data-anchor-id="the-original-partition-structure-mathcalp_5"><span class="header-section-number">6.1.2.2</span> 1. The Original Partition Structure (<span class="math inline">\(\mathcal{P}_{5}\)</span>)</h5>
 <p>When <span class="math inline">\(M = 5\)</span> and <span class="math inline">\(k = 14\)</span>, the layout partition <span class="math inline">\(\mathcal{P}_5 = \{P_1, P_2, P_3, P_4, P_5\}\)</span> groups the global indices contiguously as follows:</p>
 <ul>
 <li><span class="math inline">\(P_1 = \{q_1, \dots, q_{14}\}\)</span></li>
@@ -508,8 +540,8 @@ $$f_b(r) = \begin{cases}
 </ul>
 <hr>
 </section>
-<section id="the-new-extended-partition-structure-mathcalp_7" class="level5" data-number="5.1.2.3">
-<h5 data-number="5.1.2.3" class="anchored" data-anchor-id="the-new-extended-partition-structure-mathcalp_7"><span class="header-section-number">5.1.2.3</span> 2. The New Extended Partition Structure (<span class="math inline">\(\mathcal{P}_{7}\)</span>)</h5>
+<section id="the-new-extended-partition-structure-mathcalp_7" class="level5" data-number="6.1.2.3">
+<h5 data-number="6.1.2.3" class="anchored" data-anchor-id="the-new-extended-partition-structure-mathcalp_7"><span class="header-section-number">6.1.2.3</span> 2. The New Extended Partition Structure (<span class="math inline">\(\mathcal{P}_{7}\)</span>)</h5>
 <p>When the configuration expands to <span class="math inline">\(M^\prime = 7\)</span> and <span class="math inline">\(k^\prime = 10\)</span>, the layout partition updates to <span class="math inline">\(\mathcal{P}^\prime_7 = \{P'_1, P'_2, P'_3, P'_4, P'_5, P'_6, P'_7\}\)</span>:</p>
 <ul>
 <li><span class="math inline">\(P'_1 = \{q_1, \dots, q_{10}\}\)</span></li>
@@ -522,8 +554,8 @@ $$f_b(r) = \begin{cases}
 </ul>
 <hr>
 </section>
-<section id="micropanel-lineage-mapping" class="level5" data-number="5.1.2.4">
-<h5 data-number="5.1.2.4" class="anchored" data-anchor-id="micropanel-lineage-mapping"><span class="header-section-number">5.1.2.4</span> 3. Micropanel Lineage Mapping</h5>
+<section id="micropanel-lineage-mapping" class="level5" data-number="6.1.2.4">
+<h5 data-number="6.1.2.4" class="anchored" data-anchor-id="micropanel-lineage-mapping"><span class="header-section-number">6.1.2.4</span> 3. Micropanel Lineage Mapping</h5>
 <p>To visualize exactly how the micropanel constituents of the original macropanels are redistributed to form the new macropanel configuration, the lineage maps as follows:</p>
 <table class="caption-top table">
 <colgroup>
@@ -577,10 +609,10 @@ $$f_b(r) = \begin{cases}
 </tbody>
 </table>
 </section>
-<section id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths" class="level5" data-number="5.1.2.5">
-<h5 data-number="5.1.2.5" class="anchored" data-anchor-id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths"><span class="header-section-number">5.1.2.5</span> Example evaluation of the modified macropanel lookup function for extended/shortened cycle lengths</h5>
-<section id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10" class="level6" data-number="5.1.2.5.1">
-<h6 data-number="5.1.2.5.1" class="anchored" data-anchor-id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10"><span class="header-section-number">5.1.2.5.1</span> Example cases for cycle length extension (<span class="math inline">\(M=5, k=14 \implies M^\prime=7, k^\prime=10\)</span>)</h6>
+<section id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths" class="level5" data-number="6.1.2.5">
+<h5 data-number="6.1.2.5" class="anchored" data-anchor-id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths"><span class="header-section-number">6.1.2.5</span> Example evaluation of the modified macropanel lookup function for extended/shortened cycle lengths</h5>
+<section id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10" class="level6" data-number="6.1.2.5.1">
+<h6 data-number="6.1.2.5.1" class="anchored" data-anchor-id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10"><span class="header-section-number">6.1.2.5.1</span> Example cases for cycle length extension (<span class="math inline">\(M=5, k=14 \implies M^\prime=7, k^\prime=10\)</span>)</h6>
 <ul>
 <li><strong>Boundary Case A: The absolute first micropanel</strong>
 <ul>
@@ -603,8 +635,8 @@ $$f_b(r) = \begin{cases}
 </ul></li>
 </ul>
 </section>
-<section id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7" class="level6" data-number="5.1.2.5.2">
-<h6 data-number="5.1.2.5.2" class="anchored" data-anchor-id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7"><span class="header-section-number">5.1.2.5.2</span> Example cases for cycle length shortening (<span class="math inline">\(M=14, k=5 \implies M^\prime=10, k^\prime=7\)</span>)</h6>
+<section id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7" class="level6" data-number="6.1.2.5.2">
+<h6 data-number="6.1.2.5.2" class="anchored" data-anchor-id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7"><span class="header-section-number">6.1.2.5.2</span> Example cases for cycle length shortening (<span class="math inline">\(M=14, k=5 \implies M^\prime=10, k^\prime=7\)</span>)</h6>
 <p>The general mapping formula works for shortening cycle lengths as well. Because the formula tracks the unique sequential micropanel index <span class="math inline">\(r\)</span>, it remains valid whether the macropanel count <span class="math inline">\(M\)</span> increases or decreases.</p>
 <ul>
 <li><strong>Test Case A: The absolute first micropanel (<span class="math inline">\(q_1\)</span>)</strong>
@@ -624,6 +656,36 @@ $$f_b(r) = \begin{cases}
 <li>Input: <span class="math inline">\(m = 14, l = 5\)</span></li>
 <li>Calculation: <span class="math display">\[\mathbf{f}(14, 5) = \left\lceil \frac{(14 - 1)5 + 5}{7} \right\rceil = \left\lceil \frac{65 + 5}{7} \right\rceil = \left\lceil \frac{70}{7} \right\rceil = 10\]</span></li>
 <li><em>Result:</em> Destination is <strong><span class="math inline">\(P'_{10}\)</span></strong> (Correct).</li>
+</ul></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="dropped-micropanels-1" class="level4" data-number="6.1.3">
+<h4 data-number="6.1.3" class="anchored" data-anchor-id="dropped-micropanels-1"><span class="header-section-number">6.1.3</span> Dropped Micropanels</h4>
+<p>To represent the dropped micropanel scenario where the final micropanel in each macropanel in a cycle is dropped, we can modify the upper bound constraint of the index sets. Let <span class="math inline">\(\mathcal{D}_M \subset \mathcal{Q}\)</span> be the set of dropped micropanels for cycle configuration <span class="math inline">\(\mathcal{P}_M\)</span>. Because the final micropanel in each macropanel has index <span class="math inline">\(r = mk\)</span>, the set of dropped micropanels can be generally expressed as</p>
+<p><span class="math display">\[\mathcal{D}_M = \{ q_r \in \mathcal{Q} \mid r = m \cdot k, \text{ for } m = 1, 2, \dots, M \}\]</span></p>
+<p>The modified cycle <span class="math inline">\(\mathcal{P}'_M\)</span> preserves the original <span class="math inline">\(M\)</span> distinct macropanels, but truncates the upper micropanel boundary within each macropanel at the value <span class="math inline">\(r = mk - 1\)</span>:</p>
+<p><span class="math display">\[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}\]</span></p>
+<p>Where each truncated macro panel <span class="math inline">\(P'_m\)</span> (for <span class="math inline">\(m = 1, 2, \dots, M\)</span>) is explicitly defined by:</p>
+<p><span class="math display">\[P'_m = \{ q_r \in \mathcal{Q} \mid (m-1)k + 1 \leq r \leq mk - 1 \}\]</span></p>
+<section id="dropped-micropanel-examples" class="level5" data-number="6.1.3.1">
+<h5 data-number="6.1.3.1" class="anchored" data-anchor-id="dropped-micropanel-examples"><span class="header-section-number">6.1.3.1</span> Dropped micropanel examples:</h5>
+<ul>
+<li><strong>For <span class="math inline">\(M = 5\)</span></strong> (<span class="math inline">\(k = 14\)</span>):
+<ul>
+<li>Dropped Set: <span class="math inline">\(\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}\)</span></li>
+<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, \dots, q_{13}\}\)</span></li>
+</ul></li>
+<li><strong>For <span class="math inline">\(M = 7\)</span></strong> (<span class="math inline">\(k = 10\)</span>):
+<ul>
+<li>Dropped Set: <span class="math inline">\(\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}\)</span></li>
+<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, \dots, q_{9}\}\)</span></li>
+</ul></li>
+<li><strong>For <span class="math inline">\(M = 14\)</span></strong> (<span class="math inline">\(k = 5\)</span>):
+<ul>
+<li>Dropped Set: <span class="math inline">\(\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}\)</span></li>
+<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, q_3, q_4\}\)</span></li>
 </ul></li>
 </ul>
 <div id="refs" class="references csl-bib-body hanging-indent" role="list">
@@ -659,14 +721,13 @@ Westfall, James A, Todd A Schroeder, Joseph M McCollum, and Paul L Patterson. 20
 </section>
 </section>
 </section>
-</section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" id="quarto-citation"><h2 class="anchored quarto-appendix-heading">Citation</h2><div><div class="quarto-appendix-secondary-label">BibTeX citation:</div><div class="code-copy-outer-scaffold"><pre class="sourceCode quarto-appendix-bibtex code-with-copy"><code class="sourceCode bibtex">@online{c._gaines_iii2026,
   author = {C. Gaines III, George and Frank, Bryce and Randolph, KaDonna
     and Westfall, Jim},
   title = {Assessing the Influence of Variable Annual Sampling Effort on
     Official National Forest Inventory Statistics},
-  date = {2026-11-18},
+  date = {2026-11-20},
   langid = {en},
   abstract = {In this study we...}
 }
@@ -674,7 +735,7 @@ Westfall, James A, Todd A Schroeder, Joseph M McCollum, and Paul L Patterson. 20
 C. Gaines III, George, Bryce Frank, KaDonna Randolph, and Jim Westfall.
 2026. <span>“Assessing the Influence of Variable Annual Sampling Effort
 on Official National Forest Inventory Statistics.”</span> Forest Ecology
-and Management, November 18.
+and Management, November 20.
 </div></div></section></div></main>
 <!-- /main column -->
 <script id="quarto-html-after-body" type="application/javascript">

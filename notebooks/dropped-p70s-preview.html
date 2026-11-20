@@ -159,7 +159,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c65da67e2ccd7271deb104e05bb4b4d6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-93a94ed70b18b7a75be26843297f5c74.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-808fa2b54be4417f9355fb1d1925d19c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
      <script async="" src="https://hypothes.is/embed.js"></script>
 <script>
   window.document.addEventListener("DOMContentLoaded", function (_event) {
@@ -172,58 +172,34 @@
     <nav id="quarto-embed-header" class="headroom fixed-top text-bg-primary" aria-labelledby="quarto-embed-title">
 
       <a href="../index.html" onclick="window.quartoBackToArticle(); return false;" class="btn btn-primary quarto-back-link"><i class="bi bi-caret-left"></i> Back to Article</a>
-      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Dropped P70s</h6>
+      <h6 id="quarto-embed-title"><i class="bi bi-journal-code"></i> Dropped Micropanels</h6>
 
             <a href="../notebooks/dropped-p70s.qmd" class="btn btn-primary quarto-download-embed" download="dropped-p70s.qmd">Download Source</a>
           </nav>
 
      <div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
 <div id="quarto-sidebar-toc-left" class="sidebar toc-left">
-  <nav id="TOC" role="doc-toc" aria-labelledby="toc-title" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#dropped-p70s" id="toc-dropped-p70s" class="nav-link active" data-scroll-target="#dropped-p70s">Dropped P70s</a></li>
-  </ul>
-</nav>
+  
 </div>
 <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
 </div>
-<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">      <!-- ---
+<main class="content quarto-banner-title-block" id="quarto-document-content" tabindex="-1">    <!-- ---
 title: "dropped-p70s" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
-<section id="dropped-p70s" class="level3">
-<h3 class="anchored" data-anchor-id="dropped-p70s">Dropped P70s</h3>
-<section id="subpanel-exclusion-notation-dropping-truncated-subpanels" class="level4">
-<h4 class="anchored" data-anchor-id="subpanel-exclusion-notation-dropping-truncated-subpanels">Subpanel Exclusion Notation (Dropping Truncated Subpanels)</h4>
-<p>To represent a scenario where the system layout remains uniform but structural constraints require dropping the last subpanel from every macro panel, we modify the upper bound constraint of the index sets.</p>
-<p>Let <span class="math inline">\(\mathcal{D}_M \subset \mathcal{Q}\)</span> be the set of dropped subpanels under configuration <span class="math inline">\(M\)</span>. Because the last subpanel of each macro panel corresponds exactly to the global indices <span class="math inline">\(j = ik\)</span>, the set of dropped subpanels is formalized as:</p>
-<p><span class="math display">\[\mathcal{D}_M = \{ q_j \in \mathcal{Q} \mid j = i \cdot k, \text{ for } i = 1, 2, \dots, M \}\]</span></p>
-<p>###3 Modified Partition Layout The active system layout partition <span class="math inline">\(\mathcal{P}'_M\)</span> preserves the original <span class="math inline">\(M\)</span> distinct macro panels but truncates the inner index constraint to stop at <span class="math inline">\(ik - 1\)</span>:</p>
-<p><span class="math display">\[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}\]</span></p>
-<p>Where each truncated macro panel <span class="math inline">\(P'_i\)</span> (for <span class="math inline">\(i = 1, 2, \dots, M\)</span>) is explicitly defined by:</p>
-<p><span class="math display">\[P'_i = \{ q_j \in \mathcal{Q} \mid (i-1)k + 1 \leq j \leq ik - 1 \}\]</span></p>
-</section>
-<section id="truncated-configuration-matrix-examples" class="level4">
-<h4 class="anchored" data-anchor-id="truncated-configuration-matrix-examples">Truncated Configuration Matrix Examples</h4>
-<p>Under this setup, the cardinality (number of active subpanels) of each macro panel is reduced from <span class="math inline">\(k\)</span> to <span class="math inline">\(k-1\)</span>:</p>
-<ul>
-<li><strong>For <span class="math inline">\(M = 5\)</span></strong> (<span class="math inline">\(k = 14\)</span>):
-<ul>
-<li>Dropped Set: <span class="math inline">\(\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}\)</span></li>
-<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, \dots, q_{13}\}\)</span></li>
-</ul></li>
-<li><strong>For <span class="math inline">\(M = 7\)</span></strong> (<span class="math inline">\(k = 10\)</span>):
-<ul>
-<li>Dropped Set: <span class="math inline">\(\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}\)</span></li>
-<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, \dots, q_{9}\}\)</span></li>
-</ul></li>
-<li><strong>For <span class="math inline">\(M = 14\)</span></strong> (<span class="math inline">\(k = 5\)</span>):
-<ul>
-<li>Dropped Set: <span class="math inline">\(\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}\)</span></li>
-<li>Macro Panel 1: <span class="math inline">\(P'_1 = \{q_1, q_2, q_3, q_4\}\)</span></li>
-</ul></li>
-</ul>
+<section id="dropped-micropanels" class="level4">
+<h4 class="anchored" data-anchor-id="dropped-micropanels">Dropped Micropanels</h4>
+<p>Under the slow and fast start scenarios, both the total number of micropanels <span class="math inline">\(R\)</span> and the total number of macropanels <span class="math inline">\(M\)</span> within the cycle are preserved, but some micropanels are reassigned to other macropanels such that the number of micropanels per macropanel is no longer the fixed value <span class="math inline">\(k\)</span> as under the original configuration. Under the extended and shortened cycle length scenarios, the total number of micropanels <span class="math inline">\(R\)</span> is retained, but micropanels are evenly and sequentially redistributed across macropanels such that <span class="math inline">\(M\)</span> either gets larger or smaller.</p>
+<p>It’s conceivable that FIA could encounter such dire obstacles to field operations that sampling intensities must be consistently reduced within every macropanel in a cycle, with no intention (or capability) to regain the nominal sampling intensity before the end of the cycle. This could be achieved by simply eliminating one or more micropanels per macropanel from consideration for field visitation, until its prescribed position in the following inventory cycle at the earliest. We refer to this cirucmstance as a “dropped micropanel” scenario.</p>
+<section id="micropanel-exclusion-notation" class="level5">
+<h5 class="anchored" data-anchor-id="micropanel-exclusion-notation">Micropanel Exclusion Notation</h5>
+<p>To generalize dropped micropanel scenarios, let <span class="math inline">\(d \in \{0, 1, \dots, k\}\)</span> denote the number of trailing micropanels dropped from each macropanel in a cycle. Let <span class="math inline">\(\mathcal{D}_{M,d} \subset \mathcal{Q}\)</span> be the set of dropped micropanels for cycle configuration <span class="math inline">\(\mathcal{P}_M\)</span> under a sampling intensity reduction of the last <span class="math inline">\(d\)</span> micropanels in each macropanl. Because the final <span class="math inline">\(d\)</span> micropanels in macropanel <span class="math inline">\(m\)</span> span the micropanel indices <span class="math inline">\(r = mk - d + 1\)</span> through <span class="math inline">\(r = mk\)</span>, the set of dropped micropanels can be expressed as:</p>
+<p><span class="math display">\[\mathcal{D}_{M,d} = \{ q_r \in \mathcal{Q} : mk - d + 1 \leq r \leq mk, \text{ for } m = 1, 2, \dots, M \}\]</span></p>
+<p>The modified cycle <span class="math inline">\(\mathcal{P}'_{M,d}\)</span> preserves the original <span class="math inline">\(M\)</span> distinct macropanels, but truncates the upper micropanel boundary within each macropanel at <span class="math inline">\(r = mk - d\)</span>:</p>
+<p><span class="math display">\[\mathcal{P}'_{M,d} = \{P'_1, P'_2, \dots, P'_M\}\]</span></p>
+<p>where each truncated macropanel <span class="math inline">\(P'_m\)</span> (for <span class="math inline">\(m = 1, 2, \dots, M\)</span>) is explicitly defined by:</p>
+<p><span class="math display">\[P'_m = \{ q_r \in \mathcal{Q} : (m-1)k + 1 \leq r \leq mk - d \}\]</span></p>
+<p>Under this generalized form, the modified number of micropanels per macropanel is reduced from <span class="math inline">\(k\)</span> to <span class="math inline">\(k - d\)</span>. Note that when <span class="math inline">\(d = 0\)</span>, <span class="math inline">\(\mathcal{D}_{M,0} = \emptyset\)</span> and <span class="math inline">\(\mathcal{P}'_{M,0} = \mathcal{P}_M\)</span> (because the inequality in the expression for <span class="math inline">\(\mathcal{D}_{M,d}\)</span> yields no valid integer solution); when <span class="math inline">\(d = k\)</span>, all micropanels are dropped (<span class="math inline">\(\mathcal{D}_{M,k} = \mathcal{Q}\)</span>) and each active macropanel becomes empty (<span class="math inline">\(P'_m = \emptyset\)</span>).</p>
+<p>In the simulation study, we evaluated <span class="math inline">\(d = (1,2,3)\)</span> for each of the three states.</p>
 </section>
 </section>
      </main>

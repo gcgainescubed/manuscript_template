@@ -1,7 +1,12 @@
 <!-- ---
 title: "initial-notation" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
 --- -->
-### Initial Notation
+### Sample locations, micropanels, and macropanels
+
+In a subsequent section, we describe our use of FIA forest vegetation measurement 
+data obtained at fixed sample locations at various points in time. However, 
+it is useful to begin with a notation focused solely on individual, time-invariant
+sample locations, and sets thereof aggregated into partitions of varying size.
 
 #### Sample locations
 

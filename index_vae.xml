@@ -279,16 +279,25 @@ work.</funding-statement>
   <title>2 Data &amp; Methods</title>
   <sec id="study-area">
     <title>2.1 Study Area</title>
-    <p>3 states…</p>
+    <p>To achieve an adequately comprehensive assessment of the
+    anticipated statistical consequences of our simulated VAE scenarios,
+    we focused this study on three US states (Maine, Alabama, and
+    Montana) distinct with respect to i) the national FIA Program’s
+    underlying regional structure; ii) their nominally prescribed FIA
+    inventory cycle lengths; and iii) the extant range of forest types
+    and conditions, levels of primary productivity, and ecological
+    disturbance regimes across CONUS.</p>
   </sec>
-  <sec id="fia-data">
-    <title>2.2 FIA Data</title>
-    <p>Data from those 3 states…</p>
-  </sec>
-  <sec id="initial-notation">
-    <title>2.3 Initial Notation</title>
+  <sec id="sample-locations-micropanels-and-macropanels">
+    <title>2.2 Sample locations, micropanels, and macropanels</title>
+    <p>In a subsequent section, we describe our use of FIA forest
+    vegetation measurement data obtained at fixed sample locations at
+    various points in time. However, it is useful to begin with a
+    notation focused solely on individual, time-invariant sample
+    locations, and sets thereof aggregated into partitions of varying
+    size.</p>
     <sec id="sample-locations">
-      <title>2.3.1 Sample locations</title>
+      <title>2.2.1 Sample locations</title>
       <p>Let</p>
       <p><disp-formula><alternatives>
       <tex-math><![CDATA[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}]]></tex-math>
@@ -314,7 +323,7 @@ work.</funding-statement>
       are measures of longitude and latitude respectively.</p>
     </sec>
     <sec id="micropanels">
-      <title>2.3.2 Micropanels</title>
+      <title>2.2.2 Micropanels</title>
       <p>Let</p>
       <p><disp-formula><alternatives>
       <tex-math><![CDATA[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}]]></tex-math>
@@ -364,7 +373,7 @@ work.</funding-statement>
       for practical purposes.</p>
     </sec>
     <sec id="macropanels">
-      <title>2.3.3 Macropanels</title>
+      <title>2.2.3 Macropanels</title>
       <p>The <inline-formula><alternatives>
       <tex-math><![CDATA[R]]></tex-math>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
@@ -436,7 +445,7 @@ work.</funding-statement>
       <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mspace width="0.222em"></mml:mspace><mml:mo>+</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>.</p>
     </sec>
     <sec id="macropanel-lookup-function">
-      <title>2.3.4 Macropanel Lookup Function</title>
+      <title>2.2.4 Macropanel Lookup Function</title>
       <p>Conversely, to determine the identity of the macropanel to
       which micropanel <inline-formula><alternatives>
       <tex-math><![CDATA[r]]></tex-math>
@@ -466,7 +475,7 @@ work.</funding-statement>
     </sec>
   </sec>
   <sec id="vae-scenarios">
-    <title>2.4 VAE Scenarios</title>
+    <title>2.3 VAE Scenarios</title>
     <p>The basic premise of VAE is to enable the modification of
     remeasurement schedules by adjusting the macropanel assignments of
     some micropanels in a focal state. However, in the scenarios
@@ -479,9 +488,9 @@ work.</funding-statement>
     macropanels, or ii) dropping fixed numbers of micropanels per
     macropanel over the course of an inventory cycle.</p>
     <sec id="slow-start-and-fast-start-scenarios">
-      <title>2.4.1 Slow Start and Fast Start Scenarios</title>
+      <title>2.3.1 Slow Start and Fast Start Scenarios</title>
       <sec id="slow-start">
-        <title>2.4.1.1 Slow Start</title>
+        <title>2.3.1.1 Slow Start</title>
         <p>In the context of FIA, the “slow start” scenarios we
         simulated are intended to represent a budgetary or workforce
         shortfall in the first <inline-formula><alternatives>
@@ -517,7 +526,7 @@ work.</funding-statement>
         time”).</p>
       </sec>
       <sec id="fast-start">
-        <title>2.4.1.2 Fast Start</title>
+        <title>2.3.1.2 Fast Start</title>
         <p>Under the “fast start” scenarios we simulated, our VAE
         intentions are analogous to the slow start scenario described
         above, but the timing of the availability of resources of field
@@ -544,10 +553,10 @@ work.</funding-statement>
         <tex-math><![CDATA[M]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>.
         A more detailed demonstrative example can be found in
-        <xref alt="Section 5" rid="sec-supp-mat">Section 5</xref>.</p>
+        <xref alt="Section 6" rid="sec-supp-mat">Section 6</xref>.</p>
       </sec>
       <sec id="generalizing-shifted-macropanel-boundaries">
-        <title>2.4.1.3 Generalizing Shifted Macropanel
+        <title>2.3.1.3 Generalizing Shifted Macropanel
         Boundaries</title>
         <p>If we preserve <inline-formula><alternatives>
         <tex-math><![CDATA[R]]></tex-math>
@@ -669,7 +678,7 @@ work.</funding-statement>
         <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mi>*</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mi>.</mml:mi></mml:mrow></mml:math></alternatives></disp-formula></p>
       </sec>
       <sec id="modified-macropanel-lookup-function">
-        <title>2.4.1.4 Modified Macropanel Lookup Function</title>
+        <title>2.3.1.4 Modified Macropanel Lookup Function</title>
         <p>Because the distributions of micropanels across macropanels
         are no longer uniform under these shifted configurations, the
         scalar ceiling function cannot be used to determine macropanel
@@ -720,7 +729,7 @@ work.</funding-statement>
         <tex-math><![CDATA[f_b(r)]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>f</mml:mi><mml:mi>b</mml:mi></mml:msub><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
         can be found in
-        <xref alt="Section 5" rid="sec-supp-mat">Section 5</xref>.</p>
+        <xref alt="Section 6" rid="sec-supp-mat">Section 6</xref>.</p>
         <p><styled-content style="color: red;">I think the idea of a
         baseline vector and a deviation vector is useful for
         generalization, but the way this is written doesn’t give the
@@ -730,7 +739,7 @@ work.</funding-statement>
       </sec>
     </sec>
     <sec id="extended-and-shortened-cycle-lengths">
-      <title>2.4.2 Extended and Shortened Cycle Lengths</title>
+      <title>2.3.2 Extended and Shortened Cycle Lengths</title>
       <p>Under the slow and fast start VAE scenarios described above,
       the number of macropanels in the cycle
       <inline-formula><alternatives>
@@ -815,7 +824,7 @@ work.</funding-statement>
       <tex-math><![CDATA[\mathcal{P}_{1^\prime}]]></tex-math>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:msup><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>…right?</styled-content></p>
       <sec id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths">
-        <title>2.4.2.1 A modified macropanel lookup function for
+        <title>2.3.2.1 A modified macropanel lookup function for
         extended and shortened cycle lengths</title>
         <p>To map any micropanel from its originally prescribed
         macropanel <inline-formula><alternatives>
@@ -881,13 +890,19 @@ work.</funding-statement>
         <inline-formula><alternatives>
         <tex-math><![CDATA[(m,l)]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
-        maps to its static global index <inline-formula><alternatives>
-        <tex-math><![CDATA[r]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+        links to its fixed global index <inline-formula><alternatives>
+        <tex-math><![CDATA[r \in \{1,\ldots,R\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
         via:</p>
         <p><disp-formula><alternatives>
         <tex-math><![CDATA[r = (m - 1)k + l]]></tex-math>
         <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>which implies the local index <inline-formula><alternatives>
+        <tex-math><![CDATA[l]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
+        can be obtained via <inline-formula><alternatives>
+        <tex-math><![CDATA[l = r - (m - 1)k = r - mk + k]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mi>r</mml:mi><mml:mo>−</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mi>r</mml:mi><mml:mo>−</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
         <p>In the new cycle configuration <inline-formula><alternatives>
         <tex-math><![CDATA[\mathcal{P}^\prime_M]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>,
@@ -940,27 +955,179 @@ work.</funding-statement>
         represents the ceiling function described above.</p>
       </sec>
     </sec>
+    <sec id="dropped-micropanels">
+      <title>2.3.3 Dropped Micropanels</title>
+      <p>Under the slow and fast start scenarios, both the total number
+      of micropanels <inline-formula><alternatives>
+      <tex-math><![CDATA[R]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+      and the total number of macropanels <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+      within the cycle are preserved, but some micropanels are
+      reassigned to other macropanels such that the number of
+      micropanels per macropanel is no longer the fixed value
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[k]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+      as under the original configuration. Under the extended and
+      shortened cycle length scenarios, the total number of micropanels
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[R]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+      is retained, but micropanels are evenly and sequentially
+      redistributed across macropanels such that
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+      either gets larger or smaller.</p>
+      <p>It’s conceivable that FIA could encounter such dire obstacles
+      to field operations that sampling intensities must be consistently
+      reduced within every macropanel in a cycle, with no intention (or
+      capability) to regain the nominal sampling intensity before the
+      end of the cycle. This could be achieved by simply eliminating one
+      or more micropanels per macropanel from consideration for field
+      visitation, until its prescribed position in the following
+      inventory cycle at the earliest. We refer to this cirucmstance as
+      a “dropped micropanel” scenario.</p>
+      <sec id="micropanel-exclusion-notation">
+        <title>2.3.3.1 Micropanel Exclusion Notation</title>
+        <p>To generalize dropped micropanel scenarios, let
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[d \in \{0, 1, \dots, k\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+        denote the number of trailing micropanels dropped from each
+        macropanel in a cycle. Let <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{D}_{M,d} \subset \mathcal{Q}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>⊂</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+        be the set of dropped micropanels for cycle configuration
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{P}_M]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+        under a sampling intensity reduction of the last
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[d]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>d</mml:mi></mml:math></alternatives></inline-formula>
+        micropanels in each macropanl. Because the final
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[d]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>d</mml:mi></mml:math></alternatives></inline-formula>
+        micropanels in macropanel <inline-formula><alternatives>
+        <tex-math><![CDATA[m]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>m</mml:mi></mml:math></alternatives></inline-formula>
+        span the micropanel indices <inline-formula><alternatives>
+        <tex-math><![CDATA[r = mk - d + 1]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+        through <inline-formula><alternatives>
+        <tex-math><![CDATA[r = mk]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+        the set of dropped micropanels can be expressed as:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{D}_{M,d} = \{ q_r \in \mathcal{Q} : mk - d + 1 \leq r \leq mk, \text{ for } m = 1, 2, \dots, M \}]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> for </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>The modified cycle <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{P}'_{M,d}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+        preserves the original <inline-formula><alternatives>
+        <tex-math><![CDATA[M]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+        distinct macropanels, but truncates the upper micropanel
+        boundary within each macropanel at
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[r = mk - d]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{P}'_{M,d} = \{P'_1, P'_2, \dots, P'_M\}]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>where each truncated macropanel
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[P'_m]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+        (for <inline-formula><alternatives>
+        <tex-math><![CDATA[m = 1, 2, \dots, M]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+        is explicitly defined by:</p>
+        <p><disp-formula><alternatives>
+        <tex-math><![CDATA[P'_m = \{ q_r \in \mathcal{Q} : (m-1)k + 1 \leq r \leq mk - d \}]]></tex-math>
+        <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+        <p>Under this generalized form, the modified number of
+        micropanels per macropanel is reduced from
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[k]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+        to <inline-formula><alternatives>
+        <tex-math><![CDATA[k - d]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.
+        Note that when <inline-formula><alternatives>
+        <tex-math><![CDATA[d = 0]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{D}_{M,0} = \emptyset]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi>∅</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+        and <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{P}'_{M,0} = \mathcal{P}_M]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mn>0</mml:mn></mml:mrow><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+        (because the inequality in the expression for
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{D}_{M,d}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math></alternatives></inline-formula>
+        yields no valid integer solution); when
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[d = k]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+        all micropanels are dropped (<inline-formula><alternatives>
+        <tex-math><![CDATA[\mathcal{D}_{M,k} = \mathcal{Q}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+        and each active macropanel becomes empty
+        (<inline-formula><alternatives>
+        <tex-math><![CDATA[P'_m = \emptyset]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mi>∅</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>).</p>
+        <p>In the simulation study, we evaluated
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[d = (1,2,3)]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mn>3</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+        for each of the three states.</p>
+      </sec>
+    </sec>
+  </sec>
+  <sec id="fia-data">
+    <title>2.4 FIA Data</title>
+    <p>Apart from some conceptual linkages to inventory cycles and
+    annual periods, the Data and Methods section has focused exclusively
+    on the development of notation for describing the micropanels and
+    macropanels prescribed by the annual FIA sample design, and versions
+    of them modified to represent 3 VAE scenarios. However, the purpose
+    of the micropanel and macropanel structures is to schedule, in
+    particular field season years, measurements of forest attributes at
+    the locations they contain.</p>
+    <sec id="measurement-data">
+      <title>2.4.1 Measurement Data</title>
+      <p>???</p>
+    </sec>
   </sec>
 </sec>
+<sec id="sec-results">
+  <title>3 Results</title>
+</sec>
 <sec id="sec-discussion">
-  <title>3 Discussion</title>
+  <title>4 Discussion</title>
 </sec>
 <sec id="sec-conclusion">
-  <title>4 Conclusion</title>
+  <title>5 Conclusion</title>
 </sec>
 <sec id="references">
   <title>References</title>
 </sec>
 <sec id="sec-supp-mat">
-  <title>5 Supplementary Materials</title>
+  <title>6 Supplementary Materials</title>
   <sec id="appendix-a-examples">
-    <title>5.1 Appendix A: Examples</title>
+    <title>6.1 Appendix A: Examples</title>
     <p>Below are some demonstrative examples of the use of the notation
     and functions described in the methods section.</p>
     <sec id="fast-start-and-slow-start">
-      <title>5.1.1 Fast Start and Slow Start</title>
+      <title>6.1.1 Fast Start and Slow Start</title>
       <sec id="slow-start-1">
-        <title>5.1.1.1 Slow Start</title>
+        <title>6.1.1.1 Slow Start</title>
         <p>Consider a case where <inline-formula><alternatives>
         <tex-math><![CDATA[R = 70]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
@@ -1050,7 +1217,7 @@ work.</funding-statement>
         </list>
       </sec>
       <sec id="fast-start-1">
-        <title>5.1.1.2 Fast Start</title>
+        <title>6.1.1.2 Fast Start</title>
         <p>Alternatively, consider a case where
         <inline-formula><alternatives>
         <tex-math><![CDATA[R = 70]]></tex-math>
@@ -1132,7 +1299,7 @@ work.</funding-statement>
         </list>
       </sec>
       <sec id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors">
-        <title>5.1.1.3 Illustration of the baseline and shifted boundary
+        <title>6.1.1.3 Illustration of the baseline and shifted boundary
         deviation vectors</title>
         <p>Continuing with the example above, the transformation from
         the uniform <inline-formula><alternatives>
@@ -1158,7 +1325,7 @@ work.</funding-statement>
         <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo>−</mml:mo><mml:mn>4</mml:mn><mml:mo>,</mml:mo><mml:mn>28</mml:mn><mml:mo>−</mml:mo><mml:mn>8</mml:mn><mml:mo>,</mml:mo><mml:mn>42</mml:mn><mml:mo>−</mml:mo><mml:mn>4</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
       </sec>
       <sec id="conditions-to-ensure-validity-of-the-boundary-deviation-vector">
-        <title>5.1.1.4 Conditions to ensure validity of the boundary
+        <title>6.1.1.4 Conditions to ensure validity of the boundary
         deviation vector</title>
         <p>To ensure that a boundary deviation vector yields a
         physically valid modified boundary sequence under proposed slow
@@ -1193,7 +1360,7 @@ work.</funding-statement>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>δ</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>&gt;</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>δ</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mo>∀</mml:mo><mml:mi>m</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
       </sec>
       <sec id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start">
-        <title>5.1.1.5 Example evaluation of the modified macropanel
+        <title>6.1.1.5 Example evaluation of the modified macropanel
         lookup function for fast/slow start</title>
         <p>To locate micropanel <inline-formula><alternatives>
         <tex-math><![CDATA[q_{25}]]></tex-math>
@@ -1225,9 +1392,9 @@ work.</funding-statement>
       </sec>
     </sec>
     <sec id="extended-and-shortened-cycle-lengths-1">
-      <title>5.1.2 Extended and Shortened Cycle Lengths</title>
+      <title>6.1.2 Extended and Shortened Cycle Lengths</title>
       <sec id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7">
-        <title>5.1.2.1 Subpanel Redistribution: From
+        <title>6.1.2.1 Subpanel Redistribution: From
         <inline-formula><alternatives>
         <tex-math><![CDATA[\mathcal{P}_{5}]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
@@ -1242,7 +1409,7 @@ work.</funding-statement>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
       </sec>
       <sec id="the-original-partition-structure-mathcalp_5">
-        <title>5.1.2.2 1. The Original Partition Structure
+        <title>6.1.2.2 1. The Original Partition Structure
         (<inline-formula><alternatives>
         <tex-math><![CDATA[\mathcal{P}_{5}]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>5</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</title>
@@ -1285,7 +1452,7 @@ work.</funding-statement>
         </list>
       </sec>
       <sec id="the-new-extended-partition-structure-mathcalp_7">
-        <title>5.1.2.3 2. The New Extended Partition Structure
+        <title>6.1.2.3 2. The New Extended Partition Structure
         (<inline-formula><alternatives>
         <tex-math><![CDATA[\mathcal{P}_{7}]]></tex-math>
         <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>7</mml:mn></mml:msub></mml:math></alternatives></inline-formula>)</title>
@@ -1338,7 +1505,7 @@ work.</funding-statement>
         </list>
       </sec>
       <sec id="micropanel-lineage-mapping">
-        <title>5.1.2.4 3. Micropanel Lineage Mapping</title>
+        <title>6.1.2.4 3. Micropanel Lineage Mapping</title>
         <p>To visualize exactly how the micropanel constituents of the
         original macropanels are redistributed to form the new
         macropanel configuration, the lineage maps as follows:</p>
@@ -1472,10 +1639,10 @@ work.</funding-statement>
         </table-wrap>
       </sec>
       <sec id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths">
-        <title>5.1.2.5 Example evaluation of the modified macropanel
+        <title>6.1.2.5 Example evaluation of the modified macropanel
         lookup function for extended/shortened cycle lengths</title>
         <sec id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10">
-          <title>5.1.2.5.1 Example cases for cycle length extension
+          <title>6.1.2.5.1 Example cases for cycle length extension
           (<inline-formula><alternatives>
           <tex-math><![CDATA[M=5, k=14 \implies M^\prime=7, k^\prime=10]]></tex-math>
           <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn><mml:mo>⟹</mml:mo><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)</title>
@@ -1566,7 +1733,7 @@ work.</funding-statement>
           </list>
         </sec>
         <sec id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7">
-          <title>5.1.2.5.2 Example cases for cycle length shortening
+          <title>6.1.2.5.2 Example cases for cycle length shortening
           (<inline-formula><alternatives>
           <tex-math><![CDATA[M=14, k=5 \implies M^\prime=10, k^\prime=7]]></tex-math>
           <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn><mml:mo>⟹</mml:mo><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>)</title>
@@ -1664,6 +1831,115 @@ work.</funding-statement>
             </list-item>
           </list>
         </sec>
+      </sec>
+    </sec>
+    <sec id="dropped-micropanels-1">
+      <title>6.1.3 Dropped Micropanels</title>
+      <p>To represent the dropped micropanel scenario where the final
+      micropanel in each macropanel in a cycle is dropped, we can modify
+      the upper bound constraint of the index sets. Let
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{D}_M \subset \mathcal{Q}]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+      be the set of dropped micropanels for cycle configuration
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{P}_M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>.
+      Because the final micropanel in each macropanel has index
+      <inline-formula><alternatives>
+      <tex-math><![CDATA[r = mk]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+      the set of dropped micropanels can be generally expressed as</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{D}_M = \{ q_r \in \mathcal{Q} \mid r = m \cdot k, \text{ for } m = 1, 2, \dots, M \}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mo>⋅</mml:mo><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> for </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+      <p>The modified cycle <inline-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{P}'_M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+      preserves the original <inline-formula><alternatives>
+      <tex-math><![CDATA[M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+      distinct macropanels, but truncates the upper micropanel boundary
+      within each macropanel at the value <inline-formula><alternatives>
+      <tex-math><![CDATA[r = mk - 1]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+      <p>Where each truncated macro panel <inline-formula><alternatives>
+      <tex-math><![CDATA[P'_m]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+      (for <inline-formula><alternatives>
+      <tex-math><![CDATA[m = 1, 2, \dots, M]]></tex-math>
+      <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+      is explicitly defined by:</p>
+      <p><disp-formula><alternatives>
+      <tex-math><![CDATA[P'_m = \{ q_r \in \mathcal{Q} \mid (m-1)k + 1 \leq r \leq mk - 1 \}]]></tex-math>
+      <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+      <sec id="dropped-micropanel-examples">
+        <title>6.1.3.1 Dropped micropanel examples:</title>
+        <list list-type="bullet">
+          <list-item>
+            <p><bold>For <inline-formula><alternatives>
+            <tex-math><![CDATA[M = 5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+            (<inline-formula><alternatives>
+            <tex-math><![CDATA[k = 14]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+            <list list-type="bullet">
+              <list-item>
+                <p>Dropped Set: <inline-formula><alternatives>
+                <tex-math><![CDATA[\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}]]></tex-math>
+                <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>28</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>42</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>56</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+              </list-item>
+              <list-item>
+                <p>Macro Panel 1: <inline-formula><alternatives>
+                <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{13}\}]]></tex-math>
+                <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>13</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p><bold>For <inline-formula><alternatives>
+            <tex-math><![CDATA[M = 7]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+            (<inline-formula><alternatives>
+            <tex-math><![CDATA[k = 10]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+            <list list-type="bullet">
+              <list-item>
+                <p>Dropped Set: <inline-formula><alternatives>
+                <tex-math><![CDATA[\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}]]></tex-math>
+                <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>7</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>20</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>30</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>40</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>50</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>60</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+              </list-item>
+              <list-item>
+                <p>Macro Panel 1: <inline-formula><alternatives>
+                <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{9}\}]]></tex-math>
+                <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>9</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+              </list-item>
+            </list>
+          </list-item>
+          <list-item>
+            <p><bold>For <inline-formula><alternatives>
+            <tex-math><![CDATA[M = 14]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+            (<inline-formula><alternatives>
+            <tex-math><![CDATA[k = 5]]></tex-math>
+            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+            <list list-type="bullet">
+              <list-item>
+                <p>Dropped Set: <inline-formula><alternatives>
+                <tex-math><![CDATA[\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}]]></tex-math>
+                <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+              </list-item>
+              <list-item>
+                <p>Macro Panel 1: <inline-formula><alternatives>
+                <tex-math><![CDATA[P'_1 = \{q_1, q_2, q_3, q_4\}]]></tex-math>
+                <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+              </list-item>
+            </list>
+          </list-item>
+        </list>
       </sec>
     </sec>
   </sec>
@@ -1814,559 +2090,9 @@ work.</funding-statement>
 </front-stub>
 
 <body>
-<sec id="initial-notation-nb-1">
-  <title>Initial Notation</title>
-  <sec id="sample-locations-nb-1">
-    <title>Sample locations</title>
-    <p>Let</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">[</mml:mo><mml:mtable><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mtd></mml:mtr></mml:mtable><mml:mo stretchy="true" form="postfix">]</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
-    be the bivariate spatial coordinate vector for the
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[i^{th}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>i</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
-    FIA sample location in a focal US state,
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[i = 1,\ldots,n]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
-    where <inline-formula><alternatives>
-    <tex-math><![CDATA[n]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
-    is the number of all sample locations in the focal state, and
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[x_1]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
-    and <inline-formula><alternatives>
-    <tex-math><![CDATA[x_2]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
-    are measures of longitude and latitude respectively.</p>
-  </sec>
-  <sec id="micropanels-nb-1">
-    <title>Micropanels</title>
-    <p>Let</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>be a set of “micropanels” <inline-formula><alternatives>
-    <tex-math><![CDATA[q_r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-    that partition the <inline-formula><alternatives>
-    <tex-math><![CDATA[n]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
-    sample locations into approximately equivalently-sized subsets, such
-    that each <inline-formula><alternatives>
-    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-    achieves approximate spatial dispersion across the focal state of
-    each of the <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathbf{s}_i]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-    it contains. The <inline-formula><alternatives>
-    <tex-math><![CDATA[q_r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-    defined here are meant to correspond to collections of sample
-    locations referred to in the FIA Program as “Panel 70’s”, which
-    imply <inline-formula><alternatives>
-    <tex-math><![CDATA[R = 70]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
-    or “Panel 140’s”, which imply <inline-formula><alternatives>
-    <tex-math><![CDATA[R = 140]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.</p>
-    <p>In CONUS states where the FIA Program is administered by the
-    Pacific Northwest Research Station, <inline-formula><alternatives>
-    <tex-math><![CDATA[R = 140]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
-    in present day inventory operations. In the rest of the CONUS
-    states, <inline-formula><alternatives>
-    <tex-math><![CDATA[R = 70]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.
-    Though this notation is intended to be flexible enough to
-    accommodate a range of possible values of
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[R]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>,
-    in this study we don’t consider PNWRS states, and so we’ll only
-    consider <inline-formula><alternatives>
-    <tex-math><![CDATA[R = 70]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
-    for practical purposes.</p>
-  </sec>
-  <sec id="macropanels-nb-1">
-    <title>Macropanels</title>
-    <p>The <inline-formula><alternatives>
-    <tex-math><![CDATA[R]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
-    micropanels can be further aggregated into the set of
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
-    macropanels</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{P}_M = \{P_m : \ m = 1,\ldots,M\}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
-    for any value of <inline-formula><alternatives>
-    <tex-math><![CDATA[M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
-    such that <inline-formula><alternatives>
-    <tex-math><![CDATA[M \vert R]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">|</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>;
-    that is, such that <inline-formula><alternatives>
-    <tex-math><![CDATA[R]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
-    is evenly divisible by <inline-formula><alternatives>
-    <tex-math><![CDATA[M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
-    and so the macropanels <inline-formula><alternatives>
-    <tex-math><![CDATA[P_m \in \mathcal{P}_M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
-    are perfectly evenly partitioned by the micropanels
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-    (though the micropanels themselves may contain slightly different
-    numbers of <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathbf{s}_i]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>.</p>
-    <p>The macropanels described above are intended to correspond to the
-    ``annual panels’’ into which the <inline-formula><alternatives>
-    <tex-math><![CDATA[s_i]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>s</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-    in each state are partitioned for measurement scheduling purposes.
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
-    therefore, is intended to correspond to conceivable state-level
-    inventory cycle lengths prescribed in the FIA program for
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[R = 70]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
-    and so in this study <inline-formula><alternatives>
-    <tex-math><![CDATA[M \in \{5, 7, 10, 14\}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.
-    Because the micropanels are initially evenly distributed across the
-    macropanels, the number of micropanels per macropanel can be denoted
-    by <inline-formula><alternatives>
-    <tex-math><![CDATA[k]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
-    as</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[k = \frac{R}{M}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mi>R</mml:mi><mml:mi>M</mml:mi></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>A general expression to recover the identities of the micropanels
-    contained in any macropanel <inline-formula><alternatives>
-    <tex-math><![CDATA[P_m]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-    is given by</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mspace width="0.222em"></mml:mspace><mml:mo>+</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>.</p>
-  </sec>
-  <sec id="macropanel-lookup-function-nb-1">
-    <title>Macropanel Lookup Function</title>
-    <p>Conversely, to determine the identity of the macropanel to which
-    micropanel <inline-formula><alternatives>
-    <tex-math><![CDATA[r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
-    belongs, we can define a macropanel lookup function</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>r</mml:mi><mml:mi>k</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mi>r</mml:mi><mml:mo>⋅</mml:mo><mml:mi>M</mml:mi></mml:mrow><mml:mi>R</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
-    where the ceiling function <inline-formula><alternatives>
-    <tex-math><![CDATA[\lceil x \rceil]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
-    returns the smallest integer not less than
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[x]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>,
-    and <inline-formula><alternatives>
-    <tex-math><![CDATA[f(r) = m]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi>m</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-    outputs the index of the macropanel (<inline-formula><alternatives>
-    <tex-math><![CDATA[1 \leq m \leq M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mo>≤</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-    to which the <inline-formula><alternatives>
-    <tex-math><![CDATA[r^{th}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>r</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
-    micropanel is assigned.</p>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-8-nb-2">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="extended-and-shortened-cycle-lengths-nb-2">
-  <title>Extended and Shortened Cycle Lengths</title>
-  <p>Under the slow and fast start VAE scenarios described above, the
-  number of macropanels in the cycle <inline-formula><alternatives>
-  <tex-math><![CDATA[\mathcal{P}_M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-  (i.e., <inline-formula><alternatives>
-  <tex-math><![CDATA[M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
-  which we can think of as corresponding to “inventory cycle length” in
-  the context of FIA) is preserved by shifting an equivalent number of
-  micropanels forward (for delayed field visitation) in some macropanels
-  as are held backward (for early field visitation) in others.</p>
-  <p>Another way VAE might be applied, for particular values of
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[R]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
-  and <inline-formula><alternatives>
-  <tex-math><![CDATA[M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
-  is to evenly redistribute micropanels into a modified total number of
-  macropanels, say <inline-formula><alternatives>
-  <tex-math><![CDATA[M^{\prime} \in \{5,7,10,14\}, \quad M^{\prime} \neq M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>≠</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
-  where <inline-formula><alternatives>
-  <tex-math><![CDATA[M^{\prime}]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
-  is still a factor of <inline-formula><alternatives>
-  <tex-math><![CDATA[R]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>.
-  If <inline-formula><alternatives>
-  <tex-math><![CDATA[M^{\prime} > M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>&gt;</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-  the cycle length is extended, and the macropanel sampling intensity
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[k]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
-  (i.e., the annual effort) is reduced. Conversely, if
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[M^{\prime} < M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>&lt;</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-  the cycle length is shortened and the annual effort in each newly
-  configured macropanel <inline-formula><alternatives>
-  <tex-math><![CDATA[P^\prime_m]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
-  in in the modified cycle <inline-formula><alternatives>
-  <tex-math><![CDATA[\mathcal{P}^\prime_M]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
-  is increased.</p>
-  <p><styled-content style="color: red;">I would prefer for the modified
-  macropanels and cycles to be respectively symbolized as
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[P_{m^\prime}]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>
-  and <inline-formula><alternatives>
-  <tex-math><![CDATA[\mathcal{P}_{M^\prime}]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>
-  to align with the respective assignments of
-  <inline-formula><alternatives>
-  <tex-math><![CDATA[m^\prime]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
-  and <inline-formula><alternatives>
-  <tex-math><![CDATA[M^\prime]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
-  as modified macropanel index and cycle length. However, as an example,
-  for <inline-formula><alternatives>
-  <tex-math><![CDATA[m = 1]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
-  and <inline-formula><alternatives>
-  <tex-math><![CDATA[M = 1]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
-  it makes more sense to write <inline-formula><alternatives>
-  <tex-math><![CDATA[P^\prime_1]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
-  and <inline-formula><alternatives>
-  <tex-math><![CDATA[\mathcal{P}^\prime_1]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
-  than <inline-formula><alternatives>
-  <tex-math><![CDATA[P_{1^\prime}]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:msup><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>
-  and <inline-formula><alternatives>
-  <tex-math><![CDATA[\mathcal{P}_{1^\prime}]]></tex-math>
-  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:msup><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>…right?</styled-content></p>
-  <sec id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths-nb-2">
-    <title>A modified macropanel lookup function for extended and
-    shortened cycle lengths</title>
-    <p>To map any micropanel from its originally prescribed macropanel
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[P_m]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
-    to its new macropanel <inline-formula><alternatives>
-    <tex-math><![CDATA[P^\prime_m]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
-    under a shortened or extended cycle length, we define a function
-    that uses both the original macropanel index
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[m]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>m</mml:mi></mml:math></alternatives></inline-formula>
-    and the local micropanel offset <inline-formula><alternatives>
-    <tex-math><![CDATA[l]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
-    within that macropanel.</p>
-    <p>Let:</p>
-    <list list-type="bullet">
-      <list-item>
-        <p><inline-formula><alternatives>
-        <tex-math><![CDATA[M, k]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-        be the parameters of the original configuration (e.g.,
-        <inline-formula><alternatives>
-        <tex-math><![CDATA[M=5, k=14]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>).</p>
-      </list-item>
-      <list-item>
-        <p><inline-formula><alternatives>
-        <tex-math><![CDATA[M^\prime, k^\prime]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>
-        be the parameters of the new configuration (e.g.,
-        <inline-formula><alternatives>
-        <tex-math><![CDATA[M^\prime=7, k^\prime=10]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>).</p>
-      </list-item>
-      <list-item>
-        <p><inline-formula><alternatives>
-        <tex-math><![CDATA[m]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>m</mml:mi></mml:math></alternatives></inline-formula>
-        be the original macropanel index, where
-        <inline-formula><alternatives>
-        <tex-math><![CDATA[m \in \{1, 2, \dots, M\}]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
-      </list-item>
-      <list-item>
-        <p><inline-formula><alternatives>
-        <tex-math><![CDATA[l]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
-        be the local index of the micropanel within
-        <inline-formula><alternatives>
-        <tex-math><![CDATA[P_m]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>,
-        where <inline-formula><alternatives>
-        <tex-math><![CDATA[l \in \{1, 2, \dots, k\}]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
-      </list-item>
-    </list>
-    <p>A micropanel’s local macropanel coordinate (i.e., the two unique
-    values that determine its chronological position within its
-    originally assigned macropanel and cycle)
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[(m,l)]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
-    maps to its static global index <inline-formula><alternatives>
-    <tex-math><![CDATA[r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
-    via:</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[r = (m - 1)k + l]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>In the new cycle configuration <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{P}^\prime_M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>,
-    each macropanel <inline-formula><alternatives>
-    <tex-math><![CDATA[P^\prime_m]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
-    contains exactly <inline-formula><alternatives>
-    <tex-math><![CDATA[k^\prime]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
-    micropanels. To determine which macropanel (i.e., which sequence of
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[k^\prime]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
-    micropanels) the index <inline-formula><alternatives>
-    <tex-math><![CDATA[r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
-    falls within, we divide <inline-formula><alternatives>
-    <tex-math><![CDATA[r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
-    by <inline-formula><alternatives>
-    <tex-math><![CDATA[k^\prime]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
-    and apply the ceiling function <inline-formula><alternatives>
-    <tex-math><![CDATA[\lceil \cdot \rceil]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>⋅</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
-    to round up to the nearest integer:</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[m^\prime = \left\lceil \frac{r}{k^\prime} \right\rceil]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>r</mml:mi><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>Combining both steps yields the definitive closed-form mapping
-    function <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathbf{f}(m,l)]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>:</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[f^\prime(m,l) = \left\lceil \frac{(m - 1) k + l}{k^\prime} \right\rceil]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>f</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>Where <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathbf{f}(m,l) = m^\prime]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>
-    represents the index of the modified macropanel
-    (<inline-formula><alternatives>
-    <tex-math><![CDATA[m^\prime \in \{1, 2, \dots, M^\prime\}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>)
-    to which micropanel <inline-formula><alternatives>
-    <tex-math><![CDATA[r]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
-    is newly assigned and <inline-formula><alternatives>
-    <tex-math><![CDATA[\lceil \cdot \rceil]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>⋅</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
-    represents the ceiling function described above.</p>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-12-nb-3">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="dropped-p70s-nb-3">
-  <title>Dropped P70s</title>
-  <sec id="subpanel-exclusion-notation-dropping-truncated-subpanels-nb-3">
-    <title>Subpanel Exclusion Notation (Dropping Truncated
-    Subpanels)</title>
-    <p>To represent a scenario where the system layout remains uniform
-    but structural constraints require dropping the last subpanel from
-    every macro panel, we modify the upper bound constraint of the index
-    sets.</p>
-    <p>Let <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{D}_M \subset \mathcal{Q}]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
-    be the set of dropped subpanels under configuration
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>.
-    Because the last subpanel of each macro panel corresponds exactly to
-    the global indices <inline-formula><alternatives>
-    <tex-math><![CDATA[j = ik]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mi>i</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
-    the set of dropped subpanels is formalized as:</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{D}_M = \{ q_j \in \mathcal{Q} \mid j = i \cdot k, \text{ for } i = 1, 2, \dots, M \}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mi>j</mml:mi><mml:mo>=</mml:mo><mml:mi>i</mml:mi><mml:mo>⋅</mml:mo><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> for </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>###3 Modified Partition Layout The active system layout partition
-    <inline-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{P}'_M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
-    preserves the original <inline-formula><alternatives>
-    <tex-math><![CDATA[M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
-    distinct macro panels but truncates the inner index constraint to
-    stop at <inline-formula><alternatives>
-    <tex-math><![CDATA[ik - 1]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
-    <p>Where each truncated macro panel <inline-formula><alternatives>
-    <tex-math><![CDATA[P'_i]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>i</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
-    (for <inline-formula><alternatives>
-    <tex-math><![CDATA[i = 1, 2, \dots, M]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
-    is explicitly defined by:</p>
-    <p><disp-formula><alternatives>
-    <tex-math><![CDATA[P'_i = \{ q_j \in \mathcal{Q} \mid (i-1)k + 1 \leq j \leq ik - 1 \}]]></tex-math>
-    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>i</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>j</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>i</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>j</mml:mi><mml:mo>≤</mml:mo><mml:mi>i</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
-  </sec>
-  <sec id="truncated-configuration-matrix-examples-nb-3">
-    <title>Truncated Configuration Matrix Examples</title>
-    <p>Under this setup, the cardinality (number of active subpanels) of
-    each macro panel is reduced from <inline-formula><alternatives>
-    <tex-math><![CDATA[k]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
-    to <inline-formula><alternatives>
-    <tex-math><![CDATA[k-1]]></tex-math>
-    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
-    <list list-type="bullet">
-      <list-item>
-        <p><bold>For <inline-formula><alternatives>
-        <tex-math><![CDATA[M = 5]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
-        (<inline-formula><alternatives>
-        <tex-math><![CDATA[k = 14]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
-        <list list-type="bullet">
-          <list-item>
-            <p>Dropped Set: <inline-formula><alternatives>
-            <tex-math><![CDATA[\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}]]></tex-math>
-            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>28</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>42</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>56</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
-          </list-item>
-          <list-item>
-            <p>Macro Panel 1: <inline-formula><alternatives>
-            <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{13}\}]]></tex-math>
-            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>13</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
-          </list-item>
-        </list>
-      </list-item>
-      <list-item>
-        <p><bold>For <inline-formula><alternatives>
-        <tex-math><![CDATA[M = 7]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
-        (<inline-formula><alternatives>
-        <tex-math><![CDATA[k = 10]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
-        <list list-type="bullet">
-          <list-item>
-            <p>Dropped Set: <inline-formula><alternatives>
-            <tex-math><![CDATA[\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}]]></tex-math>
-            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>7</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>20</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>30</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>40</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>50</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>60</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
-          </list-item>
-          <list-item>
-            <p>Macro Panel 1: <inline-formula><alternatives>
-            <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{9}\}]]></tex-math>
-            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>9</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
-          </list-item>
-        </list>
-      </list-item>
-      <list-item>
-        <p><bold>For <inline-formula><alternatives>
-        <tex-math><![CDATA[M = 14]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
-        (<inline-formula><alternatives>
-        <tex-math><![CDATA[k = 5]]></tex-math>
-        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
-        <list list-type="bullet">
-          <list-item>
-            <p>Dropped Set: <inline-formula><alternatives>
-            <tex-math><![CDATA[\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}]]></tex-math>
-            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
-          </list-item>
-          <list-item>
-            <p>Macro Panel 1: <inline-formula><alternatives>
-            <tex-math><![CDATA[P'_1 = \{q_1, q_2, q_3, q_4\}]]></tex-math>
-            <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
-          </list-item>
-        </list>
-      </list-item>
-    </list>
-  </sec>
-</sec>
-</body>
-
-
-
-<back>
-</back>
-
-
-</sub-article>
-<sub-article article-type="notebook" id="nb-16-nb-4">
-<front-stub>
-</front-stub>
-
-<body>
-<sec id="slow-start-and-fast-start-scenarios-nb-4">
+<sec id="slow-start-and-fast-start-scenarios-nb-1">
   <title>Slow Start and Fast Start Scenarios</title>
-  <sec id="slow-start-nb-4">
+  <sec id="slow-start-nb-1">
     <title>Slow Start</title>
     <p>In the context of FIA, the “slow start” scenarios we simulated
     are intended to represent a budgetary or workforce shortfall in the
@@ -2399,7 +2125,7 @@ work.</funding-statement>
     <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
     retain their original assignments (i.e., we’re “back on time”).</p>
   </sec>
-  <sec id="fast-start-nb-4">
+  <sec id="fast-start-nb-1">
     <title>Fast Start</title>
     <p>Under the “fast start” scenarios we simulated, our VAE intentions
     are analogous to the slow start scenario described above, but the
@@ -2429,7 +2155,7 @@ work.</funding-statement>
     A more detailed demonstrative example can be found in
     @sec-supp-mat.</p>
   </sec>
-  <sec id="generalizing-shifted-macropanel-boundaries-nb-4">
+  <sec id="generalizing-shifted-macropanel-boundaries-nb-1">
     <title>Generalizing Shifted Macropanel Boundaries</title>
     <p>If we preserve <inline-formula><alternatives>
     <tex-math><![CDATA[R]]></tex-math>
@@ -2546,7 +2272,7 @@ work.</funding-statement>
     <tex-math><![CDATA[P_m* = \{ q_r \in \mathcal{Q} : b_{m-1} + 1 \leq r \leq b_m \}.]]></tex-math>
     <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mi>*</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:msub><mml:mi>b</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mi>.</mml:mi></mml:mrow></mml:math></alternatives></disp-formula></p>
   </sec>
-  <sec id="modified-macropanel-lookup-function-nb-4">
+  <sec id="modified-macropanel-lookup-function-nb-1">
     <title>Modified Macropanel Lookup Function</title>
     <p>Because the distributions of micropanels across macropanels are
     no longer uniform under these shifted configurations, the scalar
@@ -2615,18 +2341,214 @@ work.</funding-statement>
 
 
 </sub-article>
-<sub-article article-type="notebook" id="nb-20-nb-5">
+<sub-article article-type="notebook" id="nb-8-nb-2">
 <front-stub>
 </front-stub>
 
 <body>
-<sec id="appendix-a-examples-nb-5">
+<sec id="sample-locations-micropanels-and-macropanels-nb-2">
+  <title>Sample locations, micropanels, and macropanels</title>
+  <p>In a subsequent section, we describe our use of FIA forest
+  vegetation measurement data obtained at fixed sample locations at
+  various points in time. However, it is useful to begin with a notation
+  focused solely on individual, time-invariant sample locations, and
+  sets thereof aggregated into partitions of varying size.</p>
+  <sec id="sample-locations-nb-2">
+    <title>Sample locations</title>
+    <p>Let</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{s}_i = \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">[</mml:mo><mml:mtable><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:mtd></mml:mtr><mml:mtr><mml:mtd columnalign="center" style="text-align: center"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:mtd></mml:mtr></mml:mtable><mml:mo stretchy="true" form="postfix">]</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+    be the bivariate spatial coordinate vector for the
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[i^{th}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>i</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
+    FIA sample location in a focal US state,
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[i = 1,\ldots,n]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>i</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>n</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    where <inline-formula><alternatives>
+    <tex-math><![CDATA[n]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
+    is the number of all sample locations in the focal state, and
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[x_1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>1</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[x_2]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>x</mml:mi><mml:mn>2</mml:mn></mml:msub></mml:math></alternatives></inline-formula>
+    are measures of longitude and latitude respectively.</p>
+  </sec>
+  <sec id="micropanels-nb-2">
+    <title>Micropanels</title>
+    <p>Let</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{Q} = \{q_r : \ r=1, \ldots, R\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>be a set of “micropanels” <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    that partition the <inline-formula><alternatives>
+    <tex-math><![CDATA[n]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>n</mml:mi></mml:math></alternatives></inline-formula>
+    sample locations into approximately equivalently-sized subsets, such
+    that each <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    achieves approximate spatial dispersion across the focal state of
+    each of the <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{s}_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    it contains. The <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    defined here are meant to correspond to collections of sample
+    locations referred to in the FIA Program as “Panel 70’s”, which
+    imply <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    or “Panel 140’s”, which imply <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 140]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+    <p>In CONUS states where the FIA Program is administered by the
+    Pacific Northwest Research Station, <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 140]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>140</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    in present day inventory operations. In the rest of the CONUS
+    states, <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>.
+    Though this notation is intended to be flexible enough to
+    accommodate a range of possible values of
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>,
+    in this study we don’t consider PNWRS states, and so we’ll only
+    consider <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    for practical purposes.</p>
+  </sec>
+  <sec id="macropanels-nb-2">
+    <title>Macropanels</title>
+    <p>The <inline-formula><alternatives>
+    <tex-math><![CDATA[R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+    micropanels can be further aggregated into the set of
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    macropanels</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_M = \{P_m : \ m = 1,\ldots,M\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>:</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>
+    for any value of <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    such that <inline-formula><alternatives>
+    <tex-math><![CDATA[M \vert R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">|</mml:mo><mml:mi>R</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>;
+    that is, such that <inline-formula><alternatives>
+    <tex-math><![CDATA[R]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+    is evenly divisible by <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+    and so the macropanels <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m \in \mathcal{P}_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    are perfectly evenly partitioned by the micropanels
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[q_r \in \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    (though the micropanels themselves may contain slightly different
+    numbers of <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{s}_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="bold-italic">𝒔</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>.</p>
+    <p>The macropanels described above are intended to correspond to the
+    ``annual panels’’ into which the <inline-formula><alternatives>
+    <tex-math><![CDATA[s_i]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>s</mml:mi><mml:mi>i</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    in each state are partitioned for measurement scheduling purposes.
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+    therefore, is intended to correspond to conceivable state-level
+    inventory cycle lengths prescribed in the FIA program for
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[R = 70]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>R</mml:mi><mml:mo>=</mml:mo><mml:mn>70</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    and so in this study <inline-formula><alternatives>
+    <tex-math><![CDATA[M \in \{5, 7, 10, 14\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.
+    Because the micropanels are initially evenly distributed across the
+    macropanels, the number of micropanels per macropanel can be denoted
+    by <inline-formula><alternatives>
+    <tex-math><![CDATA[k]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+    as</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[k = \frac{R}{M}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mfrac><mml:mi>R</mml:mi><mml:mi>M</mml:mi></mml:mfrac></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>A general expression to recover the identities of the micropanels
+    contained in any macropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    is given by</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[P_m = \{ q_r \in \mathcal{Q} : (m - 1) k \ + \ 1 \leq r \leq m k \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mspace width="0.222em"></mml:mspace><mml:mo>+</mml:mo><mml:mspace width="0.222em"></mml:mspace><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula>.</p>
+  </sec>
+  <sec id="macropanel-lookup-function-nb-2">
+    <title>Macropanel Lookup Function</title>
+    <p>Conversely, to determine the identity of the macropanel to which
+    micropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+    belongs, we can define a macropanel lookup function</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[f(r) = \left\lceil \frac{r}{k} \right\rceil = \left\lceil \frac{r \cdot M}{R} \right\rceil]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>r</mml:mi><mml:mi>k</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mi>r</mml:mi><mml:mo>⋅</mml:mo><mml:mi>M</mml:mi></mml:mrow><mml:mi>R</mml:mi></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula>
+    where the ceiling function <inline-formula><alternatives>
+    <tex-math><![CDATA[\lceil x \rceil]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>x</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    returns the smallest integer not less than
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[x]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>x</mml:mi></mml:math></alternatives></inline-formula>,
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[f(r) = m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>f</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>r</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mi>m</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    outputs the index of the macropanel (<inline-formula><alternatives>
+    <tex-math><![CDATA[1 \leq m \leq M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mo>≤</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+    to which the <inline-formula><alternatives>
+    <tex-math><![CDATA[r^{th}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>r</mml:mi><mml:mrow><mml:mi>t</mml:mi><mml:mi>h</mml:mi></mml:mrow></mml:msup></mml:math></alternatives></inline-formula>
+    micropanel is assigned.</p>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-12-nb-3">
+<front-stub>
+</front-stub>
+
+<body>
+<sec id="appendix-a-examples-nb-3">
   <title>Appendix A: Examples</title>
   <p>Below are some demonstrative examples of the use of the notation
   and functions described in the methods section.</p>
-  <sec id="fast-start-and-slow-start-nb-5">
+  <sec id="fast-start-and-slow-start-nb-3">
     <title>Fast Start and Slow Start</title>
-    <sec id="slow-start-nb-5">
+    <sec id="slow-start-nb-3">
       <title>Slow Start</title>
       <p>Consider a case where <inline-formula><alternatives>
       <tex-math><![CDATA[R = 70]]></tex-math>
@@ -2714,7 +2636,7 @@ work.</funding-statement>
         </list-item>
       </list>
     </sec>
-    <sec id="fast-start-nb-5">
+    <sec id="fast-start-nb-3">
       <title>Fast Start</title>
       <p>Alternatively, consider a case where
       <inline-formula><alternatives>
@@ -2795,7 +2717,7 @@ work.</funding-statement>
         </list-item>
       </list>
     </sec>
-    <sec id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors-nb-5">
+    <sec id="illustration-of-the-baseline-and-shifted-boundary-deviation-vectors-nb-3">
       <title>Illustration of the baseline and shifted boundary deviation
       vectors</title>
       <p>Continuing with the example above, the transformation from the
@@ -2821,7 +2743,7 @@ work.</funding-statement>
       <tex-math><![CDATA[\mathbf{B}_5 = (0 + 0, 14 - 4, 28 - 8, 42 - 4, 56 + 0, 70 + 0) = (0, 10, 20, 38, 56, 70)]]></tex-math>
       <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="bold-italic">𝑩</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo>−</mml:mo><mml:mn>4</mml:mn><mml:mo>,</mml:mo><mml:mn>28</mml:mn><mml:mo>−</mml:mo><mml:mn>8</mml:mn><mml:mo>,</mml:mo><mml:mn>42</mml:mn><mml:mo>−</mml:mo><mml:mn>4</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo>+</mml:mo><mml:mn>0</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>20</mml:mn><mml:mo>,</mml:mo><mml:mn>38</mml:mn><mml:mo>,</mml:mo><mml:mn>56</mml:mn><mml:mo>,</mml:mo><mml:mn>70</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
     </sec>
-    <sec id="conditions-to-ensure-validity-of-the-boundary-deviation-vector-nb-5">
+    <sec id="conditions-to-ensure-validity-of-the-boundary-deviation-vector-nb-3">
       <title>Conditions to ensure validity of the boundary deviation
       vector</title>
       <p>To ensure that a boundary deviation vector yields a physically
@@ -2856,7 +2778,7 @@ work.</funding-statement>
       <tex-math><![CDATA[(u_m + \delta_m) > (u_{m-1} + \delta_{m-1}), \quad \forall m \in \{1, 2, \dots, M\}]]></tex-math>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>δ</mml:mi><mml:mi>m</mml:mi></mml:msub><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>&gt;</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:msub><mml:mi>u</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo>+</mml:mo><mml:msub><mml:mi>δ</mml:mi><mml:mrow><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:msub><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:mo>∀</mml:mo><mml:mi>m</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
     </sec>
-    <sec id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start-nb-5">
+    <sec id="example-evaluation-of-the-modified-macropanel-lookup-function-for-fastslow-start-nb-3">
       <title>Example evaluation of the modified macropanel lookup
       function for fast/slow start</title>
       <p>To locate micropanel <inline-formula><alternatives>
@@ -2886,9 +2808,9 @@ work.</funding-statement>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>P</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>*</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
     </sec>
   </sec>
-  <sec id="extended-and-shortened-cycle-lengths-nb-5">
+  <sec id="extended-and-shortened-cycle-lengths-nb-3">
     <title>Extended and Shortened Cycle Lengths</title>
-    <sec id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7-nb-5">
+    <sec id="subpanel-redistribution-from-mathcalp_5-to-mathcalp_7-nb-3">
       <title>Subpanel Redistribution: From
       <inline-formula><alternatives>
       <tex-math><![CDATA[\mathcal{P}_{5}]]></tex-math>
@@ -2903,7 +2825,7 @@ work.</funding-statement>
       <tex-math><![CDATA[q_r \in Q]]></tex-math>
       <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi>Q</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
     </sec>
-    <sec id="the-original-partition-structure-mathcalp_5-nb-5">
+    <sec id="the-original-partition-structure-mathcalp_5-nb-3">
       <title>1. The Original Partition Structure
       (<inline-formula><alternatives>
       <tex-math><![CDATA[\mathcal{P}_{5}]]></tex-math>
@@ -2946,7 +2868,7 @@ work.</funding-statement>
         </list-item>
       </list>
     </sec>
-    <sec id="the-new-extended-partition-structure-mathcalp_7-nb-5">
+    <sec id="the-new-extended-partition-structure-mathcalp_7-nb-3">
       <title>2. The New Extended Partition Structure
       (<inline-formula><alternatives>
       <tex-math><![CDATA[\mathcal{P}_{7}]]></tex-math>
@@ -2999,7 +2921,7 @@ work.</funding-statement>
         </list-item>
       </list>
     </sec>
-    <sec id="micropanel-lineage-mapping-nb-5">
+    <sec id="micropanel-lineage-mapping-nb-3">
       <title>3. Micropanel Lineage Mapping</title>
       <p>To visualize exactly how the micropanel constituents of the
       original macropanels are redistributed to form the new macropanel
@@ -3133,10 +3055,10 @@ work.</funding-statement>
         </table>
       </table-wrap>
     </sec>
-    <sec id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths-nb-5">
+    <sec id="example-evaluation-of-the-modified-macropanel-lookup-function-for-extendedshortened-cycle-lengths-nb-3">
       <title>Example evaluation of the modified macropanel lookup
       function for extended/shortened cycle lengths</title>
-      <sec id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10-nb-5">
+      <sec id="example-cases-for-cycle-length-extension-m5-k14-implies-mprime7-kprime10-nb-3">
         <title>Example cases for cycle length extension
         (<inline-formula><alternatives>
         <tex-math><![CDATA[M=5, k=14 \implies M^\prime=7, k^\prime=10]]></tex-math>
@@ -3227,7 +3149,7 @@ work.</funding-statement>
           </list-item>
         </list>
       </sec>
-      <sec id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7-nb-5">
+      <sec id="example-cases-for-cycle-length-shortening-m14-k5-implies-mprime10-kprime7-nb-3">
         <title>Example cases for cycle length shortening
         (<inline-formula><alternatives>
         <tex-math><![CDATA[M=14, k=5 \implies M^\prime=10, k^\prime=7]]></tex-math>
@@ -3326,6 +3248,516 @@ work.</funding-statement>
         </list>
       </sec>
     </sec>
+  </sec>
+  <sec id="dropped-micropanels-nb-3">
+    <title>Dropped Micropanels</title>
+    <p>To represent the dropped micropanel scenario where the final
+    micropanel in each macropanel in a cycle is dropped, we can modify
+    the upper bound constraint of the index sets. Let
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_M \subset \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>⊂</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    be the set of dropped micropanels for cycle configuration
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>.
+    Because the final micropanel in each macropanel has index
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[r = mk]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    the set of dropped micropanels can be generally expressed as</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_M = \{ q_r \in \mathcal{Q} \mid r = m \cdot k, \text{ for } m = 1, 2, \dots, M \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mi>M</mml:mi></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mo>⋅</mml:mo><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> for </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>The modified cycle <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+    preserves the original <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    distinct macropanels, but truncates the upper micropanel boundary
+    within each macropanel at the value <inline-formula><alternatives>
+    <tex-math><![CDATA[r = mk - 1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_M = \{P'_1, P'_2, \dots, P'_M\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Where each truncated macro panel <inline-formula><alternatives>
+    <tex-math><![CDATA[P'_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+    (for <inline-formula><alternatives>
+    <tex-math><![CDATA[m = 1, 2, \dots, M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+    is explicitly defined by:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[P'_m = \{ q_r \in \mathcal{Q} \mid (m-1)k + 1 \leq r \leq mk - 1 \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>∣</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <sec id="dropped-micropanel-examples-nb-3">
+      <title>Dropped micropanel examples:</title>
+      <list list-type="bullet">
+        <list-item>
+          <p><bold>For <inline-formula><alternatives>
+          <tex-math><![CDATA[M = 5]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+          (<inline-formula><alternatives>
+          <tex-math><![CDATA[k = 14]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+          <list list-type="bullet">
+            <list-item>
+              <p>Dropped Set: <inline-formula><alternatives>
+              <tex-math><![CDATA[\mathcal{D}_5 = \{q_{14}, q_{28}, q_{42}, q_{56}, q_{70}\}]]></tex-math>
+              <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>28</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>42</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>56</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+            </list-item>
+            <list-item>
+              <p>Macro Panel 1: <inline-formula><alternatives>
+              <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{13}\}]]></tex-math>
+              <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>13</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+            </list-item>
+          </list>
+        </list-item>
+        <list-item>
+          <p><bold>For <inline-formula><alternatives>
+          <tex-math><![CDATA[M = 7]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>7</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+          (<inline-formula><alternatives>
+          <tex-math><![CDATA[k = 10]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+          <list list-type="bullet">
+            <list-item>
+              <p>Dropped Set: <inline-formula><alternatives>
+              <tex-math><![CDATA[\mathcal{D}_7 = \{q_{10}, q_{20}, q_{30}, q_{40}, q_{50}, q_{60}, q_{70}\}]]></tex-math>
+              <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>7</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>20</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>30</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>40</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>50</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>60</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+            </list-item>
+            <list-item>
+              <p>Macro Panel 1: <inline-formula><alternatives>
+              <tex-math><![CDATA[P'_1 = \{q_1, q_2, \dots, q_{9}\}]]></tex-math>
+              <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>9</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+            </list-item>
+          </list>
+        </list-item>
+        <list-item>
+          <p><bold>For <inline-formula><alternatives>
+          <tex-math><![CDATA[M = 14]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula></bold>
+          (<inline-formula><alternatives>
+          <tex-math><![CDATA[k = 5]]></tex-math>
+          <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>):</p>
+          <list list-type="bullet">
+            <list-item>
+              <p>Dropped Set: <inline-formula><alternatives>
+              <tex-math><![CDATA[\mathcal{D}_{14} = \{q_5, q_{10}, \dots, q_{70}\}]]></tex-math>
+              <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mn>14</mml:mn></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>5</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>10</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>70</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+            </list-item>
+            <list-item>
+              <p>Macro Panel 1: <inline-formula><alternatives>
+              <tex-math><![CDATA[P'_1 = \{q_1, q_2, q_3, q_4\}]]></tex-math>
+              <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>1</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>2</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>3</mml:mn></mml:msub><mml:mo>,</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mn>4</mml:mn></mml:msub><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula></p>
+            </list-item>
+          </list>
+        </list-item>
+      </list>
+    </sec>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-16-nb-4">
+<front-stub>
+</front-stub>
+
+<body>
+<sec id="extended-and-shortened-cycle-lengths-nb-4">
+  <title>Extended and Shortened Cycle Lengths</title>
+  <p>Under the slow and fast start VAE scenarios described above, the
+  number of macropanels in the cycle <inline-formula><alternatives>
+  <tex-math><![CDATA[\mathcal{P}_M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+  (i.e., <inline-formula><alternatives>
+  <tex-math><![CDATA[M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+  which we can think of as corresponding to “inventory cycle length” in
+  the context of FIA) is preserved by shifting an equivalent number of
+  micropanels forward (for delayed field visitation) in some macropanels
+  as are held backward (for early field visitation) in others.</p>
+  <p>Another way VAE might be applied, for particular values of
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[R]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+  and <inline-formula><alternatives>
+  <tex-math><![CDATA[M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>,
+  is to evenly redistribute micropanels into a modified total number of
+  macropanels, say <inline-formula><alternatives>
+  <tex-math><![CDATA[M^{\prime} \in \{5,7,10,14\}, \quad M^{\prime} \neq M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:mn>10</mml:mn><mml:mo>,</mml:mo><mml:mn>14</mml:mn><mml:mo stretchy="false" form="postfix">}</mml:mo><mml:mo>,</mml:mo><mml:mspace width="1.0em"></mml:mspace><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>≠</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+  where <inline-formula><alternatives>
+  <tex-math><![CDATA[M^{\prime}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
+  is still a factor of <inline-formula><alternatives>
+  <tex-math><![CDATA[R]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>.
+  If <inline-formula><alternatives>
+  <tex-math><![CDATA[M^{\prime} > M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>&gt;</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+  the cycle length is extended, and the macropanel sampling intensity
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[k]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+  (i.e., the annual effort) is reduced. Conversely, if
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[M^{\prime} < M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>&lt;</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+  the cycle length is shortened and the annual effort in each newly
+  configured macropanel <inline-formula><alternatives>
+  <tex-math><![CDATA[P^\prime_m]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
+  in in the modified cycle <inline-formula><alternatives>
+  <tex-math><![CDATA[\mathcal{P}^\prime_M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
+  is increased.</p>
+  <p><styled-content style="color: red;">I would prefer for the modified
+  macropanels and cycles to be respectively symbolized as
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[P_{m^\prime}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>
+  and <inline-formula><alternatives>
+  <tex-math><![CDATA[\mathcal{P}_{M^\prime}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>
+  to align with the respective assignments of
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[m^\prime]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
+  and <inline-formula><alternatives>
+  <tex-math><![CDATA[M^\prime]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
+  as modified macropanel index and cycle length. However, as an example,
+  for <inline-formula><alternatives>
+  <tex-math><![CDATA[m = 1]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+  and <inline-formula><alternatives>
+  <tex-math><![CDATA[M = 1]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+  it makes more sense to write <inline-formula><alternatives>
+  <tex-math><![CDATA[P^\prime_1]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
+  and <inline-formula><alternatives>
+  <tex-math><![CDATA[\mathcal{P}^\prime_1]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
+  than <inline-formula><alternatives>
+  <tex-math><![CDATA[P_{1^\prime}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:msup><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>
+  and <inline-formula><alternatives>
+  <tex-math><![CDATA[\mathcal{P}_{1^\prime}]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:msup><mml:mn>1</mml:mn><mml:mi>′</mml:mi></mml:msup></mml:msub></mml:math></alternatives></inline-formula>…right?</styled-content></p>
+  <sec id="a-modified-macropanel-lookup-function-for-extended-and-shortened-cycle-lengths-nb-4">
+    <title>A modified macropanel lookup function for extended and
+    shortened cycle lengths</title>
+    <p>To map any micropanel from its originally prescribed macropanel
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[P_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    to its new macropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[P^\prime_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
+    under a shortened or extended cycle length, we define a function
+    that uses both the original macropanel index
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>m</mml:mi></mml:math></alternatives></inline-formula>
+    and the local micropanel offset <inline-formula><alternatives>
+    <tex-math><![CDATA[l]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
+    within that macropanel.</p>
+    <p>Let:</p>
+    <list list-type="bullet">
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[M, k]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+        be the parameters of the original configuration (e.g.,
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[M=5, k=14]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>M</mml:mi><mml:mo>=</mml:mo><mml:mn>5</mml:mn><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mn>14</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>).</p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[M^\prime, k^\prime]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>
+        be the parameters of the new configuration (e.g.,
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[M^\prime=7, k^\prime=10]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>7</mml:mn><mml:mo>,</mml:mo><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mn>10</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>).</p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[m]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>m</mml:mi></mml:math></alternatives></inline-formula>
+        be the original macropanel index, where
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[m \in \{1, 2, \dots, M\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+      </list-item>
+      <list-item>
+        <p><inline-formula><alternatives>
+        <tex-math><![CDATA[l]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
+        be the local index of the micropanel within
+        <inline-formula><alternatives>
+        <tex-math><![CDATA[P_m]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi>P</mml:mi><mml:mi>m</mml:mi></mml:msub></mml:math></alternatives></inline-formula>,
+        where <inline-formula><alternatives>
+        <tex-math><![CDATA[l \in \{1, 2, \dots, k\}]]></tex-math>
+        <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+      </list-item>
+    </list>
+    <p>A micropanel’s local macropanel coordinate (i.e., the two unique
+    values that determine its chronological position within its
+    originally assigned macropanel and cycle)
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[(m,l)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    links to its fixed global index <inline-formula><alternatives>
+    <tex-math><![CDATA[r \in \{1,\ldots,R\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>R</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    via:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[r = (m - 1)k + l]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>which implies the local index <inline-formula><alternatives>
+    <tex-math><![CDATA[l]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>l</mml:mi></mml:math></alternatives></inline-formula>
+    can be obtained via <inline-formula><alternatives>
+    <tex-math><![CDATA[l = r - (m - 1)k = r - mk + k]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>l</mml:mi><mml:mo>=</mml:mo><mml:mi>r</mml:mi><mml:mo>−</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>=</mml:mo><mml:mi>r</mml:mi><mml:mo>−</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.</p>
+    <p>In the new cycle configuration <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}^\prime_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>,
+    each macropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[P^\prime_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msubsup></mml:math></alternatives></inline-formula>
+    contains exactly <inline-formula><alternatives>
+    <tex-math><![CDATA[k^\prime]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
+    micropanels. To determine which macropanel (i.e., which sequence of
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[k^\prime]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
+    micropanels) the index <inline-formula><alternatives>
+    <tex-math><![CDATA[r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+    falls within, we divide <inline-formula><alternatives>
+    <tex-math><![CDATA[r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+    by <inline-formula><alternatives>
+    <tex-math><![CDATA[k^\prime]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:math></alternatives></inline-formula>
+    and apply the ceiling function <inline-formula><alternatives>
+    <tex-math><![CDATA[\lceil \cdot \rceil]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>⋅</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    to round up to the nearest integer:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[m^\prime = \left\lceil \frac{r}{k^\prime} \right\rceil]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mi>r</mml:mi><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Combining both steps yields the definitive closed-form mapping
+    function <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{f}(m,l)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[f^\prime(m,l) = \left\lceil \frac{(m - 1) k + l}{k^\prime} \right\rceil]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>f</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:mrow><mml:mo stretchy="true" form="prefix">⌈</mml:mo><mml:mfrac><mml:mrow><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mi>l</mml:mi></mml:mrow><mml:msup><mml:mi>k</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mfrac><mml:mo stretchy="true" form="postfix">⌉</mml:mo></mml:mrow></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Where <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathbf{f}(m,l) = m^\prime]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi mathvariant="bold-italic">𝒇</mml:mi><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>,</mml:mo><mml:mi>l</mml:mi><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mo>=</mml:mo><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup></mml:mrow></mml:math></alternatives></inline-formula>
+    represents the index of the modified macropanel
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[m^\prime \in \{1, 2, \dots, M^\prime\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msup><mml:mi>m</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msup><mml:mi>M</mml:mi><mml:mi>′</mml:mi></mml:msup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>)
+    to which micropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[r]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>r</mml:mi></mml:math></alternatives></inline-formula>
+    is newly assigned and <inline-formula><alternatives>
+    <tex-math><![CDATA[\lceil \cdot \rceil]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mo stretchy="false" form="prefix">⌈</mml:mo><mml:mi>⋅</mml:mi><mml:mo stretchy="false" form="postfix">⌉</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    represents the ceiling function described above.</p>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-20-nb-5">
+<front-stub>
+</front-stub>
+
+<body>
+<sec id="dropped-micropanels-nb-5">
+  <title>Dropped Micropanels</title>
+  <p>Under the slow and fast start scenarios, both the total number of
+  micropanels <inline-formula><alternatives>
+  <tex-math><![CDATA[R]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+  and the total number of macropanels <inline-formula><alternatives>
+  <tex-math><![CDATA[M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+  within the cycle are preserved, but some micropanels are reassigned to
+  other macropanels such that the number of micropanels per macropanel
+  is no longer the fixed value <inline-formula><alternatives>
+  <tex-math><![CDATA[k]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+  as under the original configuration. Under the extended and shortened
+  cycle length scenarios, the total number of micropanels
+  <inline-formula><alternatives>
+  <tex-math><![CDATA[R]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>R</mml:mi></mml:math></alternatives></inline-formula>
+  is retained, but micropanels are evenly and sequentially redistributed
+  across macropanels such that <inline-formula><alternatives>
+  <tex-math><![CDATA[M]]></tex-math>
+  <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+  either gets larger or smaller.</p>
+  <p>It’s conceivable that FIA could encounter such dire obstacles to
+  field operations that sampling intensities must be consistently
+  reduced within every macropanel in a cycle, with no intention (or
+  capability) to regain the nominal sampling intensity before the end of
+  the cycle. This could be achieved by simply eliminating one or more
+  micropanels per macropanel from consideration for field visitation,
+  until its prescribed position in the following inventory cycle at the
+  earliest. We refer to this cirucmstance as a “dropped micropanel”
+  scenario.</p>
+  <sec id="micropanel-exclusion-notation-nb-5">
+    <title>Micropanel Exclusion Notation</title>
+    <p>To generalize dropped micropanel scenarios, let
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[d \in \{0, 1, \dots, k\}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>∈</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:mn>0</mml:mn><mml:mo>,</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    denote the number of trailing micropanels dropped from each
+    macropanel in a cycle. Let <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_{M,d} \subset \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>⊂</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    be the set of dropped micropanels for cycle configuration
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:math></alternatives></inline-formula>
+    under a sampling intensity reduction of the last
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[d]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>d</mml:mi></mml:math></alternatives></inline-formula>
+    micropanels in each macropanl. Because the final
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[d]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>d</mml:mi></mml:math></alternatives></inline-formula>
+    micropanels in macropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>m</mml:mi></mml:math></alternatives></inline-formula>
+    span the micropanel indices <inline-formula><alternatives>
+    <tex-math><![CDATA[r = mk - d + 1]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>
+    through <inline-formula><alternatives>
+    <tex-math><![CDATA[r = mk]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    the set of dropped micropanels can be expressed as:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_{M,d} = \{ q_r \in \mathcal{Q} : mk - d + 1 \leq r \leq mk, \text{ for } m = 1, 2, \dots, M \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>,</mml:mo><mml:mrow><mml:mspace width="0.333em"></mml:mspace><mml:mtext mathvariant="normal"> for </mml:mtext><mml:mspace width="0.333em"></mml:mspace></mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>The modified cycle <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_{M,d}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+    preserves the original <inline-formula><alternatives>
+    <tex-math><![CDATA[M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>M</mml:mi></mml:math></alternatives></inline-formula>
+    distinct macropanels, but truncates the upper micropanel boundary
+    within each macropanel at <inline-formula><alternatives>
+    <tex-math><![CDATA[r = mk - d]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>r</mml:mi><mml:mo>=</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_{M,d} = \{P'_1, P'_2, \dots, P'_M\}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>1</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mn>2</mml:mn><mml:mo>′</mml:mo></mml:msubsup><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:msubsup><mml:mi>P</mml:mi><mml:mi>M</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>where each truncated macropanel <inline-formula><alternatives>
+    <tex-math><![CDATA[P'_m]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup></mml:math></alternatives></inline-formula>
+    (for <inline-formula><alternatives>
+    <tex-math><![CDATA[m = 1, 2, \dots, M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>m</mml:mi><mml:mo>=</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mi>…</mml:mi><mml:mo>,</mml:mo><mml:mi>M</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+    is explicitly defined by:</p>
+    <p><disp-formula><alternatives>
+    <tex-math><![CDATA[P'_m = \{ q_r \in \mathcal{Q} : (m-1)k + 1 \leq r \leq mk - d \}]]></tex-math>
+    <mml:math display="block" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">{</mml:mo><mml:msub><mml:mi>q</mml:mi><mml:mi>r</mml:mi></mml:msub><mml:mo>∈</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi><mml:mo>:</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mi>m</mml:mi><mml:mo>−</mml:mo><mml:mn>1</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo><mml:mi>k</mml:mi><mml:mo>+</mml:mo><mml:mn>1</mml:mn><mml:mo>≤</mml:mo><mml:mi>r</mml:mi><mml:mo>≤</mml:mo><mml:mi>m</mml:mi><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi><mml:mo stretchy="false" form="postfix">}</mml:mo></mml:mrow></mml:math></alternatives></disp-formula></p>
+    <p>Under this generalized form, the modified number of micropanels
+    per macropanel is reduced from <inline-formula><alternatives>
+    <tex-math><![CDATA[k]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mi>k</mml:mi></mml:math></alternatives></inline-formula>
+    to <inline-formula><alternatives>
+    <tex-math><![CDATA[k - d]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>k</mml:mi><mml:mo>−</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>.
+    Note that when <inline-formula><alternatives>
+    <tex-math><![CDATA[d = 0]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:math></alternatives></inline-formula>,
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_{M,0} = \emptyset]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mn>0</mml:mn></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi>∅</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>
+    and <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{P}'_{M,0} = \mathcal{P}_M]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi mathvariant="script">𝒫</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mn>0</mml:mn></mml:mrow><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:msub><mml:mi mathvariant="script">𝒫</mml:mi><mml:mi>M</mml:mi></mml:msub></mml:mrow></mml:math></alternatives></inline-formula>
+    (because the inequality in the expression for
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_{M,d}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>d</mml:mi></mml:mrow></mml:msub></mml:math></alternatives></inline-formula>
+    yields no valid integer solution); when
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[d = k]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>,
+    all micropanels are dropped (<inline-formula><alternatives>
+    <tex-math><![CDATA[\mathcal{D}_{M,k} = \mathcal{Q}]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msub><mml:mi mathvariant="script">𝒟</mml:mi><mml:mrow><mml:mi>M</mml:mi><mml:mo>,</mml:mo><mml:mi>k</mml:mi></mml:mrow></mml:msub><mml:mo>=</mml:mo><mml:mi mathvariant="script">𝒬</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>)
+    and each active macropanel becomes empty
+    (<inline-formula><alternatives>
+    <tex-math><![CDATA[P'_m = \emptyset]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:msubsup><mml:mi>P</mml:mi><mml:mi>m</mml:mi><mml:mo>′</mml:mo></mml:msubsup><mml:mo>=</mml:mo><mml:mi>∅</mml:mi></mml:mrow></mml:math></alternatives></inline-formula>).</p>
+    <p>In the simulation study, we evaluated
+    <inline-formula><alternatives>
+    <tex-math><![CDATA[d = (1,2,3)]]></tex-math>
+    <mml:math display="inline" xmlns:mml="http://www.w3.org/1998/Math/MathML"><mml:mrow><mml:mi>d</mml:mi><mml:mo>=</mml:mo><mml:mo stretchy="false" form="prefix">(</mml:mo><mml:mn>1</mml:mn><mml:mo>,</mml:mo><mml:mn>2</mml:mn><mml:mo>,</mml:mo><mml:mn>3</mml:mn><mml:mo stretchy="false" form="postfix">)</mml:mo></mml:mrow></mml:math></alternatives></inline-formula>
+    for each of the three states.</p>
+  </sec>
+</sec>
+</body>
+
+
+
+<back>
+</back>
+
+
+</sub-article>
+<sub-article article-type="notebook" id="nb-24-nb-6">
+<front-stub>
+</front-stub>
+
+<body>
+<sec id="fia-data-nb-6">
+  <title>FIA Data</title>
+  <p>Apart from some conceptual linkages to inventory cycles and annual
+  periods, the Data and Methods section has focused exclusively on the
+  development of notation for describing the micropanels and macropanels
+  prescribed by the annual FIA sample design, and versions of them
+  modified to represent 3 VAE scenarios. However, the purpose of the
+  micropanel and macropanel structures is to schedule, in particular
+  field season years, measurements of forest attributes at the locations
+  they contain.</p>
+  <sec id="measurement-data-nb-6">
+    <title>Measurement Data</title>
+    <p>???</p>
   </sec>
 </sec>
 </body>
