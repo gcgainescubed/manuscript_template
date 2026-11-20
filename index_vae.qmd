@@ -161,11 +161,13 @@ FIA program operations and the management of US forests.
 
 ### Study Area
 
-3 states...
-
-### FIA Data
-
-Data from those 3 states...
+To achieve an adequately comprehensive assessment of the anticipated statistical 
+consequences of our simulated VAE scenarios, we focused this study on three US states
+(Maine, Alabama, and Montana)
+distinct with respect to i) the national FIA Program's underlying regional structure;
+ii) their nominally prescribed FIA inventory cycle lengths; and 
+iii) the extant range of forest types and conditions, levels of primary productivity, and 
+ecological disturbance regimes across CONUS.
 
 {{< include notebooks/initial-notation.qmd >}}
 
@@ -182,6 +184,12 @@ an inventory cycle.
 {{< include notebooks/fast-slow.qmd >}}
 
 {{< include notebooks/extend-shorten.qmd >}}
+
+{{< include notebooks/dropped-p70s.qmd >}}
+
+{{< include notebooks/measurements_and_growth.qmd >}}
+
+## Results {#sec-results}
 
 ## Discussion {#sec-discussion}
 

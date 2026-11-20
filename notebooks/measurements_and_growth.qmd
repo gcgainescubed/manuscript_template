@@ -1,0 +1,16 @@
+<!-- ---
+title: "dropped-p70s" (commenting out title to keep it from replacing main title when this .qmd included in main .qmd)
+--- -->
+### FIA Data
+
+Apart from some conceptual linkages to inventory cycles and annual periods,
+the Data and Methods section has focused exclusively on the development of notation
+for describing the micropanels and macropanels prescribed by the annual FIA sample 
+design, and versions of them modified to represent 3 VAE scenarios. However, 
+the purpose of the micropanel and macropanel structures is to schedule, in
+particular field season years, measurements 
+of forest attributes at the locations they contain. 
+
+#### Measurement Data
+
+???
